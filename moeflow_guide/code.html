@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>打印与纸张指南 · Moeflow Guide - MoeFlow SmartPrint</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "badge-peach": "#FFD8C8",
+            "tertiary-fixed-dim": "#ccc0ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#53dad1",
+            "outline-variant": "#bbc9c7",
+            "inverse-surface": "#18343b",
+            "surface-container": "#d5f3fc",
+            "surface-container-low": "#e0f8ff",
+            "on-primary-container": "#004340",
+            "primary-container": "#20b8b0",
+            "surface-dim": "#c2dfe8",
+            "text-secondary": "#527078",
+            "secondary": "#006780",
+            "on-secondary-fixed-variant": "#004d61",
+            "on-tertiary-fixed-variant": "#4a4168",
+            "tertiary-fixed": "#e8ddff",
+            "secondary-container": "#D7F0FA",
+            "on-primary-fixed-variant": "#00504c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#011f26",
+            "on-secondary-container": "#00627a",
+            "badge-mint": "#B9EBD9",
+            "error": "#ba1a1a",
+            "surface-container-high": "#d0edf6",
+            "on-error": "#ffffff",
+            "primary": "#20b8b0",
+            "on-secondary-fixed": "#001f28",
+            "on-surface": "#011f26",
+            "on-tertiary-fixed": "#1e153a",
+            "tertiary": "#625881",
+            "badge-warm-yellow": "#FFF3C4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#3f355c",
+            "on-primary-fixed": "#00201e",
+            "surface": "#f0fbff",
+            "surface-bright": "#f0fbff",
+            "surface-high": "#EAF5F6",
+            "primary-dark": "#168D89",
+            "inverse-on-surface": "#d8f6ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#7cd2f1",
+            "on-error-container": "#93000a",
+            "background": "#f0fbff",
+            "surface-variant": "#cae7f0",
+            "outline": "#C8E3E5",
+            "text-primary": "#18343B",
+            "tertiary-container": "#ab9fcc",
+            "surface-light": "#F4FBFC",
+            "surface-container-highest": "#cae7f0",
+            "on-surface-variant": "#3c4948",
+            "secondary-fixed": "#b8eaff",
+            "secondary-on-container": "#153D52",
+            "surface-tint": "#20b8b0",
+            "primary-fixed": "#74f7ee",
+            "inverse-primary": "#53dad1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "52px", fontWeight: "800" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] pt-safe">
+<div class="h-14 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-1 min-w-0 pr-2">
+<button aria-label="返回上一页" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all flex-shrink-0" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px] leading-none">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">打印与纸张指南 · Moeflow Guide</h1>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="h-8 px-2.5 rounded-full bg-surface-high/90 border border-white/80 shadow-[0_2px_8px_rgba(32,184,176,0.06)] flex items-center gap-1.5">
+<button aria-label="小程序菜单" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">more_horiz</span>
+</button>
+<span class="w-[1px] h-3.5 bg-outline/60"></span>
+<button aria-label="关闭小程序" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[17px] leading-none">radio_button_checked</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-background"><div class="flex flex-col w-full pb-10">
+<!-- 搜索与动态胶囊快捷导览 -->
+<section class="px-margin pt-4 pb-2">
+<!-- 智能搜索栏 -->
+<div class="relative w-full mb-3.5">
+<div class="flex items-center w-full h-12 px-3.5 bg-surface-container-lowest rounded-DEFAULT shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)]">
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0 mr-2.5">search</span>
+<input class="flex-1 bg-transparent text-text-primary placeholder:text-text-secondary font-body-sm text-body-sm outline-none border-none min-w-0" id="guide-search" placeholder="搜索克重、装订、转PDF、纸张参数..." type="text"/>
+<button aria-label="清空输入" class="hidden text-text-secondary hover:text-text-primary p-1 active:scale-95 transition-transform" id="search-clear-btn">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+</div>
+<!-- 4 大主题快速胶囊导航 -->
+<div class="flex gap-2 overflow-x-auto pb-1.5 scrollbar-none -mx-margin px-margin">
+<a class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md active:scale-95 transition-transform" href="#section-paper">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span>纸张与克重</span>
+</a>
+<a class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md active:scale-95 transition-transform" href="#section-binding">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+<span>装订工艺</span>
+</a>
+<a class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest text-text-primary font-label-md text-label-md shadow-sm active:scale-95 transition-transform" href="#section-faq">
+<span class="material-symbols-outlined text-primary text-[18px]">picture_as_pdf</span>
+<span>格式与排版</span>
+</a>
+<a class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest text-text-primary font-label-md text-label-md shadow-sm active:scale-95 transition-transform" href="#section-support">
+<span class="material-symbols-outlined text-primary text-[18px]">currency_yen</span>
+<span>售后与计费</span>
+</a>
+</div>
+</section>
+<!-- 动态小贴士横幅 -->
+<section class="px-margin mb-5">
+<div class="p-3.5 rounded-DEFAULT bg-gradient-to-r from-secondary-container via-surface-container-lowest to-secondary-container text-secondary-on-container flex items-center gap-3 shadow-[0_4px_16px_rgba(0,103,128,0.06)]">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md tracking-tight">选纸黄金法则</p>
+<p class="font-body-sm text-body-sm text-text-secondary truncate">日常草稿选 70g，正规简历与画册首选 100g+ 柔韧涂层纸</p>
+</div>
+</div>
+</section>
+<!-- 常用纸张与克重规格百科 -->
+<section class="px-margin mb-7" id="section-paper">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-primary"></span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">纸张与克重规格</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary px-2.5 py-1 rounded-full bg-primary-container font-medium tabular-nums">4 类精选基质</span>
+</div>
+<div class="space-y-3.5">
+<!-- 70g / 80g A4 办公书写纸 -->
+<div class="p-4 rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-DEFAULT bg-surface-high flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[28px]">article</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-[17px] text-text-primary truncate">A4 经典书写纸</h3>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm tabular-nums">70g / 80g</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">全木浆无氯漂白 · 双面吸墨均匀</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-secondary-on-container flex-shrink-0">日常首选</span>
+</div>
+<!-- 触觉与物理参数条 -->
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-DEFAULT bg-surface-light text-center">
+<div>
+<div class="font-label-sm text-label-sm text-text-secondary">透光防透度</div>
+<div class="font-label-md text-label-md text-text-primary mt-0.5 tabular-nums">92% 不洇墨</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-text-secondary">纸张挺度</div>
+<div class="font-label-md text-label-md text-text-primary mt-0.5">柔软易翻阅</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-text-secondary">单页参考厚</div>
+<div class="font-label-md text-label-md text-text-primary mt-0.5 tabular-nums">≈ 0.09 mm</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-0.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm">课程作业复印</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm">考研复习真题</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm">论文多轮初审</span>
+</div>
+</div>
+<!-- 100g / 120g 高颜轻涂纸 -->
+<div class="p-4 rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-DEFAULT bg-secondary-container flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[28px]">description</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-[17px] text-text-primary truncate">高颜轻涂纸</h3>
+<span class="px-2 py-0.5 rounded-full bg-badge-warm-yellow text-[#5A4500] font-label-sm text-label-sm tabular-nums">100g / 120g</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">微米级高白涂布 · 色彩还原极佳</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-badge-peach text-[#5D2717] flex-shrink-0">质感推荐</span>
+</div>
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-DEFAULT bg-surface-light text-center">
+<div>
+<div class="font-label-sm text-label-sm text-text-secondary">色彩饱和度</div>
+<div class="font-label-md text-label-md text-text-primary mt-0.5">广色域高保真</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-text-secondary">纸面触感</div>
+<div class="font-label-md text-label-md text-text-primary mt-0.5">平滑不反光</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-text-secondary">单页参考厚</div>
+<div class="font-label-md text-label-md text-text-primary mt-0.5 tabular-nums">≈ 0.13 mm</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-0.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm">求职精装简历</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm">毕业答辩最终稿</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm">汇报彩图手册</span>
+</div>
+</div>
+<!-- 200g / 250g 铜版纸 & 白卡纸 -->
+<div class="p-4 rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-DEFAULT bg-tertiary-fixed flex items-center justify-center flex-shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[28px]">layers</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-[17px] text-text-primary truncate">铜版卡纸 / 厚磅卡</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm tabular-nums">200g - 250g</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">高挺度抗弯折 · 双面哑光/光面</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-high text-text-primary flex-shrink-0">超厚硬卡</span>
+</div>
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-DEFAULT bg-surface-light text-center">
+<div>
+<div class="font-label-sm text-label-sm text-text-secondary">挺括耐折度</div>
+<div class="font-label-md text-label-md text-text-primary mt-0.5 tabular-nums">特等抗卷边</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-text-secondary">表面效果</div>
+<div class="font-label-md text-label-md text-text-primary mt-0.5">细腻致密涂层</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-text-secondary">单页参考厚</div>
+<div class="font-label-md text-label-md text-text-primary mt-0.5 tabular-nums">≈ 0.28 mm</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-0.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm">论文磨砂封皮</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm">文创明信片</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm">社团立牌海报</span>
+</div>
+</div>
+<!-- 柯达/富士专业原厂相纸 -->
+<div class="p-4 rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-DEFAULT bg-badge-mint flex items-center justify-center flex-shrink-0 text-[#135442]">
+<span class="material-symbols-outlined text-[28px]">photo_library</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-[17px] text-text-primary truncate">专业影像相纸</h3>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm">柯达 / 富士原厂</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">RC 树脂涂层 · 纳米级色彩微孔锁色</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container flex-shrink-0">影像专用</span>
+</div>
+<!-- 绒面与光面对比卡 -->
+<div class="grid grid-cols-2 gap-2.5">
+<div class="p-3 rounded-DEFAULT bg-surface-high">
+<div class="flex items-center gap-1.5 mb-1 text-primary">
+<span class="material-symbols-outlined text-[18px]">texture</span>
+<span class="font-label-md text-label-md font-bold">微粒绒面 (推荐)</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">细致磨砂触感，防指纹不眩光，证件照与复古人像必选</p>
+</div>
+<div class="p-3 rounded-DEFAULT bg-surface-high">
+<div class="flex items-center gap-1.5 mb-1 text-secondary">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span class="font-label-md text-label-md font-bold">高光通透镜面</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">晶莹透亮，反光强烈，风景照与摄影大片明亮通透</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm pt-0.5">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">straighten</span>
+            支持尺寸：1寸 / 2寸 / 6寸(10×15cm) / 7寸(13×18cm)
+          </span>
+<span class="tabular-nums font-semibold text-text-primary">300 DPI+ 高清输出</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 装订工艺可视化解析 -->
+<section class="px-margin mb-7" id="section-binding">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">装订工艺可视化指南</h2>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">依据页数智能适配</span>
+</div>
+<!-- 4 大工艺卡片网格 -->
+<div class="grid grid-cols-1 gap-3">
+<!-- 不装订 -->
+<div class="p-4 rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex items-center justify-between gap-3">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-11 h-11 rounded-DEFAULT bg-surface-high flex items-center justify-center text-text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">content_copy</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-[16px] text-text-primary">散页整理 (不装订)</h3>
+<span class="font-label-sm text-label-sm text-primary px-2 py-0.2 rounded-full bg-primary-container tabular-nums">免费</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 truncate">自动分套输出，各份防折角顺向平铺</p>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-label-sm text-label-sm text-text-secondary">适用范围</div>
+<div class="font-label-md text-label-md text-text-primary tabular-nums">任意页数</div>
+</div>
+</div>
+<!-- 骑马钉 / 订书机 -->
+<div class="p-4 rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex items-center justify-between gap-3">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-11 h-11 rounded-DEFAULT bg-primary-container flex items-center justify-center text-on-primary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">push_pin</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-[16px] text-text-primary">角钉 / 侧边双钉</h3>
+<span class="font-label-sm text-label-sm text-primary px-2 py-0.2 rounded-full bg-primary-container tabular-nums">免装订费</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 truncate">机台自动压合，左上角斜45°订或左侧平钉</p>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-label-sm text-label-sm text-text-secondary">最佳容纳</div>
+<div class="font-label-md text-label-md text-text-primary tabular-nums">2 - 50 页</div>
+</div>
+</div>
+<!-- 热熔无线胶装 -->
+<div class="p-4 rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex items-center justify-between gap-3">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-11 h-11 rounded-DEFAULT bg-secondary-container flex items-center justify-center text-secondary-on-container flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-[16px] text-text-primary">高品质热熔胶装</h3>
+<span class="font-label-sm text-label-sm text-secondary-on-container px-2 py-0.2 rounded-full bg-secondary-container">加厚书脊</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 truncate">配套 EVA 韧性热熔胶 + 250g 磨砂透明封皮</p>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-label-sm text-label-sm text-text-secondary">厚书专属</div>
+<div class="font-label-md text-label-md text-text-primary tabular-nums">30 - 300 页</div>
+</div>
+</div>
+<!-- 金属活页圈 / 骑马中缝装 -->
+<div class="p-4 rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex items-center justify-between gap-3">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-11 h-11 rounded-DEFAULT bg-surface-container-high flex items-center justify-center text-text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">all_inclusive</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-[16px] text-text-primary">活页铁圈 / 骑马折页</h3>
+<span class="font-label-sm text-label-sm text-text-secondary px-2 py-0.2 rounded-full bg-surface-light">180°平摊</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 truncate">支持随意插拔增页，刷题作答不卡笔手</p>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-label-sm text-label-sm text-text-secondary">刷题手册</div>
+<div class="font-label-md text-label-md text-text-primary tabular-nums">10 - 120 页</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 常见问题手风琴折叠问答 (FAQ) -->
+<section class="px-margin mb-7" id="section-faq">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-primary"></span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">打印常见问题解答 (FAQ)</h2>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">即时避坑</span>
+</div>
+<div class="space-y-3" id="faq-accordion">
+<!-- FAQ 1 -->
+<div class="faq-item rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] overflow-hidden transition-all duration-200">
+<button aria-expanded="false" class="faq-trigger w-full p-4 flex items-center justify-between text-left gap-3 focus:outline-none">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-label-md flex-shrink-0">
+              Q1
+            </div>
+<span class="font-headline-sm text-[16px] text-text-primary truncate">为什么 Word 在不同设备排版会跑偏？</span>
+</div>
+<span class="material-symbols-outlined faq-icon text-text-secondary transition-transform duration-200 text-[20px] flex-shrink-0">keyboard_arrow_down</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1">
+<div class="p-3.5 rounded-DEFAULT bg-surface-light text-text-secondary font-body-sm text-body-sm leading-relaxed">
+<p class="mb-2 text-text-primary font-medium">原因：本地字体缺失与 Office 渲染版本差异导致页边距重流。</p>
+<p class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0 mt-0.5">check_circle</span>
+<span><strong>系统建议：</strong>上传前请先转为 <strong class="text-primary">PDF 格式</strong>！PDF 会固化字符矩阵、页眉角标与段落间距，确保打印所见即所得。</span>
+</p>
+</div>
+</div>
+</div>
+<!-- FAQ 2 -->
+<div class="faq-item rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] overflow-hidden transition-all duration-200">
+<button aria-expanded="false" class="faq-trigger w-full p-4 flex items-center justify-between text-left gap-3 focus:outline-none">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-secondary-on-container flex items-center justify-center font-bold text-label-md flex-shrink-0">
+              Q2
+            </div>
+<span class="font-headline-sm text-[16px] text-text-primary truncate">长边翻转与短边翻转有什么区别？</span>
+</div>
+<span class="material-symbols-outlined faq-icon text-text-secondary transition-transform duration-200 text-[20px] flex-shrink-0">keyboard_arrow_down</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1">
+<div class="p-3.5 rounded-DEFAULT bg-surface-light space-y-2.5 font-body-sm text-body-sm text-text-secondary">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] flex-shrink-0 mt-0.5">menu_book</span>
+<p><strong class="text-text-primary">长边翻转 (默认推荐)：</strong>模拟正常读物左右翻页，适合纵向 A4 毕业论文、实验报告、阅读文献。</p>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] flex-shrink-0 mt-0.5">calendar_month</span>
+<p><strong class="text-text-primary">短边翻转：</strong>模拟日历或财务凭证上下掀页，专为横向 PPT 讲义、宽表统计清单设计。</p>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ 3 -->
+<div class="faq-item rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] overflow-hidden transition-all duration-200">
+<button aria-expanded="false" class="faq-trigger w-full p-4 flex items-center justify-between text-left gap-3 focus:outline-none">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-full bg-badge-mint text-[#135442] flex items-center justify-center font-bold text-label-md flex-shrink-0">
+              Q3
+            </div>
+<span class="font-headline-sm text-[16px] text-text-primary truncate">打印遇卡纸、缺墨被扣费了怎么办？</span>
+</div>
+<span class="material-symbols-outlined faq-icon text-text-secondary transition-transform duration-200 text-[20px] flex-shrink-0">keyboard_arrow_down</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1">
+<div class="p-3.5 rounded-DEFAULT bg-surface-light text-text-secondary font-body-sm text-body-sm leading-relaxed">
+<p class="text-text-primary font-medium mb-1.5">安心打印保障机制：</p>
+<p>MoeFlow 打印终端均搭载 IoT 阻抗光学传感器。如遇卡纸、缺纸中断，硬件将在 <strong class="text-primary tabular-nums">3 秒内</strong> 向云端上报未出纸张数量，并执行系统<strong>原路秒级全额退款</strong>（微信零钱入账通知），无需向柜台提交繁琐工单。</p>
+</div>
+</div>
+</div>
+<!-- FAQ 4 -->
+<div class="faq-item rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] overflow-hidden transition-all duration-200">
+<button aria-expanded="false" class="faq-trigger w-full p-4 flex items-center justify-between text-left gap-3 focus:outline-none">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-full bg-badge-warm-yellow text-[#5A4500] flex items-center justify-center font-bold text-label-md flex-shrink-0">
+              Q4
+            </div>
+<span class="font-headline-sm text-[16px] text-text-primary truncate">提交订单后多久可以在自提机取出？</span>
+</div>
+<span class="material-symbols-outlined faq-icon text-text-secondary transition-transform duration-200 text-[20px] flex-shrink-0">keyboard_arrow_down</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1">
+<div class="p-3.5 rounded-DEFAULT bg-surface-light text-text-secondary font-body-sm text-body-sm leading-relaxed">
+<p>线上支付成功后，文件进入全校云打印队列。您可在 <strong class="text-primary tabular-nums">24 小时内</strong> 前往校园内任意一台 MoeFlow 智能云终端，使用手机小程序扫码即刻出纸，告别下课排队拥堵。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 底部客服在线答疑通道 -->
+<section class="px-margin mb-4" id="section-support">
+<div class="p-4 rounded-DEFAULT bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)]">
+<div class="flex items-center gap-3 mb-3.5">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-[17px] text-text-primary">遇到特殊规格需求？</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">7×24 小时校园智能守护 · 驻点师傅极速响应</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- 智能在线助手 -->
+<button class="flex items-center justify-center gap-2 h-11 px-3 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-[0_6px_18px_rgba(32,184,176,0.25)] active:scale-95 transition-transform" onclick="openChat()">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+<span>在线智能咨询</span>
+</button>
+<!-- 驻点运维专线 -->
+<a class="flex items-center justify-center gap-2 h-11 px-3 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md active:scale-95 transition-transform" href="tel:400-800-6688">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span class="tabular-nums">400-800-6688</span>
+</a>
+</div>
+<div class="mt-3 text-center">
+<span class="font-label-sm text-label-sm text-text-secondary">
+          机房专修驻点：各校区图书馆大厅 / 综合实验楼 1F 运维中心
+        </span>
+</div>
+</div>
+</section>
+<!-- 轻量底部品牌标识 -->
+<div class="text-center py-2">
+<p class="font-label-sm text-label-sm text-text-secondary/70">MoeFlow SmartPrint · 纸张工艺实验研习所</p>
+</div>
+</div>
+<script>
+  (function() {
+    // 手风琴折叠交互
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+
+      trigger.addEventListener('click', () => {
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        
+        // 切换展开状态
+        if (isExpanded) {
+          content.classList.add('hidden');
+          trigger.setAttribute('aria-expanded', 'false');
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          content.classList.remove('hidden');
+          trigger.setAttribute('aria-expanded', 'true');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // 默认展开第一个问题
+    if (faqItems.length > 0) {
+      const firstTrigger = faqItems[0].querySelector('.faq-trigger');
+      firstTrigger.click();
+    }
+
+    // 实时搜索过滤
+    const searchInput = document.getElementById('guide-search');
+    const clearBtn = document.getElementById('search-clear-btn');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim().toLowerCase();
+        if (query.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+
+        // 简单的 FAQ 过滤联动
+        faqItems.forEach(item => {
+          const text = item.innerText.toLowerCase();
+          if (query === '' || text.includes(query)) {
+            item.style.display = 'block';
+            if (query !== '') {
+              // 自动展开匹配的条目
+              const content = item.querySelector('.faq-content');
+              const trigger = item.querySelector('.faq-trigger');
+              const icon = item.querySelector('.faq-icon');
+              content.classList.remove('hidden');
+              trigger.setAttribute('aria-expanded', 'true');
+              icon.style.transform = 'rotate(180deg)';
+            }
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearBtn.classList.add('hidden');
+        faqItems.forEach(item => {
+          item.style.display = 'block';
+        });
+      });
+    }
+
+    window.openChat = function() {
+      // 模拟触发客服会话反馈
+      alert('已连接校园 7×24H 智能打印助手，随时为您解答纸张及工艺疑问！');
+    };
+  })();
+</script></main>
+</body></html>

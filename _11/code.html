@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-bright": "#f0fbff", "tertiary-fixed-dim": "#ccc0ef", "on-error-container": "#93000a", "on-surface-variant": "#3c4948", "primary-dark": "#168D89", "secondary-fixed-dim": "#7cd2f1", "secondary-fixed": "#b8eaff", "tertiary": "#625881", "badge-mint": "#B9EBD9", "secondary-on-container": "#153D52", "primary-fixed": "#74f7ee", "on-background": "#011f26", "primary": "#006a65", "tertiary-container": "#ab9fcc", "error": "#ba1a1a", "on-primary-fixed": "#00201e", "badge-warm-yellow": "#FFF3C4", "error-container": "#ffdad6", "on-secondary": "#ffffff", "surface-light": "#F4FBFC", "on-surface": "#011f26", "text-primary": "#18343B", "secondary": "#006780", "surface-tint": "#006a65", "on-primary": "#ffffff", "surface-variant": "#cae7f0", "primary-fixed-dim": "#53dad1", "inverse-surface": "#18343b", "on-primary-fixed-variant": "#00504c", "tertiary-fixed": "#e8ddff", "secondary-container": "#D7F0FA", "surface-container": "#d5f3fc", "background": "#f0fbff", "inverse-primary": "#53dad1", "primary-container": "#20b8b0", "outline": "#C8E3E5", "on-tertiary-container": "#3f355c", "on-secondary-fixed": "#001f28", "on-secondary-fixed-variant": "#004d61", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "surface": "#f0fbff", "inverse-on-surface": "#d8f6ff", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#4a4168", "surface-dim": "#c2dfe8", "on-primary-container": "#004340", "surface-container-highest": "#cae7f0", "badge-peach": "#FFD8C8", "surface-container-low": "#e0f8ff", "text-secondary": "#527078", "on-tertiary-fixed": "#1e153a", "surface-container-high": "#d0edf6", "on-secondary-container": "#00627a", "outline-variant": "#bbc9c7", "surface-high": "#EAF5F6" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "margin-desktop": "2.5rem", "margin": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "gutter-desktop": "1.5rem", "space-md": "1rem", "gutter": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem" }, fontFamily: { "label-sm": ["Be Vietnam Pro"], "body-md": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Be Vietnam Pro"], "body-sm": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"] }, fontSize: { "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button class="w-11 h-11 -ml-space-xs flex items-center justify-center rounded-full text-on-surface hover:bg-surface-variant/40 transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">Notice List</h1></div><div class="flex items-center gap-space-sm"><div class="flex items-center h-8 px-space-sm bg-white/70 backdrop-blur-md rounded-full shadow-[0_2px_8px_rgba(32,184,176,0.08)]"><button class="w-7 h-7 flex items-center justify-center text-text-primary hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button><div class="w-px h-3.5 bg-outline/60 mx-1"></div><button class="w-7 h-7 flex items-center justify-center text-text-primary hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">trip_origin</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_6px_rgba(0,106,101,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Category Filter & Global Action -->
+<div class="flex flex-col w-full px-margin pt-space-sm pb-space-sm gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">消息通知</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm shadow-sm transition-all duration-300" id="unread-total-badge">6 未读</span>
+</div>
+<button class="flex items-center gap-1 text-primary hover:text-primary-dark transition-colors py-1 px-2.5 rounded-full hover:bg-secondary-container/40" id="mark-all-read-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+<span class="font-label-md text-label-md">全部标为已读</span>
+</button>
+</div>
+<!-- Capsule Tabs Scroll -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="tab-chip active-tab flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary text-on-primary shadow-[0_4px_12px_rgba(0,106,101,0.2)] transition-all" data-tab="all" type="button">
+<span class="font-label-md text-label-md font-semibold">全部</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/25 text-white font-label-sm text-label-sm tabular-nums">12</span>
+</button>
+<button class="tab-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-secondary hover:bg-surface-variant transition-all" data-tab="order" type="button">
+<span class="font-label-md text-label-md">订单进度</span>
+<span class="px-1.5 py-0.2 rounded-full bg-badge-mint text-primary-dark font-label-sm text-label-sm tabular-nums font-bold">4</span>
+</button>
+<button class="tab-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-secondary hover:bg-surface-variant transition-all" data-tab="group" type="button">
+<span class="font-label-md text-label-md">拼团动态</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tabular-nums font-bold">2</span>
+</button>
+<button class="tab-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-secondary hover:bg-surface-variant transition-all" data-tab="activity" type="button">
+<span class="font-label-md text-label-md">活动福利</span>
+<span class="px-1.5 py-0.2 rounded-full bg-badge-warm-yellow text-[#5A4500] font-label-sm text-label-sm tabular-nums font-bold">3</span>
+</button>
+<button class="tab-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-secondary hover:bg-surface-variant transition-all" data-tab="system" type="button">
+<span class="font-label-md text-label-md">系统公告</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-variant text-text-secondary font-label-sm text-label-sm tabular-nums">3</span>
+</button>
+</div>
+</div>
+<!-- Messages List Container -->
+<div class="flex flex-col px-margin gap-3 mt-space-xs" id="messages-container">
+<!-- Card 1: 订单进度 · 出纸就绪 (Unread, Mint Accent) -->
+<div class="message-card unread group relative bg-surface-container-lowest rounded-lg p-5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)] transition-all duration-300 hover:shadow-[0_16px_36px_-6px_rgba(32,184,176,0.18)]" data-category="order">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-2xl bg-secondary-container flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">print</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-badge-mint text-primary-dark font-semibold flex-shrink-0">订单进度</span>
+<span class="unread-dot w-2 h-2 rounded-full bg-primary-container flex-shrink-0 animate-pulse"></span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary tabular-nums flex-shrink-0">刚刚 · 10:28</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-1 line-clamp-1">您的毕业设计说明书已出纸完毕</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1.5 leading-relaxed">
+            科技园 A 座 02 号智能复合机已完成全部 24 页双面打印，请在 24 小时内凭提货码 <span class="font-semibold text-primary font-mono bg-surface-container-low px-1.5 py-0.5 rounded">8829</span> 取件。
+          </p>
+<div class="mt-3.5 pt-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="font-label-sm text-label-sm text-text-secondary truncate">科技园 A 座 1F 大堂东侧</span>
+</div>
+<button class="action-btn flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-primary text-on-primary shadow-sm hover:opacity-95 active:scale-95 transition-all" type="button">
+<span class="font-label-md text-label-md font-semibold">立即取件</span>
+<span class="material-symbols-outlined text-[16px]">qr_code_2</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: 拼团动态 · 成团成功 (Unread, Sky Blue Accent) -->
+<div class="message-card unread group relative bg-surface-container-lowest rounded-lg p-5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)] transition-all duration-300 hover:shadow-[0_16px_36px_-6px_rgba(32,184,176,0.18)]" data-category="group">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-2xl bg-surface-container flex items-center justify-center text-secondary flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">diversity_3</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-secondary-on-container font-semibold flex-shrink-0">拼团动态</span>
+<span class="unread-dot w-2 h-2 rounded-full bg-secondary-fixed-dim flex-shrink-0 animate-pulse"></span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary tabular-nums flex-shrink-0">28分钟前</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-1 line-clamp-1">恭喜！计算机学院毕业论文拼印已成团</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1.5 leading-relaxed">
+            李*凡、林*轩与您已成功凑满 3 人，设备正在预热合单出纸，每人已立省 <span class="text-primary-dark font-semibold font-mono">¥5.20</span>。
+          </p>
+<div class="mt-3.5 pt-3 flex items-center justify-between">
+<div class="flex items-center -space-x-1.5">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-text-secondary font-label-sm text-label-sm font-semibold">李</div>
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-text-secondary font-label-sm text-label-sm font-semibold">林</div>
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-semibold">我</div>
+</div>
+<button class="action-btn flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-secondary-container text-secondary-on-container hover:bg-secondary-fixed transition-all active:scale-95" type="button">
+<span class="font-label-md text-label-md font-semibold">查看拼单详情</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: 活动福利 · 学霸卡发放 (Peach/Yellow Accent) -->
+<div class="message-card group relative bg-surface-container-lowest rounded-lg p-5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] transition-all duration-300 hover:shadow-[0_16px_36px_-6px_rgba(32,184,176,0.14)]" data-category="activity">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-2xl bg-badge-warm-yellow/70 flex items-center justify-center text-[#5A4500] flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">redeem</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-badge-warm-yellow text-[#5A4500] font-semibold flex-shrink-0">活动福利</span>
+<span class="font-body-sm text-body-sm text-text-secondary tabular-nums flex-shrink-0">昨天 16:40</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-1 line-clamp-1">开学季福利！¥5.00 无门槛打印抵扣券已到账</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1.5 leading-relaxed">
+            全场黑白/彩色文档与证件照制作通用，有效期至 <span class="font-mono text-text-primary">2025.04.15</span>。
+          </p>
+<div class="mt-3.5 pt-3 flex items-center justify-between">
+<div class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-[#5A4500]">timer</span>
+<span class="font-label-sm text-label-sm">剩余 28 天可用</span>
+</div>
+<button class="action-btn flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-surface-container text-text-primary hover:bg-surface-variant transition-all active:scale-95" type="button">
+<span class="font-label-md text-label-md font-semibold">去券中心查看</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: 系统公告 · 例行维护 (Read, Neutral Lavender/Slate) -->
+<div class="message-card group relative bg-surface-container-lowest/80 rounded-lg p-5 shadow-[0_4px_16px_rgba(0,0,0,0.03)] transition-all duration-300" data-category="system">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-2xl bg-surface-container flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">build_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-variant text-text-secondary font-semibold flex-shrink-0">系统维护</span>
+<span class="font-body-sm text-body-sm text-text-secondary tabular-nums flex-shrink-0">3天前</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-1 line-clamp-1">关于自强创业园 B栋复合机固件例行维护公告</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1.5 leading-relaxed">
+            预计于周日凌晨 <span class="font-mono text-text-primary">02:00-04:00</span> 进行云端打印引擎升级，期间周边点位正常服务。
+          </p>
+<div class="mt-3.5 pt-3 flex items-center justify-between">
+<div class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-label-sm text-label-sm">系统安全运维部</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary/70">已读</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Empty State (Hidden by default, triggered on empty filters) -->
+<div class="hidden flex flex-col items-center justify-center px-margin py-12 text-center" id="empty-state">
+<div class="w-20 h-20 rounded-full bg-surface-container-low flex items-center justify-center text-primary-dark/50 shadow-inner mb-3">
+<span class="material-symbols-outlined text-[36px]">inbox</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary">暂无此类通知</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">新的订单、成团进度与活动福利将在此呈现</p>
+<button class="mt-4 px-4 py-1.5 rounded-full bg-surface-container text-primary font-label-md text-label-md font-semibold" onclick="resetFilter()" type="button">
+      查看全部消息
+    </button>
+</div>
+<!-- Footer Tip & Safety Notice -->
+<div class="mt-space-lg px-margin flex flex-col items-center gap-1 text-center">
+<div class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary">security</span>
+<span class="font-label-sm text-label-sm">文档安全提醒：取件凭证请勿转借他人</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary/70">已加载最近 30 天通知</span>
+</div>
+</div>
+<script>
+  (function initMessageCenter() {
+    const tabs = document.querySelectorAll('.tab-chip');
+    const cards = document.querySelectorAll('.message-card');
+    const emptyState = document.getElementById('empty-state');
+    const markAllBtn = document.getElementById('mark-all-read-btn');
+    const totalBadge = document.getElementById('unread-total-badge');
+
+    // Filter switching logic
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-primary', 'text-on-primary', 'shadow-[0_4px_12px_rgba(0,106,101,0.2)]');
+          t.classList.add('bg-surface-container', 'text-text-secondary');
+        });
+        tab.classList.remove('bg-surface-container', 'text-text-secondary');
+        tab.classList.add('bg-primary', 'text-on-primary', 'shadow-[0_4px_12px_rgba(0,106,101,0.2)]');
+
+        const category = tab.getAttribute('data-tab');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (category === 'all' || cardCat === category) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+        }
+      });
+    });
+
+    window.resetFilter = function() {
+      const allTab = document.querySelector('[data-tab="all"]');
+      if (allTab) allTab.click();
+    };
+
+    // Mark all as read micro-interaction
+    markAllBtn.addEventListener('click', () => {
+      const unreadDots = document.querySelectorAll('.unread-dot');
+      unreadDots.forEach(dot => {
+        dot.classList.add('scale-0', 'opacity-0');
+        setTimeout(() => dot.remove(), 250);
+      });
+
+      cards.forEach(card => card.classList.remove('unread'));
+
+      if (totalBadge) {
+        totalBadge.textContent = '全已读';
+        totalBadge.classList.remove('bg-primary-container', 'text-on-primary-container');
+        totalBadge.classList.add('bg-surface-variant', 'text-text-secondary');
+      }
+
+      markAllBtn.style.opacity = '0.5';
+      markAllBtn.style.pointerEvents = 'none';
+    });
+  })();
+</script></main></body></html>

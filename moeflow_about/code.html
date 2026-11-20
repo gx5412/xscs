@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>关于我们 · Moeflow About - MoeFlow SmartPrint</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "badge-peach": "#FFD8C8",
+            "tertiary-fixed-dim": "#ccc0ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#53dad1",
+            "outline-variant": "#bbc9c7",
+            "inverse-surface": "#18343b",
+            "surface-container": "#d5f3fc",
+            "surface-container-low": "#e0f8ff",
+            "on-primary-container": "#004340",
+            "primary-container": "#20b8b0",
+            "surface-dim": "#c2dfe8",
+            "text-secondary": "#527078",
+            "secondary": "#006780",
+            "on-secondary-fixed-variant": "#004d61",
+            "on-tertiary-fixed-variant": "#4a4168",
+            "tertiary-fixed": "#e8ddff",
+            "secondary-container": "#D7F0FA",
+            "on-primary-fixed-variant": "#00504c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#011f26",
+            "on-secondary-container": "#00627a",
+            "badge-mint": "#B9EBD9",
+            "error": "#ba1a1a",
+            "surface-container-high": "#d0edf6",
+            "on-error": "#ffffff",
+            "primary": "#20b8b0",
+            "on-secondary-fixed": "#001f28",
+            "on-surface": "#011f26",
+            "on-tertiary-fixed": "#1e153a",
+            "tertiary": "#625881",
+            "badge-warm-yellow": "#FFF3C4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#3f355c",
+            "on-primary-fixed": "#00201e",
+            "surface": "#f0fbff",
+            "surface-bright": "#f0fbff",
+            "surface-high": "#EAF5F6",
+            "primary-dark": "#168D89",
+            "inverse-on-surface": "#d8f6ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#7cd2f1",
+            "on-error-container": "#93000a",
+            "background": "#f0fbff",
+            "surface-variant": "#cae7f0",
+            "outline": "#C8E3E5",
+            "text-primary": "#18343B",
+            "tertiary-container": "#ab9fcc",
+            "surface-light": "#F4FBFC",
+            "surface-container-highest": "#cae7f0",
+            "on-surface-variant": "#3c4948",
+            "secondary-fixed": "#b8eaff",
+            "secondary-on-container": "#153D52",
+            "surface-tint": "#20b8b0",
+            "primary-fixed": "#74f7ee",
+            "inverse-primary": "#53dad1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "52px", fontWeight: "800" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] pt-safe">
+<div class="h-14 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-1 min-w-0 pr-2">
+<button aria-label="返回上一步" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all flex-shrink-0" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px] leading-none">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">关于我们 · Moeflow About</h1>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="h-8 px-2.5 rounded-full bg-surface-high/90 border border-white/80 shadow-[0_2px_8px_rgba(32,184,176,0.06)] flex items-center gap-1.5">
+<button aria-label="小程序菜单" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">more_horiz</span>
+</button>
+<span class="w-[1px] h-3.5 bg-outline/60"></span>
+<button aria-label="关闭小程序" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[17px] leading-none">radio_button_checked</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-background"><div class="flex flex-col w-full pb-8">
+<!-- 品牌头部与愿景介绍 -->
+<section class="px-margin pt-4 pb-6 flex flex-col items-center text-center relative overflow-hidden">
+<!-- 背景流光装饰环 (无描边，纯柔和光斑) -->
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-64 h-64 bg-gradient-to-b from-primary-fixed/40 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- 品牌微标 -->
+<div class="relative mb-3 flex items-center justify-center">
+<div class="w-20 h-20 rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_rgba(32,184,176,0.18)] flex items-center justify-center p-2.5 relative">
+<div class="w-full h-full rounded-[14px] bg-gradient-to-br from-primary-container to-secondary flex items-center justify-center text-on-primary shadow-inner">
+<span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">print_connect</span>
+</div>
+</div>
+<!-- 绿色小水滴状态浮标 -->
+<span class="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-surface-container-lowest shadow-sm">
+<span class="h-4 w-4 rounded-full bg-badge-mint flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-[12px] text-[#135442]">eco</span>
+</span>
+</span>
+</div>
+<!-- 品牌主标题 -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary tracking-tight">MoeFlow 智能云印</h2>
+<!-- 版本标签 -->
+<div class="mt-1.5 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-secondary-on-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+<span>v5.3.2 (Build 202409)</span>
+</div>
+<!-- Slogan 胶囊容器 -->
+<div class="mt-4 px-4 py-2 rounded-full bg-surface-container-lowest/80 shadow-[0_8px_24px_rgba(32,184,176,0.06)]">
+<p class="font-body-sm text-body-sm text-text-secondary">
+        让高校文印更简单 · 绿色合单 · 秒级自助出纸
+      </p>
+</div>
+</section>
+<!-- 核心社会价值与绿色印量数据看板（三宫格） -->
+<section class="px-margin mb-6">
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 shadow-[0_8px_24px_rgba(32,184,176,0.08)]">
+<div class="flex items-center justify-between pb-3 mb-3 border-b-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary-container">energy_savings_leaf</span>
+<span class="font-label-md text-label-md text-text-primary">低碳校园影响力</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm">
+          全国高校共建
+        </span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center">
+<!-- 覆盖高校 -->
+<div class="flex flex-col items-center p-2 rounded-lg bg-surface-high/60">
+<span class="material-symbols-outlined text-[20px] text-secondary mb-1">school</span>
+<span class="font-display-lg-mobile text-headline-sm text-text-primary font-bold tabular-nums">820+</span>
+<span class="font-label-sm text-label-sm text-text-secondary mt-0.5">覆盖高校(所)</span>
+<span class="text-[10px] text-text-secondary/70 mt-0.5 truncate w-full">31省市校区</span>
+</div>
+<!-- 累计节纸 -->
+<div class="flex flex-col items-center p-2 rounded-lg bg-surface-high/60">
+<span class="material-symbols-outlined text-[20px] text-primary-container mb-1">layers</span>
+<span class="font-display-lg-mobile text-headline-sm text-text-primary font-bold tabular-nums">1,420<span class="text-xs font-normal">万</span></span>
+<span class="font-label-sm text-label-sm text-text-secondary mt-0.5">累计节纸(张)</span>
+<span class="text-[10px] text-text-secondary/70 mt-0.5 truncate w-full">双面合单拼印</span>
+</div>
+<!-- 碳减排量 -->
+<div class="flex flex-col items-center p-2 rounded-lg bg-surface-high/60">
+<span class="material-symbols-outlined text-[20px] text-[#006a65] mb-1">forest</span>
+<span class="font-display-lg-mobile text-headline-sm text-text-primary font-bold tabular-nums">118.6</span>
+<span class="font-label-sm text-label-sm text-text-secondary mt-0.5">碳减排量(吨)</span>
+<span class="text-[10px] text-text-secondary/70 mt-0.5 truncate w-full">守护绿色森林</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 校园场景视觉展示 -->
+<section class="px-margin mb-6">
+<div class="relative w-full h-36 rounded-DEFAULT overflow-hidden shadow-[0_8px_24px_rgba(32,184,176,0.08)]">
+<img class="w-full h-full object-cover" data-alt="Modern university library print hub with sleek aesthetic aqua cyan self-service MoeFlow printing stations, college students smiling softly while holding neat spiral-bound thesis papers, sunlit airy Nordic campus atmosphere with soft diffuse sky light and potted green plants in fresh teal and clean white palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5XnoD6K5ri4ySHAWaXrhJQdlBtkjOKBzDmBZwtRo7xmLi5kYM6e8OlNtHqkn1QhQVRJZDATqdjMSyOrDKozkTAZrLaL4kHXtq-ees-WVQC97Y_rTbg67xPoZr8tTfPRd2lVPxjJIQLHd_Xp-mrZhiqfO4up4GRjqYNwl2XRZCeVU6wXqRsI2IywDljmgh8s9CW8vEWfnGAkUOY06aCbNacSSy-4kUj4iR0tpbA_5m"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex items-end p-3.5">
+<div class="flex items-center justify-between w-full">
+<div>
+<p class="font-label-md text-label-md text-on-primary">智慧云印终端 · 遍布教学楼与图书馆</p>
+<p class="font-body-sm text-xs text-surface-container-low/90">24 小时随到随取，扫码即印无需排队</p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/25 backdrop-blur-md text-on-primary font-label-sm text-label-sm">
+            全天候守候
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- 核心优势与专利技术矩阵（双列网格卡片） -->
+<section class="px-margin mb-6">
+<div class="flex items-center gap-1.5 mb-3">
+<span class="material-symbols-outlined text-[20px] text-primary-container">verified</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">核心技术与创新特性</h3>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- 01 AI 智能预检排版 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-3.5 shadow-[0_8px_24px_rgba(32,184,176,0.06)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-full bg-secondary-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+</span>
+<span class="font-label-sm text-label-sm text-text-secondary/60 tabular-nums">01</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-text-primary mb-1">AI 智能预检</h4>
+<p class="font-body-sm text-xs text-text-secondary leading-snug">
+            自动识别倾斜、暗角与边缘阴影，智能套版修正。
+          </p>
+</div>
+<div class="mt-3 pt-2">
+<span class="inline-block px-2 py-0.5 rounded-full bg-surface-high font-label-sm text-[11px] text-text-secondary">
+            专利识别引擎
+          </span>
+</div>
+</div>
+<!-- 02 银行级链路加密 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-3.5 shadow-[0_8px_24px_rgba(32,184,176,0.06)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-full bg-badge-mint/50 text-[#135442] flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+</span>
+<span class="font-label-sm text-label-sm text-text-secondary/60 tabular-nums">02</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-text-primary mb-1">链路级加密</h4>
+<p class="font-body-sm text-xs text-text-secondary leading-snug">
+            256 位 TLS 全程加密，出纸完成立即销毁零留存。
+          </p>
+</div>
+<div class="mt-3 pt-2">
+<span class="inline-block px-2 py-0.5 rounded-full bg-surface-high font-label-sm text-[11px] text-text-secondary">
+            完工即焚保障
+          </span>
+</div>
+</div>
+<!-- 03 物联网云端集群 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-3.5 shadow-[0_8px_24px_rgba(32,184,176,0.06)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-full bg-badge-warm-yellow/60 text-[#5A4500] flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+</span>
+<span class="font-label-sm text-label-sm text-text-secondary/60 tabular-nums">03</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-text-primary mb-1">IoT 云端集群</h4>
+<p class="font-body-sm text-xs text-text-secondary leading-snug">
+            毫秒级感知卡纸与缺墨，异常自动调度秒退款。
+          </p>
+</div>
+<div class="mt-3 pt-2">
+<span class="inline-block px-2 py-0.5 rounded-full bg-surface-high font-label-sm text-[11px] text-text-secondary">
+            实时状态自愈
+          </span>
+</div>
+</div>
+<!-- 04 校园合单拼团模式 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-3.5 shadow-[0_8px_24px_rgba(32,184,176,0.06)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-full bg-badge-peach/60 text-[#5D2717] flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">groups</span>
+</span>
+<span class="font-label-sm text-label-sm text-text-secondary/60 tabular-nums">04</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-text-primary mb-1">合单拼印模式</h4>
+<p class="font-body-sm text-xs text-text-secondary leading-snug">
+            同楼同栋集单并打，节约纸损，专享学生 8 折起。
+          </p>
+</div>
+<div class="mt-3 pt-2">
+<span class="inline-block px-2 py-0.5 rounded-full bg-surface-high font-label-sm text-[11px] text-text-secondary">
+            环保省钱双赢
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- 官方资质与权威合规背书列表 -->
+<section class="px-margin mb-6">
+<div class="flex items-center gap-1.5 mb-3">
+<span class="material-symbols-outlined text-[20px] text-secondary">security</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">合规资质与行业背书</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-3 shadow-[0_8px_24px_rgba(32,184,176,0.06)] flex flex-col gap-2">
+<!-- 资质 1 -->
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-surface-high transition-colors">
+<div class="w-8 h-8 rounded-full bg-secondary-container/70 flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">policy</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md text-text-primary truncate">增值电信业务经营许可证</p>
+<p class="font-body-sm text-xs text-text-secondary">ICP/EDI 认证：京 B2-20230891</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary/50 text-[18px]">check_circle</span>
+</div>
+<!-- 资质 2 -->
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-surface-high transition-colors">
+<div class="w-8 h-8 rounded-full bg-secondary-container/70 flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md text-text-primary truncate">公安部信息安全等级保护三级</p>
+<p class="font-body-sm text-xs text-text-secondary">金融及政务同级网络安全防护</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary/50 text-[18px]">check_circle</span>
+</div>
+<!-- 资质 3 -->
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-surface-high transition-colors">
+<div class="w-8 h-8 rounded-full bg-secondary-container/70 flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">copyright</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md text-text-primary truncate">国家版权局计算机软著登记</p>
+<p class="font-body-sm text-xs text-text-secondary">自主研发云排版与物联调度内核</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary/50 text-[18px]">check_circle</span>
+</div>
+<!-- 资质 4 -->
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-surface-high transition-colors">
+<div class="w-8 h-8 rounded-full bg-secondary-container/70 flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md text-text-primary truncate">全国高等教育后勤文印推荐平台</p>
+<p class="font-body-sm text-xs text-text-secondary">中国高校绿色后勤文印服务入库品牌</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary/50 text-[18px]">check_circle</span>
+</div>
+</div>
+</section>
+<!-- 官方联系与合作渠道 -->
+<section class="px-margin mb-6">
+<div class="flex items-center gap-1.5 mb-3">
+<span class="material-symbols-outlined text-[20px] text-primary-container">support_agent</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">联系与合作</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 shadow-[0_8px_24px_rgba(32,184,176,0.06)] flex flex-col gap-3.5">
+<!-- 电话 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-surface-high flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-text-primary">机台入驻与合作热线</p>
+<p class="font-body-sm text-xs text-text-secondary">400-800-6688 (08:00 - 22:00)</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-full bg-secondary-container text-secondary-on-container font-label-sm text-label-sm active:scale-95 transition-transform" onclick="window.moeCopy('400-800-6688', this)" type="button">
+          呼叫
+        </button>
+</div>
+<!-- 邮箱 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-surface-high flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-text-primary">商务合作邮箱</p>
+<p class="font-body-sm text-xs text-text-secondary">partner@moeflow.edu.cn</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-full bg-surface-high text-text-primary font-label-sm text-label-sm active:scale-95 transition-transform" onclick="window.moeCopy('partner@moeflow.edu.cn', this)" type="button">
+          复制
+        </button>
+</div>
+<!-- 公众号 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-surface-high flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-text-primary">官方微信公众号</p>
+<p class="font-body-sm text-xs text-text-secondary">MoeFlow 校园云印助手</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-full bg-surface-high text-text-primary font-label-sm text-label-sm active:scale-95 transition-transform" onclick="window.moeCopy('MoeFlow 校园云印助手', this)" type="button">
+          关注
+        </button>
+</div>
+</div>
+</section>
+<!-- 底部协议与版权信息 -->
+<footer class="px-margin flex flex-col items-center text-center pt-2">
+<!-- 协议链接 -->
+<div class="flex items-center justify-center gap-3 text-secondary mb-3">
+<button class="font-label-sm text-label-sm hover:underline active:opacity-75" type="button">
+        软件使用许可及服务协议
+      </button>
+<span class="text-text-secondary/40 text-xs">|</span>
+<button class="font-label-sm text-label-sm hover:underline active:opacity-75" type="button">
+        开源组件许可声明
+      </button>
+</div>
+<!-- 版权文本 -->
+<p class="font-body-sm text-xs text-text-secondary/70">
+      Copyright © 2021-2024 MoeFlow Tech. All Rights Reserved.
+    </p>
+<p class="font-body-sm text-[11px] text-text-secondary/50 mt-0.5">
+      萌印智能科技（北京）有限公司 · 践行高校低碳文印
+    </p>
+</footer>
+</div>
+<script>
+  window.moeCopy = function(text, btn) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text);
+    }
+    const originalText = btn.innerText;
+    btn.innerText = '已复制';
+    btn.classList.add('bg-badge-mint', 'text-[#135442]');
+    setTimeout(() => {
+      btn.innerText = originalText;
+      btn.classList.remove('bg-badge-mint', 'text-[#135442]');
+    }, 1500);
+  };
+</script></main>
+</body></html>

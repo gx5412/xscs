@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#004d61", "primary-container": "#20b8b0", "surface-dim": "#c2dfe8", "tertiary-container": "#ab9fcc", "on-tertiary-fixed-variant": "#4a4168", "on-secondary-fixed": "#001f28", "surface-container-high": "#d0edf6", "on-background": "#011f26", "secondary-container": "#88ddfd", "surface-variant": "#cae7f0", "on-tertiary-fixed": "#1e153a", "error-container": "#ffdad6", "outline-variant": "#bbc9c7", "surface-container-low": "#e0f8ff", "secondary-fixed": "#b8eaff", "surface-light": "#F4FBFC", "tertiary": "#625881", "surface-container-highest": "#cae7f0", "badge-peach": "#FFD8C8", "secondary-fixed-dim": "#7cd2f1", "on-secondary": "#ffffff", "text-primary": "#18343B", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "surface-tint": "#006a65", "primary-fixed": "#74f7ee", "error": "#ba1a1a", "on-primary-container": "#004340", "tertiary-fixed-dim": "#ccc0ef", "secondary-on-container": "#153D52", "tertiary-fixed": "#e8ddff", "on-error": "#ffffff", "surface-high": "#EAF5F6", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#00504c", "on-primary": "#ffffff", "surface-container": "#d5f3fc", "on-tertiary-container": "#3f355c", "primary-dark": "#168D89", "inverse-on-surface": "#d8f6ff", "on-secondary-container": "#00627a", "surface": "#f0fbff", "outline": "#C8E3E5", "inverse-primary": "#53dad1", "on-surface": "#011f26", "badge-warm-yellow": "#FFF3C4", "badge-mint": "#B9EBD9", "text-secondary": "#527078", "inverse-surface": "#18343b", "on-primary-fixed": "#00201e", "surface-bright": "#f0fbff", "secondary": "#006780", "primary-fixed-dim": "#53dad1", "on-surface-variant": "#3c4948", "primary": "#006a65", "background": "#f0fbff" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin-desktop": "2.5rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "margin": "1rem" }, "fontFamily": { "label-md": ["Be Vietnam Pro"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-sm": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "body-lg": ["Be Vietnam Pro"], "label-sm": ["Be Vietnam Pro"], "body-md": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"] }, "fontSize": { "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-text-primary flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-full bg-surface-container-low flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[22px]">store</span></div><div class="flex flex-col text-left"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">Workbench Overview</span><span class="material-symbols-outlined text-text-secondary text-[18px]">expand_more</span></div><span class="font-label-sm text-label-sm text-text-secondary">MoeFlow 商家中心</span></div></div><div class="flex items-center gap-space-sm"><div class="h-9 px-3 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-space-xs shadow-[0_1px_4px_rgba(0,103,128,0.08)]"><button aria-label="小程序操作菜单" class="w-7 h-7 flex items-center justify-center text-text-primary" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button><div class="w-px h-3.5 bg-outline"></div><button aria-label="最小化小程序" class="w-7 h-7 flex items-center justify-center text-text-primary" type="button"><span class="material-symbols-outlined text-[16px]">radio_button_checked</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin space-y-space-md">
+<!-- 1. 当前门店信息栏 -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex items-center justify-between">
+<div class="flex flex-col min-w-0 pr-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-badge-mint text-primary-dark font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-1 animate-pulse"></span>
+          营业中
+        </span>
+<span class="font-label-sm text-label-sm text-text-secondary">点位编号 #CU-8802</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary truncate mt-1 tracking-tight">
+        大学城文理学部创客打印中心
+      </h2>
+</div>
+<button class="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-low text-secondary font-label-md text-label-md hover:bg-secondary-fixed transition-colors" type="button">
+<span>切换点位</span>
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+</button>
+</div>
+<!-- 2. 今日核心数据总览（青碧渐变玻璃拟态大卡片） -->
+<div class="relative w-full rounded-lg overflow-hidden p-space-lg text-on-primary bg-gradient-to-br from-primary-container via-primary-dark to-secondary shadow-[0_16px_36px_-6px_rgba(32,184,176,0.28)]">
+<!-- 装饰光影气泡 -->
+<div class="absolute -right-10 -top-10 w-44 h-44 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-8 -bottom-8 w-36 h-36 rounded-full bg-secondary-fixed/20 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-space-md">
+<!-- 营收主指标 -->
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5 text-white/80 font-label-sm text-label-sm">
+<span>今日实时总营收</span>
+<span class="inline-flex items-center text-[10px] px-1.5 py-0.5 rounded-full bg-white/20 text-white backdrop-blur-sm">
+              秒级更新
+            </span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-sm text-headline-sm text-white/90">¥</span>
+<span class="font-display-lg-mobile text-display-lg-mobile font-extrabold tracking-tight tabular-nums drop-shadow-sm">
+              1,286.50
+            </span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="inline-flex items-center gap-0.5 px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px]">trending_up</span>
+<span class="tabular-nums">+18.4%</span>
+</div>
+<span class="font-label-sm text-label-sm text-white/75 mt-1">较昨日同时段</span>
+</div>
+</div>
+<!-- 订单笔数与小胶囊 -->
+<div class="flex items-center gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/15 text-white font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">receipt</span>
+          有效订单 <span class="tabular-nums font-bold">142</span> 笔
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/15 text-white font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+          退款率 <span class="tabular-nums font-bold">0.0%</span>
+</span>
+</div>
+<!-- 三项横向指标分栏 -->
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs border-t-0 bg-white/10 backdrop-blur-md rounded-DEFAULT p-space-sm text-white">
+<!-- 指标 1 -->
+<div class="flex flex-col px-1">
+<span class="font-label-sm text-label-sm text-white/80">出纸总量</span>
+<span class="font-headline-sm text-headline-sm font-bold tabular-nums mt-0.5">1,840</span>
+<span class="font-label-sm text-[10px] leading-tight text-white/70 mt-0.5 truncate">黑白1520/彩320</span>
+</div>
+<!-- 指标 2 -->
+<div class="flex flex-col px-1 border-l-0">
+<span class="font-label-sm text-label-sm text-white/80">运转率</span>
+<div class="flex items-baseline gap-0.5 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-bold tabular-nums">94.2</span>
+<span class="text-[12px] font-bold">%</span>
+</div>
+<span class="font-label-sm text-[10px] leading-tight text-white/70 mt-0.5">峰值利用平稳</span>
+</div>
+<!-- 指标 3 -->
+<div class="flex flex-col px-1 border-l-0">
+<span class="font-label-sm text-label-sm text-white/80">笔均单价</span>
+<div class="flex items-baseline gap-0.5 mt-0.5">
+<span class="text-[12px]">¥</span>
+<span class="font-headline-sm text-headline-sm font-bold tabular-nums">9.06</span>
+</div>
+<span class="font-label-sm text-[10px] leading-tight text-white/70 mt-0.5">环比 +¥0.82</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. 常用运营快捷操作（四宫格） -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<h3 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">快捷作业</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">高频通道</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- 快捷 1: 快速核销 -->
+<button class="relative text-left bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_20px_-4px_rgba(0,103,128,0.06)] hover:shadow-md transition-all active:scale-[0.98]" type="button">
+<span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-badge-mint text-primary-dark font-label-sm text-[10px] font-bold">
+          极速扫码
+        </span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">qr_code_scanner</span>
+</div>
+<div class="font-label-lg text-label-lg text-text-primary font-bold mt-3">快速核销</div>
+<div class="font-label-sm text-label-sm text-text-secondary mt-0.5">扫码取件或输码</div>
+</button>
+<!-- 快捷 2: 设备管理 -->
+<button class="relative text-left bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_20px_-4px_rgba(0,103,128,0.06)] hover:shadow-md transition-all active:scale-[0.98]" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">print</span>
+</div>
+<div class="font-label-lg text-label-lg text-text-primary font-bold mt-3">设备管理</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-text-secondary mt-0.5">
+<span class="text-primary font-bold">3</span>台在线 /
+          <span class="text-error font-bold">1</span>待加纸
+        </div>
+</button>
+<!-- 快捷 3: 订单管理 -->
+<button class="relative text-left bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_20px_-4px_rgba(0,103,128,0.06)] hover:shadow-md transition-all active:scale-[0.98]" type="button">
+<span class="absolute top-2.5 right-2.5 px-1.5 py-0.2 rounded-full bg-badge-peach text-error font-label-sm text-[10px] font-bold">
+          12 笔出纸中
+        </span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">fact_check</span>
+</div>
+<div class="font-label-lg text-label-lg text-text-primary font-bold mt-3">订单流转</div>
+<div class="font-label-sm text-label-sm text-text-secondary mt-0.5">查看出纸实时队列</div>
+</button>
+<!-- 快捷 4: 活动配置 -->
+<button class="relative text-left bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_20px_-4px_rgba(0,103,128,0.06)] hover:shadow-md transition-all active:scale-[0.98]" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary-dark">
+<span class="material-symbols-outlined text-[22px]">loyalty</span>
+</div>
+<div class="font-label-lg text-label-lg text-text-primary font-bold mt-3">策略活动</div>
+<div class="font-label-sm text-label-sm text-text-secondary mt-0.5">期末满减与拼团印</div>
+</button>
+</div>
+</div>
+<!-- 4. 7 日营收与出纸趋势（柱状图卡片） -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col space-y-space-md">
+<!-- 标头与切换切换器 -->
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">近 7 日经营走势</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">周期对比与负载分析</span>
+</div>
+<!-- 精致迷你 Tab -->
+<div class="flex items-center p-1 rounded-full bg-surface-container-low">
+<button class="px-3 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-sm transition-all" id="tab-revenue" onclick="switchTrendTab('rev')" type="button">
+          营收 (¥)
+        </button>
+<button class="px-3 py-1 rounded-full text-text-secondary font-label-sm text-label-sm hover:text-text-primary transition-all" id="tab-pages" onclick="switchTrendTab('pages')" type="button">
+          张数
+        </button>
+</div>
+</div>
+<!-- 峰值提示胶囊条 -->
+<div class="flex items-center justify-between px-3 py-2 rounded-DEFAULT bg-surface-container-low text-secondary-on-container">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_graph</span>
+<span>本周峰值出货：<strong class="font-bold">周五</strong></span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary tabular-nums">¥1,580.00 / 2,120张</span>
+</div>
+<!-- 迷你柱状图渲染区域 (SVG + HTML 结合) -->
+<div class="w-full pt-4 pb-1">
+<div class="grid grid-cols-7 gap-2 items-end h-36 px-1">
+<!-- 周一 -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-[10px] text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity tabular-nums">¥860</span>
+<div class="w-full bg-secondary-container rounded-t-full transition-all duration-500 hover:brightness-95" style="height: 52%;"></div>
+<span class="font-label-sm text-label-sm text-text-secondary">一</span>
+</div>
+<!-- 周二 -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-[10px] text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity tabular-nums">¥980</span>
+<div class="w-full bg-secondary-container rounded-t-full transition-all duration-500 hover:brightness-95" style="height: 60%;"></div>
+<span class="font-label-sm text-label-sm text-text-secondary">二</span>
+</div>
+<!-- 周三 -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-[10px] text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity tabular-nums">¥1,140</span>
+<div class="w-full bg-secondary-container rounded-t-full transition-all duration-500 hover:brightness-95" style="height: 72%;"></div>
+<span class="font-label-sm text-label-sm text-text-secondary">三</span>
+</div>
+<!-- 周四 -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-[10px] text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity tabular-nums">¥1,080</span>
+<div class="w-full bg-secondary-container rounded-t-full transition-all duration-500 hover:brightness-95" style="height: 68%;"></div>
+<span class="font-label-sm text-label-sm text-text-secondary">四</span>
+</div>
+<!-- 周五 (峰值高亮) -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end relative">
+<div class="absolute -top-3 px-1.5 py-0.5 rounded-full bg-badge-peach text-error text-[9px] font-bold tracking-tight whitespace-nowrap shadow-sm">
+            峰值
+          </div>
+<div class="w-full bg-gradient-to-t from-primary-container to-secondary-fixed rounded-t-full shadow-[0_4px_12px_rgba(32,184,176,0.3)]" style="height: 100%;"></div>
+<span class="font-label-sm text-label-sm font-bold text-primary">五</span>
+</div>
+<!-- 周六 -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-[10px] text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity tabular-nums">¥1,020</span>
+<div class="w-full bg-secondary-container rounded-t-full transition-all duration-500 hover:brightness-95" style="height: 64%;"></div>
+<span class="font-label-sm text-label-sm text-text-secondary">六</span>
+</div>
+<!-- 周日 (今日) -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end relative">
+<div class="absolute -top-3 px-1.5 py-0.5 rounded-full bg-badge-mint text-primary-dark text-[9px] font-bold tracking-tight whitespace-nowrap">
+            今日
+          </div>
+<div class="w-full bg-primary-container rounded-t-full shadow-[0_4px_12px_rgba(32,184,176,0.2)]" style="height: 82%;"></div>
+<span class="font-label-sm text-label-sm font-bold text-primary">日</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. 实时设备健康简报卡片 -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">终端硬件状态</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm">4台机组</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary flex items-center hover:underline" href="#">
+        完整监控
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- 设备列表项 1：健康正常 -->
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-low flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-8 h-8 rounded-full bg-badge-mint text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<div class="truncate">
+<div class="font-label-lg text-label-lg text-text-primary font-bold truncate">科技园A座01号机 (双面激光)</div>
+<div class="font-label-sm text-label-sm text-text-secondary">IP: 192.168.12.80 · 联机正常</div>
+</div>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded-full bg-badge-mint text-primary-dark font-label-sm text-label-sm">
+          运转中
+        </span>
+</div>
+<!-- 耗材进度条 -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-text-secondary mb-1">
+<span>A4 纸仓存量</span>
+<span class="font-bold tabular-nums text-text-primary">85%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-white overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-text-secondary mb-1">
+<span>黑色碳粉</span>
+<span class="font-bold tabular-nums text-text-primary">72%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-white overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 72%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 设备列表项 2：缺纸预警 -->
+<div class="p-space-sm rounded-DEFAULT bg-badge-peach/40 flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-8 h-8 rounded-full bg-badge-peach text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="truncate">
+<div class="font-label-lg text-label-lg text-text-primary font-bold truncate">创客空间02号机 (高精彩印)</div>
+<div class="font-label-sm text-label-sm text-error font-medium">A4 纸张余量低于 10%，请尽快添加</div>
+</div>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded-full bg-badge-peach text-error font-label-sm text-label-sm font-bold">
+          需加纸
+        </span>
+</div>
+<!-- 耗材进度条与一键运维动作 -->
+<div class="space-y-2">
+<div class="w-full">
+<div class="flex justify-between font-label-sm text-label-sm text-text-secondary mb-1">
+<span>A4 纸仓余量 (不足 50 张)</span>
+<span class="font-bold tabular-nums text-error">8%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-white overflow-hidden">
+<div class="h-full bg-error rounded-full animate-pulse" style="width: 8%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-text-secondary">预估可支持约 6 笔小订单</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded-full bg-surface-container-lowest text-text-primary font-label-sm text-label-sm shadow-sm hover:bg-surface transition-colors flex items-center gap-1" onclick="handleRemoteReboot(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">restart_alt</span>
+              远程自检
+            </button>
+<button class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shadow-sm hover:bg-primary-dark transition-colors" type="button">
+              已补纸确认
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 6. 底部版权与版本信息 -->
+<div class="w-full flex flex-col items-center justify-center py-space-md text-text-secondary space-y-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>MoeFlow Merchant OS v2.4.0</span>
+</div>
+<p class="font-label-sm text-[11px] text-text-secondary/70">
+      校园自主云印生态 · 数字化伙伴经营中心
+    </p>
+</div>
+</div>
+<script>
+  function switchTrendTab(type) {
+    const revTab = document.getElementById('tab-revenue');
+    const pagesTab = document.getElementById('tab-pages');
+    if (!revTab || !pagesTab) return;
+
+    if (type === 'rev') {
+      revTab.className = "px-3 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-sm transition-all";
+      pagesTab.className = "px-3 py-1 rounded-full text-text-secondary font-label-sm text-label-sm hover:text-text-primary transition-all";
+    } else {
+      pagesTab.className = "px-3 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-sm transition-all";
+      revTab.className = "px-3 py-1 rounded-full text-text-secondary font-label-sm text-label-sm hover:text-text-primary transition-all";
+    }
+  }
+
+  function handleRemoteReboot(btn) {
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[14px] animate-spin">refresh</span> 自检中...';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[14px] text-primary">done</span> 指令已送达';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      }, 2000);
+    }, 1200);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,103,128,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-margin"><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[48px] h-12 transition-all text-primary font-bold" data-path="workbench-overview" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-sm text-label-sm">工作台</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[48px] h-12 text-text-secondary hover:text-text-primary transition-all" data-path="device-fleet" href="#"><span class="material-symbols-outlined text-[24px]">print</span><span class="font-label-sm text-label-sm">设备仓</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[48px] h-12 text-text-secondary hover:text-text-primary transition-all" data-path="order-management" href="#"><span class="material-symbols-outlined text-[24px]">receipt_long</span><span class="font-label-sm text-label-sm">工单账单</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[48px] h-12 text-text-secondary hover:text-text-primary transition-all" data-path="merchant-settings" href="#"><span class="material-symbols-outlined text-[24px]">settings</span><span class="font-label-sm text-label-sm">运维设置</span></a></div></nav></body></html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>Ai 智能错题本 · 擦除与重排 - MoeFlow SmartPrint</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "badge-peach": "#FFD8C8",
+            "tertiary-fixed-dim": "#ccc0ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#53dad1",
+            "outline-variant": "#bbc9c7",
+            "inverse-surface": "#18343b",
+            "surface-container": "#d5f3fc",
+            "surface-container-low": "#e0f8ff",
+            "on-primary-container": "#004340",
+            "primary-container": "#20b8b0",
+            "surface-dim": "#c2dfe8",
+            "text-secondary": "#527078",
+            "secondary": "#006780",
+            "on-secondary-fixed-variant": "#004d61",
+            "on-tertiary-fixed-variant": "#4a4168",
+            "tertiary-fixed": "#e8ddff",
+            "secondary-container": "#D7F0FA",
+            "on-primary-fixed-variant": "#00504c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#011f26",
+            "on-secondary-container": "#00627a",
+            "badge-mint": "#B9EBD9",
+            "error": "#ba1a1a",
+            "surface-container-high": "#d0edf6",
+            "on-error": "#ffffff",
+            "primary": "#20b8b0",
+            "on-secondary-fixed": "#001f28",
+            "on-surface": "#011f26",
+            "on-tertiary-fixed": "#1e153a",
+            "tertiary": "#625881",
+            "badge-warm-yellow": "#FFF3C4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#3f355c",
+            "on-primary-fixed": "#00201e",
+            "surface": "#f0fbff",
+            "surface-bright": "#f0fbff",
+            "surface-high": "#EAF5F6",
+            "primary-dark": "#168D89",
+            "inverse-on-surface": "#d8f6ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#7cd2f1",
+            "on-error-container": "#93000a",
+            "background": "#f0fbff",
+            "surface-variant": "#cae7f0",
+            "outline": "#C8E3E5",
+            "text-primary": "#18343B",
+            "tertiary-container": "#ab9fcc",
+            "surface-light": "#F4FBFC",
+            "surface-container-highest": "#cae7f0",
+            "on-surface-variant": "#3c4948",
+            "secondary-fixed": "#b8eaff",
+            "secondary-on-container": "#153D52",
+            "surface-tint": "#20b8b0",
+            "primary-fixed": "#74f7ee",
+            "inverse-primary": "#53dad1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "52px", fontWeight: "800" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] pt-safe">
+<div class="h-14 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-1 min-w-0 pr-2">
+<button aria-label="返回上一页" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all flex-shrink-0" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px] leading-none">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">Ai 智能错题本 · 擦除与重排</h1>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="h-8 px-2.5 rounded-full bg-surface-high/90 border border-white/80 shadow-[0_2px_8px_rgba(32,184,176,0.06)] flex items-center gap-1.5">
+<button aria-label="小程序菜单" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">more_horiz</span>
+</button>
+<span class="w-[1px] h-3.5 bg-outline/60"></span>
+<button aria-label="关闭小程序" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[17px] leading-none">radio_button_checked</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-background"><div class="flex flex-col w-full pb-32">
+<!-- 1. AI 智能错题整理工作流横幅 -->
+<section class="px-margin pt-space-md">
+<div class="relative overflow-hidden rounded-lg bg-gradient-to-br from-surface-container-low via-surface-container to-secondary-container p-5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)]">
+<div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-primary-fixed-dim/30 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-6 -bottom-6 w-28 h-28 rounded-full bg-secondary-fixed/40 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+<span class="font-label-sm text-label-sm text-text-primary tracking-wide">MoeFlow AI 视觉神经增强引擎</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[11px] font-semibold text-[#135442] leading-tight">V3.4 纯净版</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">AI 拍照擦除手写痕迹</h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">智能还原高清空白题目 · 一键重组专属提分试卷</p>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-2">
+<div class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-lowest/70 backdrop-blur-sm text-center">
+<span class="font-display-lg-mobile text-[17px] font-extrabold text-primary leading-tight font-mono">99.8%</span>
+<span class="font-label-sm text-[10px] text-text-secondary mt-0.5">笔迹去除率</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-lowest/70 backdrop-blur-sm text-center">
+<span class="font-display-lg-mobile text-[17px] font-extrabold text-secondary leading-tight font-mono">毫米级</span>
+<span class="font-label-sm text-[10px] text-text-secondary mt-0.5">题目自动分切</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-lowest/70 backdrop-blur-sm text-center">
+<span class="font-display-lg-mobile text-[17px] font-extrabold text-primary-dark leading-tight font-mono">标准 A4</span>
+<span class="font-label-sm text-[10px] text-text-secondary mt-0.5">预留解题留白</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. 试卷/作业来源选择区 -->
+<section class="px-margin mt-5 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-text-primary tracking-tight">导入试卷或作业</span>
+<span class="font-label-sm text-label-sm text-text-secondary">单次最多支持上传 9 页</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="group flex flex-col items-center justify-center p-4 rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] active:scale-[0.98] transition-all text-center" type="button">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center mb-2.5 text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">photo_camera</span>
+</div>
+<span class="font-label-md text-label-md text-text-primary">相机拍照识别</span>
+<span class="font-label-sm text-[11px] text-text-secondary mt-0.5">透视校正 · 去除阴影折痕</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-4 rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] active:scale-[0.98] transition-all text-center" type="button">
+<div class="w-12 h-12 rounded-full bg-secondary-container/60 flex items-center justify-center mb-2.5 text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">attachment</span>
+</div>
+<span class="font-label-md text-label-md text-text-primary">从微信/相册导入</span>
+<span class="font-label-sm text-[11px] text-text-secondary mt-0.5">JPG / PNG / PDF 文档</span>
+</button>
+</div>
+<!-- 示例试卷快捷体验卡 -->
+<div class="p-3 rounded-lg bg-surface-container-low/70 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[12px] text-text-secondary">快速试用官方模版数据：</span>
+<span class="font-label-sm text-[11px] text-primary flex items-center">
+          查看全部
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar">
+<button class="flex-shrink-0 px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm flex items-center gap-1.5 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary">functions</span>
+<span class="font-label-sm text-label-sm text-text-primary">高等数学期末模拟卷 (微分方程)</span>
+<span class="px-1.5 py-0.2 rounded-full bg-badge-warm-yellow text-[10px] text-[#5A4500]">精选 4 题</span>
+</button>
+<button class="flex-shrink-0 px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm flex items-center gap-1.5 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[15px] text-secondary">translate</span>
+<span class="font-label-sm text-label-sm text-text-primary">大学英语四六级历年长难句与完形</span>
+<span class="px-1.5 py-0.2 rounded-full bg-badge-peach text-[10px] text-[#5D2717]">高频 8 题</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 3. AI 识别处理预览卡片 (已处理状态) -->
+<section class="px-margin mt-5 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-text-primary tracking-tight">消除前后对比与错题识别</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[11px] font-semibold text-[#135442]">已处理完成</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-mono">试卷编号 #9284</span>
+</div>
+<!-- 交互式对比滑块视图 -->
+<div class="relative w-full h-64 rounded-lg overflow-hidden bg-surface-container-lowest shadow-[0_12px_32px_-6px_rgba(32,184,176,0.14)] select-none" id="slider-card">
+<!-- 消除后纯净印刷体 (底层完整) -->
+<div class="absolute inset-0 bg-[#fdfefe] p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-2">
+<span class="font-label-sm text-[11px] font-mono text-primary font-bold">试题原貌 · 净版重排</span>
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded bg-surface-container text-on-secondary-container">印刷清晰度 300DPI</span>
+</div>
+<div class="space-y-2.5 pt-1">
+<div class="flex items-start gap-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-high font-mono text-[12px] font-bold text-text-primary">03</span>
+<p class="font-body-sm text-[13px] text-text-primary leading-snug">
+                设函数 $f(x)$ 在 $[0, 1]$ 上连续，且满足 $\int_0^1 f(x)\mathrm{d}x = \frac{\pi}{4}$，求极限 $\lim_{n \to \infty} \sum_{k=1}^n f(\frac{k}{n}) \frac{1}{n}$ 的解析值。
+              </p>
+</div>
+<div class="grid grid-cols-2 gap-2 pl-6 font-body-sm text-[12px] text-text-secondary">
+<span>(A) $\frac{\pi}{4}$</span>
+<span>(B) $\frac{\pi}{2}$</span>
+<span>(C) $1$</span>
+<span>(D) $0$</span>
+</div>
+<div class="flex items-start gap-2 pt-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-high font-mono text-[12px] font-bold text-text-primary">04</span>
+<p class="font-body-sm text-[13px] text-text-primary leading-snug">
+                设三阶矩阵 $A$ 满足特征多项式 $| \lambda E - A | = (\lambda-1)(\lambda-2)^2$，求 $A$ 的逆矩阵行列式。
+              </p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end">
+<span class="font-label-sm text-[11px] text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            已自动擦除红色评阅勾叉及手写墨水
+          </span>
+</div>
+</div>
+<!-- 消除前原始带手写笔记 (上层可裁剪) -->
+<div class="absolute inset-0 w-1/2 overflow-hidden bg-[#faf8f5] shadow-[4px_0_12px_rgba(0,0,0,0.06)]" id="before-layer" style="width: 50%;">
+<div class="w-[343px] h-full p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-2">
+<span class="font-label-sm text-[11px] font-mono text-error font-bold">原始卷面 · 包含笔迹</span>
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded bg-error-container text-on-error-container">检测到 4 处涂写</span>
+</div>
+<div class="space-y-2.5 pt-1 relative">
+<div class="flex items-start gap-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-variant font-mono text-[12px] font-bold text-text-primary">03</span>
+<p class="font-body-sm text-[13px] text-text-primary leading-snug">
+                  设函数 $f(x)$ 在 $[0, 1]$ 上连续，且满足 $\int_0^1 f(x)\mathrm{d}x = \frac{\pi}{4}$，求极限 $\lim_{n \to \infty} \sum_{k=1}^n f(\frac{k}{n}) \frac{1}{n}$ 的解析值。
+                </p>
+</div>
+<!-- 手写红笔和蓝笔覆盖层模拟 -->
+<div class="absolute top-4 left-24 pointer-events-none transform -rotate-12">
+<span class="font-display-lg text-[28px] font-extrabold text-error/80 leading-none">✕</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pl-6 font-body-sm text-[12px] text-text-secondary relative">
+<span class="line-through text-error decoration-2">(A) $\frac{\pi}{4}$</span>
+<span class="text-secondary font-semibold font-mono">(B) $\frac{\pi}{2}$ ?</span>
+<span>(C) $1$</span>
+<span>(D) $0$</span>
+<div class="absolute -bottom-2 left-10 text-[11px] text-secondary font-mono bg-badge-warm-yellow/70 px-1 rounded transform -rotate-2">
+                  注意积分定义!
+                </div>
+</div>
+<div class="flex items-start gap-2 pt-4">
+<span class="px-1.5 py-0.5 rounded bg-surface-variant font-mono text-[12px] font-bold text-text-primary">04</span>
+<p class="font-body-sm text-[13px] text-text-primary leading-snug">
+                  设三阶矩阵 $A$ 满足特征多项式 $| \lambda E - A | = (\lambda-1)(\lambda-2)^2$ ...
+                </p>
+</div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="font-label-sm text-[11px] text-text-secondary">拖动中轴滑动条查看擦除</span>
+</div>
+</div>
+</div>
+<!-- 滑动拖拽指示条 -->
+<div class="absolute top-0 bottom-0 w-1 bg-primary cursor-ew-resize flex items-center justify-center -ml-0.5" id="slider-handle" style="left: 50%;">
+<div class="w-7 h-7 rounded-full bg-surface-container-lowest shadow-[0_2px_10px_rgba(0,106,101,0.3)] flex items-center justify-center text-primary border-none">
+<span class="material-symbols-outlined text-[16px] select-none">swap_horiz</span>
+</div>
+</div>
+</div>
+<!-- 识别结果统计与操作胶囊 -->
+<div class="p-3.5 rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.06)] flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-text-primary">已精准提取</span>
+<span class="font-mono font-bold text-primary text-[16px]">5</span>
+<span class="font-label-sm text-label-sm text-text-secondary">道错题</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-container font-label-sm text-[11px]">单选 3 题</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-container font-label-sm text-[11px]">计算 2 题</span>
+</div>
+</div>
+<!-- 错题快速切片微调列表 -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-1">
+<div class="flex-shrink-0 flex items-center gap-2 p-2 rounded bg-surface-container-low/60 active:scale-95 transition-transform">
+<span class="font-mono text-label-sm font-bold text-primary">T1</span>
+<span class="font-body-sm text-[12px] text-text-primary truncate max-w-[84px]">极限收敛判定</span>
+<button class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center text-text-secondary hover:text-text-primary" type="button">
+<span class="material-symbols-outlined text-[13px]">crop</span>
+</button>
+</div>
+<div class="flex-shrink-0 flex items-center gap-2 p-2 rounded bg-surface-container-low/60 active:scale-95 transition-transform">
+<span class="font-mono text-label-sm font-bold text-primary">T2</span>
+<span class="font-body-sm text-[12px] text-text-primary truncate max-w-[84px]">多元微分方程</span>
+<button class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center text-text-secondary hover:text-text-primary" type="button">
+<span class="material-symbols-outlined text-[13px]">crop</span>
+</button>
+</div>
+<div class="flex-shrink-0 flex items-center gap-2 p-2 rounded bg-surface-container-low/60 active:scale-95 transition-transform">
+<span class="font-mono text-label-sm font-bold text-primary">T3</span>
+<span class="font-body-sm text-[12px] text-text-primary truncate max-w-[84px]">定积分面积比</span>
+<button class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center text-text-secondary hover:text-text-primary" type="button">
+<span class="material-symbols-outlined text-[13px]">crop</span>
+</button>
+</div>
+<div class="flex-shrink-0 flex items-center gap-1.5 p-2 rounded bg-secondary-container/40 text-secondary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="font-label-sm text-[12px]">微调选区</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. 排版重组与试卷生成设置 -->
+<section class="px-margin mt-5 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-text-primary tracking-tight">试卷排版与重组规范</span>
+<span class="font-label-sm text-label-sm text-text-secondary">输出尺寸：A4 标准开本</span>
+</div>
+<!-- 排版模式切换卡片 -->
+<div class="p-4 rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.06)] flex flex-col gap-4">
+<div>
+<label class="font-label-sm text-[12px] text-text-secondary mb-2 block">试题排版密度与作答预留</label>
+<div class="grid grid-cols-3 gap-2" id="layout-mode-group">
+<button class="layout-mode-btn p-2.5 rounded flex flex-col items-start gap-1 bg-surface-container text-on-secondary-container active:scale-95 transition-all text-left" data-mode="standard" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-sm text-label-sm font-bold">标准考场</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-label-sm text-[10px] text-text-secondary">留足大块解题区</span>
+</button>
+<button class="layout-mode-btn p-2.5 rounded flex flex-col items-start gap-1 bg-surface-container-low text-text-secondary active:scale-95 transition-all text-left" data-mode="compact" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-sm text-label-sm font-bold text-text-primary">紧凑省纸</span>
+<span class="w-4 h-4 rounded-full bg-outline/40"></span>
+</div>
+<span class="font-label-sm text-[10px] text-text-secondary">每页容纳 4-5 题</span>
+</button>
+<button class="layout-mode-btn p-2.5 rounded flex flex-col items-start gap-1 bg-surface-container-low text-text-secondary active:scale-95 transition-all text-left" data-mode="appendix" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-sm text-label-sm font-bold text-text-primary">解析附录</span>
+<span class="w-4 h-4 rounded-full bg-outline/40"></span>
+</div>
+<span class="font-label-sm text-[10px] text-text-secondary">文末附名师答案</span>
+</button>
+</div>
+</div>
+<!-- 字体大小与行距调节胶囊 -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-text-primary">题目字号与行距</span>
+<div class="inline-flex p-1 rounded-full bg-surface-container-low">
+<button class="px-3 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-[12px] shadow-sm" type="button">
+            标准清晰
+          </button>
+<button class="px-3 py-1 rounded-full text-text-secondary font-label-sm text-[12px]" type="button">
+            大字护眼
+          </button>
+</div>
+</div>
+<!-- 生成输出选项开关与辅助线 -->
+<div class="flex flex-col gap-2.5 pt-1">
+<label class="flex items-center justify-between cursor-pointer p-2 rounded bg-surface-container-low/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">menu_book</span>
+<div>
+<p class="font-label-sm text-label-sm text-text-primary">生成精选错题分析目录</p>
+<p class="font-label-sm text-[10px] text-text-secondary">统计知识点盲区与易错题型标签</p>
+</div>
+</div>
+<div class="w-10 h-6 bg-primary rounded-full relative p-0.5 flex items-center justify-end">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest shadow-sm"></div>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer p-2 rounded bg-surface-container-low/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">content_cut</span>
+<div>
+<p class="font-label-sm text-label-sm text-text-primary">标注装订留白与打孔辅线</p>
+<p class="font-label-sm text-[10px] text-text-secondary">左侧保留 18mm 活页夹孔位避让空间</p>
+</div>
+</div>
+<div class="w-10 h-6 bg-primary rounded-full relative p-0.5 flex items-center justify-end">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest shadow-sm"></div>
+</div>
+</label>
+</div>
+</div>
+</section>
+<!-- 5. 底部动作条 (贴底浮动 Dock) -->
+<aside class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-8px_24px_-4px_rgba(32,184,176,0.12)] px-margin py-3 pb-safe">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-text-primary">已重组 5 道错题</span>
+<span class="text-text-secondary text-[12px]">·</span>
+<span class="font-label-sm text-label-sm text-text-secondary font-mono">预计生成 2 页 A4</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-[11px] text-text-secondary">打印小计:</span>
+<span class="font-headline-sm text-[18px] font-bold text-primary font-mono leading-none">¥0.40</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5">
+<!-- 次操作：存入题库 -->
+<button class="h-11 px-4 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+<span>存入错题库</span>
+</button>
+<!-- 主操作：送印出纸 -->
+<button class="h-11 flex-1 rounded-full bg-gradient-to-r from-primary-container to-[#73C9E8] text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-[0_6px_18px_rgba(32,184,176,0.25)] active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span class="tracking-wide">立即套版并送印</span>
+</button>
+</div>
+</aside>
+</div>
+<!-- 局部滑动与模式切换交互脚本 -->
+<script>
+  (function() {
+    // 错题消除对比滑块交互
+    const card = document.getElementById('slider-card');
+    const beforeLayer = document.getElementById('before-layer');
+    const handle = document.getElementById('slider-handle');
+
+    if (card && beforeLayer && handle) {
+      let isDragging = false;
+
+      const setSliderPosition = (clientX) => {
+        const rect = card.getBoundingClientRect();
+        let offsetX = clientX - rect.left;
+        if (offsetX < 20) offsetX = 20;
+        if (offsetX > rect.width - 20) offsetX = rect.width - 20;
+        const percentage = (offsetX / rect.width) * 100;
+
+        beforeLayer.style.width = percentage + '%';
+        handle.style.left = percentage + '%';
+      };
+
+      const startDrag = (e) => {
+        isDragging = true;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        setSliderPosition(clientX);
+      };
+
+      const moveDrag = (e) => {
+        if (!isDragging) return;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        setSliderPosition(clientX);
+      };
+
+      const endDrag = () => {
+        isDragging = false;
+      };
+
+      card.addEventListener('mousedown', startDrag);
+      window.addEventListener('mousemove', moveDrag);
+      window.addEventListener('mouseup', endDrag);
+
+      card.addEventListener('touchstart', startDrag, { passive: true });
+      window.addEventListener('touchmove', moveDrag, { passive: true });
+      window.addEventListener('touchend', endDrag);
+    }
+
+    // 排版模式切换
+    const modeButtons = document.querySelectorAll('.layout-mode-btn');
+    modeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeButtons.forEach(b => {
+          b.className = 'layout-mode-btn p-2.5 rounded flex flex-col items-start gap-1 bg-surface-container-low text-text-secondary active:scale-95 transition-all text-left';
+          const iconSpan = b.querySelector('span:last-child');
+          if (iconSpan) {
+            iconSpan.outerHTML = '<span class="w-4 h-4 rounded-full bg-outline/40"></span>';
+          }
+        });
+        btn.className = 'layout-mode-btn p-2.5 rounded flex flex-col items-start gap-1 bg-surface-container text-on-secondary-container active:scale-95 transition-all text-left';
+        const indicator = btn.querySelector('.w-4');
+        if (indicator) {
+          indicator.outerHTML = '<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: \'FILL\' 1;">check_circle</span>';
+        }
+      });
+    });
+  })();
+</script></main>
+</body></html>

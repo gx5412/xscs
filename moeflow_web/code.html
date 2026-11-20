@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#e0f8ff", "secondary-fixed": "#b8eaff", "on-error-container": "#93000a", "surface-variant": "#cae7f0", "on-tertiary-fixed-variant": "#4a4168", "on-primary-fixed-variant": "#00504c", "secondary-on-container": "#153D52", "secondary-fixed-dim": "#7cd2f1", "outline-variant": "#bbc9c7", "surface-container": "#d5f3fc", "badge-mint": "#B9EBD9", "on-tertiary-fixed": "#1e153a", "on-tertiary-container": "#3f355c", "on-background": "#011f26", "tertiary": "#625881", "on-tertiary": "#ffffff", "tertiary-container": "#ab9fcc", "badge-peach": "#FFD8C8", "primary-dark": "#168D89", "primary-fixed": "#74f7ee", "on-secondary-container": "#00627a", "on-error": "#ffffff", "badge-warm-yellow": "#FFF3C4", "on-secondary": "#ffffff", "surface": "#f0fbff", "on-primary-fixed": "#00201e", "inverse-primary": "#53dad1", "on-primary-container": "#004340", "on-secondary-fixed": "#001f28", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "on-surface-variant": "#3c4948", "text-secondary": "#527078", "on-surface": "#011f26", "error-container": "#ffdad6", "secondary": "#006780", "primary": "#006a65", "surface-container-highest": "#cae7f0", "background": "#f0fbff", "inverse-on-surface": "#d8f6ff", "primary-fixed-dim": "#53dad1", "surface-container-high": "#d0edf6", "surface-high": "#EAF5F6", "inverse-surface": "#18343b", "surface-light": "#F4FBFC", "on-primary": "#ffffff", "text-primary": "#18343B", "outline": "#C8E3E5", "tertiary-fixed": "#e8ddff", "secondary-container": "#D7F0FA", "primary-container": "#20b8b0", "surface-bright": "#f0fbff", "surface-tint": "#006a65", "on-secondary-fixed-variant": "#004d61", "tertiary-fixed-dim": "#ccc0ef", "surface-dim": "#c2dfe8" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "gutter-desktop": "1.5rem", "gutter": "1rem", "space-xl": "2rem", "space-md": "1rem", "margin": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-desktop": "2.5rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "body-md": ["Be Vietnam Pro"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-sm": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-sm": ["Be Vietnam Pro"], "body-lg": ["Be Vietnam Pro"] }, fontSize: { "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }] } } } }</script><style>@layer base { html, body { margin: 0; padding: 0; width: 100%; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="返回" class="w-11 h-11 -ml-space-xs flex items-center justify-center text-text-primary rounded-full hover:bg-surface-high/50 transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[170px]">Web View</h1></div><div class="flex items-center gap-space-sm"><div class="flex items-center bg-white/70 backdrop-blur-md rounded-full px-space-sm py-space-xs shadow-[0_2px_8px_rgba(32,184,176,0.08)]"><button aria-label="小程序更多操作" class="w-11 h-11 flex items-center justify-center text-text-secondary hover:text-text-primary" type="button"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button><div class="w-px h-4 bg-outline-variant/40"></div><button aria-label="小程序退出" class="w-11 h-11 flex items-center justify-center text-text-secondary hover:text-text-primary" type="button"><span class="material-symbols-outlined text-[18px]">adjust</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-safe"><div class="flex flex-col w-full pb-safe">
+<!-- SSL Address Bar & Browser Head Simulator -->
+<section class="px-margin pt-space-sm pb-space-xs">
+<div class="bg-surface-container-lowest/90 backdrop-blur-md rounded-2xl p-space-sm shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)] flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex-1 flex items-center bg-surface-high rounded-full px-space-sm py-1.5 min-w-0">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mr-1" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-body-sm text-label-sm text-text-secondary truncate tracking-tight select-all">https://h5.moeflow.com/activity/campus-guide-autumn</span>
+</div>
+<button class="shrink-0 h-8 px-space-sm rounded-full bg-secondary-container text-secondary-on-container font-label-sm text-label-sm flex items-center gap-1 active:scale-95 transition-transform" id="copyUrlBtn" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+<span>复制</span>
+</button>
+<button class="shrink-0 w-8 h-8 rounded-full bg-surface-high text-text-secondary flex items-center justify-center active:rotate-180 transition-transform" id="reloadBtn" type="button">
+<span class="material-symbols-outlined text-[17px]">sync</span>
+</button>
+</div>
+<!-- H5 Title & Quick Browser Utility Toolbar -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 min-w-0 flex-1 pr-2">
+<span class="inline-flex w-2 h-2 rounded-full bg-primary-container shrink-0"></span>
+<h2 class="font-label-md text-label-md text-text-primary truncate">2024 秋季高校文印通识手册与学霸特权指南</h2>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="h-7 px-2 rounded-full bg-surface-container text-text-primary font-label-sm text-label-sm flex items-center gap-0.5 active:bg-surface-variant transition-colors" id="fontSizeBtn" title="调整字号" type="button">
+<span class="font-headline-sm text-[12px] leading-none">A</span>
+<span class="font-headline-sm text-[15px] leading-none font-bold">A+</span>
+</button>
+<button class="w-7 h-7 rounded-full bg-surface-container text-text-primary flex items-center justify-center active:bg-surface-variant transition-colors" id="shareH5Btn" title="转发给微信好友" type="button">
+<span class="material-symbols-outlined text-[16px]">share</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Progress Bar Loaded State Indicator -->
+<div class="w-full px-margin py-0.5">
+<div class="w-full h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full w-full transition-all duration-300" id="loadingTrack"></div>
+</div>
+</div>
+<!-- Main Rendered H5 Web Article Frame -->
+<article class="px-margin py-space-sm flex flex-col gap-space-md" id="articleContent">
+<!-- Top Hero Banner Card -->
+<div class="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_12px_32px_-6px_rgba(32,184,176,0.12)]">
+<div class="relative w-full aspect-[16/9] bg-surface-container-high overflow-hidden">
+<div class="bg-cover bg-center w-full h-full" data-alt="A vivid modern digital illustration of college students working with smart IoT cloud printers on an airy sunlit campus, subtle aqua cyan and gentle sky blue glass reflections, isometric minimalist aesthetic with paper origami elements floating softly, high key pastel lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCosILdWuHtDSyp2mKSw_0hU2vwnqXa6y6RdFgF-62NLVbH8lJ1AEZfkqJJT0Jj1KIcARgt7mBwWSa-UD1DBbEUSDFiuKbPGCl5bCVIfqzJ5XpnMyj3C4aawM0BFAZYjM-o2uK1a8_gC_5YPY3FhRaeparZoIE2-P31JH589c9lpKxhokVnI8CEvxyz4YYHvTv_lfgNoiGYvtIc5CGYdImVVolPYfLYMQl1x2sISuZ1')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-text-primary/75 via-text-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-space-md text-white flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 self-start px-2 py-0.5 rounded-full bg-primary-container/90 backdrop-blur-sm text-on-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+            秋季迎新必读
+          </span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-white leading-snug drop-shadow-sm">高校云印新纪元：如何利用终端提升学习科研效率</h1>
+</div>
+</div>
+<!-- Author Metadata Row -->
+<div class="px-space-md py-space-sm flex items-center justify-between bg-surface-light">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary">MoeFlow 校园研究院</span>
+<span class="font-body-sm text-label-sm text-text-secondary">2024-10-24 发布 · 12,480 阅读</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm font-semibold">官方特供</span>
+</div>
+</div>
+<!-- Section 1 -->
+<section class="bg-surface-container-lowest rounded-3xl p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-2xl bg-secondary-container text-secondary-on-container flex items-center justify-center shrink-0">
+<span class="font-headline-sm text-headline-sm">01</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">零排队秘籍：微信提前传件，到店即扫即出</h3>
+</div>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+        期末打印店排队长龙总让人抓狂。利用 MoeFlow 分布式云打印网关，学生可直接在微信小程序提前上传课件与复印件。系统后台运用矢量 PostScript 流水线完成毫秒级光栅化预渲染，文件直接推送到机器本地缓存。
+      </p>
+<div class="bg-surface-container-low/70 rounded-2xl p-space-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-label-md text-label-md text-text-primary">终端自提体验</span>
+<span class="font-body-sm text-label-sm text-text-secondary">下课途中在寝室楼下或图书馆机器扫码，纸张 3 秒自动滑出，真正告别U盘中毒与排队。</span>
+</div>
+</div>
+</section>
+<!-- Section 2 -->
+<section class="bg-surface-container-lowest rounded-3xl p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-2xl bg-secondary-container text-secondary-on-container flex items-center justify-center shrink-0">
+<span class="font-headline-sm text-headline-sm">02</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">学术合规排版规范：双面论文胶装与三线表标准</h3>
+</div>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+        毕业设计与开题报告常因不同版本 Word 产生字体缺失、页边距跑偏与三线表错行。推荐使用 MoeFlow 小程序一键转标准 PDF，开启智能装订线出血辅助留白。
+      </p>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-space-sm rounded-2xl bg-surface-light flex flex-col gap-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[17px]">format_align_center</span>
+<span class="font-label-md text-label-md">装订边距建议</span>
+</div>
+<span class="font-body-sm text-label-sm text-text-secondary">内侧预留 28mm，外侧 20mm，保证热熔胶装翻阅不遮挡正文。</span>
+</div>
+<div class="p-space-sm rounded-2xl bg-surface-light flex flex-col gap-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[17px]">layers</span>
+<span class="font-label-md text-label-md">三线表高精模式</span>
+</div>
+<span class="font-body-sm text-label-sm text-text-secondary">选用 600DPI 极细线阵渲染，表格顶线底线清晰分明不糊墨。</span>
+</div>
+</div>
+</section>
+<!-- Section 3 -->
+<section class="bg-surface-container-lowest rounded-3xl p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-2xl bg-secondary-container text-secondary-on-container flex items-center justify-center shrink-0">
+<span class="font-headline-sm text-headline-sm">03</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">绿色低碳计划：双面打印碳积分与树木认领机制</h3>
+</div>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+        每一份双面论文可减少 50% 木浆消耗与 15g 碳排放。每次在 MoeFlow 勾选默认双面节约模式，即可自动累积「青绿叶积分」，兑换全国生态防护林专属苗木认领证书。
+      </p>
+<div class="p-space-sm rounded-2xl bg-badge-mint/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-label-md text-label-md text-text-primary">全校学子累计减碳</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold tabular-nums">48,920 kg</span>
+</div>
+</section>
+<!-- Embedded Interactive H5 Widget: Calculator -->
+<section class="bg-surface-container-lowest rounded-3xl p-space-md shadow-[0_16px_36px_-6px_rgba(32,184,176,0.18)] flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">测试您的专属文印省钱方案</h3>
+<p class="font-body-sm text-label-sm text-text-secondary">根据学业阶段与周打印需求快速匹配最优特权</p>
+</div>
+</div>
+<!-- Stage Selector Pills -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-primary">1. 当前就读阶段</label>
+<div class="grid grid-cols-3 gap-2" id="degreeGroup">
+<button class="stage-btn py-2 px-1 rounded-full bg-surface-high font-label-md text-label-md text-text-secondary flex items-center justify-center transition-all" data-val="junior" type="button">专科</button>
+<button class="stage-btn py-2 px-1 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shadow-[0_4px_12px_rgba(32,184,176,0.3)] transition-all" data-val="undergrad" type="button">本科生</button>
+<button class="stage-btn py-2 px-1 rounded-full bg-surface-high font-label-md text-label-md text-text-secondary flex items-center justify-center transition-all" data-val="grad" type="button">研究生</button>
+</div>
+</div>
+<!-- Volume Selector Pills -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-primary">2. 预估每周平均印量</label>
+<div class="grid grid-cols-3 gap-2" id="volumeGroup">
+<button class="volume-btn py-2 px-1 rounded-full bg-surface-high font-label-md text-label-md text-text-secondary flex items-center justify-center transition-all" data-val="low" type="button">&lt; 10 页</button>
+<button class="volume-btn py-2 px-1 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shadow-[0_4px_12px_rgba(32,184,176,0.3)] transition-all" data-val="mid" type="button">10 - 50 页</button>
+<button class="volume-btn py-2 px-1 rounded-full bg-surface-high font-label-md text-label-md text-text-secondary flex items-center justify-center transition-all" data-val="high" type="button">&gt; 50 页</button>
+</div>
+</div>
+<!-- Calculated Recommendation Banner Result -->
+<div class="bg-gradient-to-r from-surface-container-low via-surface-container to-surface-variant p-space-md rounded-2xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary">计算器诊断结果</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-badge-peach text-[#5D2717] font-semibold">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+            省心省钱
+          </span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold" id="calcResultText">
+          推荐开通「学霸 PRO 月卡」预计每月立省 <span class="tabular-nums">¥24.50</span>
+</div>
+<p class="font-body-sm text-label-sm text-text-secondary" id="calcSubText">
+          包含每月 60 张免单额度、高精双面胶装特惠及高峰期急速排队优先权。
+        </p>
+</div>
+<button class="w-full py-3.5 px-space-md rounded-full bg-gradient-to-r from-[#20B8B0] to-[#73C9E8] text-white font-label-lg text-label-lg shadow-[0_6px_18px_rgba(32,184,176,0.25)] flex items-center justify-center gap-2 active:scale-[0.98] transition-transform" id="claimPlanBtn" type="button">
+<span>立即领取专属特权权益包</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</section>
+</article>
+<!-- Webview Safety & Verified Domain Security Card -->
+<footer class="px-margin pt-space-xs pb-space-lg flex flex-col gap-space-sm">
+<div class="bg-surface-container-lowest/80 backdrop-blur-sm rounded-2xl p-space-sm flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-badge-mint text-[#135442] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">gpp_good</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-sm text-label-sm text-text-secondary leading-snug">
+          此网页已由 <span class="text-text-primary font-semibold">微信开放平台业务域名</span> 安全认证
+        </p>
+<span class="font-body-sm text-[10px] text-text-secondary/70 block truncate">ICP备案号: 鄂ICP备202308912号-2A · MoeFlow Cloud SSL</span>
+</div>
+</div>
+<!-- Action Toolbar at Bottom -->
+<div class="bg-surface-container-lowest rounded-full p-1.5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)] flex items-center justify-between">
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-high active:scale-95 transition-all" id="webBackBtn" title="返回上一页" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-outline-variant cursor-not-allowed" disabled="" id="webForwardBtn" title="前进" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-high active:scale-95 transition-all" id="webRefreshBtn" title="刷新" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 pr-1">
+<button class="h-10 px-3 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm flex items-center gap-1 active:scale-95 transition-transform" id="openExternalBtn" title="在系统浏览器中打开" type="button">
+<span class="material-symbols-outlined text-[16px]">open_in_browser</span>
+<span class="hidden sm:inline">系统浏览器</span>
+</button>
+<button class="h-10 px-3.5 rounded-full bg-secondary-container text-secondary-on-container font-label-sm text-label-sm flex items-center gap-1 active:scale-95 transition-transform" id="bookmarkBtn" type="button">
+<span class="material-symbols-outlined text-[17px]" id="bookmarkIcon">bookmark_border</span>
+<span id="bookmarkText">一键收藏</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Toast Notification Pill (Floating) -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full font-label-sm text-label-sm opacity-0 pointer-events-none transition-opacity duration-200 z-50 flex items-center gap-1.5 shadow-lg" id="toastNotification">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">check_circle</span>
+<span id="toastMsg">链接已复制到剪贴板</span>
+</div>
+</div>
+<script>
+  (function initWebViewInteractions() {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMsg');
+    
+    function showToast(text) {
+      if (!toast) return;
+      toastMsg.textContent = text;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        toast.classList.remove('opacity-100');
+      }, 1800);
+    }
+
+    // Copy link pill
+    const copyUrlBtn = document.getElementById('copyUrlBtn');
+    if (copyUrlBtn) {
+      copyUrlBtn.addEventListener('click', () => {
+        showToast('已复制网页地址到剪贴板');
+      });
+    }
+
+    // Refresh simulation
+    const reloadBtn = document.getElementById('reloadBtn');
+    const webRefreshBtn = document.getElementById('webRefreshBtn');
+    const loadingTrack = document.getElementById('loadingTrack');
+
+    function triggerReloadAnimation() {
+      if (!loadingTrack) return;
+      loadingTrack.style.width = '15%';
+      setTimeout(() => { loadingTrack.style.width = '60%'; }, 120);
+      setTimeout(() => { loadingTrack.style.width = '100%'; showToast('网页已更新至最新版本'); }, 300);
+    }
+
+    if (reloadBtn) reloadBtn.addEventListener('click', triggerReloadAnimation);
+    if (webRefreshBtn) webRefreshBtn.addEventListener('click', triggerReloadAnimation);
+
+    // Font size toggling
+    const fontSizeBtn = document.getElementById('fontSizeBtn');
+    const article = document.getElementById('articleContent');
+    let isEnlarged = false;
+    if (fontSizeBtn && article) {
+      fontSizeBtn.addEventListener('click', () => {
+        isEnlarged = !isEnlarged;
+        const paragraphs = article.querySelectorAll('p');
+        paragraphs.forEach(p => {
+          if (isEnlarged) {
+            p.classList.remove('text-body-md');
+            p.classList.add('text-body-lg');
+          } else {
+            p.classList.remove('text-body-lg');
+            p.classList.add('text-body-md');
+          }
+        });
+        showToast(isEnlarged ? '已调大正文字号' : '已恢复标准字号');
+      });
+    }
+
+    // Interactive calculator
+    const degreeBtns = document.querySelectorAll('.stage-btn');
+    const volumeBtns = document.querySelectorAll('.volume-btn');
+    const resultText = document.getElementById('calcResultText');
+    const subText = document.getElementById('calcSubText');
+
+    let currentStage = 'undergrad';
+    let currentVolume = 'mid';
+
+    const plans = {
+      'junior-low': {
+        title: '推荐使用「随心打·绿色次卡」预计每月立省 ¥8.00',
+        desc: '单页打印享 9 折，无需预付，最适合随堂作业少量应急打印。'
+      },
+      'junior-mid': {
+        title: '推荐开通「考证轻享包」预计每月立省 ¥16.50',
+        desc: '附赠试卷模拟双面 30 页免单及彩色准考证专属打印配额。'
+      },
+      'junior-high': {
+        title: '推荐开通「学霸 PRO 月卡」预计每月立省 ¥28.00',
+        desc: '海量复习资料无限黑白双面优惠，全校联网终端随时即扫即提。'
+      },
+      'undergrad-low': {
+        title: '推荐开通「期末无忧次卡」预计每月立省 ¥10.50',
+        desc: '期末考前课件与实验报告速印专享，赠送 1 次免费论文排版。'
+      },
+      'undergrad-mid': {
+        title: '推荐开通「学霸 PRO 月卡」预计每月立省 ¥24.50',
+        desc: '包含每月 60 张免单额度、高精双面胶装特惠及高峰期急速排队优先权。'
+      },
+      'undergrad-high': {
+        title: '推荐开通「保研/毕设尊享季卡」预计每月立省 ¥42.00',
+        desc: '论文全本热熔胶装 5 折、三线表排版校对及专属大容量云盘同步。'
+      },
+      'grad-low': {
+        title: '推荐使用「科研文献轻量包」预计每月立省 ¥12.00',
+        desc: '英文文献自动三线双面优化输出，原汁原味呈现高精图表。'
+      },
+      'grad-mid': {
+        title: '推荐开通「学术科研 PRO 月卡」预计每月立省 ¥31.00',
+        desc: 'SCI 预审版胶装立等可取，赠送高分子铜版纸彩色折页打印配额。'
+      },
+      'grad-high': {
+        title: '推荐开通「课题组团队共享仓」预计每月立省 ¥68.00',
+        desc: '支持组内多人共享额度，专票一键开具，报销流水秒导出。'
+      }
+    };
+
+    function updatePlan() {
+      const key = currentStage + '-' + currentVolume;
+      const plan = plans[key] || plans['undergrad-mid'];
+      if (resultText && subText) {
+        resultText.innerHTML = plan.title.replace(/(¥\d+(\.\d+)?)/g, '<span class="tabular-nums">$1</span>');
+        subText.textContent = plan.desc;
+      }
+    }
+
+    degreeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        degreeBtns.forEach(b => {
+          b.className = 'stage-btn py-2 px-1 rounded-full bg-surface-high font-label-md text-label-md text-text-secondary flex items-center justify-center transition-all';
+        });
+        btn.className = 'stage-btn py-2 px-1 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shadow-[0_4px_12px_rgba(32,184,176,0.3)] transition-all';
+        currentStage = btn.dataset.val;
+        updatePlan();
+      });
+    });
+
+    volumeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        volumeBtns.forEach(b => {
+          b.className = 'volume-btn py-2 px-1 rounded-full bg-surface-high font-label-md text-label-md text-text-secondary flex items-center justify-center transition-all';
+        });
+        btn.className = 'volume-btn py-2 px-1 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shadow-[0_4px_12px_rgba(32,184,176,0.3)] transition-all';
+        currentVolume = btn.dataset.val;
+        updatePlan();
+      });
+    });
+
+    // Bookmark toggle
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
+    const bookmarkIcon = document.getElementById('bookmarkIcon');
+    const bookmarkText = document.getElementById('bookmarkText');
+    let isBookmarked = false;
+
+    if (bookmarkBtn) {
+      bookmarkBtn.addEventListener('click', () => {
+        isBookmarked = !isBookmarked;
+        if (isBookmarked) {
+          bookmarkIcon.textContent = 'bookmark';
+          bookmarkIcon.style.fontVariationSettings = "'FILL' 1";
+          bookmarkText.textContent = '已收藏';
+          showToast('已加入微信小程序「我的资料库」');
+        } else {
+          bookmarkIcon.textContent = 'bookmark_border';
+          bookmarkIcon.style.fontVariationSettings = "'FILL' 0";
+          bookmarkText.textContent = '一键收藏';
+          showToast('已取消收藏');
+        }
+      });
+    }
+
+    // External browser and share
+    const openExternalBtn = document.getElementById('openExternalBtn');
+    if (openExternalBtn) {
+      openExternalBtn.addEventListener('click', () => {
+        showToast('正在调起系统浏览器打开...');
+      });
+    }
+
+    const shareH5Btn = document.getElementById('shareH5Btn');
+    if (shareH5Btn) {
+      shareH5Btn.addEventListener('click', () => {
+        showToast('已准备好微信分享卡片');
+      });
+    }
+
+    const claimPlanBtn = document.getElementById('claimPlanBtn');
+    if (claimPlanBtn) {
+      claimPlanBtn.addEventListener('click', () => {
+        showToast('特权权益包已发放至当前学号');
+      });
+    }
+
+    const webBackBtn = document.getElementById('webBackBtn');
+    if (webBackBtn) {
+      webBackBtn.addEventListener('click', () => {
+        history.back();
+      });
+    }
+  })();
+</script></main></body></html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>多格式转 Pdf · 极速高清转换 - MoeFlow SmartPrint</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "badge-peach": "#FFD8C8",
+            "tertiary-fixed-dim": "#ccc0ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#53dad1",
+            "outline-variant": "#bbc9c7",
+            "inverse-surface": "#18343b",
+            "surface-container": "#d5f3fc",
+            "surface-container-low": "#e0f8ff",
+            "on-primary-container": "#004340",
+            "primary-container": "#20b8b0",
+            "surface-dim": "#c2dfe8",
+            "text-secondary": "#527078",
+            "secondary": "#006780",
+            "on-secondary-fixed-variant": "#004d61",
+            "on-tertiary-fixed-variant": "#4a4168",
+            "tertiary-fixed": "#e8ddff",
+            "secondary-container": "#D7F0FA",
+            "on-primary-fixed-variant": "#00504c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#011f26",
+            "on-secondary-container": "#00627a",
+            "badge-mint": "#B9EBD9",
+            "error": "#ba1a1a",
+            "surface-container-high": "#d0edf6",
+            "on-error": "#ffffff",
+            "primary": "#20b8b0",
+            "on-secondary-fixed": "#001f28",
+            "on-surface": "#011f26",
+            "on-tertiary-fixed": "#1e153a",
+            "tertiary": "#625881",
+            "badge-warm-yellow": "#FFF3C4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#3f355c",
+            "on-primary-fixed": "#00201e",
+            "surface": "#f0fbff",
+            "surface-bright": "#f0fbff",
+            "surface-high": "#EAF5F6",
+            "primary-dark": "#168D89",
+            "inverse-on-surface": "#d8f6ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#7cd2f1",
+            "on-error-container": "#93000a",
+            "background": "#f0fbff",
+            "surface-variant": "#cae7f0",
+            "outline": "#C8E3E5",
+            "text-primary": "#18343B",
+            "tertiary-container": "#ab9fcc",
+            "surface-light": "#F4FBFC",
+            "surface-container-highest": "#cae7f0",
+            "on-surface-variant": "#3c4948",
+            "secondary-fixed": "#b8eaff",
+            "secondary-on-container": "#153D52",
+            "surface-tint": "#20b8b0",
+            "primary-fixed": "#74f7ee",
+            "inverse-primary": "#53dad1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "52px", fontWeight: "800" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] pt-safe">
+<div class="h-14 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-1 min-w-0 pr-2">
+<button aria-label="返回上一页" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all flex-shrink-0" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px] leading-none">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">多格式转 Pdf · 极速高清转换</h1>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="h-8 px-2.5 rounded-full bg-surface-high/90 border border-white/80 shadow-[0_2px_8px_rgba(32,184,176,0.06)] flex items-center gap-1.5">
+<button aria-label="小程序菜单" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">more_horiz</span>
+</button>
+<span class="w-[1px] h-3.5 bg-outline/60"></span>
+<button aria-label="关闭小程序" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[17px] leading-none">radio_button_checked</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-background"><div class="flex flex-col w-full px-4 pb-28 gap-4">
+<!-- 引擎特性横幅 -->
+<section class="mt-3 relative overflow-hidden rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)] p-4">
+<div class="absolute -right-10 -bottom-10 w-36 h-36 rounded-full bg-primary-container/10 blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between gap-3 relative z-10">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-badge-mint text-text-primary text-[10px] font-bold">
+<span class="material-symbols-outlined text-[13px] leading-none text-primary-dark">bolt</span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-dark font-semibold">MoeFlow Core Engine 4.2</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary leading-tight font-bold tracking-tight">
+          多格式秒级转 PDF · 高清矢量保真
+        </h2>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px] text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">picture_as_pdf</span>
+</div>
+</div>
+<!-- 优势微标签 -->
+<div class="flex flex-wrap gap-1.5 mt-3 pt-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-primary-dark">check_circle</span>
+        Word / PPT / Excel / EPUB / 图片
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-primary-dark">font_download</span>
+        保留字体排版与可点击超链接
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-badge-warm-yellow text-on-surface-variant font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[13px] text-on-surface-variant">lock</span>
+        云端 256 位加密 · 完工即焚
+      </span>
+</div>
+</section>
+<!-- 格式转换矩阵卡片 -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between px-1">
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold flex items-center gap-1.5">
+<span class="w-1.5 h-3.5 bg-primary-container rounded-full"></span>
+        选择转换模式
+      </h3>
+<span class="font-label-sm text-label-sm text-text-secondary">智能识别源文件扩展名</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Word (Active / Recommended) -->
+<div class="relative p-3.5 rounded-lg bg-surface-container-lowest shadow-[0_8px_20px_rgba(32,184,176,0.14)] cursor-pointer group transition-transform active:scale-[0.98]">
+<div class="absolute top-2.5 right-2.5">
+<span class="px-1.5 py-0.5 rounded-full bg-badge-mint text-primary-dark font-label-sm text-[10px] font-bold">精确保真</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center mb-2 text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<p class="font-label-md text-label-md text-text-primary font-bold">Word 转 PDF</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-0.5">.doc, .docx</p>
+<p class="font-label-sm text-label-sm text-primary-dark mt-2 leading-relaxed">
+          高保真公式排版、三线表与嵌套图形重构
+        </p>
+</div>
+<!-- PPT -->
+<div class="relative p-3.5 rounded-lg bg-surface-container-lowest shadow-[0_4px_16px_rgba(32,184,176,0.06)] cursor-pointer group transition-transform active:scale-[0.98]">
+<div class="w-9 h-9 rounded-full bg-surface-high flex items-center justify-center mb-2 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">slideshow</span>
+</div>
+<p class="font-label-md text-label-md text-text-primary font-bold">PPT 转 PDF / 讲义</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-0.5">.ppt, .pptx</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-2 leading-relaxed">
+          单页全屏 / 4合1 / 6合1 答辩讲义排版
+        </p>
+</div>
+<!-- Excel -->
+<div class="relative p-3.5 rounded-lg bg-surface-container-lowest shadow-[0_4px_16px_rgba(32,184,176,0.06)] cursor-pointer group transition-transform active:scale-[0.98]">
+<div class="w-9 h-9 rounded-full bg-surface-high flex items-center justify-center mb-2 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">table_chart</span>
+</div>
+<p class="font-label-md text-label-md text-text-primary font-bold">Excel 表格转 PDF</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-0.5">.xls, .xlsx, .csv</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-2 leading-relaxed">
+          超宽表格自动折算，单页自适应缩放防截断
+        </p>
+</div>
+<!-- Image Merge -->
+<div class="relative p-3.5 rounded-lg bg-surface-container-lowest shadow-[0_4px_16px_rgba(32,184,176,0.06)] cursor-pointer group transition-transform active:scale-[0.98]">
+<div class="w-9 h-9 rounded-full bg-surface-high flex items-center justify-center mb-2 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">photo_library</span>
+</div>
+<p class="font-label-md text-label-md text-text-primary font-bold">多图合并转 PDF</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-0.5">.jpg, .png, .heic</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-2 leading-relaxed">
+          相册拖拽重排，自动裁切并统一 A4 边距
+        </p>
+</div>
+</div>
+</section>
+<!-- 待转换文件队列卡片 -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold flex items-center gap-1.5">
+<span class="w-1.5 h-3.5 bg-primary-container rounded-full"></span>
+          转换任务队列
+        </h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">2 个文件</span>
+</div>
+<button class="text-text-secondary font-label-sm text-label-sm hover:text-error transition-colors flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[15px]">delete_sweep</span>
+        清空列表
+      </button>
+</div>
+<!-- 队列列表 -->
+<div class="flex flex-col gap-2.5">
+<!-- File 1: Word -->
+<div class="bg-surface-container-lowest rounded-lg p-3.5 shadow-[0_6px_20px_rgba(32,184,176,0.08)] flex flex-col gap-2.5">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center flex-shrink-0 text-on-secondary-container font-bold text-xs uppercase tracking-wider">
+            DOCX
+          </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-label-md text-label-md text-text-primary font-bold truncate">计算机体系结构期末复习重点.docx</h4>
+<button class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-text-secondary">4.2 MB</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary-dark">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                已就绪
+              </span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-high/60 rounded-md px-2.5 py-1.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-dark">tune</span>
+<span class="font-label-sm text-label-sm text-text-secondary">处理模式:</span>
+<span class="font-label-sm text-label-sm text-text-primary font-medium">高质量矢量嵌入</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary-dark font-semibold" type="button">修改参数</button>
+</div>
+</div>
+<!-- File 2: PPT -->
+<div class="bg-surface-container-lowest rounded-lg p-3.5 shadow-[0_6px_20px_rgba(32,184,176,0.08)] flex flex-col gap-2.5">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded bg-badge-peach flex items-center justify-center flex-shrink-0 text-[#5D2717] font-bold text-xs uppercase tracking-wider">
+            PPTX
+          </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-label-md text-label-md text-text-primary font-bold truncate">2024届毕业生毕业设计答辩讲义.pptx</h4>
+<button class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-text-secondary">18.5 MB</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary-dark">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                已就绪
+              </span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-high/60 rounded-md px-2.5 py-1.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-dark">grid_view</span>
+<span class="font-label-sm text-label-sm text-text-secondary">版式选项:</span>
+<span class="font-label-sm text-label-sm text-text-primary font-medium truncate max-w-[170px]">4合1 讲义 (带横线)</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary-dark font-semibold" type="button">排版切换</button>
+</div>
+</div>
+<!-- Add More Files Trigger -->
+<button class="w-full py-3.5 rounded-lg bg-surface-high text-primary-dark font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99] transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+        继续添加文件 (支持从微信聊天 / 本地选择)
+      </button>
+</div>
+</section>
+<!-- 转换高级输出配置 -->
+<section class="bg-surface-container-lowest rounded-lg p-4 shadow-[0_8px_24px_rgba(32,184,176,0.08)] flex flex-col gap-4">
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold flex items-center gap-1.5">
+<span class="w-1.5 h-3.5 bg-primary-container rounded-full"></span>
+      PDF 输出规格设定
+    </h3>
+<!-- 压缩质量控制 -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary font-medium">压缩与分辨率</span>
+<span class="font-label-sm text-label-sm text-text-secondary">智能降噪保真</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<!-- Option 1: Print (Active) -->
+<label class="flex flex-col p-3 rounded-lg bg-surface-high cursor-pointer relative transition-all">
+<input checked="" class="sr-only" name="compression" type="radio"/>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary font-bold">标准高清打印</span>
+<span class="w-4 h-4 rounded-full bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[13px] leading-none">check</span>
+</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary mt-1">300 DPI · 锐利矢量字形</span>
+<span class="inline-block mt-2 font-label-sm text-[10px] text-primary-dark font-semibold">推荐：实体打印与交卷</span>
+</label>
+<!-- Option 2: Web Transfer -->
+<label class="flex flex-col p-3 rounded-lg bg-surface-high/40 hover:bg-surface-high cursor-pointer relative transition-all">
+<input class="sr-only" name="compression" type="radio"/>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary font-medium">邮件传输适中</span>
+<span class="w-4 h-4 rounded-full bg-outline/60 flex items-center justify-center"></span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary mt-1">150 DPI · 体积轻巧 50%</span>
+<span class="inline-block mt-2 font-label-sm text-[10px] text-text-secondary">适宜：微信互发与网盘</span>
+</label>
+</div>
+</div>
+<!-- 纸张方向锁定 -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-text-primary font-medium">版面方向</span>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2.5 px-2 rounded-lg bg-primary-container text-white font-label-sm text-label-sm font-semibold flex flex-col items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+          自动匹配原文档
+        </button>
+<button class="py-2.5 px-2 rounded-lg bg-surface-high text-text-secondary font-label-sm text-label-sm flex flex-col items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">portrait</span>
+          强制纵向 A4
+        </button>
+<button class="py-2.5 px-2 rounded-lg bg-surface-high text-text-secondary font-label-sm text-label-sm flex flex-col items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">landscape</span>
+          强制横向 A4
+        </button>
+</div>
+</div>
+<!-- 安全水印配置 -->
+<div class="pt-2 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-high flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">branding_watermark</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-text-primary font-medium">嵌入专属安全防伪水印</p>
+<p class="font-label-sm text-label-sm text-text-secondary">浅色半透明倾斜防盗用</p>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="watermark-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-outline peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- 水印文字输入区域 (条件显示状态) -->
+<div class="bg-surface-high/60 rounded-lg p-2.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">edit_note</span>
+<input class="bg-transparent font-label-sm text-label-sm text-text-primary flex-1 focus:outline-none" type="text" value="仅供个人期末复习使用"/>
+<span class="font-label-sm text-[11px] text-text-secondary bg-surface-container-lowest px-2 py-0.5 rounded-full">预览已启用</span>
+</div>
+</section>
+<!-- 底部吸底转换与输出操作栏 -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-8px_24px_rgba(32,184,176,0.12)] px-4 py-3 pb-safe">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-dark">auto_stories</span>
+<span class="font-label-sm text-label-sm text-text-secondary">已选 2 个文件</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-sm text-label-sm text-text-primary font-semibold">合并为 1 份 PDF</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-dark font-medium">预计耗时 1.8 秒</span>
+</div>
+<!-- 转换按钮与进度 -->
+<button class="w-full h-12 rounded-full bg-gradient-to-r from-primary-container to-[#73C9E8] text-white font-headline-sm text-[17px] font-bold flex items-center justify-center gap-2 shadow-[0_6px_20px_rgba(32,184,176,0.30)] active:scale-[0.98] transition-transform" id="convert-btn" type="button">
+<span class="material-symbols-outlined text-[20px] animate-pulse">rocket_launch</span>
+<span>开始极速转换并预览</span>
+</button>
+<!-- 快捷流转操作预告 -->
+<div class="flex items-center justify-center gap-6 mt-2.5">
+<div class="flex items-center gap-1 text-text-secondary font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[13px] text-primary-dark">print</span>
+        转后直接投递校园云打印机
+      </div>
+<div class="flex items-center gap-1 text-text-secondary font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[13px] text-primary-dark">share</span>
+        一键转发至微信或保存手机
+      </div>
+</div>
+</div>
+</div>
+<script>
+  // 微交互：点击模拟开始转换并呈现动态态
+  const btn = document.getElementById('convert-btn');
+  if (btn) {
+    btn.addEventListener('click', function() {
+      const originalContent = btn.innerHTML;
+      btn.innerHTML = `
+        <span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span>
+        <span>智能解析与矢量渲染中 (85%)...</span>
+      `;
+      btn.classList.add('opacity-90');
+      setTimeout(() => {
+        btn.innerHTML = `
+          <span class="material-symbols-outlined text-[20px]">task_alt</span>
+          <span>转换完成！正在加载预览视图</span>
+        `;
+      }, 1400);
+    });
+  }
+</script></main>
+</body></html>

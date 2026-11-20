@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>MoeFlow SmartPrint</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:max(env(safe-area-inset-bottom,0px),16px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-primary":"#53dad1","secondary":"#006780","on-tertiary-container":"#3f355c","secondary-container":"#88ddfd","surface-high":"#EAF5F6","surface-container-high":"#d0edf6","error-container":"#ffdad6","surface-light":"#F4FBFC","surface-container":"#FFFFFF","badge-mint":"#B9EBD9","surface-dim":"#c2dfe8","tertiary-fixed":"#e8ddff","background":"#f0fbff","outline":"#C8E3E5","primary-fixed":"#74f7ee","on-primary-fixed-variant":"#00504c","surface-variant":"#cae7f0","outline-variant":"#bbc9c7","on-secondary":"#ffffff","on-error-container":"#93000a","surface":"#f0fbff","secondary-fixed-dim":"#7cd2f1","secondary-fixed":"#b8eaff","surface-container-highest":"#cae7f0","primary-container":"#D5F4F1","primary-fixed-dim":"#53dad1","inverse-on-surface":"#d8f6ff","badge-peach":"#FFD8C8","error":"#ba1a1a","text-primary":"#18343B","on-primary":"#ffffff","on-error":"#ffffff","on-tertiary-fixed-variant":"#4a4168","on-secondary-fixed-variant":"#004d61","surface-bright":"#f0fbff","surface-tint":"#006a65","text-secondary":"#527078","tertiary-container":"#ab9fcc","on-tertiary-fixed":"#1e153a","on-secondary-container":"#00627a","on-surface":"#011f26","on-secondary-fixed":"#001f28","on-primary-fixed":"#00201e","inverse-surface":"#18343b","badge-warm-yellow":"#FFF3C4","tertiary":"#625881","primary-dark":"#168D89","on-tertiary":"#ffffff","on-background":"#011f26","surface-container-low":"#e0f8ff","tertiary-fixed-dim":"#ccc0ef","on-surface-variant":"#3c4948","surface-container-lowest":"#ffffff","secondary-on-container":"#153D52","primary":"#006a65","on-primary-container":"#004340"},borderRadius:{DEFAULT:"1rem",lg:"2rem",xl:"3rem",full:"9999px"},spacing:{"gutter":"1rem","space-lg":"1.5rem","margin-desktop":"2.5rem","space-xl":"2rem","margin":"1rem","space-md":"1rem","space-sm":"0.5rem","gutter-desktop":"1.5rem","space-xs":"0.25rem"},fontFamily:{"body-sm":["Be Vietnam Pro"],"body-lg":["Be Vietnam Pro"],"label-lg":["Be Vietnam Pro"],"body-md":["Be Vietnam Pro"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Be Vietnam Pro"],"label-md":["Be Vietnam Pro"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"]},fontSize:{"body-sm":["14px",{lineHeight:"22px",fontWeight:"400"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-lg":["15px",{lineHeight:"22px",fontWeight:"600"}],"body-md":["16px",{lineHeight:"26px",fontWeight:"400"}],"headline-lg":["32px",{lineHeight:"40px",fontWeight:"700"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"700"}],"display-lg-mobile":["32px",{lineHeight:"40px",fontWeight:"800"}],"label-sm":["11px",{lineHeight:"16px",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",fontWeight:"600"}],"headline-lg-mobile":["26px",{lineHeight:"34px",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"700"}],"display-lg":["40px",{lineHeight:"52px",fontWeight:"800"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] pt-safe"><div class="h-14 px-3 flex items-center justify-between"><div class="flex items-center gap-1.5"><button aria-label="返回" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all" onclick="history.back()"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[150px]">Merchant Tools</h1></div><div class="flex items-center gap-2"><div class="h-8 px-2 rounded-full bg-surface-high/90 flex items-center gap-1"><button aria-label="更多操作" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors" type="button"><svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></svg></button><span class="w-[1px] h-3.5 bg-outline/60"></span><button aria-label="小程序胶囊关闭" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors" type="button"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" fill="currentColor" r="2.5"></circle></svg></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_2px_8px_rgba(0,106,101,0.2)]"><svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- 顶部沉浸式审核指标看板 (Bento Metrics) -->
+<section class="px-gutter pt-3 pb-2">
+<div class="rounded-lg bg-surface-container p-4 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)]">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></div>
+<span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">售后质保监控</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          先行赔付保障中
+        </div>
+</div>
+<div class="grid grid-cols-2 gap-2.5 pt-1">
+<!-- 待处理退款 -->
+<div class="rounded-xl bg-surface-high p-3 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">待处理审核</span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm">紧急 2</span>
+</div>
+<div class="pt-2 flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-error tabular-nums tracking-tight">2</span>
+<span class="font-label-sm text-label-sm text-text-secondary">笔待定</span>
+</div>
+</div>
+<!-- 今日已处理 -->
+<div class="rounded-xl bg-surface-high p-3 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">今日已完结</span>
+<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="pt-2 flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary tabular-nums tracking-tight">8</span>
+<span class="font-label-sm text-label-sm text-text-secondary">笔完成</span>
+</div>
+</div>
+<!-- 今日退款总额 -->
+<div class="rounded-xl bg-surface-high p-3 flex flex-col justify-between">
+<span class="font-label-md text-label-md text-text-secondary">今日退款净额</span>
+<div class="pt-2 flex items-baseline gap-0.5">
+<span class="font-label-md text-label-md text-text-primary font-medium">¥</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary tabular-nums tracking-tight">24.80</span>
+</div>
+</div>
+<!-- 平均审核耗时 -->
+<div class="rounded-xl bg-surface-high p-3 flex flex-col justify-between">
+<span class="font-label-md text-label-md text-text-secondary">平均决议耗时</span>
+<div class="pt-2 flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary tabular-nums tracking-tight">1.8</span>
+<span class="font-label-sm text-label-sm text-text-secondary">分钟 / 笔</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 状态过滤 Tab 胶囊 -->
+<section class="px-gutter py-2">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-[0_4px_12px_rgba(0,106,101,0.25)] flex items-center gap-1.5 transition-transform active:scale-95">
+<span>待审核</span>
+<span class="px-1.5 py-0.2 rounded-full bg-on-primary text-primary font-label-sm text-label-sm">2</span>
+</button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-text-secondary font-label-md text-label-md shadow-sm hover:text-text-primary transition-all active:scale-95">
+        已退款 (19)
+      </button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-text-secondary font-label-md text-label-md shadow-sm hover:text-text-primary transition-all active:scale-95">
+        已驳回 (3)
+      </button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-text-secondary font-label-md text-label-md shadow-sm hover:text-text-primary transition-all active:scale-95">
+        全部单据
+      </button>
+</div>
+</section>
+<!-- 核心审核单流 -->
+<section class="px-gutter py-2 flex flex-col gap-4">
+<!-- 退款单 1：硬件卡纸，IoT 日志完全匹配，高信度快速退款 -->
+<article class="rounded-lg bg-surface-container p-5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.14)] relative overflow-hidden transition-all duration-300">
+<!-- 状态警报高光条 -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary to-secondary-fixed-dim"></div>
+<!-- 订单信息头部 -->
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-badge-peach text-on-tertiary-fixed-variant">硬件故障</span>
+<span class="font-label-md text-label-md text-text-secondary tabular-nums">MP202310248829</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums">10 分钟前</span>
+</div>
+<!-- 用户信息与金额 Bento Row -->
+<div class="p-3.5 rounded-xl bg-surface-light mb-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary font-headline-sm text-headline-sm">
+              李
+            </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-text-primary">李同学</span>
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums">188****5291</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">计算机学院 · 科技园 A 座</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-text-secondary block">申请退款</span>
+<div class="flex items-baseline justify-end text-error">
+<span class="font-label-md text-label-md font-bold">¥</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold tabular-nums">3.10</span>
+</div>
+</div>
+</div>
+<div class="mt-2.5 pt-2 flex items-center justify-between text-text-secondary font-label-sm text-label-sm">
+<span>原单实付：¥3.10</span>
+<span class="text-primary flex items-center gap-1">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+</svg>
+            支持微信原路返还
+          </span>
+</div>
+</div>
+<!-- 诉求描述与凭证展示 -->
+<div class="space-y-3 mb-4">
+<div>
+<span class="font-label-sm text-label-sm text-text-secondary">申请退款原因</span>
+<p class="font-body-md text-body-md text-text-primary mt-1 font-medium bg-surface-high p-3 rounded-xl">
+            “复合机出纸卡纸，第 18 页卡住未打印完成”
+          </p>
+</div>
+<!-- 凭证缩略图展示 -->
+<div>
+<span class="font-label-sm text-label-sm text-text-secondary">用户上传凭证 (1张)</span>
+<div class="mt-1.5 flex items-center gap-3">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden shadow-sm group">
+<img class="w-full h-full object-cover" data-alt="A macro close-up photograph of a laser printer paper ejection tray jammed with white office paper skewed at an angle, natural office soft indoor lighting, showing paper sensor indicator lights, clear crisp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJTxn8sVXaGPpD4ymyOp89AEowGOw2DQPW8DrYSQgKONVjGWO702MPYeVs9cAsptihv-Jbm39WMBTlvjaCT4nKMYMo_VfUR4UMRzR1hfTsLkKf3IFWvIogndqO2GaHaSxrOkJZpHj68EhTTcqh6tHKdAfgyYx0wDSYPkECoJxbjxAugAz5rhihlsTY9KNLG_pdSiI2IfijRgOOGOZwmE1yshXSxNIojGtuiXtroJy0"/>
+<div class="absolute inset-0 bg-text-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<svg class="w-5 h-5 text-on-primary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<div class="flex-1 text-text-secondary font-body-sm text-body-sm">
+<span class="block text-text-primary font-label-md text-label-md">取纸仓门卡阻照片</span>
+<span class="block mt-0.5">照片时间与订单匹配</span>
+</div>
+</div>
+</div>
+<!-- 物联感知佐证 (IoT Telemetry Verification) -->
+<div class="p-3.5 rounded-xl bg-badge-mint/30 flex items-start gap-2.5">
+<div class="w-6 h-6 rounded-full bg-badge-mint flex items-center justify-center text-text-primary flex-shrink-0 mt-0.5">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary font-bold">物联日志已佐证</span>
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums">高匹配度 99.4%</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-primary mt-1 leading-snug">
+              科技园 A 座 02 号机 <span class="tabular-nums font-semibold">10:24</span> 记录传感器阻塞阻抗（日志与申诉时间吻合）。
+            </p>
+</div>
+</div>
+</div>
+<!-- 审核决议操作区 -->
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full py-3.5 px-4 rounded-full bg-gradient-to-r from-primary to-primary-dark text-on-primary font-label-lg text-label-lg shadow-[0_6px_18px_rgba(0,106,101,0.25)] flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          同意并原路退款 ¥3.10（秒级到账）
+        </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2.5 px-3 rounded-full bg-surface-high text-secondary-on-container font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95 flex items-center justify-center gap-1.5">
+<svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            补印授权 (免费)
+          </button>
+<button class="py-2.5 px-3 rounded-full bg-surface-container text-text-secondary font-label-md text-label-md hover:text-error transition-colors active:scale-95 flex items-center justify-center gap-1">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            驳回申请
+          </button>
+</div>
+</div>
+</article>
+<!-- 退款单 2：打印质量争议，需人工核对鼓组件参数 -->
+<article class="rounded-lg bg-surface-container p-5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] relative overflow-hidden transition-all duration-300">
+<!-- 审核提示高光条 -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-badge-warm-yellow"></div>
+<!-- 头部 -->
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-badge-warm-yellow text-on-surface">质量申诉</span>
+<span class="font-label-md text-label-md text-text-secondary tabular-nums">MP202310247604</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums">35 分钟前</span>
+</div>
+<!-- 用户信息与金额 -->
+<div class="p-3.5 rounded-xl bg-surface-light mb-3.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-text-primary font-headline-sm text-headline-sm">
+            张
+          </div>
+<div>
+<span class="font-label-lg text-label-lg text-text-primary">张同学</span>
+<p class="font-body-sm text-body-sm text-text-secondary">生化楼 2 楼中厅机组</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-text-secondary block">申请退款</span>
+<div class="flex items-baseline justify-end text-text-primary">
+<span class="font-label-md text-label-md font-bold">¥</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold tabular-nums">7.50</span>
+</div>
+</div>
+</div>
+<!-- 诉求与设备状态 -->
+<div class="space-y-3 mb-4">
+<div>
+<span class="font-label-sm text-label-sm text-text-secondary">申请退款原因</span>
+<p class="font-body-md text-body-md text-text-primary mt-1 font-medium bg-surface-high p-3 rounded-xl">
+            “色彩有纵向杂色条纹，影响实验答辩报告阅读”
+          </p>
+</div>
+<!-- 凭证缩略图展示 -->
+<div>
+<span class="font-label-sm text-label-sm text-text-secondary">用户上传凭证 (1张)</span>
+<div class="mt-1.5 flex items-center gap-3">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden shadow-sm group">
+<img class="w-full h-full object-cover" data-alt="A high contrast overhead photo of a printed academic document page with visible cyan streak lines across text and data graphs, soft desk lighting, shot on a mobile phone camera." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv-5jzwxAOWWqVhy4orPKD4G17G_WbhGAeIfMW38FpMh49Edd_IF3gHKSl4VLPAxVDLuPiFvakda9NlxKsQ9-s-YGDwTn3Ojb2XvKvMMNEgIJW5uxhrA0d4snP2E0q0LxxqmrP4TpeXrzgOVzR8u6P2GK6fnVD3vIOsGcw0oex1ZDOsSrbPtF7VCrr98lCFWry-VeG6cE36x6X_CfWcHpmHD9udh2QY7YBL0a9YesE"/>
+<div class="absolute inset-0 bg-text-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<svg class="w-5 h-5 text-on-primary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<div class="flex-1 text-text-secondary font-body-sm text-body-sm">
+<span class="block text-text-primary font-label-md text-label-md">实拍彩色纵向条纹</span>
+<span class="block mt-0.5">需核实是否为原稿自带</span>
+</div>
+</div>
+</div>
+<!-- 设备健康监控反馈 -->
+<div class="p-3.5 rounded-xl bg-surface-high flex items-start gap-2.5">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0 mt-0.5">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary font-bold">硬件状态提示</span>
+<span class="font-label-sm text-label-sm text-secondary tabular-nums">鼓寿命 78%</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+              01 号机感光鼓寿命正常 (78%)，未触发色温脏污预警，建议与用户沟通确认原稿源文件。
+            </p>
+</div>
+</div>
+</div>
+<!-- 操作按钮群 -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<button class="py-2.5 px-2 rounded-full bg-surface-high text-text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95 flex items-center justify-center gap-1">
+<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          联系用户
+        </button>
+<button class="py-2.5 px-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-transform active:scale-95 flex items-center justify-center">
+          同意退款
+        </button>
+<button class="py-2.5 px-2 rounded-full bg-surface-container text-error font-label-md text-label-md hover:bg-error-container/40 transition-colors active:scale-95 flex items-center justify-center">
+          驳回申请
+        </button>
+</div>
+</article>
+</section>
+<!-- 历史已处理流水缩略记录 -->
+<section class="px-gutter pt-3 pb-2">
+<div class="flex items-center justify-between mb-2.5">
+<span class="font-headline-sm text-headline-sm text-text-primary">近期决议流水</span>
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-0.5">
+        查看全部记录
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<div class="rounded-lg bg-surface-container p-4 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-badge-mint/40 text-primary flex items-center justify-center">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-text-primary tabular-nums">MP202310229410</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm">系统秒退</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary block mt-0.5">出纸超时系统自愈 · 2天前</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-text-secondary block">已返还</span>
+<span class="font-label-lg text-label-lg font-bold text-text-primary tabular-nums">¥5.00</span>
+</div>
+</div>
+</section>
+<!-- 底部安全与质保保证金浮条 -->
+<footer class="px-gutter py-4 mt-2">
+<div class="rounded-xl bg-surface-high p-4 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path>
+</svg>
+</div>
+<div>
+<span class="font-label-md text-label-md text-text-primary font-semibold">商户退款保证金充足</span>
+<p class="font-body-sm text-body-sm text-text-secondary">可用额度 <span class="tabular-nums font-bold text-text-primary">¥500.00</span>，支持全校极速先行赔付</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-full bg-surface-container text-text-primary font-label-sm text-label-sm shadow-sm active:scale-95 transition-transform">
+        充值管理
+      </button>
+</div>
+</footer>
+</div>
+<script>
+  // 简易交互支持：Tab 切换与审核反馈
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (this.innerText.includes('同意并原路退款')) {
+        const originalText = this.innerHTML;
+        this.innerHTML = `
+          <svg class="animate-spin w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+          已通过微信支付退款完成
+        `;
+        this.classList.add('bg-primary-dark');
+        setTimeout(() => {
+          const card = this.closest('article');
+          if (card) {
+            card.style.opacity = '0.6';
+            card.style.pointerEvents = 'none';
+          }
+        }, 800);
+      }
+    });
+  });
+</script></main></body></html>

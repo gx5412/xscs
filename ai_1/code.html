@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>证件照制作 · Ai 智能美颜与排版</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#74f7ee", "text-secondary": "#527078", "on-surface": "#011f26", "primary": "#006a65", "on-tertiary-fixed": "#1e153a", "surface-container": "#FFFFFF", "error-container": "#ffdad6", "tertiary-fixed": "#e8ddff", "badge-peach": "#FFD8C8", "surface-container-high": "#d0edf6", "on-tertiary-fixed-variant": "#4a4168", "surface-container-highest": "#cae7f0", "surface-light": "#F4FBFC", "background": "#f0fbff", "on-error": "#ffffff", "outline": "#C8E3E5", "badge-mint": "#B9EBD9", "secondary-fixed-dim": "#7cd2f1", "inverse-surface": "#18343b", "surface-bright": "#f0fbff", "on-secondary-container": "#00627a", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ccc0ef", "inverse-primary": "#53dad1", "secondary-fixed": "#b8eaff", "surface-variant": "#cae7f0", "on-primary-container": "#004340", "primary-container": "#D5F4F1", "secondary": "#006780", "surface-dim": "#c2dfe8", "secondary-on-container": "#153D52", "primary-dark": "#168D89", "on-primary-fixed-variant": "#00504c", "surface-high": "#EAF5F6", "primary-fixed-dim": "#53dad1", "on-tertiary-container": "#3f355c", "on-primary-fixed": "#00201e", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004d61", "surface-container-low": "#e0f8ff", "outline-variant": "#bbc9c7", "secondary-container": "#88ddfd", "on-secondary": "#ffffff", "error": "#ba1a1a", "badge-warm-yellow": "#FFF3C4", "on-surface-variant": "#3c4948", "tertiary": "#625881", "surface": "#f0fbff", "surface-container-lowest": "#ffffff", "tertiary-container": "#ab9fcc", "inverse-on-surface": "#d8f6ff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#001f28", "surface-tint": "#006a65", "text-primary": "#18343B", "on-background": "#011f26" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "gutter": "1rem" }, fontFamily: { "label-md": ["Be Vietnam Pro"], "label-sm": ["Be Vietnam Pro"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Be Vietnam Pro"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px));}.pt-safe{padding-top:calc(env(safe-area-inset-top,0px));}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>body { min-height: max(884px, 100dvh); }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-text-primary antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_12px_rgba(32,184,176,0.06)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-text-primary rounded-full hover:bg-surface-container-low active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[170px]">证件照制作 · Ai 智能美颜与排版</h1></div><div class="flex items-center gap-space-sm"><div class="flex items-center bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,106,101,0.08)] border border-white/60"><button aria-label="Mini Program Options" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button><div class="w-px h-3.5 bg-outline mx-0.5"></div><button aria-label="Close Mini Program" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[18px]">radio_button_checked</span></button></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface px-margin pb-safe min-h-screen"><div class="flex flex-col w-full pb-32">
+<!-- Top Spec Horizontal Selector -->
+<section class="flex flex-col gap-space-sm pt-space-xs mb-space-md">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-lg text-label-lg text-text-primary">证件规格</span>
+<button class="flex items-center gap-1 font-label-md text-label-md text-primary active:opacity-75" type="button">
+<span>全部68种规格</span>
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+<!-- Horizontal Pill Capsule Tabs -->
+<div class="flex gap-space-xs overflow-x-auto pb-1.5 pt-0.5 no-scrollbar -mx-margin px-margin">
+<!-- Active Pill -->
+<button class="spec-tab active flex-shrink-0 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-md transition-all" type="button">
+        一寸 (25×35mm)
+      </button>
+<button class="spec-tab flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-text-secondary font-label-md text-label-md shadow-sm active:bg-surface-container-high transition-all" type="button">
+        二寸 (35×49mm)
+      </button>
+<button class="spec-tab flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-text-secondary font-label-md text-label-md shadow-sm active:bg-surface-container-high transition-all" type="button">
+        小二寸 (33×48mm)
+      </button>
+<button class="spec-tab flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-text-secondary font-label-md text-label-md shadow-sm active:bg-surface-container-high transition-all" type="button">
+        计算机二级
+      </button>
+<button class="spec-tab flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-text-secondary font-label-md text-label-md shadow-sm active:bg-surface-container-high transition-all" type="button">
+        英语四六级
+      </button>
+<button class="spec-tab flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-text-secondary font-label-md text-label-md shadow-sm active:bg-surface-container-high transition-all" type="button">
+        护照签证
+      </button>
+</div>
+<!-- Spec Parameters Micro-badge -->
+<div class="flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-full bg-surface-high text-secondary-on-container font-label-sm text-label-sm self-start">
+<span class="material-symbols-outlined text-[14px] text-primary">aspect_ratio</span>
+<span>标准分辨率 295×413 px · 冲印尺寸 25×35 mm · 300 DPI</span>
+</div>
+</section>
+<!-- Photo Upload & Interactive Preview Area -->
+<section class="flex flex-col mb-space-lg">
+<div class="relative w-full bg-surface-container rounded-lg p-space-md shadow-lg flex flex-col items-center">
+<!-- ID Photo Frame Container (3:4 ratio standard passport composition) -->
+<div class="relative w-[220px] h-[294px] rounded-DEFAULT overflow-hidden shadow-inner flex items-center justify-center bg-[#438EB5] transition-colors duration-300" id="photoStage">
+<!-- Student Portrait Placeholder -->
+<img class="absolute inset-0 w-full h-full object-cover object-top mix-blend-normal z-0 select-none" data-alt="A clean professional student ID passport photo of an East Asian youth with a gentle warm smile, neutral collared shirt, head and shoulders framing, crisp sharp hair contour, studio lighting with soft fill, transparent alpha cutout look" id="portraitImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrC3xY7UddBeMeQ_X8z6Fj6Z-SbMFAmeNxgFHUTvxcq0BTEEPmJAbBQIXisFoCYvm0kc7U39YMMtDBrRVcK-Au56Vdn6OoXU9jKdueBe95o6oidtjnRjS7fyvi2E03j-N-yWQmRj2yQ3RWIUx6mxCBW2RSv3LjvB_1pNIw5zZiZqmaTUo-BC7shGPmYiC-KfKcGGGwEPl712qTcZgJcZ3D9qtdFqGxlWjDqSXAbM0U"/>
+<!-- Smart Alignment Overlay Guides -->
+<div class="absolute inset-0 z-10 pointer-events-none flex flex-col justify-between p-3 transition-opacity duration-300 opacity-90" id="alignmentOverlay">
+<!-- Top Safe Zone -->
+<div class="w-full flex justify-between items-center text-white/50 text-[10px] font-label-sm">
+<span>头顶安全区</span>
+<span class="material-symbols-outlined text-[14px]">height</span>
+</div>
+<!-- Eye Level Guide Line -->
+<div class="w-full relative flex items-center justify-center">
+<div class="w-full border-t border-dashed border-white/60"></div>
+<span class="absolute bg-on-surface/40 backdrop-blur-sm text-white px-2 py-0.5 rounded-full text-[9px] font-label-sm tracking-wider scale-90">眼睛参考线</span>
+</div>
+<!-- Shoulder Level Guide Line -->
+<div class="w-full relative flex items-center justify-center mb-4">
+<div class="w-full border-t border-dashed border-white/50"></div>
+<span class="absolute bg-on-surface/40 backdrop-blur-sm text-white px-2 py-0.5 rounded-full text-[9px] font-label-sm tracking-wider scale-90">肩水平基线</span>
+</div>
+<!-- Outer Framing Bounds -->
+<div class="absolute inset-2 rounded-sm border border-dashed border-white/40 pointer-events-none"></div>
+</div>
+<!-- AI Edge Matting Pill Badge -->
+<div class="absolute top-2.5 right-2.5 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-sm font-label-sm text-label-sm text-primary">
+<span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+<span>发丝级精细抠图</span>
+</div>
+</div>
+<!-- Quick Action Floating Control Bar -->
+<div class="flex items-center justify-center gap-2 mt-4 w-full">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-high text-text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-95 transition-all shadow-sm" id="toggleGuidesBtn" type="button">
+<span class="material-symbols-outlined text-[17px] text-text-secondary">crop</span>
+<span>微调裁剪</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-high text-text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-95 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[17px] text-primary" style="font-variation-settings: 'FILL' 1;">face_retouching_natural</span>
+<span>美颜光感 柔和</span>
+</button>
+<button class="py-2 px-3.5 rounded-full bg-surface-high text-text-secondary font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[17px]">photo_camera</span>
+<span>重选</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Background Color Changer Section -->
+<section class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-baseline justify-between px-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">palette</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">底色切换</h2>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">AI 智能边缘发丝级发丝精细抠图</span>
+</div>
+<!-- Color Circles Selector -->
+<div class="bg-surface-container rounded-lg p-space-md shadow-sm flex items-center justify-between">
+<!-- Sky Blue (Active Default) -->
+<button class="color-btn group flex flex-col items-center gap-1.5 focus:outline-none" data-color="#438EB5" type="button">
+<div class="w-11 h-11 rounded-full bg-[#438EB5] flex items-center justify-center shadow-md ring-4 ring-primary/30 transition-all scale-105">
+<span class="material-symbols-outlined text-white text-[20px] font-bold">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">天空蓝</span>
+</button>
+<!-- Pure White -->
+<button class="color-btn group flex flex-col items-center gap-1.5 focus:outline-none" data-color="#FFFFFF" type="button">
+<div class="w-11 h-11 rounded-full bg-[#FFFFFF] flex items-center justify-center shadow-md shadow-text-secondary/10 transition-all">
+<span class="material-symbols-outlined text-text-primary text-[20px] font-bold hidden">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">纯白</span>
+</button>
+<!-- China Red -->
+<button class="color-btn group flex flex-col items-center gap-1.5 focus:outline-none" data-color="#D32F2F" type="button">
+<div class="w-11 h-11 rounded-full bg-[#D32F2F] flex items-center justify-center shadow-md transition-all">
+<span class="material-symbols-outlined text-white text-[20px] font-bold hidden">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">中国红</span>
+</button>
+<!-- Gradient Blue -->
+<button class="color-btn group flex flex-col items-center gap-1.5 focus:outline-none" data-color="linear-gradient(180deg, #6EA8D9 0%, #407DB1 100%)" type="button">
+<div class="w-11 h-11 rounded-full bg-gradient-to-b from-[#6EA8D9] to-[#407DB1] flex items-center justify-center shadow-md transition-all">
+<span class="material-symbols-outlined text-white text-[20px] font-bold hidden">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">渐变蓝</span>
+</button>
+<!-- Premium Grey -->
+<button class="color-btn group flex flex-col items-center gap-1.5 focus:outline-none" data-color="#A0A5AA" type="button">
+<div class="w-11 h-11 rounded-full bg-[#A0A5AA] flex items-center justify-center shadow-md transition-all">
+<span class="material-symbols-outlined text-white text-[20px] font-bold hidden">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">高级灰</span>
+</button>
+</div>
+</section>
+<!-- Layout & Printing Options -->
+<section class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">print</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">排版输出格式</h2>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">支持自动排版对齐裁切线</span>
+</div>
+<!-- 2 Cards Layout Selector Grid -->
+<div class="grid grid-cols-1 gap-space-sm w-full">
+<!-- Option 1: Electronic Single File -->
+<div class="layout-card relative bg-surface-container rounded-lg p-space-md shadow-sm active:scale-[0.99] transition-all cursor-pointer flex items-center gap-space-md">
+<div class="w-14 h-16 rounded-DEFAULT bg-surface-high flex-shrink-0 flex flex-col items-center justify-center p-1 relative overflow-hidden shadow-inner">
+<div class="w-8 h-10 rounded-sm bg-[#438EB5] flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-[16px]">person</span>
+</div>
+<span class="text-[9px] font-label-sm text-text-secondary mt-1">单张JPG</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-text-primary">单张高清电子版</span>
+<div class="px-2 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm font-semibold">
+              免费领
+            </div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">高清无损 JPG 原图文件 · 像素级规范</p>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">¥0.00</span>
+<span class="font-label-sm text-label-sm text-text-secondary line-through">¥6.00</span>
+<span class="font-label-sm text-label-sm text-text-secondary ml-1">今日已领1次免费额度</span>
+</div>
+</div>
+<div class="radio-indicator w-5 h-5 rounded-full bg-surface-high flex items-center justify-center flex-shrink-0">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>
+</div>
+</div>
+<!-- Option 2: 6-Inch Print Layout (Selected Active) -->
+<div class="layout-card active relative bg-primary-container/30 rounded-lg p-space-md shadow-md active:scale-[0.99] transition-all cursor-pointer flex items-center gap-space-md">
+<!-- Visual Thumbnail (4x2 grid on 6-inch canvas) -->
+<div class="w-16 h-20 rounded-DEFAULT bg-white flex-shrink-0 p-1.5 flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="grid grid-cols-4 gap-1 w-full h-full">
+<div class="bg-[#438EB5] rounded-[2px]"></div>
+<div class="bg-[#438EB5] rounded-[2px]"></div>
+<div class="bg-[#438EB5] rounded-[2px]"></div>
+<div class="bg-[#438EB5] rounded-[2px]"></div>
+<div class="bg-[#438EB5] rounded-[2px]"></div>
+<div class="bg-[#438EB5] rounded-[2px]"></div>
+<div class="bg-[#438EB5] rounded-[2px]"></div>
+<div class="bg-[#438EB5] rounded-[2px]"></div>
+</div>
+<!-- Subtle cut guide markers in corners -->
+<div class="absolute inset-0 pointer-events-none border border-dashed border-primary/40 rounded-[6px]"></div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-text-primary">6寸冲印照 (8张合拼)</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-warm-yellow text-[#5A4500] font-label-sm text-label-sm font-semibold">推荐</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">8张一寸紧凑合排 · 附带专业激光裁剪虚线</p>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">¥2.00</span>
+<span class="font-label-sm text-label-sm text-text-secondary ml-1">现场即插即打 · 支持到店出纸</span>
+</div>
+</div>
+<div class="radio-indicator w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-white text-[14px] font-bold">check</span>
+</div>
+</div>
+</div>
+<!-- Paper Quality Micro-Banner -->
+<div class="flex items-center justify-between px-space-md py-2.5 rounded-DEFAULT bg-surface-container shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<span class="font-label-md text-label-md text-text-primary">富士高级专业光面相纸</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-text-secondary">
+<span>防刮花防水覆膜</span>
+<span class="material-symbols-outlined text-[16px] text-text-secondary">info</span>
+</div>
+</div>
+</section>
+<!-- Printable Sample Feature Showcase -->
+<section class="flex flex-col gap-space-xs mb-4">
+<div class="p-space-md bg-surface-container rounded-lg shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">contactless</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-lg text-label-lg text-text-primary">支持直接投送共享打印机</span>
+<p class="font-body-sm text-body-sm text-text-secondary truncate">生成后可在图书馆、宿舍打印点扫描机身二维码即刻出片</p>
+</div>
+</div>
+</section>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/85 backdrop-blur-xl px-margin py-3 shadow-[0_-4px_24px_rgba(32,184,176,0.12)] pb-safe">
+<div class="flex items-center justify-between gap-space-md max-w-lg mx-auto w-full">
+<!-- Left: Price Summary -->
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-label-md text-label-md text-text-secondary">合计</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary font-bold tracking-tight">¥2.00</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">含冲印数据与8张排版</span>
+</div>
+<!-- Right: Primary CTA -->
+<button class="flex-1 max-w-[230px] h-12 rounded-full bg-gradient-to-r from-primary to-[#73C9E8] text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" id="submitPrintBtn" type="button">
+<span>去打印排版照</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Color Changer Interaction
+  const photoStage = document.getElementById('photoStage');
+  const colorBtns = document.querySelectorAll('.color-btn');
+
+  colorBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Clear all active checkmarks and halo rings
+      colorBtns.forEach(b => {
+        const circle = b.querySelector('div');
+        const icon = b.querySelector('.material-symbols-outlined');
+        const label = b.querySelector('span:last-child');
+        
+        circle.classList.remove('ring-4', 'ring-primary/30', 'scale-105');
+        if (icon) icon.classList.add('hidden');
+        label.classList.remove('text-primary', 'font-semibold');
+        label.classList.add('text-text-secondary');
+      });
+
+      // Apply selection to current
+      const activeCircle = btn.querySelector('div');
+      const activeIcon = btn.querySelector('.material-symbols-outlined');
+      const activeLabel = btn.querySelector('span:last-child');
+
+      activeCircle.classList.add('ring-4', 'ring-primary/30', 'scale-105');
+      if (activeIcon) activeIcon.classList.remove('hidden');
+      activeLabel.classList.add('text-primary', 'font-semibold');
+      activeLabel.classList.remove('text-text-secondary');
+
+      // Update background of the photo preview
+      const targetColor = btn.getAttribute('data-color');
+      if (targetColor.startsWith('linear')) {
+        photoStage.style.background = targetColor;
+      } else {
+        photoStage.style.background = targetColor;
+      }
+    });
+  });
+
+  // Spec Selector Tabs Interaction
+  const specTabs = document.querySelectorAll('.spec-tab');
+  specTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      specTabs.forEach(t => {
+        t.className = 'spec-tab flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-text-secondary font-label-md text-label-md shadow-sm active:bg-surface-container-high transition-all';
+      });
+      tab.className = 'spec-tab active flex-shrink-0 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-md transition-all';
+    });
+  });
+
+  // Toggle Overlay Guides
+  const toggleGuidesBtn = document.getElementById('toggleGuidesBtn');
+  const alignmentOverlay = document.getElementById('alignmentOverlay');
+  let guidesVisible = true;
+
+  toggleGuidesBtn.addEventListener('click', () => {
+    guidesVisible = !guidesVisible;
+    alignmentOverlay.style.opacity = guidesVisible ? '0.9' : '0';
+    toggleGuidesBtn.classList.toggle('bg-primary-container', !guidesVisible);
+  });
+
+  // Print Layout Card Selection
+  const layoutCards = document.querySelectorAll('.layout-card');
+  layoutCards.forEach(card => {
+    card.addEventListener('click', () => {
+      layoutCards.forEach(c => {
+        c.classList.remove('active', 'bg-primary-container/30', 'shadow-md');
+        c.classList.add('bg-surface-container', 'shadow-sm');
+        const indicator = c.querySelector('.radio-indicator');
+        indicator.className = 'radio-indicator w-5 h-5 rounded-full bg-surface-high flex items-center justify-center flex-shrink-0';
+        indicator.innerHTML = '<div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>';
+      });
+
+      card.classList.add('active', 'bg-primary-container/30', 'shadow-md');
+      card.classList.remove('bg-surface-container', 'shadow-sm');
+      const indicator = card.querySelector('.radio-indicator');
+      indicator.className = 'radio-indicator w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0';
+      indicator.innerHTML = '<span class="material-symbols-outlined text-white text-[14px] font-bold">check</span>';
+    });
+  });
+</script></main></body></html>

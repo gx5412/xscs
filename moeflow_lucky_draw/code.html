@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#00201e", "tertiary": "#625881", "primary-fixed-dim": "#53dad1", "on-primary-fixed-variant": "#00504c", "background": "#f0fbff", "error": "#ba1a1a", "on-primary": "#ffffff", "primary-dark": "#168D89", "inverse-primary": "#53dad1", "on-surface-variant": "#3c4948", "secondary-container": "#88ddfd", "tertiary-fixed-dim": "#ccc0ef", "surface-container-high": "#d0edf6", "on-secondary-fixed-variant": "#004d61", "error-container": "#ffdad6", "surface-bright": "#f0fbff", "on-primary-container": "#004340", "surface-high": "#EAF5F6", "badge-mint": "#B9EBD9", "text-secondary": "#527078", "surface-container": "#d5f3fc", "on-tertiary-fixed": "#1e153a", "badge-peach": "#FFD8C8", "tertiary-fixed": "#e8ddff", "inverse-on-surface": "#d8f6ff", "surface": "#f0fbff", "on-background": "#011f26", "primary-fixed": "#74f7ee", "secondary-fixed-dim": "#7cd2f1", "on-secondary-fixed": "#001f28", "text-primary": "#18343B", "primary-container": "#20b8b0", "surface-tint": "#006a65", "on-tertiary": "#ffffff", "inverse-surface": "#18343b", "on-error": "#ffffff", "outline-variant": "#bbc9c7", "surface-dim": "#c2dfe8", "on-tertiary-fixed-variant": "#4a4168", "surface-container-lowest": "#ffffff", "secondary-fixed": "#b8eaff", "secondary": "#006780", "on-tertiary-container": "#3f355c", "surface-light": "#F4FBFC", "on-secondary": "#ffffff", "surface-container-highest": "#cae7f0", "on-error-container": "#93000a", "on-surface": "#011f26", "badge-warm-yellow": "#FFF3C4", "surface-container-low": "#e0f8ff", "secondary-on-container": "#153D52", "outline": "#C8E3E5", "surface-variant": "#cae7f0", "tertiary-container": "#ab9fcc", "on-secondary-container": "#00627a", "primary": "#006a65" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xl": "2rem", "margin": "1rem", "space-xs": "0.25rem", "margin-desktop": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "gutter": "1rem" }, "fontFamily": { "label-lg": ["Be Vietnam Pro"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-sm": ["Be Vietnam Pro"], "body-sm": ["Be Vietnam Pro"], "body-lg": ["Be Vietnam Pro"], "body-md": ["Be Vietnam Pro"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Be Vietnam Pro"], "display-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"] }, "fontSize": { "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col antialiased selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center min-w-0 flex-1"><button aria-label="返回" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high/60 active:scale-95 transition-all -ml-space-xs" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><h1 class="font-label-lg text-label-lg text-text-primary font-semibold tracking-tight truncate ml-space-xs select-none">幸运大转盘 · Moeflow Lucky Draw</h1></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="h-8 px-space-sm rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_2px_10px_rgba(32,184,176,0.08)] flex items-center gap-space-xs select-none"><button aria-label="更多选项" class="w-7 h-7 flex items-center justify-center rounded-full text-text-primary active:opacity-60 transition-opacity" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button><span class="w-px h-3.5 bg-outline/60"></span><button aria-label="关闭小程序" class="w-7 h-7 flex items-center justify-center rounded-full text-text-primary active:opacity-60 transition-opacity" type="button"><span class="material-symbols-outlined text-[17px]">radio_button_checked</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-[0_4px_12px_rgba(0,106,101,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-14 bg-surface pb-safe min-h-screen"><div class="flex flex-col w-full pb-10">
+<!-- Top Activity Banner & Ambient Lighting -->
+<section class="relative w-full px-margin pt-4 pb-2">
+<!-- Ambient Blur Spot -->
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-72 h-44 bg-gradient-to-b from-primary-fixed/40 via-secondary-container/20 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+<div class="relative bg-surface-container-lowest/85 backdrop-blur-xl rounded-lg p-5 shadow-[0_12px_32px_-6px_rgba(32,184,176,0.12)] overflow-hidden">
+<!-- Decorative light orb inside card -->
+<div class="absolute -right-10 -bottom-10 w-36 h-36 bg-gradient-to-tl from-primary/10 to-transparent rounded-full pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">local_activity</span>
+          开学狂欢季
+        </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+          100% 必中
+        </span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary font-bold tracking-tight mb-1">
+        校园开学季 · 幸运文印大转盘
+      </h2>
+<p class="font-body-sm text-body-sm text-text-secondary mb-4 leading-relaxed">
+        免费赢全学期打印免单与学霸 PRO 年卡，天天打印有礼！
+      </p>
+<!-- Draw Chance Pill Indicator -->
+<div class="flex items-center justify-between bg-surface-container-low/90 rounded-full px-3.5 py-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_2px_8px_rgba(32,184,176,0.3)]">
+<span class="material-symbols-outlined text-[16px]">toll</span>
+</div>
+<div class="font-body-sm text-body-sm text-text-primary">
+            当前可用 <span class="font-headline-sm text-headline-sm text-primary font-bold tabular-nums" id="draw-count-badge">2</span> 次抽奖机会
+          </div>
+</div>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:opacity-80 active:scale-95 transition-all" id="quick-exchange-btn" type="button">
+          50积分兑换+1
+        </button>
+</div>
+</div>
+</section>
+<!-- Live Marquee Winners Broadcast -->
+<section class="px-margin my-3">
+<div class="bg-surface-container-low/70 rounded-full px-3.5 py-2 flex items-center gap-2 overflow-hidden shadow-sm">
+<div class="flex items-center gap-1 text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[17px] animate-pulse" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<span class="font-label-sm text-label-sm font-semibold">中奖播报</span>
+</div>
+<div class="h-4.5 overflow-hidden relative flex-1">
+<div class="flex flex-col transition-transform duration-500" id="marquee-track">
+<div class="h-4.5 flex items-center text-text-secondary font-label-sm text-label-sm truncate">
+<span>恭喜 计算机学院 林* 抽中【学霸PRO月卡】</span>
+<span class="ml-auto text-outline-variant font-normal">1分钟前</span>
+</div>
+<div class="h-4.5 flex items-center text-text-secondary font-label-sm text-label-sm truncate">
+<span>恭喜 经管学院 陈** 抽中【¥5.00代金券】</span>
+<span class="ml-auto text-outline-variant font-normal">3分钟前</span>
+</div>
+<div class="h-4.5 flex items-center text-text-secondary font-label-sm text-label-sm truncate">
+<span>恭喜 外国语学院 张* 抽中【免单锦鲤卡】</span>
+<span class="ml-auto text-outline-variant font-normal">10分钟前</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lucky 8-Grid Interactive Wheel -->
+<section class="px-margin my-2">
+<div class="relative bg-surface-container-lowest/90 backdrop-blur-xl rounded-lg p-3.5 shadow-[0_16px_36px_-6px_rgba(32,184,176,0.18)]">
+<!-- Glow rim behind the grid -->
+<div class="absolute inset-2 bg-gradient-to-br from-primary-fixed/20 via-transparent to-secondary-container/20 rounded-lg pointer-events-none"></div>
+<!-- 3x3 Grid (8 perimeter prizes + center trigger button) -->
+<div class="relative grid grid-cols-3 gap-2 w-full aspect-square" id="raffle-grid">
+<!-- Slot 0: Top-Left (锦鲤卡 特等奖) -->
+<div class="lottery-card flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-container-low transition-all duration-200 select-none text-center" data-index="0">
+<div class="w-8 h-8 rounded-full bg-badge-peach flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[#5D2717] text-[18px]">verified</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-text-primary line-clamp-1">免单锦鲤卡</div>
+<div class="font-label-sm text-[10px] text-error font-medium">特等奖¥300</div>
+</div>
+<!-- Slot 1: Top-Center (学霸PRO) -->
+<div class="lottery-card flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-container-low transition-all duration-200 select-none text-center" data-index="1">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-tertiary text-[18px]">school</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-text-primary line-clamp-1">学霸PRO月卡</div>
+<div class="font-label-sm text-[10px] text-text-secondary">尊享85折</div>
+</div>
+<!-- Slot 2: Top-Right (¥5 代金券) -->
+<div class="lottery-card flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-container-low transition-all duration-200 select-none text-center" data-index="2">
+<div class="w-8 h-8 rounded-full bg-badge-warm-yellow flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[#5A4500] text-[18px]">payments</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-text-primary line-clamp-1">¥5.00代金券</div>
+<div class="font-label-sm text-[10px] text-text-secondary">无门槛减免</div>
+</div>
+<!-- Slot 7: Middle-Left (100积分) -->
+<div class="lottery-card flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-container-low transition-all duration-200 select-none text-center" data-index="7">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-secondary text-[18px]">card_giftcard</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-text-primary line-clamp-1">100积分礼包</div>
+<div class="font-label-sm text-[10px] text-text-secondary">兑换文具</div>
+</div>
+<!-- Center: Core Trigger Button -->
+<button class="relative group flex flex-col items-center justify-center p-2 rounded-2xl bg-gradient-to-br from-[#20B8B0] to-[#73C9E8] text-on-primary shadow-[0_8px_20px_rgba(32,184,176,0.35)] active:scale-95 transition-transform overflow-hidden cursor-pointer select-none" id="spin-button" type="button">
+<div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-[28px] mb-0.5" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-headline-sm text-[17px] font-bold tracking-wide">立即抽奖</span>
+<span class="font-label-sm text-[11px] opacity-90">剩 <span class="tabular-nums font-bold" id="spin-btn-count">2</span> 次</span>
+</button>
+<!-- Slot 3: Middle-Right (柯达冲印) -->
+<div class="lottery-card flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-container-low transition-all duration-200 select-none text-center" data-index="3">
+<div class="w-8 h-8 rounded-full bg-badge-mint flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[#135442] text-[18px]">photo_camera</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-text-primary line-clamp-1">柯达照片冲印</div>
+<div class="font-label-sm text-[10px] text-text-secondary">免费6寸3张</div>
+</div>
+<!-- Slot 6: Bottom-Left (彩印5页) -->
+<div class="lottery-card flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-container-low transition-all duration-200 select-none text-center" data-index="6">
+<div class="w-8 h-8 rounded-full bg-badge-mint flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[#135442] text-[18px]">palette</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-text-primary line-clamp-1">彩印5页特权</div>
+<div class="font-label-sm text-[10px] text-text-secondary">报告高光页</div>
+</div>
+<!-- Slot 5: Bottom-Center (胶装立减) -->
+<div class="lottery-card flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-container-low transition-all duration-200 select-none text-center" data-index="5">
+<div class="w-8 h-8 rounded-full bg-badge-warm-yellow flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[#5A4500] text-[18px]">auto_stories</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-text-primary line-clamp-1">¥1.00胶装券</div>
+<div class="font-label-sm text-[10px] text-text-secondary">毕业论文立减</div>
+</div>
+<!-- Slot 4: Bottom-Right (安慰奖10积分) -->
+<div class="lottery-card flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-container-low transition-all duration-200 select-none text-center" data-index="4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">sentiment_satisfied</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-text-primary line-clamp-1">谢谢参与</div>
+<div class="font-label-sm text-[10px] text-text-secondary">赠安慰奖10分</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Action & Record Entry Bar -->
+<section class="px-margin my-2 flex items-center justify-between gap-3">
+<button class="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-full bg-surface-container-low/90 text-text-primary font-label-md text-label-md active:bg-surface-container transition-colors shadow-sm" id="open-records-btn" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">receipt_long</span>
+<span>我的中奖记录</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-full bg-surface-container-low/90 text-text-primary font-label-md text-label-md active:bg-surface-container transition-colors shadow-sm" id="open-rules-btn" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">help</span>
+<span>活动抽奖规则</span>
+</button>
+</section>
+<!-- Channels to earn more draw chances -->
+<section class="px-margin mt-4">
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">获取更多抽奖机会</h3>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">每日零点刷新任务</span>
+</div>
+<div class="space-y-2.5">
+<!-- Task 1 -->
+<div class="bg-surface-container-lowest/90 backdrop-blur-md rounded-2xl p-3.5 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-badge-mint flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[#135442] text-[20px]">print</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-text-primary flex items-center gap-1.5">
+<span>每日到店打印出纸 1 次</span>
+<span class="px-1.5 py-0.2 rounded-full bg-badge-peach text-[#5D2717] text-[10px] font-semibold">+1次</span>
+</div>
+<div class="font-body-sm text-[12px] text-text-secondary mt-0.5">
+              前往校园任何文印终端出纸即可达成
+            </div>
+</div>
+</div>
+<div class="flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold px-3 py-1.5 rounded-full bg-surface-container-low flex-shrink-0">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>今日 1/1</span>
+</div>
+</div>
+<!-- Task 2 -->
+<div class="bg-surface-container-lowest/90 backdrop-blur-md rounded-2xl p-3.5 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">group_add</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-text-primary flex items-center gap-1.5">
+<span>邀请 1 位新校友绑定</span>
+<span class="px-1.5 py-0.2 rounded-full bg-badge-peach text-[#5D2717] text-[10px] font-semibold">+2次</span>
+</div>
+<div class="font-body-sm text-[12px] text-text-secondary mt-0.5">
+              邀请未注册校友扫码完成微信绑定
+            </div>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-sm text-label-sm font-semibold shadow-sm active:scale-95 transition-all flex-shrink-0" onclick="alert('已生成专属邀请卡，可转发给微信班级群！')" type="button">
+          去邀请
+        </button>
+</div>
+<!-- Task 3 -->
+<div class="bg-surface-container-lowest/90 backdrop-blur-md rounded-2xl p-3.5 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-badge-warm-yellow flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[#5A4500] text-[20px]">toll</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-text-primary flex items-center gap-1.5">
+<span>消耗 50 积分兑换</span>
+<span class="px-1.5 py-0.2 rounded-full bg-badge-mint text-[#135442] text-[10px] font-semibold">+1次</span>
+</div>
+<div class="font-body-sm text-[12px] text-text-secondary mt-0.5">
+              当前可用积分: <span class="font-semibold text-text-primary tabular-nums">480</span> 分
+            </div>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-secondary-container text-secondary-on-container font-label-sm text-label-sm font-semibold active:scale-95 transition-all flex-shrink-0" id="task-exchange-btn" type="button">
+          去兑换
+        </button>
+</div>
+</div>
+</section>
+<!-- Rules Modal Dialog -->
+<div class="fixed inset-0 z-50 bg-on-background/40 backdrop-blur-sm hidden flex items-center justify-center p-margin" id="rules-modal">
+<div class="bg-surface-container-lowest rounded-lg max-w-sm w-full p-5 shadow-2xl relative">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">活动规则与奖品说明</h3>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-text-secondary active:scale-95" id="close-rules-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="font-body-sm text-body-sm text-text-secondary space-y-2.5 max-h-80 overflow-y-auto pr-1">
+<p>1. <strong class="text-text-primary">活动时间：</strong>2025年秋季开学阶段（即日起至学期第4周周日24:00止）。</p>
+<p>2. <strong class="text-text-primary">抽奖资格：</strong>全日制在校师生均可参与，每日初始赠送1次，完成出纸打印再得1次。</p>
+<p>3. <strong class="text-text-primary">特等奖发放：</strong>全学期打印免单锦鲤卡含300元账户打印金，有效期至本学期末。</p>
+<p>4. <strong class="text-text-primary">代金券与特权：</strong>中奖后即时充入当前微信绑定账户，出纸结算时自动优先抵扣。</p>
+<p>5. 本活动严禁任何作弊刷单行为，文印中心对本次活动保留最终解释权。</p>
+</div>
+<button class="w-full mt-4 py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold active:opacity-90" id="confirm-rules-btn" type="button">
+        我知道了
+      </button>
+</div>
+</div>
+<!-- Prize Won Success Modal -->
+<div class="fixed inset-0 z-50 bg-on-background/45 backdrop-blur-md hidden flex items-center justify-center p-margin" id="result-modal">
+<div class="bg-surface-container-lowest rounded-lg max-w-sm w-full p-6 text-center shadow-2xl relative overflow-hidden">
+<!-- Ambient celebratory glow -->
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 w-48 h-48 bg-primary-fixed-dim/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative w-16 h-16 rounded-full bg-badge-mint text-[#135442] mx-auto flex items-center justify-center mb-3 shadow-[0_4px_16px_rgba(32,184,176,0.3)]">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">celebration</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold mb-1">恭喜获得好礼！</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-4">幸运降临，奖品已自动存入卡包</p>
+<div class="bg-surface-container-low rounded-2xl p-4 mb-5">
+<div class="font-headline-sm text-headline-sm text-primary font-bold" id="won-prize-title">全学期打印免单锦鲤卡</div>
+<div class="font-label-sm text-label-sm text-text-secondary mt-1" id="won-prize-desc">特等奖 · 价值 ¥300</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-2.5 rounded-full bg-surface-container text-text-primary font-label-md text-label-md font-semibold active:opacity-80" id="close-result-btn" type="button">
+          稍后查看
+        </button>
+<button class="flex-1 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-sm active:scale-95 transition-all" id="goto-wallet-btn" type="button">
+          立即使用
+        </button>
+</div>
+</div>
+</div>
+<!-- Records Drawer Modal -->
+<div class="fixed inset-0 z-50 bg-on-background/40 backdrop-blur-sm hidden flex items-end justify-center" id="records-modal">
+<div class="bg-surface-container-lowest rounded-t-3xl max-w-md w-full p-5 shadow-2xl relative max-h-[663px] flex flex-col">
+<div class="w-10 h-1 bg-outline/60 rounded-full mx-auto mb-3 flex-shrink-0"></div>
+<div class="flex items-center justify-between mb-4 flex-shrink-0">
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">我的中奖记录</h3>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-text-secondary" id="close-records-x" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="overflow-y-auto space-y-3 flex-1 pr-1 pb-safe">
+<div class="flex items-center justify-between p-3 rounded-2xl bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-badge-warm-yellow flex items-center justify-center text-[#5A4500]">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-text-primary font-semibold">¥5.00 无门槛打印代金券</div>
+<div class="font-label-sm text-[11px] text-text-secondary">2025-09-08 14:22:10</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm font-semibold">已入账</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-2xl bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">card_giftcard</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-text-primary font-semibold">100 积分大礼包</div>
+<div class="font-label-sm text-[11px] text-text-secondary">2025-09-07 10:15:43</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm font-semibold">已入账</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-2xl bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-badge-mint flex items-center justify-center text-[#135442]">
+<span class="material-symbols-outlined text-[18px]">palette</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-text-primary font-semibold">免费彩色打印 5 页特权</div>
+<div class="font-label-sm text-[11px] text-text-secondary">2025-09-05 18:30:19</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-text-secondary font-label-sm text-label-sm font-semibold">已使用</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initRaffle() {
+    let chances = 2;
+    let isSpinning = false;
+    let currentIndex = 0;
+    const totalSlots = 8;
+
+    // Grid order mapped to indices: 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
+    const prizes = [
+      { name: "免单锦鲤卡", desc: "特等奖 · 价值 ¥300" },
+      { name: "学霸 PRO 会员月卡", desc: "尊享 85 折 · 尊贵标识" },
+      { name: "¥5.00 打印代金券", desc: "无门槛直接抵扣" },
+      { name: "柯达 6寸 照片 3 张", desc: "冲印特权 · 纸质永存" },
+      { name: "谢谢参与", desc: "安慰礼已到账 · 10 积分" },
+      { name: "¥1.00 胶装立减券", desc: "毕业设计论文专享" },
+      { name: "免费彩印 5 页特权", desc: "全彩高光出纸" },
+      { name: "100 积分大礼包", desc: "已存入个人积分池" }
+    ];
+
+    const spinBtn = document.getElementById('spin-button');
+    const badgeCount = document.getElementById('draw-count-badge');
+    const spinBtnCount = document.getElementById('spin-btn-count');
+    const cards = Array.from(document.querySelectorAll('.lottery-card'));
+
+    function updateCounts() {
+      badgeCount.textContent = chances;
+      spinBtnCount.textContent = chances;
+    }
+
+    function highlightSlot(idx) {
+      cards.forEach(card => {
+        const cIdx = parseInt(card.getAttribute('data-index'), 10);
+        if (cIdx === idx) {
+          card.classList.remove('bg-surface-container-low');
+          card.classList.add('bg-primary-container', 'text-on-primary', 'scale-[1.04]', 'shadow-lg');
+          const subText = card.querySelectorAll('div')[1];
+          if (subText) subText.classList.add('text-on-primary');
+        } else {
+          card.classList.remove('bg-primary-container', 'text-on-primary', 'scale-[1.04]', 'shadow-lg');
+          card.classList.add('bg-surface-container-low');
+          const subText = card.querySelectorAll('div')[1];
+          if (subText) subText.classList.remove('text-on-primary');
+        }
+      });
+    }
+
+    function runLottery(targetIndex) {
+      if (isSpinning) return;
+      if (chances <= 0) {
+        alert("今日抽奖机会已用尽，可通过下方通道兑换或完成任务获得！");
+        return;
+      }
+
+      isSpinning = true;
+      chances--;
+      updateCounts();
+
+      let currentStep = 0;
+      const minRounds = 3;
+      const totalSteps = minRounds * totalSlots + ((targetIndex - currentIndex + totalSlots) % totalSlots);
+      let stepSpeed = 60;
+
+      function step() {
+        currentIndex = (currentIndex + 1) % totalSlots;
+        highlightSlot(currentIndex);
+        currentStep++;
+
+        if (currentStep < totalSteps) {
+          if (totalSteps - currentStep < 8) {
+            stepSpeed += 30; // Decelerate smoothly at end
+          }
+          setTimeout(step, stepSpeed);
+        } else {
+          // Completed
+          setTimeout(() => {
+            isSpinning = false;
+            showResultModal(targetIndex);
+          }, 300);
+        }
+      }
+
+      step();
+    }
+
+    function showResultModal(targetIndex) {
+      const prize = prizes[targetIndex];
+      document.getElementById('won-prize-title').textContent = prize.name;
+      document.getElementById('won-prize-desc').textContent = prize.desc;
+      document.getElementById('result-modal').classList.remove('hidden');
+    }
+
+    spinBtn.addEventListener('click', () => {
+      // Pick random prize weighted towards fun gifts, e.g. slot 2 or 6 or 0
+      const outcomes = [1, 2, 3, 4, 6, 7]; // standard random distribution
+      const selected = outcomes[Math.floor(Math.random() * outcomes.length)];
+      runLottery(selected);
+    });
+
+    // Exchange Interactions
+    function handleExchange() {
+      if (confirm("是否消耗 50 积分兑换 1 次抽奖机会？")) {
+        chances += 1;
+        updateCounts();
+        alert("兑换成功！已增加 1 次抽奖机会。");
+      }
+    }
+    document.getElementById('quick-exchange-btn').addEventListener('click', handleExchange);
+    document.getElementById('task-exchange-btn').addEventListener('click', handleExchange);
+
+    // Modal Triggers
+    const rulesModal = document.getElementById('rules-modal');
+    document.getElementById('open-rules-btn').addEventListener('click', () => rulesModal.classList.remove('hidden'));
+    document.getElementById('close-rules-btn').addEventListener('click', () => rulesModal.classList.add('hidden'));
+    document.getElementById('confirm-rules-btn').addEventListener('click', () => rulesModal.classList.add('hidden'));
+
+    const recordsModal = document.getElementById('records-modal');
+    document.getElementById('open-records-btn').addEventListener('click', () => recordsModal.classList.remove('hidden'));
+    document.getElementById('close-records-x').addEventListener('click', () => recordsModal.classList.add('hidden'));
+
+    const resultModal = document.getElementById('result-modal');
+    document.getElementById('close-result-btn').addEventListener('click', () => resultModal.classList.add('hidden'));
+    document.getElementById('goto-wallet-btn').addEventListener('click', () => {
+      resultModal.classList.add('hidden');
+      alert("跳转至「我的卡包」查看并立即使用。");
+    });
+
+    // Marquee Auto Roll
+    const marqueeTrack = document.getElementById('marquee-track');
+    let marqueeIdx = 0;
+    setInterval(() => {
+      marqueeIdx = (marqueeIdx + 1) % 3;
+      marqueeTrack.style.transform = `translateY(-${marqueeIdx * 18}px)`;
+    }, 3200);
+
+    // Initial highlight on first slot
+    highlightSlot(0);
+  })();
+</script></main></body></html>

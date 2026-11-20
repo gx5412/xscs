@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#e0f8ff", "secondary-fixed": "#b8eaff", "on-error-container": "#93000a", "surface-variant": "#cae7f0", "on-tertiary-fixed-variant": "#4a4168", "on-primary-fixed-variant": "#00504c", "secondary-on-container": "#153D52", "secondary-fixed-dim": "#7cd2f1", "outline-variant": "#bbc9c7", "surface-container": "#d5f3fc", "badge-mint": "#B9EBD9", "on-tertiary-fixed": "#1e153a", "on-tertiary-container": "#3f355c", "on-background": "#011f26", "tertiary": "#625881", "on-tertiary": "#ffffff", "tertiary-container": "#ab9fcc", "badge-peach": "#FFD8C8", "primary-dark": "#168D89", "primary-fixed": "#74f7ee", "on-secondary-container": "#00627a", "on-error": "#ffffff", "badge-warm-yellow": "#FFF3C4", "on-secondary": "#ffffff", "surface": "#f0fbff", "on-primary-fixed": "#00201e", "inverse-primary": "#53dad1", "on-primary-container": "#004340", "on-secondary-fixed": "#001f28", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "on-surface-variant": "#3c4948", "text-secondary": "#527078", "on-surface": "#011f26", "error-container": "#ffdad6", "secondary": "#006780", "primary": "#006a65", "surface-container-highest": "#cae7f0", "background": "#f0fbff", "inverse-on-surface": "#d8f6ff", "primary-fixed-dim": "#53dad1", "surface-container-high": "#d0edf6", "surface-high": "#EAF5F6", "inverse-surface": "#18343b", "surface-light": "#F4FBFC", "on-primary": "#ffffff", "text-primary": "#18343B", "outline": "#C8E3E5", "tertiary-fixed": "#e8ddff", "secondary-container": "#D7F0FA", "primary-container": "#20b8b0", "surface-bright": "#f0fbff", "surface-tint": "#006a65", "on-secondary-fixed-variant": "#004d61", "tertiary-fixed-dim": "#ccc0ef", "surface-dim": "#c2dfe8" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "gutter-desktop": "1.5rem", "gutter": "1rem", "space-xl": "2rem", "space-md": "1rem", "margin": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-desktop": "2.5rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "body-md": ["Be Vietnam Pro"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-sm": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-sm": ["Be Vietnam Pro"], "body-lg": ["Be Vietnam Pro"] }, fontSize: { "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }] } } } }</script><style>@layer base { html, body { margin: 0; padding: 0; width: 100%; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="返回" class="w-11 h-11 -ml-space-xs flex items-center justify-center text-text-primary rounded-full hover:bg-surface-high/50 transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[170px]">Merchant Remote</h1></div><div class="flex items-center gap-space-sm"><div class="flex items-center bg-white/70 backdrop-blur-md rounded-full px-space-sm py-space-xs shadow-[0_2px_8px_rgba(32,184,176,0.08)]"><button aria-label="小程序更多操作" class="w-11 h-11 flex items-center justify-center text-text-secondary hover:text-text-primary" type="button"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button><div class="w-px h-4 bg-outline-variant/40"></div><button aria-label="小程序退出" class="w-11 h-11 flex items-center justify-center text-text-secondary hover:text-text-primary" type="button"><span class="material-symbols-outlined text-[18px]">adjust</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-safe"><div class="flex flex-col w-full pb-8 space-y-4">
+<!-- Dynamic Notification / Live Toast Container -->
+<div class="hidden fixed top-20 left-4 right-4 z-50 p-4 rounded-xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl flex items-center justify-between transition-all duration-300" id="actionToast">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-primary text-[22px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-text-primary" id="toastMsg">指令已安全下发至云印盒子</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary font-mono">MQTT:ACK</span>
+</div>
+<!-- Machine Selector & Live Status Banner -->
+<div class="px-margin pt-2">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md rounded-lg p-5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)]">
+<!-- Selector Dropdown Pill -->
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">print</span>
+<span class="font-label-md text-label-md text-text-secondary">当前目标机台</span>
+</div>
+<div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-surface-container text-secondary-on-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span>切换节点</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mb-3">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">科技园 A座 01号</h2>
+<p class="font-label-sm text-label-sm text-text-secondary font-mono mt-0.5">MF-RICOH-8821 · 理光高速双面一体机</p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm font-semibold flex items-center space-x-1">
+<span class="w-2 h-2 rounded-full bg-[#135442] animate-pulse"></span>
+<span>在线就绪</span>
+</span>
+</div>
+<!-- Live Metadata Pills -->
+<div class="flex flex-wrap items-center gap-2 pt-2 pb-4">
+<div class="flex items-center space-x-1 px-2.5 py-1 rounded-full bg-surface-container-low text-text-primary text-label-sm font-label-sm font-mono">
+<span class="material-symbols-outlined text-primary text-[14px]">cell_tower</span>
+<span>18ms (4G IoT 专网)</span>
+</div>
+<div class="flex items-center space-x-1 px-2.5 py-1 rounded-full bg-surface-container-low text-text-primary text-label-sm font-label-sm font-mono">
+<span class="material-symbols-outlined text-secondary text-[14px]">verified</span>
+<span>固件 v4.2.8-stable</span>
+</div>
+<div class="flex items-center space-x-1 px-2.5 py-1 rounded-full bg-surface-container-low text-text-primary text-label-sm font-label-sm font-mono">
+<span class="material-symbols-outlined text-primary text-[14px]">lock</span>
+<span>TLS 1.3 双向加密</span>
+</div>
+</div>
+<!-- Realtime Hardware Gauges (3-Column Bento) -->
+<div class="grid grid-cols-3 gap-2.5 pt-3">
+<div class="bg-surface-container-low/70 rounded-xl p-3 flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-secondary">
+<span class="font-label-sm text-label-sm">CPU 负载</span>
+<span class="material-symbols-outlined text-[16px] text-primary">memory</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-sm text-headline-sm text-text-primary font-mono tabular-nums">14%</span>
+<div class="w-full h-1.5 bg-surface-variant rounded-full mt-1.5 overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 14%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary mt-1 block">低负载运行</span>
+</div>
+</div>
+<div class="bg-surface-container-low/70 rounded-xl p-3 flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-secondary">
+<span class="font-label-sm text-label-sm">定影机芯</span>
+<span class="material-symbols-outlined text-[16px] text-primary">thermostat</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-sm text-headline-sm text-text-primary font-mono tabular-nums">32°C</span>
+<div class="w-full h-1.5 bg-surface-variant rounded-full mt-1.5 overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 32%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-[#135442] mt-1 block font-medium">恒温正常</span>
+</div>
+</div>
+<div class="bg-surface-container-low/70 rounded-xl p-3 flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-secondary">
+<span class="font-label-sm text-label-sm">内存占用</span>
+<span class="material-symbols-outlined text-[16px] text-primary">storage</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-sm text-headline-sm text-text-primary font-mono tabular-nums">38%</span>
+<div class="w-full h-1.5 bg-surface-variant rounded-full mt-1.5 overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 38%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary mt-1 block">缓存充裕</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick IoT Command Deck (4-Grid Interactive Cards) -->
+<div class="px-margin">
+<div class="flex items-center justify-between mb-2.5">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">远程指令中枢</h3>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center">
+<span class="material-symbols-outlined text-[16px] text-primary mr-1">bolt</span>
+        端云秒级执行
+      </span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Command 1: Restart Terminal -->
+<button class="bg-surface-container-lowest/90 backdrop-blur-sm p-4 rounded-xl text-left shadow-[0_4px_16px_rgba(32,184,176,0.06)] active:scale-[0.98] transition-all flex flex-col justify-between group" onclick="triggerCmd('远程重启终端', 'sys_reboot')" type="button">
+<div class="flex items-center justify-between mb-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">restart_alt</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px] group-hover:text-primary transition-colors">touch_app</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-text-primary block font-semibold">远程重启终端</span>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5 block">安全注销任务队列并软启动</span>
+</div>
+</button>
+<!-- Command 2: Paper Clearing / Ejection -->
+<button class="bg-surface-container-lowest/90 backdrop-blur-sm p-4 rounded-xl text-left shadow-[0_4px_16px_rgba(32,184,176,0.06)] active:scale-[0.98] transition-all flex flex-col justify-between group" onclick="triggerCmd('纸路强制吐纸', 'paper_purge')" type="button">
+<div class="flex items-center justify-between mb-3">
+<div class="w-10 h-10 rounded-full bg-badge-peach flex items-center justify-center text-[#5D2717]">
+<span class="material-symbols-outlined text-[20px]">eject</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px] group-hover:text-primary transition-colors">touch_app</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-text-primary block font-semibold">纸路强制吐纸</span>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5 block">辊轮反转清理残留夹纸</span>
+</div>
+</button>
+<!-- Command 3: Nozzle/Laser Calibration -->
+<button class="bg-surface-container-lowest/90 backdrop-blur-sm p-4 rounded-xl text-left shadow-[0_4px_16px_rgba(32,184,176,0.06)] active:scale-[0.98] transition-all flex flex-col justify-between group" onclick="triggerCmd('激光器自洁校准', 'laser_calibrate')" type="button">
+<div class="flex items-center justify-between mb-3">
+<div class="w-10 h-10 rounded-full bg-badge-warm-yellow flex items-center justify-center text-[#5A4500]">
+<span class="material-symbols-outlined text-[20px]">auto_fix_high</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px] group-hover:text-primary transition-colors">touch_app</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-text-primary block font-semibold">激光器自洁校准</span>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5 block">光感除尘并重置色彩偏度</span>
+</div>
+</button>
+<!-- Command 4: Restart Cloud Box -->
+<button class="bg-surface-container-lowest/90 backdrop-blur-sm p-4 rounded-xl text-left shadow-[0_4px_16px_rgba(32,184,176,0.06)] active:scale-[0.98] transition-all flex flex-col justify-between group" onclick="triggerCmd('重启 IoT 云印盒子', 'gateway_reset')" type="button">
+<div class="flex items-center justify-between mb-3">
+<div class="w-10 h-10 rounded-full bg-badge-mint flex items-center justify-center text-[#135442]">
+<span class="material-symbols-outlined text-[20px]">router</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px] group-hover:text-primary transition-colors">touch_app</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-text-primary block font-semibold">重启云印盒子</span>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5 block">重连内网并刷新 MQTT 通道</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Consumables Status & Motor Wear Telemetry -->
+<div class="px-margin">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md rounded-lg p-5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)]">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">耗材与机件运转健康</h3>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">实测感应</span>
+</div>
+<div class="space-y-4">
+<!-- Paper Tray 1 (A4) -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center space-x-2">
+<span class="font-label-md text-label-md text-text-primary font-medium">1号纸盒 (A4 标准)</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm font-semibold">余量充足</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-primary font-mono tabular-nums font-semibold">85% · 约 420 张</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-primary to-primary-container" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Paper Tray 2 (A3) -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center space-x-2">
+<span class="font-label-md text-label-md text-text-primary font-medium">2号纸盒 (A3 高画质)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary-on-container font-label-sm text-label-sm">状态正常</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-primary font-mono tabular-nums font-semibold">60% · 约 180 张</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-secondary to-secondary-fixed-dim" style="width: 60%;"></div>
+</div>
+</div>
+<!-- Black Toner -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center space-x-2">
+<span class="font-label-md text-label-md text-text-primary font-medium">原装黑色碳粉仓 (BK)</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm font-semibold">良好</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-primary font-mono tabular-nums font-semibold">74% · 预计可印 3,200 页</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full rounded-full bg-[#18343B]" style="width: 74%;"></div>
+</div>
+</div>
+<!-- Waste Toner Box & Feed Roller (Split Bento) -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<div class="bg-surface-container-low/60 rounded-xl p-3">
+<div class="flex items-center justify-between mb-1 text-text-secondary">
+<span class="font-label-sm text-label-sm">废粉回收箱</span>
+<span class="material-symbols-outlined text-[16px] text-primary">delete_sweep</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="font-headline-sm text-headline-sm text-text-primary font-mono tabular-nums">12%</span>
+<span class="font-label-sm text-label-sm text-[#135442] font-medium">负荷安全</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 12%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-low/60 rounded-xl p-3">
+<div class="flex items-center justify-between mb-1 text-text-secondary">
+<span class="font-label-sm text-label-sm">搓纸轮与切刀</span>
+<span class="material-symbols-outlined text-[16px] text-primary">cyclone</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="font-headline-sm text-headline-sm text-text-primary font-mono tabular-nums">89%</span>
+<span class="font-label-sm text-label-sm text-[#135442] font-medium">寿命健康</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 89%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Terminal Log & Realtime Heartbeat Stream -->
+<div class="px-margin">
+<div class="bg-[#18343B] text-surface-container-lowest rounded-lg p-4 shadow-[0_8px_24px_rgba(24,52,59,0.18)]">
+<div class="flex items-center justify-between pb-3 border-b border-surface-variant/20">
+<div class="flex items-center space-x-2">
+<div class="w-2.5 h-2.5 rounded-full bg-badge-mint animate-pulse"></div>
+<span class="font-label-sm text-label-sm text-surface-container-low font-mono tracking-wide">MoeFlow-Edge://tty.iot01</span>
+</div>
+<div class="flex items-center space-x-2">
+<button class="text-surface-variant hover:text-white transition-colors" onclick="clearLogs()" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/10 text-badge-mint font-label-sm text-label-sm font-mono">LIVE</span>
+</div>
+</div>
+<!-- Code Terminal Content -->
+<div class="font-mono text-label-sm space-y-2 pt-3 h-36 overflow-y-auto pr-1" id="terminalBody">
+<div class="text-secondary-fixed">
+<span class="text-surface-variant/60">[15:42:01]</span> HEARTBEAT_ACK: machine_state=IDLE, temp=32.1C, wifi_rssi=-54dBm
+        </div>
+<div class="text-badge-mint">
+<span class="text-surface-variant/60">[15:40:12]</span> PRINT_JOB_DONE: order_id=MP202410240982, pages=24, cost_time=18s
+        </div>
+<div class="text-surface-container-low">
+<span class="text-surface-variant/60">[15:35:00]</span> SENSOR_CHECK: feeder_optical_sensor=OK, tray1_limit=OK
+        </div>
+<div class="text-badge-peach">
+<span class="text-surface-variant/60">[15:30:22]</span> MQTT_PING: latency=18ms, cloud_gateway=moeflow-iot-east-2
+        </div>
+</div>
+</div>
+</div>
+<!-- Firmware & Configuration Management Card -->
+<div class="px-margin">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md rounded-lg p-5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">system_update</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">固件与智能省电</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-warm-yellow text-[#5A4500] font-label-sm text-label-sm font-semibold">有更新</span>
+</div>
+<!-- OTA Upgrade Banner -->
+<div class="p-3.5 rounded-xl bg-surface-container-low/80 flex items-center justify-between">
+<div class="flex-1 pr-3">
+<div class="flex items-center space-x-1.5">
+<span class="font-label-md text-label-md text-text-primary font-semibold">最新版本 v4.3.0 可用</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">支持闲时自动静默写入，优化微孔激光校准算法</p>
+</div>
+<button class="px-3.5 py-2 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold whitespace-nowrap active:scale-95 transition-transform shadow-[0_4px_12px_rgba(32,184,176,0.25)]" onclick="triggerOTA()" type="button">
+          静默 OTA
+        </button>
+</div>
+<!-- Sleep Timer Toggle Item -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex-1 pr-4">
+<span class="font-label-md text-label-md text-text-primary font-medium block">空闲自动休眠节能</span>
+<span class="font-body-sm text-body-sm text-text-secondary block mt-0.5">无打印任务 10 分钟后定影温控转入超低功耗模式</span>
+</div>
+<!-- Pill Switch Component -->
+<button class="w-12 h-7 bg-primary rounded-full relative transition-colors duration-200 focus:outline-none p-0.5 flex-shrink-0" id="sleepToggle" onclick="toggleSwitch(this)" type="button">
+<div class="w-6 h-6 bg-white rounded-full transition-transform duration-200 transform translate-x-5 shadow-sm"></div>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Action Deck: Emergency Offline & Self-Test -->
+<div class="px-margin pt-2 pb-6 space-y-3">
+<div class="grid grid-cols-2 gap-3">
+<!-- Emergency Pause / Offline Maintenance Button -->
+<button class="h-12 rounded-full bg-error-container text-on-error-container font-label-md text-label-md font-semibold flex items-center justify-center space-x-1.5 active:scale-95 transition-transform" onclick="confirmOffline()" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+<span>暂停接单 (下线维护)</span>
+</button>
+<!-- Primary Full Self-Test Button -->
+<button class="h-12 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center space-x-1.5 shadow-[0_6px_18px_rgba(32,184,176,0.30)] active:scale-95 transition-transform" onclick="runSelfTest()" type="button">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+<span>执行全面自检</span>
+</button>
+</div>
+<div class="text-center">
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center justify-center space-x-1">
+<span class="material-symbols-outlined text-[14px] text-primary">security</span>
+<span>MoeFlow IoT Cloud Engine · 链路处于安全监护中</span>
+</span>
+</div>
+</div>
+</div>
+<script>
+  function triggerCmd(name, action) {
+    showToast('已向终端推送指令: ' + name);
+    appendLog('[15:43:08] REMOTE_EXEC: cmd=' + action + ', operator=MERCHANT_ADMIN, status=SENT');
+  }
+
+  function triggerOTA() {
+    showToast('已预约凌晨 03:00 静默 OTA 升级 v4.3.0');
+    appendLog('[15:43:15] OTA_SCHEDULE: target=v4.3.0-stable, window=03:00-04:00');
+  }
+
+  function runSelfTest() {
+    showToast('正在轮询全机光电传感器与电机状态...');
+    appendLog('[15:43:22] DIAGNOSTIC_START: sensors=12, rollers=4, laser_engine=1');
+  }
+
+  function confirmOffline() {
+    if (confirm('确认将当前机台设为暂停接单维护状态？已接收的任务仍将打印完毕。')) {
+      showToast('终端已切换为“暂停接单·维护中”');
+      appendLog('[15:43:30] QUEUE_STATE_CHANGE: allow_new_order=FALSE, reason=MAINTENANCE');
+    }
+  }
+
+  function toggleSwitch(btn) {
+    const knob = btn.querySelector('div');
+    const isChecked = btn.classList.contains('bg-primary');
+    if (isChecked) {
+      btn.classList.remove('bg-primary');
+      btn.classList.add('bg-outline-variant');
+      knob.classList.remove('translate-x-5');
+      knob.classList.add('translate-x-0');
+      showToast('已关闭 10 分钟自动节能休眠');
+    } else {
+      btn.classList.remove('bg-outline-variant');
+      btn.classList.add('bg-primary');
+      knob.classList.remove('translate-x-0');
+      knob.classList.add('translate-x-5');
+      showToast('已开启 10 分钟自动节能休眠');
+    }
+  }
+
+  function appendLog(line) {
+    const terminal = document.getElementById('terminalBody');
+    if (terminal) {
+      const el = document.createElement('div');
+      el.className = 'text-badge-mint animate-pulse';
+      el.innerText = line;
+      terminal.prepend(el);
+    }
+  }
+
+  function clearLogs() {
+    const terminal = document.getElementById('terminalBody');
+    if (terminal) {
+      terminal.innerHTML = '<div class="text-surface-variant/60">[00:00:00] LOG_BUFFER_CLEARED_BY_USER</div>';
+      showToast('实时心跳日志已清空');
+    }
+  }
+
+  function showToast(text) {
+    const toast = document.getElementById('actionToast');
+    const msg = document.getElementById('toastMsg');
+    if (toast && msg) {
+      msg.innerText = text;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2500);
+    }
+  }
+</script></main></body></html>

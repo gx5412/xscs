@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-fixed-variant": "#004d61", "text-primary": "#18343B", "on-tertiary": "#ffffff", "inverse-surface": "#18343b", "on-primary-container": "#004340", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "secondary": "#006780", "badge-warm-yellow": "#FFF3C4", "surface-tint": "#006a65", "tertiary-container": "#ab9fcc", "on-surface": "#011f26", "surface-container-high": "#d0edf6", "secondary-container": "#D7F0FA", "on-background": "#011f26", "on-secondary-fixed": "#001f28", "primary-container": "#20b8b0", "on-primary-fixed": "#00201e", "primary": "#006a65", "tertiary-fixed-dim": "#ccc0ef", "on-surface-variant": "#3c4948", "on-tertiary-container": "#3f355c", "on-primary": "#ffffff", "primary-dark": "#168D89", "tertiary-fixed": "#e8ddff", "surface-container-highest": "#cae7f0", "on-tertiary-fixed": "#1e153a", "primary-fixed": "#74f7ee", "on-tertiary-fixed-variant": "#4a4168", "surface-high": "#EAF5F6", "outline-variant": "#bbc9c7", "surface-variant": "#cae7f0", "badge-peach": "#FFD8C8", "on-primary-fixed-variant": "#00504c", "surface-container-low": "#e0f8ff", "surface-light": "#F4FBFC", "tertiary": "#625881", "outline": "#C8E3E5", "secondary-fixed": "#b8eaff", "primary-fixed-dim": "#53dad1", "badge-mint": "#B9EBD9", "surface-dim": "#c2dfe8", "secondary-fixed-dim": "#7cd2f1", "surface": "#f0fbff", "secondary-on-container": "#153D52", "on-error-container": "#93000a", "background": "#f0fbff", "inverse-primary": "#53dad1", "error-container": "#ffdad6", "surface-container": "#FFFFFF", "on-error": "#ffffff", "on-secondary": "#ffffff", "surface-bright": "#f0fbff", "inverse-on-surface": "#d8f6ff", "text-secondary": "#527078", "on-secondary-container": "#00627a" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "margin": "1rem", "margin-desktop": "2.5rem", "gutter": "1rem", "space-xl": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem" }, fontFamily: { "headline-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Be Vietnam Pro"], "body-sm": ["Be Vietnam Pro"], "body-md": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Be Vietnam Pro"] }, fontSize: { "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-text-primary min-h-screen flex flex-col antialiased selection:bg-secondary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(32,184,176,0.06)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="返回" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-high/60 active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[170px]">Pages/Merchant/Bind</h1></div><div class="flex items-center gap-space-xs"><div class="h-8 px-space-sm rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_2px_8px_rgba(32,184,176,0.08)] flex items-center gap-space-xs"><button aria-label="小程序菜单" class="w-7 h-7 flex items-center justify-center text-text-primary hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button><div class="w-[1px] h-3.5 bg-outline-variant/40"></div><button aria-label="关闭" class="w-7 h-7 flex items-center justify-center text-text-primary hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">adjust</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs shadow-[0_2px_8px_rgba(32,184,176,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface pb-safe"><div class="flex flex-col w-full px-margin pb-space-xl gap-space-lg">
+<!-- 顶部轻盈流光引导区 (Step Progression) -->
+<section class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Smart IoT Setup</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">极速绑定智慧文印终端</h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">3 步完成上线入网，开启无人值守云打印矩阵</p>
+</div>
+<!-- 步骤进度指示条 (Aqua tactile pill tracker) -->
+<div class="relative bg-surface-container rounded-DEFAULT p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] mt-space-xs">
+<div class="flex items-center justify-between relative z-10">
+<!-- 步骤 1: 完成 -->
+<div class="flex flex-col items-center gap-1.5 flex-1">
+<div class="w-8 h-8 rounded-full bg-primary-container text-surface-container-lowest flex items-center justify-center shadow-[0_4px_12px_rgba(32,184,176,0.35)] transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]">qr_code_scanner</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-text-primary">1. 扫机身码</span>
+</div>
+<div class="h-0.5 flex-1 bg-gradient-to-r from-primary-container via-primary-container to-secondary-container rounded-full mx-1"></div>
+<!-- 步骤 2: 进行中 -->
+<div class="flex flex-col items-center gap-1.5 flex-1">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-secondary flex items-center justify-center shadow-sm ring-4 ring-primary-container/20 animate-pulse">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">2. 部署点位</span>
+</div>
+<div class="h-0.5 flex-1 bg-surface-high rounded-full mx-1"></div>
+<!-- 步骤 3: 待完成 -->
+<div class="flex flex-col items-center gap-1.5 flex-1">
+<div class="w-8 h-8 rounded-full bg-surface-high text-text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">wifi_tethering</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">3. 联网自检</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 绑定方式切换卡片 (扫码极速 vs 手动输入) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold">终端识别接入</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-badge-mint text-on-surface font-medium">智能识别</span>
+</div>
+<!-- 方式一：扫码大卡片 -->
+<div class="relative overflow-hidden bg-gradient-to-br from-surface-container via-surface-light to-secondary-container/30 rounded-DEFAULT p-space-md shadow-[0_12px_28px_-6px_rgba(32,184,176,0.12)]">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-13 h-13 w-12 h-12 shrink-0 rounded-DEFAULT bg-primary-container/15 flex items-center justify-center text-primary shadow-[0_4px_16px_rgba(32,184,176,0.2)]">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<h4 class="font-headline-sm text-headline-sm text-text-primary text-[17px] font-bold">扫码极速绑定</h4>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-surface-container-lowest font-medium scale-90 -ml-1">推荐首选</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">对准扫描打印机屏幕二维码或 MoeFlow IoT 智能盒外壳条形码</p>
+</div>
+</div>
+<button class="w-full sm:w-auto h-11 px-6 rounded-full bg-gradient-to-r from-primary-container to-secondary text-surface-container-lowest font-label-md text-label-md flex items-center justify-center gap-space-xs shadow-[0_6px_18px_rgba(32,184,176,0.3)] active:scale-98 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<span>立即开启摄像头</span>
+</button>
+</div>
+</div>
+<!-- 方式二：手动 SN / MAC 录入折叠卡 -->
+<div class="bg-surface-container rounded-DEFAULT p-space-md shadow-[0_6px_20px_-4px_rgba(32,184,176,0.06)] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">keyboard</span>
+<span class="font-label-md text-label-md text-text-primary font-semibold">手动输入序列号 (SN / MAC)</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-text-secondary">expand_more</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-space-xs mt-1">
+<div class="flex-1 relative">
+<input class="w-full h-11 px-space-md rounded-DEFAULT bg-surface-high font-body-sm text-body-sm text-text-primary placeholder:text-text-secondary/60 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" placeholder="如: MF-CB-882910 或 MAC 地址" type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-text-secondary hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_paste</span>
+</button>
+</div>
+<button class="h-11 px-5 rounded-DEFAULT bg-secondary-container text-secondary-on-container font-label-md text-label-md font-semibold hover:bg-secondary-container/80 transition-colors" type="button">
+          录入校验
+        </button>
+</div>
+</div>
+</section>
+<!-- 自动嗅探设备雷达 (BLE Discovery) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="relative flex items-center justify-center w-5 h-5">
+<span class="absolute w-full h-full rounded-full bg-primary-container/20 animate-ping"></span>
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">bluetooth_searching</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold">附近待绑定设备</h3>
+</div>
+<div class="flex items-center gap-1 text-primary font-label-sm text-label-sm font-medium">
+<span>嗅探中</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+</div>
+</div>
+<div class="text-text-secondary font-body-sm text-body-sm -mt-1">
+      已通过 BLE 蓝牙嗅探发现 <strong class="text-text-primary font-semibold">2</strong> 台待配置终端就绪
+    </div>
+<!-- 发现列表 Grid -->
+<div class="flex flex-col gap-space-sm">
+<!-- 设备 A: MoeFlow CloudBox -->
+<div class="bg-surface-container rounded-DEFAULT p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-sm transition-all hover:shadow-[0_12px_28px_-6px_rgba(32,184,176,0.15)]">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded-DEFAULT bg-secondary-container text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">router</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-[16px] text-text-primary font-bold truncate">MoeFlow CloudBox Gen4</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-on-surface font-label-sm text-[11px] font-semibold">就绪待配网</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5 font-mono text-[13px]">SN: MF-CB-882910</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-high text-primary font-label-sm text-[11px] font-semibold shrink-0">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span>
+<span>-52dBm (极佳)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-space-xs text-text-secondary font-body-sm text-[13px]">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span>IoT 智能固件 v4.2.8</span>
+</div>
+<button class="h-9 px-4 rounded-full bg-gradient-to-r from-primary-container to-secondary text-surface-container-lowest font-label-md text-[13px] flex items-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span>立即配网</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- 设备 B: Ricoh MP 2554 -->
+<div class="bg-surface-container rounded-DEFAULT p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded-DEFAULT bg-surface-high text-text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">print</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-[16px] text-text-primary font-bold truncate">Ricoh MP 2554 智能复合机</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-warm-yellow text-on-surface font-label-sm text-[11px] font-semibold">待授权接入</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5 font-mono text-[13px]">SN: RC-MP-202410</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-high text-text-secondary font-label-sm text-[11px] font-semibold shrink-0">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt_2_bar</span>
+<span>-76dBm (中等)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-space-xs text-text-secondary font-body-sm text-[13px]">
+<span class="material-symbols-outlined text-[16px] text-secondary">sync</span>
+<span>已由本地局域网握手广播</span>
+</div>
+<button class="h-9 px-4 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-[13px] flex items-center gap-1 hover:bg-secondary-container/70 active:scale-95 transition-all" type="button">
+<span>认领授权</span>
+<span class="material-symbols-outlined text-[15px]">check</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 归属校区与点位部署配置表单 (Tactile Inputs) -->
+<section class="bg-surface-container rounded-DEFAULT p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold">校区归属与点位配置</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium">必填信息</span>
+</div>
+<!-- 归属门店选择 -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-primary font-semibold flex items-center gap-1">
+<span>归属校区 / 运营门店</span>
+<span class="text-error">*</span>
+</label>
+<div class="relative w-full">
+<div class="w-full h-12 px-space-md rounded-DEFAULT bg-surface-high flex items-center justify-between cursor-pointer focus-within:ring-2 focus-within:ring-primary-container">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-[20px] text-secondary">domain</span>
+<span class="font-body-md text-body-md text-text-primary font-medium truncate">大学城文理学部创客打印中心</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-text-secondary">arrow_drop_down</span>
+</div>
+</div>
+</div>
+<!-- 安装具体位置 -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-primary font-semibold flex items-center gap-1">
+<span>安装铺设具体点位</span>
+<span class="text-error">*</span>
+</label>
+<div class="relative w-full">
+<input class="w-full h-12 px-space-md rounded-DEFAULT bg-surface-high font-body-md text-body-md text-text-primary placeholder:text-text-secondary/60 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" placeholder="如：创客大厅 1 楼东侧走廊 / 2 号机位" type="text" value="创客大厅 1 楼东侧走廊 / 2 号机位"/>
+</div>
+</div>
+<!-- 设备自定义命名 -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-primary font-semibold">
+        设备对外展示名称
+      </label>
+<div class="relative w-full">
+<input class="w-full h-12 px-space-md rounded-DEFAULT bg-surface-high font-body-md text-body-md text-text-primary placeholder:text-text-secondary/60 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" placeholder="如：理光高速黑白 02 号机" type="text" value="理光高速黑白 02 号机"/>
+</div>
+</div>
+<!-- 纸仓规格与功能初设 (Toggle & Spec selectors) -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-md text-label-md text-text-primary font-semibold">纸仓能力初设</span>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- A4 纸仓容量 -->
+<div class="p-space-sm rounded-DEFAULT bg-surface-high flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary">A4 满纸纸仓规格</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-sm text-headline-sm text-text-primary text-[20px]">800</span>
+<span class="font-label-sm text-label-sm text-text-secondary">张容量</span>
+</div>
+</div>
+<!-- 进纸盒自校准 -->
+<div class="p-space-sm rounded-DEFAULT bg-surface-high flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary">耗材预警基准</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-sm text-headline-sm text-primary text-[20px]">15%</span>
+<span class="font-label-sm text-label-sm text-text-secondary">低纸告警</span>
+</div>
+</div>
+</div>
+<!-- 功能特性开关组 (Tactile toggle rows) -->
+<div class="flex flex-col gap-space-xs mt-1">
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-text-primary font-medium">支持自动双面打印</span>
+<span class="font-body-sm text-body-sm text-text-secondary text-[12px]">开启后用户在小程序可勾选双面翻转</span>
+</div>
+<!-- 开启 Toggle -->
+<div class="w-12 h-6.5 w-12 h-7 bg-primary-container rounded-full p-0.5 flex items-center justify-end cursor-pointer shadow-sm">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-md transform transition-transform"></div>
+</div>
+</div>
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-text-primary font-medium">支持全彩激光印刷</span>
+<span class="font-body-sm text-body-sm text-text-secondary text-[12px]">设备搭载 CMYK 彩色碳粉盒</span>
+</div>
+<!-- 关闭 Toggle (柔和灰底) -->
+<div class="w-12 h-7 bg-surface-high rounded-full p-0.5 flex items-center justify-start cursor-pointer">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-sm transform transition-transform"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 联网通讯链路选择 (4G IoT vs WiFi) -->
+<section class="bg-surface-container rounded-DEFAULT p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">cell_tower</span>
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold">联网通讯方式配置</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">双模冗余自愈</span>
+</div>
+<!-- 通讯单选卡片组 -->
+<div class="flex flex-col gap-space-sm">
+<!-- 选项 1: 4G 蜂窝 (选中国) -->
+<div class="relative p-space-md rounded-DEFAULT bg-secondary-container/40 flex flex-col gap-space-xs cursor-pointer shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-primary-container text-surface-container-lowest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-[16px] text-text-primary font-bold">4G 蜂窝全网通</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-surface-container-lowest font-label-sm text-[11px] font-semibold">首选推荐</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">信号满格</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary pl-7">
+          机身内置工业级中国移动/电信 IoT 流量卡，无缝插电即用，免受校园网 Web 认证断连困扰。
+        </p>
+</div>
+<!-- 选项 2: 校园内网 WiFi -->
+<div class="p-space-md rounded-DEFAULT bg-surface-high flex flex-col gap-space-sm cursor-pointer opacity-85">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0">
+<!-- 未选空心 -->
+</div>
+<span class="font-headline-sm text-headline-sm text-[16px] text-text-primary font-bold">校园内网 WiFi / LAN 局域网</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">2.4G / 5G</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary pl-7">
+          需向校网络中心申请固定 IP 准入，或输入无 Portal 拦截的 Wi-Fi SSID 与密码。
+        </p>
+</div>
+</div>
+</section>
+<!-- 底部主操作区 (Floating Sky Glass Panel Feel) -->
+<footer class="flex flex-col items-center gap-space-md pt-space-xs">
+<button class="w-full h-13 py-3.5 px-6 rounded-full bg-gradient-to-r from-primary-container via-primary-dark to-secondary text-surface-container-lowest font-headline-sm text-[17px] font-bold shadow-[0_8px_24px_rgba(32,184,176,0.35)] flex items-center justify-center gap-space-xs active:scale-98 transition-all hover:brightness-105" type="button">
+<span class="material-symbols-outlined text-[22px]">network_check</span>
+<span>开始测试连接并绑定</span>
+</button>
+<div class="flex items-center justify-center gap-1 text-text-secondary font-label-sm text-label-sm">
+<span>遇到配网问题？</span>
+<a class="text-primary font-semibold hover:underline flex items-center" href="javascript:void(0);">
+<span>查看《设备联网绑定与常见故障指引》</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</footer>
+</div></main></body></html>

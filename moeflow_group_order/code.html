@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>拼团下单与结算 · Moeflow Group Order - MoeFlow SmartPrint</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "badge-peach": "#FFD8C8",
+            "tertiary-fixed-dim": "#ccc0ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#53dad1",
+            "outline-variant": "#bbc9c7",
+            "inverse-surface": "#18343b",
+            "surface-container": "#d5f3fc",
+            "surface-container-low": "#e0f8ff",
+            "on-primary-container": "#004340",
+            "primary-container": "#20b8b0",
+            "surface-dim": "#c2dfe8",
+            "text-secondary": "#527078",
+            "secondary": "#006780",
+            "on-secondary-fixed-variant": "#004d61",
+            "on-tertiary-fixed-variant": "#4a4168",
+            "tertiary-fixed": "#e8ddff",
+            "secondary-container": "#D7F0FA",
+            "on-primary-fixed-variant": "#00504c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#011f26",
+            "on-secondary-container": "#00627a",
+            "badge-mint": "#B9EBD9",
+            "error": "#ba1a1a",
+            "surface-container-high": "#d0edf6",
+            "on-error": "#ffffff",
+            "primary": "#20b8b0",
+            "on-secondary-fixed": "#001f28",
+            "on-surface": "#011f26",
+            "on-tertiary-fixed": "#1e153a",
+            "tertiary": "#625881",
+            "badge-warm-yellow": "#FFF3C4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#3f355c",
+            "on-primary-fixed": "#00201e",
+            "surface": "#f0fbff",
+            "surface-bright": "#f0fbff",
+            "surface-high": "#EAF5F6",
+            "primary-dark": "#168D89",
+            "inverse-on-surface": "#d8f6ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#7cd2f1",
+            "on-error-container": "#93000a",
+            "background": "#f0fbff",
+            "surface-variant": "#cae7f0",
+            "outline": "#C8E3E5",
+            "text-primary": "#18343B",
+            "tertiary-container": "#ab9fcc",
+            "surface-light": "#F4FBFC",
+            "surface-container-highest": "#cae7f0",
+            "on-surface-variant": "#3c4948",
+            "secondary-fixed": "#b8eaff",
+            "secondary-on-container": "#153D52",
+            "surface-tint": "#20b8b0",
+            "primary-fixed": "#74f7ee",
+            "inverse-primary": "#53dad1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "52px", fontWeight: "800" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] pt-safe">
+<div class="h-14 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-1 min-w-0 pr-2">
+<button aria-label="返回上一页" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all flex-shrink-0" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px] leading-none">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">拼团下单与结算 · Moeflow Group Order</h1>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="h-8 px-2.5 rounded-full bg-surface-high/90 border border-white/80 shadow-[0_2px_8px_rgba(32,184,176,0.06)] flex items-center gap-1.5">
+<button aria-label="小程序菜单" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">more_horiz</span>
+</button>
+<span class="w-[1px] h-3.5 bg-outline/60"></span>
+<button aria-label="关闭小程序" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[17px] leading-none">radio_button_checked</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-background"><div class="flex flex-col w-full pb-28">
+<!-- 拼团专属优惠状态卡 -->
+<section class="px-margin pt-space-sm pb-space-xs">
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] relative overflow-hidden">
+<!-- 柔和呼吸渐变底纹 -->
+<div class="absolute -right-12 -top-12 w-40 h-40 rounded-full bg-gradient-to-br from-primary-fixed-dim/30 to-secondary-container/40 blur-2xl pointer-events-none"></div>
+<!-- 团信息头 -->
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+<svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+          5人阶梯拼团
+        </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-badge-mint text-on-surface font-label-sm text-label-sm">
+          已集结 4/5 人 · 仅差 1 席
+        </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary tracking-tight mb-space-sm">
+        【计算机学院】毕业论文拼印团专属结算
+      </h2>
+<!-- 拼团特权横幅 -->
+<div class="p-space-sm rounded-DEFAULT bg-gradient-to-r from-surface-container-low to-surface-container text-secondary-on-container flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-lowest/80 flex items-center justify-center text-primary">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</div>
+<div>
+<p class="font-label-md text-label-md text-text-primary">校园拼印阶梯特权</p>
+<p class="font-body-sm text-body-sm text-text-secondary">单页低至 <span class="font-bold text-primary tabular-nums">¥0.08</span>（立省 46%）</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-badge-peach text-on-surface font-label-sm text-label-sm tabular-nums">
+          立省 ¥2.68
+        </span>
+</div>
+<!-- 成团时限与设备协同提示 -->
+<div class="flex items-center gap-2 text-text-secondary font-body-sm text-body-sm bg-surface-light px-3 py-2 rounded-DEFAULT">
+<svg class="w-4 h-4 text-primary shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span class="truncate">成团后统一由 <strong class="text-text-primary font-medium">科技园 02 号机</strong> 自动化极速排单</span>
+</div>
+</div>
+</section>
+<!-- 待拼印文件选择与参数摘要 -->
+<section class="px-margin py-space-xs">
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)]">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-4 rounded-full bg-primary"></span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">已确认文件与规格</h3>
+</div>
+<button class="text-primary font-label-sm text-label-sm flex items-center gap-1 active:opacity-75 transition-opacity" type="button">
+<span>重选文件</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</button>
+</div>
+<!-- 文件元信息卡 -->
+<div class="flex items-start gap-3 p-3 rounded-DEFAULT bg-surface-light mb-space-sm">
+<div class="w-11 h-12 rounded-DEFAULT bg-primary-container/60 flex items-center justify-center shrink-0 text-primary">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+<polyline points="10 9 9 9 8 9"></polyline>
+</svg>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-lg text-label-lg text-text-primary truncate">计算机学院毕业设计说明书_终稿.docx</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-badge-mint text-on-surface font-label-sm text-label-sm tabular-nums">
+              共 24 页
+            </span>
+<span class="text-text-secondary font-body-sm text-body-sm flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+              高保真矢量解析完毕
+            </span>
+</div>
+</div>
+</div>
+<!-- 参数配置摘要 -->
+<div class="space-y-2.5">
+<div class="flex items-center justify-between py-1.5 border-b-0">
+<div class="flex items-center gap-2 text-text-secondary font-body-md text-body-md">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="20" rx="2" width="12" x="6" y="2"></rect>
+<line x1="12" x2="12" y1="18" y2="18.01"></line>
+</svg>
+<span>打印规格</span>
+</div>
+<span class="font-label-md text-label-md text-text-primary">A4 黑白双面 · 长边翻转</span>
+</div>
+<div class="flex items-center justify-between py-1.5">
+<div class="flex items-center gap-2 text-text-secondary font-body-md text-body-md">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+</svg>
+<span>装订工艺</span>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-text-primary">左侧热熔胶装（蓝色磨砂皮）</p>
+<p class="font-label-sm text-label-sm text-primary tabular-nums">拼团特惠 ¥0.50 <span class="line-through text-outline-variant font-normal">¥1.50</span></p>
+</div>
+</div>
+<div class="flex items-center justify-between py-1.5">
+<div class="flex items-center gap-2 text-text-secondary font-body-md text-body-md">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+<path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+</svg>
+<span>打印份数</span>
+</div>
+<div class="inline-flex items-center bg-surface-high rounded-full p-1 gap-3">
+<button aria-label="减少份数" class="w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center text-text-secondary active:scale-95 transition-transform" onclick="updateCopies(-1)" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+</button>
+<span class="font-label-md text-label-md text-text-primary tabular-nums px-1" id="copies-count">1</span>
+<button aria-label="增加份数" class="w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center text-text-primary active:scale-95 transition-transform" onclick="updateCopies(1)" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 履约方式选择 -->
+<section class="px-margin py-space-xs">
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)]">
+<div class="flex items-center gap-2 mb-space-sm">
+<span class="w-1.5 h-4 rounded-full bg-primary"></span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">履约取件方式</h3>
+</div>
+<div class="grid grid-cols-1 gap-2.5" id="fulfillment-options">
+<!-- 选项 A：到店自取 (默认选中) -->
+<label class="fulfillment-card relative flex items-start gap-3 p-3.5 rounded-DEFAULT cursor-pointer transition-all bg-surface-container-low text-text-primary shadow-[0_4px_16px_-2px_rgba(32,184,176,0.12)]" data-method="pickup">
+<input checked="" class="hidden" name="fulfillment" onchange="handleFulfillmentChange(this)" type="radio" value="pickup"/>
+<div class="radio-indicator w-5 h-5 rounded-full bg-primary flex items-center justify-center shrink-0 mt-0.5 text-on-primary">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold">科技园 A 座 02 号机</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">自取免费</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold tabular-nums">¥0.00</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">成团打印完成后将推送动态提取码，随时免排队扫码出件</p>
+</div>
+</label>
+<!-- 选项 B：寝室配送 -->
+<label class="fulfillment-card relative flex items-start gap-3 p-3.5 rounded-DEFAULT cursor-pointer transition-all bg-surface-light text-text-primary" data-method="delivery">
+<input class="hidden" name="fulfillment" onchange="handleFulfillmentChange(this)" type="radio" value="delivery"/>
+<div class="radio-indicator w-5 h-5 rounded-full bg-surface-high flex items-center justify-center shrink-0 mt-0.5 text-transparent">
+<svg class="w-3.5 h-3.5 text-white hidden" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold">紫菘 4 栋 302 室</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-secondary-on-container font-label-sm text-label-sm">拼团拼送</span>
+</div>
+<span class="font-label-md text-label-md text-text-primary font-bold tabular-nums">+¥1.00</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">全寝统一班次配送 · 预计明日 12:30 前楼栋管家轻声送达</p>
+</div>
+</label>
+</div>
+</div>
+</section>
+<!-- 金额测算与明细明细卡 -->
+<section class="px-margin py-space-xs">
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)]">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-4 rounded-full bg-primary"></span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">费用明细</h3>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">透明计费 · 阶梯锁定</span>
+</div>
+<div class="space-y-2 font-body-sm text-body-sm">
+<div class="flex items-center justify-between text-text-secondary">
+<span>基础打印原价 (24页 × ¥0.15)</span>
+<span class="tabular-nums text-text-primary font-medium">¥3.60</span>
+</div>
+<div class="flex items-center justify-between text-text-secondary">
+<span>热熔胶装服务费</span>
+<span class="tabular-nums text-text-primary font-medium">¥1.50</span>
+</div>
+<div class="flex items-center justify-between text-primary">
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+<line x1="7" x2="7.01" y1="7" y2="7"></line>
+</svg>
+            拼团专享减免（每面省 ¥0.07）
+          </span>
+<span class="tabular-nums font-bold">-¥1.68</span>
+</div>
+<div class="flex items-center justify-between text-primary">
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect>
+<line x1="1" x2="23" y1="10" y2="10"></line>
+</svg>
+            胶装券抵扣
+          </span>
+<span class="tabular-nums font-bold">-¥1.00</span>
+</div>
+<div class="hidden flex items-center justify-between text-text-secondary" id="delivery-row">
+<span>拼团加购拼送费</span>
+<span class="tabular-nums text-text-primary font-medium">+¥1.00</span>
+</div>
+<div class="pt-2 mt-2 bg-surface-high/50 rounded-DEFAULT p-3">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md text-text-primary font-bold">实付预授权金额</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-0.5">成团即扣款 · 未满员 100% 原路秒退</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-bold tabular-nums" id="total-price-display">¥2.42</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 底部固定支付浮层栏 -->
+<footer class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-8px_24px_-4px_rgba(32,184,176,0.12)] pb-safe">
+<div class="px-margin pt-2.5 pb-2">
+<div class="flex items-center justify-between gap-3">
+<!-- 价格总览 -->
+<div class="min-w-0">
+<div class="flex items-baseline gap-1.5">
+<span class="font-label-sm text-label-sm text-text-secondary">预授权付</span>
+<span class="font-headline-md text-headline-md text-primary font-bold tabular-nums" id="bar-price-display">¥2.42</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="inline-block px-1.5 py-0.2 rounded-full bg-badge-peach text-on-surface font-label-sm text-[10px] leading-tight tabular-nums">
+              立省 ¥2.68
+            </span>
+</div>
+</div>
+<!-- 支付主按钮 -->
+<button class="flex-1 max-w-[210px] h-12 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-[0_6px_20px_rgba(32,184,176,0.28)] active:scale-[0.98] transition-all" onclick="submitGroupOrder()" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+</svg>
+<span>立即参与拼单</span>
+</button>
+</div>
+<!-- 微信支付与校级保障提示 -->
+<div class="flex items-center justify-center gap-1.5 mt-2 text-text-secondary font-label-sm text-[11px]">
+<svg class="w-3.5 h-3.5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+<span class="truncate">资金由校级微信支付商户托管 · 受未满员自动退款保障</span>
+</div>
+</div>
+</footer>
+</div>
+<script>
+  let copies = 1;
+  let isDelivery = false;
+  const baseCost = 2.42;
+
+  function updateCopies(delta) {
+    const newCount = copies + delta;
+    if (newCount >= 1 && newCount <= 10) {
+      copies = newCount;
+      const countEl = document.getElementById('copies-count');
+      if (countEl) countEl.innerText = copies;
+      recalculateTotal();
+    }
+  }
+
+  function handleFulfillmentChange(radio) {
+    isDelivery = radio.value === 'delivery';
+    
+    // 更新选项卡样式
+    const cards = document.querySelectorAll('.fulfillment-card');
+    cards.forEach(card => {
+      const isCardActive = card.getAttribute('data-method') === radio.value;
+      const indicator = card.querySelector('.radio-indicator');
+      const checkIcon = indicator.querySelector('svg');
+
+      if (isCardActive) {
+        card.classList.remove('bg-surface-light');
+        card.classList.add('bg-surface-container-low', 'shadow-[0_4px_16px_-2px_rgba(32,184,176,0.12)]');
+        indicator.classList.remove('bg-surface-high', 'text-transparent');
+        indicator.classList.add('bg-primary', 'text-on-primary');
+        if (checkIcon) checkIcon.classList.remove('hidden');
+      } else {
+        card.classList.remove('bg-surface-container-low', 'shadow-[0_4px_16px_-2px_rgba(32,184,176,0.12)]');
+        card.classList.add('bg-surface-light');
+        indicator.classList.remove('bg-primary', 'text-on-primary');
+        indicator.classList.add('bg-surface-high', 'text-transparent');
+        if (checkIcon) checkIcon.classList.add('hidden');
+      }
+    });
+
+    const deliveryRow = document.getElementById('delivery-row');
+    if (deliveryRow) {
+      if (isDelivery) {
+        deliveryRow.classList.remove('hidden');
+      } else {
+        deliveryRow.classList.add('hidden');
+      }
+    }
+
+    recalculateTotal();
+  }
+
+  function recalculateTotal() {
+    let finalAmount = (baseCost * copies) + (isDelivery ? 1.00 : 0.00);
+    const formatted = '¥' + finalAmount.toFixed(2);
+    
+    const totalDisplay = document.getElementById('total-price-display');
+    const barDisplay = document.getElementById('bar-price-display');
+    if (totalDisplay) totalDisplay.innerText = formatted;
+    if (barDisplay) barDisplay.innerText = formatted;
+  }
+
+  function submitGroupOrder() {
+    // 微信小程序拉起支付交互动效模拟
+    const btn = event.currentTarget;
+    btn.style.transform = 'scale(0.96)';
+    setTimeout(() => {
+      btn.style.transform = 'none';
+      alert('已发起微信支付安全预授权 ¥' + ((baseCost * copies) + (isDelivery ? 1.00 : 0.00)).toFixed(2) + '，成团后将自动出件！');
+    }, 120);
+  }
+</script></main>
+</body></html>

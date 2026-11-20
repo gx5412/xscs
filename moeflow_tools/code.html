@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>工具箱 · Moeflow Tools</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#74f7ee", "text-secondary": "#527078", "on-surface": "#011f26", "primary": "#006a65", "on-tertiary-fixed": "#1e153a", "surface-container": "#FFFFFF", "error-container": "#ffdad6", "tertiary-fixed": "#e8ddff", "badge-peach": "#FFD8C8", "surface-container-high": "#d0edf6", "on-tertiary-fixed-variant": "#4a4168", "surface-container-highest": "#cae7f0", "surface-light": "#F4FBFC", "background": "#f0fbff", "on-error": "#ffffff", "outline": "#C8E3E5", "badge-mint": "#B9EBD9", "secondary-fixed-dim": "#7cd2f1", "inverse-surface": "#18343b", "surface-bright": "#f0fbff", "on-secondary-container": "#00627a", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ccc0ef", "inverse-primary": "#53dad1", "secondary-fixed": "#b8eaff", "surface-variant": "#cae7f0", "on-primary-container": "#004340", "primary-container": "#D5F4F1", "secondary": "#006780", "surface-dim": "#c2dfe8", "secondary-on-container": "#153D52", "primary-dark": "#168D89", "on-primary-fixed-variant": "#00504c", "surface-high": "#EAF5F6", "primary-fixed-dim": "#53dad1", "on-tertiary-container": "#3f355c", "on-primary-fixed": "#00201e", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004d61", "surface-container-low": "#e0f8ff", "outline-variant": "#bbc9c7", "secondary-container": "#88ddfd", "on-secondary": "#ffffff", "error": "#ba1a1a", "badge-warm-yellow": "#FFF3C4", "on-surface-variant": "#3c4948", "tertiary": "#625881", "surface": "#f0fbff", "surface-container-lowest": "#ffffff", "tertiary-container": "#ab9fcc", "inverse-on-surface": "#d8f6ff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#001f28", "surface-tint": "#006a65", "text-primary": "#18343B", "on-background": "#011f26" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "gutter": "1rem" }, fontFamily: { "label-md": ["Be Vietnam Pro"], "label-sm": ["Be Vietnam Pro"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Be Vietnam Pro"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px));}.pt-safe{padding-top:calc(env(safe-area-inset-top,0px));}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>body { min-height: max(884px, 100dvh); }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-text-primary antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_12px_rgba(32,184,176,0.06)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#20B8B0] to-[#73C9E8] flex items-center justify-center shadow-[0_2px_8px_rgba(32,184,176,0.25)]"><span class="material-symbols-outlined text-white text-[18px]">print</span></div><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">工具箱 · Moeflow Tools</span></div><div class="flex items-center bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,106,101,0.08)] border border-white/60"><button aria-label="Mini Program Options" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button><div class="w-px h-3.5 bg-outline mx-0.5"></div><button aria-label="Close Mini Program" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[18px]">radio_button_checked</span></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface px-margin min-h-screen"><div class="flex flex-col w-full pb-6 space-y-5">
+<!-- Search & Quick Filter Hub -->
+<div class="flex flex-col space-y-3">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-12 pl-10 pr-10 bg-surface-container rounded-[14px] text-body-sm font-body-sm text-text-primary placeholder:text-text-secondary/70 shadow-[0_4px_16px_rgba(32,184,176,0.06)] focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200" placeholder="搜索智能文档与图像工具..." type="search"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+<span class="material-symbols-outlined text-text-secondary/60 text-[18px]">tune</span>
+</div>
+</div>
+<!-- Aqua Sky Master Hero Banner -->
+<div class="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-[#20B8B0] via-[#35C6BC] to-[#73C9E8] p-5 text-on-primary shadow-[0_12px_28px_rgba(32,184,176,0.22)]">
+<!-- Decorative Ambient Circles -->
+<div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-white/15 blur-xl pointer-events-none"></div>
+<div class="absolute -left-6 -bottom-6 w-28 h-28 rounded-full bg-secondary-container/20 blur-lg pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-white text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm tracking-wide text-white uppercase">Cloud GPU Hub</span>
+</div>
+<div class="flex items-center space-x-1 text-white/90">
+<span class="w-1.5 h-1.5 rounded-full bg-badge-mint animate-pulse"></span>
+<span class="font-label-sm text-label-sm">智能排版引擎已就绪</span>
+</div>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-white tracking-tight leading-tight">MoeFlow AI 智印工坊</h2>
+<p class="font-body-sm text-body-sm text-white/90 mt-1">让复杂排版与格式转换化繁为简，所见即所印</p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-0.5">
+<span class="px-2.5 py-1 rounded-full bg-white/25 backdrop-blur-sm text-white font-label-sm text-label-sm font-medium">AI 智能切题</span>
+<span class="px-2.5 py-1 rounded-full bg-white/25 backdrop-blur-sm text-white font-label-sm text-label-sm font-medium">高清透视扫描</span>
+<span class="px-2.5 py-1 rounded-full bg-white/25 backdrop-blur-sm text-white font-label-sm text-label-sm font-medium">一键无损转档</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 1: 证照与冲印类 -->
+<section class="flex flex-col space-y-3">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center space-x-2">
+<div class="w-2.5 h-5 rounded-full bg-primary"></div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">证照与冲印类</h3>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary font-medium">专业相纸标准 · 毫米级校准</span>
+</div>
+<!-- Smart ID Photo: Feature Highlight Card -->
+<div class="w-full bg-surface-container rounded-[24px] p-5 shadow-[0_6px_20px_rgba(32,184,176,0.08)] flex flex-col space-y-3 relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-[16px] bg-primary-container flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">badge</span>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<h4 class="font-headline-sm text-headline-sm text-text-primary text-[17px]">智能证件照</h4>
+<span class="px-2 py-0.5 rounded-full bg-badge-peach text-[#5D2717] font-label-sm text-label-sm">免跑照相馆</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">AI 抠图换底 · 自动修正仪容与光照</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-light rounded-[16px] p-3 flex items-center justify-between">
+<div class="flex items-center space-x-3 text-text-primary">
+<div class="flex -space-x-1.5 overflow-hidden">
+<span class="inline-block w-4 h-4 rounded-full bg-[#E53935] shadow-xs"></span>
+<span class="inline-block w-4 h-4 rounded-full bg-[#1E88E5] shadow-xs"></span>
+<span class="inline-block w-4 h-4 rounded-full bg-white shadow-xs"></span>
+<span class="inline-block w-4 h-4 rounded-full bg-[#78909C] shadow-xs"></span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">支持蓝/白/红/灰底色</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-primary">一寸 / 二寸排版</span>
+</div>
+<button class="w-full h-11 rounded-full bg-gradient-to-r from-primary to-primary-dark text-on-primary font-label-lg text-label-lg shadow-[0_4px_14px_rgba(0,106,101,0.22)] active:scale-[0.98] transition-transform flex items-center justify-center space-x-1.5">
+<span>立即拍摄制作</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- 2 Column Credentials Grid -->
+<div class="grid grid-cols-2 gap-3">
+<!-- ID Document Copy -->
+<div class="bg-surface-container rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.06)] flex flex-col justify-between space-y-3">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="w-10 h-10 rounded-[14px] bg-secondary-container/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">contact_page</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm">1:1 防伪印</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary text-[15px]">证件复印排版</h4>
+<p class="font-body-sm text-body-sm text-text-secondary text-[12px] leading-[18px] mt-1">身份证/户口本/驾照 正反面极速归一</p>
+</div>
+<div class="pt-2 flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm font-semibold">快速排版</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+<!-- Photo Print -->
+<div class="bg-surface-container rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.06)] flex flex-col justify-between space-y-3">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="w-10 h-10 rounded-[14px] bg-primary-container/60 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">photo_library</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary-on-container font-label-sm text-label-sm">富士原厂</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary text-[15px]">手机照片冲印</h4>
+<p class="font-body-sm text-body-sm text-text-secondary text-[12px] leading-[18px] mt-1">6寸专业光面/绒面 防水防褪色即打</p>
+</div>
+<div class="pt-2 flex items-center justify-between text-primary">
+<span class="font-label-sm text-label-sm font-semibold">挑选照片</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: 文档与转换类 -->
+<section class="flex flex-col space-y-3">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center space-x-2">
+<div class="w-2.5 h-5 rounded-full bg-secondary"></div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">文档与转换类</h3>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary font-medium">无损向量渲染</span>
+</div>
+<!-- Photo Scan Card -->
+<div class="w-full bg-surface-container rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.06)] flex items-center justify-between space-x-3">
+<div class="flex items-center space-x-3.5 min-w-0">
+<div class="w-11 h-11 rounded-[16px] bg-secondary-container/30 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[24px]">document_scanner</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center space-x-2">
+<h4 class="font-headline-sm text-headline-sm text-text-primary text-[16px] truncate">拍照扫描仪</h4>
+<span class="px-2 py-0.5 rounded-full bg-badge-warm-yellow text-[#5A4500] font-label-sm text-label-sm shrink-0">热销工具</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">智能纠偏 · 去阴影去折痕 · 生成高清PDF</p>
+</div>
+</div>
+<button class="shrink-0 w-8 h-8 rounded-full bg-surface-light flex items-center justify-center text-secondary hover:bg-secondary-container/50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Multi-format Conversion -->
+<div class="w-full bg-surface-container rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.06)] flex items-center justify-between space-x-3">
+<div class="flex items-center space-x-3.5 min-w-0">
+<div class="w-11 h-11 rounded-[16px] bg-primary-container/40 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center space-x-1.5">
+<h4 class="font-headline-sm text-headline-sm text-text-primary text-[16px] truncate">多格式转 PDF</h4>
+<span class="font-label-sm text-label-sm text-primary font-semibold">无损转换</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">Word / PPT / Excel / JPG 极速转换排版</p>
+</div>
+</div>
+<button class="shrink-0 w-8 h-8 rounded-full bg-surface-light flex items-center justify-center text-primary hover:bg-primary-container/50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Long Screenshot to PDF -->
+<div class="w-full bg-surface-container rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.06)] flex items-center justify-between space-x-3">
+<div class="flex items-center space-x-3.5 min-w-0">
+<div class="w-11 h-11 rounded-[16px] bg-surface-container-high/60 flex items-center justify-center text-secondary-on-container shrink-0">
+<span class="material-symbols-outlined text-[24px]">view_stream</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center space-x-1.5">
+<h4 class="font-headline-sm text-headline-sm text-text-primary text-[16px] truncate">长截图转 PDF</h4>
+<span class="font-label-sm text-label-sm text-text-secondary">智能 A4 裁切</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">网页/微信长图智能识别，规避文字接缝截断</p>
+</div>
+</div>
+<button class="shrink-0 w-8 h-8 rounded-full bg-surface-light flex items-center justify-center text-secondary-on-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- PPT Handout Multiple Pages Grid -->
+<div class="w-full bg-surface-container rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.06)] flex items-center justify-between space-x-3">
+<div class="flex items-center space-x-3.5 min-w-0">
+<div class="w-11 h-11 rounded-[16px] bg-tertiary-fixed/60 flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[24px]">co_present</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center space-x-2">
+<h4 class="font-headline-sm text-headline-sm text-text-primary text-[16px] truncate">PPT 讲义合页排版</h4>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-primary font-label-sm text-label-sm shrink-0">省纸环保</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">支持 2合1 / 4合1 / 6合1 附带横线笔记槽</p>
+</div>
+</div>
+<button class="shrink-0 w-8 h-8 rounded-full bg-surface-light flex items-center justify-center text-tertiary hover:bg-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- SECTION 3: 学业与学习效率 -->
+<section class="flex flex-col space-y-3">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center space-x-2">
+<div class="w-2.5 h-5 rounded-full bg-[#168D89]"></div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">学业与学习效率</h3>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary font-medium">考研 / 期末刷题利器</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Wrong Question Workbook -->
+<div class="bg-surface-container rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.06)] flex flex-col justify-between space-y-3 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-[14px] bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">format_paint</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm">学霸必备</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary text-[15px]">错题本智能重排</h4>
+<p class="font-body-sm text-body-sm text-text-secondary text-[12px] leading-[18px] mt-1">AI 抹除手写笔记 · 提取题干自动排版成练习卷</p>
+</div>
+<button class="w-full h-8 rounded-full bg-surface-light text-primary font-label-sm text-label-sm font-semibold flex items-center justify-center space-x-1 hover:bg-primary-container/40 transition-colors">
+<span>进入错题集</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- Exam Paper Renovation -->
+<div class="bg-surface-container rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.06)] flex flex-col justify-between space-y-3 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-[14px] bg-secondary-container/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">history_edu</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-peach text-[#5D2717] font-label-sm text-label-sm">真题还原</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary text-[15px]">试卷翻新消除</h4>
+<p class="font-body-sm text-body-sm text-text-secondary text-[12px] leading-[18px] mt-1">一键清空红笔勾画与圆珠笔字迹，输出崭新空白卷</p>
+</div>
+<button class="w-full h-8 rounded-full bg-surface-light text-secondary font-label-sm text-label-sm font-semibold flex items-center justify-center space-x-1 hover:bg-secondary-container/40 transition-colors">
+<span>开始翻新</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Safe & Trust Assurance Dock -->
+<div class="bg-surface-container/70 backdrop-blur-md rounded-[24px] p-4 shadow-[0_4px_16px_rgba(32,184,176,0.04)] flex items-center justify-between space-x-3">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<span class="font-label-md text-label-md text-text-primary">云端渲染与隐私保险箱</span>
+<span class="w-2 h-2 rounded-full bg-badge-mint"></span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary text-[12px] leading-tight">渲染缓存完工即焚 · 24小时自动脱敏销毁</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-secondary/50 text-[18px]">lock</span>
+</div>
+</div>
+<script>
+  // Add subtle ripple feedback for cards on touch devices
+  document.querySelectorAll('.group, button, .cursor-pointer').forEach(el => {
+    el.addEventListener('touchstart', function() {
+      this.classList.add('opacity-85');
+    }, {passive: true});
+    el.addEventListener('touchend', function() {
+      this.classList.remove('opacity-85');
+    }, {passive: true});
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-4px_20px_rgba(32,184,176,0.08)]" data-active-classes="text-primary bg-primary-container/60"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center w-16 h-16 rounded-[24px] text-text-secondary hover:text-text-primary transition-all duration-200 active:scale-95" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">cottage</span><span class="font-label-sm text-label-sm mt-0.5">首页</span></a><a class="flex flex-col items-center justify-center w-16 h-16 rounded-[24px] text-text-secondary hover:text-text-primary transition-all duration-200 active:scale-95" data-path="library" href="#"><span class="material-symbols-outlined text-[22px]">auto_stories</span><span class="font-label-sm text-label-sm mt-0.5">资料库</span></a><a class="flex flex-col items-center justify-center w-16 h-16 rounded-[24px] text-text-secondary hover:text-text-primary transition-all duration-200 active:scale-95" data-path="group-and-tools" href="#"><span class="material-symbols-outlined text-[22px]">widgets</span><span class="font-label-sm text-label-sm mt-0.5">拼团/工具</span></a><a class="flex flex-col items-center justify-center w-16 h-16 rounded-[24px] text-text-secondary hover:text-text-primary transition-all duration-200 active:scale-95" data-path="mine" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm mt-0.5">我的</span></a></div></nav></body></html>

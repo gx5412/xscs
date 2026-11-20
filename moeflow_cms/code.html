@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-fixed-variant": "#004d61", "text-primary": "#18343B", "on-tertiary": "#ffffff", "inverse-surface": "#18343b", "on-primary-container": "#004340", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "secondary": "#006780", "badge-warm-yellow": "#FFF3C4", "surface-tint": "#006a65", "tertiary-container": "#ab9fcc", "on-surface": "#011f26", "surface-container-high": "#d0edf6", "secondary-container": "#D7F0FA", "on-background": "#011f26", "on-secondary-fixed": "#001f28", "primary-container": "#20b8b0", "on-primary-fixed": "#00201e", "primary": "#006a65", "tertiary-fixed-dim": "#ccc0ef", "on-surface-variant": "#3c4948", "on-tertiary-container": "#3f355c", "on-primary": "#ffffff", "primary-dark": "#168D89", "tertiary-fixed": "#e8ddff", "surface-container-highest": "#cae7f0", "on-tertiary-fixed": "#1e153a", "primary-fixed": "#74f7ee", "on-tertiary-fixed-variant": "#4a4168", "surface-high": "#EAF5F6", "outline-variant": "#bbc9c7", "surface-variant": "#cae7f0", "badge-peach": "#FFD8C8", "on-primary-fixed-variant": "#00504c", "surface-container-low": "#e0f8ff", "surface-light": "#F4FBFC", "tertiary": "#625881", "outline": "#C8E3E5", "secondary-fixed": "#b8eaff", "primary-fixed-dim": "#53dad1", "badge-mint": "#B9EBD9", "surface-dim": "#c2dfe8", "secondary-fixed-dim": "#7cd2f1", "surface": "#f0fbff", "secondary-on-container": "#153D52", "on-error-container": "#93000a", "background": "#f0fbff", "inverse-primary": "#53dad1", "error-container": "#ffdad6", "surface-container": "#FFFFFF", "on-error": "#ffffff", "on-secondary": "#ffffff", "surface-bright": "#f0fbff", "inverse-on-surface": "#d8f6ff", "text-secondary": "#527078", "on-secondary-container": "#00627a" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "margin": "1rem", "margin-desktop": "2.5rem", "gutter": "1rem", "space-xl": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem" }, fontFamily: { "headline-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Be Vietnam Pro"], "body-sm": ["Be Vietnam Pro"], "body-md": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Be Vietnam Pro"] }, fontSize: { "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-text-primary min-h-screen flex flex-col antialiased selection:bg-secondary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(32,184,176,0.06)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="返回" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-high/60 active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[170px]">Pages/Merchant/Cms</h1></div><div class="flex items-center gap-space-xs"><div class="h-8 px-space-sm rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_2px_8px_rgba(32,184,176,0.08)] flex items-center gap-space-xs"><button aria-label="小程序菜单" class="w-7 h-7 flex items-center justify-center text-text-primary hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button><div class="w-[1px] h-3.5 bg-outline-variant/40"></div><button aria-label="关闭" class="w-7 h-7 flex items-center justify-center text-text-primary hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">adjust</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs shadow-[0_2px_8px_rgba(32,184,176,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface pb-safe"><div class="flex flex-col w-full pb-28">
+<!-- Search & Stats Banner Section -->
+<section class="px-margin pt-space-sm pb-space-sm flex flex-col gap-space-md">
+<!-- Search Bar with Floating Sky Glass Touch -->
+<div class="relative flex items-center w-full">
+<div class="absolute left-3.5 flex items-center pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-11 pl-10 pr-10 rounded-full bg-surface-container text-text-primary placeholder:text-text-secondary/60 text-body-sm font-body-sm shadow-[0_4px_16px_rgba(32,184,176,0.06)] focus:outline-none focus:shadow-[0_4px_20px_rgba(32,184,176,0.18)] transition-all" placeholder="搜索模板名称、分类标签、文档编号..." type="text"/>
+<button aria-label="扫码识别文档" class="absolute right-3 text-primary hover:opacity-80 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+</button>
+</div>
+<!-- Data Overview Dashboard Card -->
+<div class="w-full rounded-DEFAULT p-space-md bg-gradient-to-br from-surface-container to-secondary-container/40 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)] relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-primary-fixed-dim/20 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="text-label-md font-label-md text-text-secondary tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">analytics</span>
+          资料库经营总览
+        </span>
+<button class="text-label-sm font-label-sm text-primary flex items-center gap-0.5 active:opacity-75" type="button">
+<span>收益明细</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-text-secondary">在售/上架</span>
+<div class="flex items-baseline gap-0.5 mt-0.5">
+<span class="text-headline-md font-headline-md text-text-primary tracking-tight">48</span>
+<span class="text-label-sm font-label-sm text-text-secondary">套</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary flex items-center mt-1">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>+3本周
+          </span>
+</div>
+<div class="flex flex-col px-space-xs">
+<span class="text-label-sm font-label-sm text-text-secondary">累计打印量</span>
+<div class="flex items-baseline gap-0.5 mt-0.5">
+<span class="text-headline-md font-headline-md text-text-primary tracking-tight">3,620</span>
+<span class="text-label-sm font-label-sm text-text-secondary">次</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary-on-container flex items-center mt-1">
+<span class="material-symbols-outlined text-[12px]">cloud_done</span>云印99%
+          </span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-label-sm font-label-sm text-text-secondary">模板净收益</span>
+<div class="flex items-baseline gap-0.5 mt-0.5">
+<span class="text-label-sm font-label-sm text-primary font-bold">¥</span>
+<span class="text-headline-md font-headline-md text-primary tracking-tight">1,248</span>
+<span class="text-label-sm font-label-sm text-primary">.50</span>
+</div>
+<span class="text-label-sm font-label-sm bg-badge-mint text-primary-dark font-medium px-1.5 py-0.5 rounded-full mt-1">
+            昨日+¥86
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Pills & State Toggle Bar -->
+<section class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Horizontal Scroll Category Chips -->
+<div class="w-full overflow-x-auto no-scrollbar px-margin flex items-center gap-space-xs py-0.5">
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md shrink-0 bg-primary-container text-on-primary shadow-[0_4px_12px_rgba(32,184,176,0.25)] transition-all" type="button">
+        全部 (48)
+      </button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md shrink-0 bg-surface-container text-text-secondary shadow-sm active:bg-surface-high transition-colors" type="button">
+        毕业答辩
+      </button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md shrink-0 bg-surface-container text-text-secondary shadow-sm active:bg-surface-high transition-colors" type="button">
+        课程设计
+      </button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md shrink-0 bg-surface-container text-text-secondary shadow-sm active:bg-surface-high transition-colors" type="button">
+        考研资料
+      </button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md shrink-0 bg-surface-container text-text-secondary shadow-sm active:bg-surface-high transition-colors" type="button">
+        实用表格
+      </button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md shrink-0 bg-surface-container text-text-secondary shadow-sm active:bg-surface-high transition-colors" type="button">
+        校园海报
+      </button>
+</div>
+<!-- Sub Status Switch Filter -->
+<div class="px-margin flex items-center justify-between">
+<div class="flex items-center gap-space-sm bg-surface-container-high/40 p-1 rounded-full">
+<button class="px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-text-primary shadow-sm font-semibold transition-all" type="button">
+          已上架 (42)
+        </button>
+<button class="px-3 py-1 rounded-full text-label-sm font-label-sm text-text-secondary hover:text-text-primary transition-colors" type="button">
+          审核中 (4)
+        </button>
+<button class="px-3 py-1 rounded-full text-label-sm font-label-sm text-text-secondary hover:text-text-primary transition-colors" type="button">
+          已下架 (2)
+        </button>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-text-secondary">
+<span class="material-symbols-outlined text-[16px]">swap_vert</span>
+<span>热度排序</span>
+</div>
+</div>
+</section>
+<!-- Template Items Feed -->
+<section class="px-margin mt-space-md flex flex-col gap-space-md">
+<!-- Item 1: Computer Science Thesis (Active & Featured) -->
+<article class="w-full bg-surface-container rounded-DEFAULT p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-sm relative">
+<div class="flex items-start gap-space-md">
+<!-- Thumbnail Placeholder with format badge -->
+<div class="relative w-20 h-24 rounded-lg bg-surface-high overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A clean top-down graphic preview of a university graduation thesis paper template in light cyan tones, neat typography layout, mathematical formulas and code blocks visible on crisp white sheets with soft aqua drop shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxsvXpHRnZF7uCtWV8ViyH8pygIR2xuoTaGa0INYZIZPlwwUXbz7-NEFbCE0AitYx19xjZ_O32AbrHpXGUQnsyE90a0V_oAAd58tahk-BkPydELwF5ocxK1Z77qXSEin0Uc-3Jm5qYCV8HPQambca6UGnLBu3yaDAN04YSPysFtSPnO-_KTicBmpTddrIyWc3QXtDocu86FixsthEbZifiLO2MdO-t6As0Lg673akh"/>
+<span class="absolute top-1 left-1 bg-primary-container text-on-primary text-[10px] font-semibold px-1 rounded-sm leading-tight">
+            精选
+          </span>
+</div>
+<!-- Meta info -->
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="text-label-sm font-label-sm bg-badge-mint text-primary-dark font-medium px-2 py-0.5 rounded-full truncate">
+              免费开放
+            </span>
+<span class="text-label-sm font-label-sm text-text-secondary shrink-0">编号: W11-0428</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary leading-tight mt-1 truncate">
+            2024届计算机专业毕业论文标准模板
+          </h2>
+<p class="text-label-sm font-label-sm text-text-secondary truncate mt-0.5">
+            含 LaTeX / Word 双版配套格式
+          </p>
+<div class="flex items-center gap-space-xs mt-2 flex-wrap">
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-high text-secondary-on-container">Word/LaTeX</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-high text-text-secondary">32 页</span>
+<span class="text-label-sm font-label-sm text-primary flex items-center ml-auto">
+<span class="material-symbols-outlined text-[14px] text-badge-warm-yellow" style="font-variation-settings: 'FILL' 1;">star</span>
+              99.2% 好评
+            </span>
+</div>
+</div>
+</div>
+<!-- Live metrics band -->
+<div class="flex items-center justify-between bg-surface-light rounded-lg px-3 py-2 text-label-sm font-label-sm">
+<div class="flex items-center gap-1.5 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">local_printshop</span>
+<span>打印热度：<strong class="text-text-primary font-semibold">1,840</strong> 次</span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>官方认证模板</span>
+</div>
+</div>
+<!-- Action Button Group -->
+<div class="flex items-center justify-between gap-space-xs pt-space-xs">
+<button class="flex-1 py-1.5 rounded-full bg-secondary-container text-secondary-on-container text-label-sm font-label-sm font-semibold active:opacity-80 transition-all flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">edit</span>
+          编辑详情
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-high text-primary text-label-sm font-label-sm font-semibold active:bg-surface-variant transition-colors flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[15px]">insights</span>
+          数据
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-high text-text-secondary hover:text-error text-label-sm font-label-sm font-semibold active:bg-surface-variant transition-colors" type="button">
+          下架
+        </button>
+</div>
+</article>
+<!-- Item 2: Academic Three-line Table Manual (Paid) -->
+<article class="w-full bg-surface-container rounded-DEFAULT p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-md">
+<!-- Thumbnail -->
+<div class="relative w-20 h-24 rounded-lg bg-surface-high overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Modern document layout preview of academic three-line tables and scientific data typography, clean graphic design on light blue textured background with subtle cyan lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2HneVlcU8RQIVET0IfTIDN5DzpNFariTa1GHwC9Lx5TPMOIKBdCOOnVFNcMOXXIcWlUFZi-OrnzUfncUtv8MwSSgBgDuB1AzQQGdlekQ7Uck5AaiefriRL9lWIZkKK9m--vPW3fp_psPP16Mxfojx_KmwcY3l40aui--6u8aPlI51p9X4I1ioapF3AEjM8dMhJdTU2ar4R7F0w2wy-7JW1vC6IxvsbA_MrwGhWrlD"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-primary font-bold bg-secondary-container px-2 py-0.5 rounded-full">
+              ¥1.00 / 份
+            </span>
+<span class="text-label-sm font-label-sm text-text-secondary">编号: W11-0391</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary leading-tight mt-1 truncate">
+            全国高校计算机三线表学术排版规范手册
+          </h2>
+<p class="text-label-sm font-label-sm text-text-secondary truncate mt-0.5">
+            符合核心期刊与国标附录格式
+          </p>
+<div class="flex items-center gap-space-xs mt-2">
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-high text-secondary-on-container">PDF</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-high text-text-secondary">16 页</span>
+<span class="text-label-sm font-label-sm text-text-secondary ml-auto">
+              累计收益: <strong class="text-primary font-semibold">¥420.00</strong>
+</span>
+</div>
+</div>
+</div>
+<!-- Live metrics -->
+<div class="flex items-center justify-between bg-surface-light rounded-lg px-3 py-2 text-label-sm font-label-sm">
+<div class="flex items-center gap-1.5 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span>打印使用：<strong class="text-text-primary font-semibold">420</strong> 次</span>
+</div>
+<div class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span>自动分成开启</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-between gap-space-xs pt-space-xs">
+<button class="flex-1 py-1.5 rounded-full bg-secondary-container text-secondary-on-container text-label-sm font-label-sm font-semibold active:opacity-80 transition-all flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">edit</span>
+          编辑
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-high text-primary text-label-sm font-label-sm font-semibold active:bg-surface-variant transition-colors flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[15px]">payments</span>
+          调整定价
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-high text-text-secondary hover:text-error text-label-sm font-label-sm font-semibold active:bg-surface-variant transition-colors" type="button">
+          下架
+        </button>
+</div>
+</article>
+<!-- Item 3: Youth League Activity Plan (In Review State) -->
+<article class="w-full bg-surface-container rounded-DEFAULT p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-md">
+<!-- Thumbnail with Pending overlay -->
+<div class="relative w-20 h-24 rounded-lg bg-surface-high overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover opacity-85" data-alt="Spreadsheet template document for campus event budget planning and approval form, clean tabular interface in gentle aqua and pastel white styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWSHJQKsCVwraeu3YQB65rFzqN3lx98eaa6TNMoVxyxiL82HZ4V1N3W5Z4HVu5dpfQmlkQSuCW60nu6ijORSERMkXhVZY2bYjqpYUJzyZ0i6lU6oyH-oeddQYWR9Aj6BSJNbdDPfrK20l8OlRUv1ug030AoMyFpMrfSFr-LHghKI0W72exbHDz3UVfMr03mDA23PqsLyuUQ_Buw10Wg2JqNm32Fz2uM-t1FSo3gXA9"/>
+<div class="absolute inset-0 bg-surface-tint/20 backdrop-blur-[1px] flex items-center justify-center">
+<span class="material-symbols-outlined text-surface text-[22px]">hourglass_top</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm bg-badge-warm-yellow text-[#5A4500] font-medium px-2 py-0.5 rounded-full">
+              审核中
+            </span>
+<span class="text-label-sm font-label-sm text-text-secondary">编号: W11-0504</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary leading-tight mt-1 truncate">
+            高校团委活动策划案与预算报批表格
+          </h2>
+<p class="text-label-sm font-label-sm text-text-secondary truncate mt-0.5">
+            预计今日 18:00 完成审核发布
+          </p>
+<div class="flex items-center gap-space-xs mt-2">
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-high text-secondary-on-container">Excel/Word</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-high text-text-secondary">8 页</span>
+<span class="text-label-sm font-label-sm text-primary font-medium ml-auto">
+              免费开放
+            </span>
+</div>
+</div>
+</div>
+<!-- Pending notification banner -->
+<div class="flex items-center gap-2 bg-secondary-container/40 rounded-lg px-3 py-2 text-label-sm font-label-sm text-secondary-on-container">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+<span>资料库安全算法已通过初验，正同步校对打印排版</span>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-end gap-space-xs pt-space-xs">
+<button class="px-4 py-1.5 rounded-full bg-surface-high text-text-secondary text-label-sm font-label-sm font-semibold active:bg-surface-variant transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">visibility</span>
+          预览
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-badge-peach text-[#5D2717] text-label-sm font-label-sm font-semibold active:opacity-80 transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">undo</span>
+          撤回修改
+        </button>
+</div>
+</article>
+<!-- Item 4: Resume Template (Quick Display) -->
+<article class="w-full bg-surface-container rounded-DEFAULT p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-md">
+<!-- Thumbnail -->
+<div class="relative w-20 h-24 rounded-lg bg-surface-high overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A refined minimalist one-page student resume template layout, clean avatar placeholder, sleek modern typography in soft teal accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcYPCYxjMZSZ1kVGz4pgM36ZVNdrzvXWYFCEAFDhBR4skshMbZnskUQVRe6SL9VEvOajHDRwEC3vdVbzV2bnOzHjEJnF8Zzzh-s47t46Q0wPKlaAthQ8NVd2OYwS1vyZwkqGzM-wex9r2xcRqh7sLY04xurc57HKbhup9nGJTCbmv6kAfozE3884DvuIvTVxs5GZ08iDBZsBlMFr9i9w7azqx9zhQMY9HSgPFcQeRi"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm bg-badge-mint text-primary-dark font-medium px-2 py-0.5 rounded-full">
+              免费
+            </span>
+<span class="text-label-sm font-label-sm text-text-secondary">编号: W11-0498</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary leading-tight mt-1 truncate">
+            2025届毕业生秋季校园招聘简历模板
+          </h2>
+<p class="text-label-sm font-label-sm text-text-secondary truncate mt-0.5">
+            高颜值单页 · 针对 HR 快速筛查设计
+          </p>
+<div class="flex items-center gap-space-xs mt-2">
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-high text-secondary-on-container">Word</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-high text-text-secondary">1 页</span>
+<span class="text-label-sm font-label-sm text-text-secondary ml-auto">
+              打印热度: <strong class="text-text-primary font-semibold">920</strong> 次
+            </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-between gap-space-xs pt-space-xs">
+<button class="flex-1 py-1.5 rounded-full bg-secondary-container text-secondary-on-container text-label-sm font-label-sm font-semibold active:opacity-80 transition-all flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">edit</span>
+          编辑详情
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-high text-primary text-label-sm font-label-sm font-semibold active:bg-surface-variant transition-colors flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[15px]">star_border</span>
+          设为精选
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-high text-text-secondary hover:text-error text-label-sm font-label-sm font-semibold active:bg-surface-variant transition-colors" type="button">
+          下架
+        </button>
+</div>
+</article>
+</section>
+<!-- Sticky Bottom Upload & Batch Management Bar -->
+<aside class="fixed bottom-0 left-0 right-0 z-40 px-margin pb-safe pt-space-xs bg-surface-container/90 backdrop-blur-xl shadow-[0_-8px_30px_rgba(32,184,176,0.12)]">
+<div class="h-16 flex items-center justify-between gap-space-sm max-w-lg mx-auto">
+<!-- Batch Action Trigger -->
+<button class="flex flex-col items-center justify-center px-3 py-1 rounded-DEFAULT text-text-secondary hover:text-primary active:scale-95 transition-all" id="batch-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">checklist</span>
+<span class="text-label-sm font-label-sm font-semibold mt-0.5">批量管理</span>
+</button>
+<!-- Primary Upload Button -->
+<button class="flex-1 h-12 rounded-full bg-gradient-to-r from-primary-container to-secondary text-on-primary font-headline-sm text-[16px] shadow-[0_6px_20px_rgba(32,184,176,0.3)] active:scale-[0.98] transition-all flex items-center justify-center gap-2" id="upload-modal-trigger" type="button">
+<span class="material-symbols-outlined text-[22px]">upload_file</span>
+<span>上传新模板 / 文档</span>
+</button>
+</div>
+</aside>
+<!-- Interactive Quick Upload Sheet (Hidden by Default, toggled by JS) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex-col justify-end" id="upload-sheet">
+<div class="w-full bg-surface-container rounded-t-xl p-space-lg flex flex-col gap-space-md shadow-2xl animate-fade-in-up">
+<div class="flex items-center justify-between pb-space-xs">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary">上传模板与资料</h3>
+<p class="text-label-sm font-label-sm text-text-secondary mt-0.5">接入 Word 11 智能排版与版面分析接口</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-high flex items-center justify-center text-text-secondary" id="close-sheet" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Format Supports Pill list -->
+<div class="flex items-center gap-space-xs text-label-sm font-label-sm text-text-secondary bg-surface-light p-2.5 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">rule</span>
+<span>支持格式：DOCX、PPTX、XLSX、PDF（最大 150MB）</span>
+</div>
+<!-- Upload Pathways Grid -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<!-- Path 1: WeChat Chat Files -->
+<button class="p-space-md rounded-DEFAULT bg-surface-high/70 hover:bg-surface-high active:scale-98 transition-all flex flex-col items-center text-center gap-2" type="button">
+<div class="w-12 h-12 rounded-full bg-badge-mint text-primary-dark flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+</div>
+<span class="text-label-md font-label-md text-text-primary font-semibold">从微信聊天记录选择</span>
+<span class="text-label-sm font-label-sm text-text-secondary">直接导入群聊接收文档</span>
+</button>
+<!-- Path 2: PC QR Fast Transfer -->
+<button class="p-space-md rounded-DEFAULT bg-surface-high/70 hover:bg-surface-high active:scale-98 transition-all flex flex-col items-center text-center gap-2" type="button">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-secondary-on-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">laptop_mac</span>
+</div>
+<span class="text-label-md font-label-md text-text-primary font-semibold">电脑端扫码速传</span>
+<span class="text-label-sm font-label-sm text-text-secondary">投屏同步大批量传件</span>
+</button>
+</div>
+<div class="pt-space-xs pb-safe text-center">
+<span class="text-label-sm font-label-sm text-text-secondary/70">
+          上传即代表同意《校园打印公共资料库共享公约》
+        </span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for upload modal toggle
+  (function initCmsSheet() {
+    const trigger = document.getElementById('upload-modal-trigger');
+    const sheet = document.getElementById('upload-sheet');
+    const closeBtn = document.getElementById('close-sheet');
+
+    if (trigger && sheet && closeBtn) {
+      trigger.addEventListener('click', () => {
+        sheet.classList.remove('hidden');
+        sheet.classList.add('flex');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        sheet.classList.add('hidden');
+        sheet.classList.remove('flex');
+      });
+
+      sheet.addEventListener('click', (e) => {
+        if (e.target === sheet) {
+          sheet.classList.add('hidden');
+          sheet.classList.remove('flex');
+        }
+      });
+    }
+  })();
+</script></main></body></html>

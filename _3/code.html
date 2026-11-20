@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>Print Task Preview</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#74f7ee", "text-secondary": "#527078", "on-surface": "#011f26", "primary": "#006a65", "on-tertiary-fixed": "#1e153a", "surface-container": "#d5f3fc", "error-container": "#ffdad6", "tertiary-fixed": "#e8ddff", "badge-peach": "#FFD8C8", "surface-container-high": "#d0edf6", "on-tertiary-fixed-variant": "#4a4168", "surface-container-highest": "#cae7f0", "surface-light": "#F4FBFC", "background": "#f0fbff", "on-error": "#ffffff", "outline": "#C8E3E5", "badge-mint": "#B9EBD9", "secondary-fixed-dim": "#7cd2f1", "inverse-surface": "#18343b", "surface-bright": "#f0fbff", "on-secondary-container": "#00627a", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ccc0ef", "inverse-primary": "#53dad1", "secondary-fixed": "#b8eaff", "surface-variant": "#cae7f0", "on-primary-container": "#004340", "primary-container": "#D5F4F1", "secondary": "#006780", "surface-dim": "#c2dfe8", "secondary-on-container": "#153D52", "primary-dark": "#168D89", "on-primary-fixed-variant": "#00504c", "surface-high": "#EAF5F6", "primary-fixed-dim": "#53dad1", "on-tertiary-container": "#3f355c", "on-primary-fixed": "#00201e", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004d61", "surface-container-low": "#e0f8ff", "outline-variant": "#bbc9c7", "secondary-container": "#88ddfd", "on-secondary": "#ffffff", "error": "#ba1a1a", "badge-warm-yellow": "#FFF3C4", "on-surface-variant": "#3c4948", "tertiary": "#625881", "surface": "#f0fbff", "surface-container-lowest": "#ffffff", "tertiary-container": "#ab9fcc", "inverse-on-surface": "#d8f6ff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#001f28", "surface-tint": "#006a65", "text-primary": "#18343B", "on-background": "#011f26" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "gutter": "1rem" }, fontFamily: { "label-md": ["Be Vietnam Pro"], "label-sm": ["Be Vietnam Pro"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Be Vietnam Pro"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px));}.pt-safe{padding-top:calc(env(safe-area-inset-top,0px));}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-text-primary antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_12px_rgba(32,184,176,0.06)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-text-primary rounded-full hover:bg-surface-container-low active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[160px]">Print Task Preview</h1></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex items-center bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,106,101,0.08)]"><button aria-label="Mini Program Options" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button><div class="w-px h-3.5 bg-outline mx-0.5"></div><button aria-label="Close Mini Program" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[18px]">radio_button_checked</span></button></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface px-margin pb-safe min-h-screen"><div class="flex flex-col w-full pb-28 space-y-space-md">
+<!-- 1. 文件摘要卡片 -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] flex items-start gap-space-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-primary-container/30 blur-2xl pointer-events-none"></div>
+<!-- 预览缩略图 + PDF角标 -->
+<div class="relative w-20 h-24 rounded-DEFAULT overflow-hidden bg-surface-container-high flex-shrink-0 shadow-sm flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Clean corporate specification document title page preview with subtle blue charts, architectural layout drawings, minimalist modern clean PDF page design in soft teal and white lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADYgSqzd17RQR4rtcpkhtFWVSBoy9rLbpBU_F_d8tjdB5jTbn66Z3nXjBz-WdpPuoT3iJYYSIlHBMUOCaH4fE8MN7Aj7TS_lZW8oRb_jnb2_u95ZVEWZMQLIYleEpbjoGO2XS9MUfEls57jpsH5_wikTJfnydOiYf7TciMjvXrmfUetHW4uFdN4qX8vlyLF-6a072WBkRkB9--RYYlkgwO6lag5z9QAHbKmZ8McUPx"/>
+<div class="absolute top-1.5 left-1.5 bg-primary/90 backdrop-blur-md px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px] text-on-primary">picture_as_pdf</span>
+<span class="font-label-sm text-label-sm text-on-primary scale-90">PDF</span>
+</div>
+<div class="absolute bottom-1 right-1 bg-on-surface/60 backdrop-blur-sm px-1.5 py-0.5 rounded-full text-surface text-[10px] font-medium leading-none">
+        24P
+      </div>
+</div>
+<!-- 文件详情 -->
+<div class="flex flex-col flex-1 min-w-0 justify-between py-0.5">
+<div class="space-y-1">
+<div class="flex items-center justify-between gap-1">
+<h2 class="font-label-lg text-label-lg text-text-primary truncate" title="产品规划与交互架构设计说明书_v2.pdf">
+            产品规划与交互架构设计说明书_v2.pdf
+          </h2>
+</div>
+<div class="flex items-center gap-space-sm text-text-secondary">
+<span class="font-body-sm text-body-sm tabular-nums">14.8 MB</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-body-sm text-body-sm tabular-nums">共 24 页</span>
+</div>
+</div>
+<!-- 解析就绪徽章 -->
+<div class="flex items-center gap-2 mt-2">
+<span class="inline-flex items-center gap-1 bg-badge-mint text-[#135442] px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          智能预检解析完成
+        </span>
+</div>
+</div>
+</section>
+<!-- 2. 参数分组一 · 单双面模式 -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">auto_stories</span>
+<h3 class="font-label-lg text-label-lg text-text-primary">单双面模式</h3>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary">长边更省纸</span>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1" id="duplex-group">
+<!-- 选项 1 -->
+<button class="duplex-btn flex flex-col items-center justify-center p-2.5 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all text-center" data-duplex="single" onclick="selectDuplex('single')" type="button">
+<span class="material-symbols-outlined text-[20px] mb-1">description</span>
+<span class="font-label-md text-label-md">单面打印</span>
+<span class="text-[10px] text-text-secondary mt-0.5">每页单张</span>
+</button>
+<!-- 选项 2 (推荐/当前选中) -->
+<button class="duplex-btn relative flex flex-col items-center justify-center p-2.5 rounded-DEFAULT bg-primary-container text-on-primary-container shadow-sm active:scale-95 transition-all text-center" data-duplex="long" onclick="selectDuplex('long')" type="button">
+<div class="absolute -top-1.5 -right-1 bg-badge-peach text-[#5D2717] font-label-sm text-[10px] px-1.5 py-0.2 rounded-full scale-90">
+          推荐
+        </div>
+<span class="material-symbols-outlined text-[20px] mb-1 text-primary">menu_book</span>
+<span class="font-label-md text-label-md font-semibold">双面·长边翻转</span>
+<span class="text-[10px] text-text-secondary mt-0.5">普通书册式</span>
+</button>
+<!-- 选项 3 -->
+<button class="duplex-btn flex flex-col items-center justify-center p-2.5 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all text-center" data-duplex="short" onclick="selectDuplex('short')" type="button">
+<span class="material-symbols-outlined text-[20px] mb-1">import_contacts</span>
+<span class="font-label-md text-label-md">双面·短边翻转</span>
+<span class="text-[10px] text-text-secondary mt-0.5">日历/便签式</span>
+</button>
+</div>
+</section>
+<!-- 3. 参数分组二 · 色彩与纸张 -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] space-y-space-md">
+<!-- 色彩 -->
+<div class="space-y-space-xs">
+<div class="flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-[18px] text-primary">palette</span>
+<h3 class="font-label-lg text-label-lg text-text-primary">打印色彩</h3>
+</div>
+<div class="grid grid-cols-2 gap-space-sm" id="color-group">
+<button class="color-btn flex items-center justify-between p-3 rounded-DEFAULT bg-primary-container text-on-primary-container active:scale-95 transition-all" data-color="bw" onclick="selectColor('bw')" type="button">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-slate-600 shadow-inner"></span>
+<div class="text-left">
+<div class="font-label-md text-label-md font-semibold">黑白轻省</div>
+<div class="text-[11px] text-text-secondary">日常文档更优惠</div>
+</div>
+</div>
+<span class="font-label-md text-label-md tabular-nums text-right font-semibold">¥0.15<span class="text-[10px] font-normal text-text-secondary">/页</span></span>
+</button>
+<button class="color-btn flex items-center justify-between p-3 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all" data-color="color" onclick="selectColor('color')" type="button">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-gradient-to-tr from-rose-400 via-amber-300 to-sky-400 shadow-inner"></span>
+<div class="text-left">
+<div class="font-label-md text-label-md">全彩精印</div>
+<div class="text-[11px] text-text-secondary">高保真色彩图表</div>
+</div>
+</div>
+<span class="font-label-md text-label-md tabular-nums text-right font-semibold">¥0.80<span class="text-[10px] font-normal text-text-secondary">/页</span></span>
+</button>
+</div>
+</div>
+<!-- 纸张类型 -->
+<div class="space-y-space-xs pt-1">
+<div class="flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-[18px] text-primary">layers</span>
+<h3 class="font-label-lg text-label-lg text-text-primary">纸张规格</h3>
+</div>
+<div class="grid grid-cols-3 gap-2" id="paper-group">
+<button class="paper-btn flex flex-col p-2.5 rounded-DEFAULT bg-primary-container text-on-primary-container active:scale-95 transition-all text-left" data-paper="80g" onclick="selectPaper('80g')" type="button">
+<span class="font-label-md text-label-md font-semibold">标准 80g</span>
+<span class="text-[11px] text-text-secondary mt-0.5">A4 高白道林</span>
+<span class="text-[10px] text-primary mt-1 font-medium">标配用纸</span>
+</button>
+<button class="paper-btn flex flex-col p-2.5 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all text-left" data-paper="100g" onclick="selectPaper('100g')" type="button">
+<span class="font-label-md text-label-md">加厚 100g</span>
+<span class="text-[11px] text-text-secondary mt-0.5">A4 不透墨防印</span>
+<span class="text-[10px] text-text-secondary mt-1 tabular-nums">+¥0.05/页</span>
+</button>
+<button class="paper-btn flex flex-col p-2.5 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all text-left" data-paper="a3" onclick="selectPaper('a3')" type="button">
+<span class="font-label-md text-label-md">工程 A3 纸</span>
+<span class="text-[11px] text-text-secondary mt-0.5">大图幅架构图</span>
+<span class="text-[10px] text-text-secondary mt-1 tabular-nums">+¥0.50/页</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4. 参数分组三 · 份数与打印范围 -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] space-y-space-md">
+<!-- 打印份数 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">content_copy</span>
+<h3 class="font-label-lg text-label-lg text-text-primary">打印份数</h3>
+</div>
+<!-- 触感步进器 -->
+<div class="flex items-center bg-surface-container-low rounded-full p-1 shadow-inner">
+<button aria-label="减少份数" class="w-9 h-9 rounded-full bg-surface-container-lowest flex items-center justify-center text-text-primary shadow-sm active:scale-90 transition-all" onclick="adjustCopies(-1)" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="w-12 text-center font-headline-sm text-headline-sm tabular-nums text-text-primary" id="copies-count">1</span>
+<button aria-label="增加份数" class="w-9 h-9 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm active:scale-90 transition-all" onclick="adjustCopies(1)" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- 打印页码范围 -->
+<div class="space-y-space-xs pt-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">format_list_numbered</span>
+<h3 class="font-label-lg text-label-lg text-text-primary">打印范围</h3>
+</div>
+<span class="font-body-sm text-body-sm text-primary font-medium tabular-nums" id="page-count-badge">计 24 页</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-DEFAULT bg-primary-container text-on-primary-container font-label-md text-label-md transition-all active:scale-95" id="range-all-btn" onclick="toggleRangeMode('all')" type="button">
+<span class="material-symbols-outlined text-[16px]">select_all</span>
+          全部页码 (1-24)
+        </button>
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-DEFAULT bg-surface-light text-text-secondary font-label-md text-label-md transition-all active:scale-95" id="range-custom-btn" onclick="toggleRangeMode('custom')" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+          自定义范围
+        </button>
+</div>
+<!-- 自定义范围输入框（默认折叠隐藏，平滑切换） -->
+<div class="hidden pt-2" id="custom-range-input-wrapper">
+<div class="relative flex items-center">
+<input class="w-full h-12 px-4 rounded-DEFAULT bg-surface-light text-text-primary font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest placeholder:text-text-secondary/50 shadow-inner" id="custom-range-input" oninput="updatePricing()" placeholder="例如: 1-5, 8, 12-24" type="text" value="1-5, 8, 12-24"/>
+<button class="absolute right-3 w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary" onclick="document.getElementById('custom-range-input').value=''; updatePricing();" type="button">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+</button>
+</div>
+<p class="font-body-sm text-[12px] text-text-secondary mt-1.5 pl-1">
+          支持逗号隔开与横杠连缀，未选中的页码将自动滤除不计费
+        </p>
+</div>
+</div>
+</section>
+<!-- 5. 装订服务选项卡 -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">inventory_2</span>
+<h3 class="font-label-lg text-label-lg text-text-primary">装订工艺服务</h3>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary">加急无损封装</span>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1" id="binding-group">
+<!-- 选项 1 -->
+<button class="binding-btn flex flex-col items-center justify-center p-3 rounded-DEFAULT bg-primary-container text-on-primary-container active:scale-95 transition-all text-center" data-binding="none" onclick="selectBinding('none')" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">close</span>
+<span class="font-label-md text-label-md font-semibold">无需装订</span>
+<span class="text-[11px] text-primary mt-1 font-medium">免费</span>
+</button>
+<!-- 选项 2 -->
+<button class="binding-btn flex flex-col items-center justify-center p-3 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all text-center" data-binding="staple" onclick="selectBinding('staple')" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">hardware</span>
+<span class="font-label-md text-label-md">左上角角订</span>
+<span class="text-[11px] text-text-secondary mt-1 tabular-nums">+¥0.50</span>
+</button>
+<!-- 选项 3 -->
+<button class="binding-btn flex flex-col items-center justify-center p-3 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all text-center" data-binding="glue" onclick="selectBinding('glue')" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">auto_stories</span>
+<span class="font-label-md text-label-md">骑马订/胶装</span>
+<span class="text-[11px] text-text-secondary mt-1 tabular-nums">+¥3.00</span>
+</button>
+</div>
+</section>
+<!-- 6. 底部固定结算条 (Fixed Bottom Bar) -->
+<footer class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl px-margin py-3 pb-safe shadow-[0_-4px_20px_rgba(32,184,176,0.12)]">
+<div class="max-w-[768px] mx-auto flex items-center justify-between gap-space-md">
+<!-- 左侧：计价明细与触发面板 -->
+<div class="flex flex-col cursor-pointer active:opacity-80 transition-opacity" onclick="togglePriceBreakdown()">
+<div class="flex items-baseline gap-1.5">
+<span class="text-[12px] font-label-md text-text-secondary">折后预估</span>
+<span class="text-headline-md font-headline-md text-primary tabular-nums font-bold tracking-tight" id="total-price-display">
+            ¥3.60
+          </span>
+<span class="text-body-sm font-body-sm text-text-secondary/60 line-through tabular-nums" id="original-price-display">
+            ¥4.50
+          </span>
+</div>
+<div class="flex items-center gap-1">
+<span class="inline-flex items-center bg-badge-peach/80 text-[#5D2717] px-1.5 py-0.2 rounded-full text-[10px] font-semibold">
+            校园特惠 8 折
+          </span>
+<span class="material-symbols-outlined text-[14px] text-text-secondary">keyboard_arrow_up</span>
+</div>
+</div>
+<!-- 右侧：下一步操作按钮 -->
+<button class="h-12 px-6 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg font-semibold flex items-center gap-1.5 shadow-[0_6px_18px_rgba(32,184,176,0.30)] active:scale-95 transition-all" onclick="goToPreview()" type="button">
+<span>纸张效果预览</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+<!-- 计价明细展开半弹窗 (BottomSheet Modal) -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-200" id="price-modal-backdrop" onclick="togglePriceBreakdown()">
+<div class="absolute bottom-0 left-0 right-0 bg-surface-container-lowest rounded-t-xl p-6 pb-safe space-y-4 shadow-2xl transform translate-y-full transition-transform duration-300" id="price-modal-panel" onclick="event.stopPropagation()">
+<!-- 拖拽把手指示条 -->
+<div class="w-10 h-1 rounded-full bg-outline mx-auto -mt-2 mb-2"></div>
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-text-primary">费用明细</h4>
+<button class="w-8 h-8 rounded-full bg-surface-light flex items-center justify-center text-text-secondary active:scale-90" onclick="togglePriceBreakdown()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="space-y-3 pt-2 text-body-sm font-body-sm">
+<div class="flex items-center justify-between text-text-secondary">
+<span>基础打印费 (<span id="modal-pages-count">24</span>页 × ¥0.15 × <span id="modal-copies-count">1</span>份)</span>
+<span class="font-medium text-text-primary tabular-nums" id="modal-base-fee">¥3.60</span>
+</div>
+<div class="flex items-center justify-between text-text-secondary">
+<span>纸张升级加价 (80g 标准A4)</span>
+<span class="font-medium text-text-primary tabular-nums" id="modal-paper-fee">¥0.00</span>
+</div>
+<div class="flex items-center justify-between text-text-secondary">
+<span>装订定制费用</span>
+<span class="font-medium text-text-primary tabular-nums" id="modal-binding-fee">¥0.00</span>
+</div>
+<div class="flex items-center justify-between text-primary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            校园认证专享折减 (8折)
+          </span>
+<span class="font-medium tabular-nums" id="modal-discount-fee">-¥0.90</span>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-text-primary">最终实付预估</span>
+<span class="font-headline-md text-headline-md text-primary font-bold tabular-nums" id="modal-final-fee">¥3.60</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // 状态机
+  const state = {
+    duplex: 'long',
+    color: 'bw',
+    paper: '80g',
+    copies: 1,
+    rangeMode: 'all',
+    totalPages: 24,
+    effectivePages: 24,
+    binding: 'none'
+  };
+
+  const prices = {
+    color: { bw: 0.15, color: 0.80 },
+    paper: { '80g': 0.00, '100g': 0.05, 'a3': 0.50 },
+    binding: { 'none': 0.00, 'staple': 0.50, 'glue': 3.00 }
+  };
+
+  function selectDuplex(mode) {
+    state.duplex = mode;
+    document.querySelectorAll('.duplex-btn').forEach(btn => {
+      const isMatch = btn.getAttribute('data-duplex') === mode;
+      btn.className = isMatch
+        ? 'duplex-btn relative flex flex-col items-center justify-center p-2.5 rounded-DEFAULT bg-primary-container text-on-primary-container shadow-sm active:scale-95 transition-all text-center'
+        : 'duplex-btn relative flex flex-col items-center justify-center p-2.5 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all text-center';
+    });
+    updatePricing();
+  }
+
+  function selectColor(color) {
+    state.color = color;
+    document.querySelectorAll('.color-btn').forEach(btn => {
+      const isMatch = btn.getAttribute('data-color') === color;
+      btn.className = isMatch
+        ? 'color-btn flex items-center justify-between p-3 rounded-DEFAULT bg-primary-container text-on-primary-container active:scale-95 transition-all'
+        : 'color-btn flex items-center justify-between p-3 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all';
+    });
+    updatePricing();
+  }
+
+  function selectPaper(paper) {
+    state.paper = paper;
+    document.querySelectorAll('.paper-btn').forEach(btn => {
+      const isMatch = btn.getAttribute('data-paper') === paper;
+      btn.className = isMatch
+        ? 'paper-btn flex flex-col p-2.5 rounded-DEFAULT bg-primary-container text-on-primary-container active:scale-95 transition-all text-left'
+        : 'paper-btn flex flex-col p-2.5 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all text-left';
+    });
+    updatePricing();
+  }
+
+  function selectBinding(binding) {
+    state.binding = binding;
+    document.querySelectorAll('.binding-btn').forEach(btn => {
+      const isMatch = btn.getAttribute('data-binding') === binding;
+      btn.className = isMatch
+        ? 'binding-btn flex flex-col items-center justify-center p-3 rounded-DEFAULT bg-primary-container text-on-primary-container active:scale-95 transition-all text-center'
+        : 'binding-btn flex flex-col items-center justify-center p-3 rounded-DEFAULT bg-surface-light text-text-secondary active:scale-95 transition-all text-center';
+    });
+    updatePricing();
+  }
+
+  function adjustCopies(delta) {
+    const next = state.copies + delta;
+    if (next >= 1 && next <= 99) {
+      state.copies = next;
+      document.getElementById('copies-count').textContent = state.copies;
+      updatePricing();
+    }
+  }
+
+  function toggleRangeMode(mode) {
+    state.rangeMode = mode;
+    const allBtn = document.getElementById('range-all-btn');
+    const customBtn = document.getElementById('range-custom-btn');
+    const customWrapper = document.getElementById('custom-range-input-wrapper');
+
+    if (mode === 'all') {
+      allBtn.className = 'flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-DEFAULT bg-primary-container text-on-primary-container font-label-md text-label-md transition-all active:scale-95';
+      customBtn.className = 'flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-DEFAULT bg-surface-light text-text-secondary font-label-md text-label-md transition-all active:scale-95';
+      customWrapper.classList.add('hidden');
+      state.effectivePages = state.totalPages;
+    } else {
+      customBtn.className = 'flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-DEFAULT bg-primary-container text-on-primary-container font-label-md text-label-md transition-all active:scale-95';
+      allBtn.className = 'flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-DEFAULT bg-surface-light text-text-secondary font-label-md text-label-md transition-all active:scale-95';
+      customWrapper.classList.remove('hidden');
+      state.effectivePages = 19; // 解析 "1-5, 8, 12-24" 的有效张数演示
+    }
+    document.getElementById('page-count-badge').textContent = `计 ${state.effectivePages} 页`;
+    updatePricing();
+  }
+
+  function updatePricing() {
+    const unitPrintPrice = prices.color[state.color];
+    const unitPaperPrice = prices.paper[state.paper];
+    const bindingPrice = prices.binding[state.binding] * state.copies;
+
+    const basePrintCost = (unitPrintPrice + unitPaperPrice) * state.effectivePages * state.copies;
+    const rawTotal = basePrintCost + bindingPrice;
+    const discountedTotal = rawTotal * 0.8; // 校园特惠 8 折
+
+    // 更新界面展示
+    document.getElementById('total-price-display').textContent = `¥${discountedTotal.toFixed(2)}`;
+    document.getElementById('original-price-display').textContent = `¥${rawTotal.toFixed(2)}`;
+
+    // 更新弹窗明细
+    document.getElementById('modal-pages-count').textContent = state.effectivePages;
+    document.getElementById('modal-copies-count').textContent = state.copies;
+    document.getElementById('modal-base-fee').textContent = `¥${(unitPrintPrice * state.effectivePages * state.copies).toFixed(2)}`;
+    document.getElementById('modal-paper-fee').textContent = `¥${(unitPaperPrice * state.effectivePages * state.copies).toFixed(2)}`;
+    document.getElementById('modal-binding-fee').textContent = `¥${bindingPrice.toFixed(2)}`;
+    document.getElementById('modal-discount-fee').textContent = `-¥${(rawTotal - discountedTotal).toFixed(2)}`;
+    document.getElementById('modal-final-fee').textContent = `¥${discountedTotal.toFixed(2)}`;
+  }
+
+  function togglePriceBreakdown() {
+    const backdrop = document.getElementById('price-modal-backdrop');
+    const panel = document.getElementById('price-modal-panel');
+    
+    if (backdrop.classList.contains('hidden')) {
+      backdrop.classList.remove('hidden');
+      setTimeout(() => {
+        backdrop.classList.remove('opacity-0');
+        panel.classList.remove('translate-y-full');
+      }, 10);
+    } else {
+      backdrop.classList.add('opacity-0');
+      panel.classList.add('translate-y-full');
+      setTimeout(() => {
+        backdrop.classList.add('hidden');
+      }, 250);
+    }
+  }
+
+  function goToPreview() {
+    // 触发下一步预览微动效
+    const btn = event.currentTarget;
+    btn.classList.add('scale-95');
+    setTimeout(() => {
+      btn.classList.remove('scale-95');
+    }, 150);
+  }
+
+  // 初始计算运行
+  updatePricing();
+</script></main></body></html>

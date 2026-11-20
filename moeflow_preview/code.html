@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>纸张排版预览 · 版本锁定 - MoeFlow SmartPrint</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "badge-peach": "#FFD8C8",
+            "tertiary-fixed-dim": "#ccc0ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#53dad1",
+            "outline-variant": "#bbc9c7",
+            "inverse-surface": "#18343b",
+            "surface-container": "#d5f3fc",
+            "surface-container-low": "#e0f8ff",
+            "on-primary-container": "#004340",
+            "primary-container": "#20b8b0",
+            "surface-dim": "#c2dfe8",
+            "text-secondary": "#527078",
+            "secondary": "#006780",
+            "on-secondary-fixed-variant": "#004d61",
+            "on-tertiary-fixed-variant": "#4a4168",
+            "tertiary-fixed": "#e8ddff",
+            "secondary-container": "#D7F0FA",
+            "on-primary-fixed-variant": "#00504c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#011f26",
+            "on-secondary-container": "#00627a",
+            "badge-mint": "#B9EBD9",
+            "error": "#ba1a1a",
+            "surface-container-high": "#d0edf6",
+            "on-error": "#ffffff",
+            "primary": "#20b8b0",
+            "on-secondary-fixed": "#001f28",
+            "on-surface": "#011f26",
+            "on-tertiary-fixed": "#1e153a",
+            "tertiary": "#625881",
+            "badge-warm-yellow": "#FFF3C4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#3f355c",
+            "on-primary-fixed": "#00201e",
+            "surface": "#f0fbff",
+            "surface-bright": "#f0fbff",
+            "surface-high": "#EAF5F6",
+            "primary-dark": "#168D89",
+            "inverse-on-surface": "#d8f6ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#7cd2f1",
+            "on-error-container": "#93000a",
+            "background": "#f0fbff",
+            "surface-variant": "#cae7f0",
+            "outline": "#C8E3E5",
+            "text-primary": "#18343B",
+            "tertiary-container": "#ab9fcc",
+            "surface-light": "#F4FBFC",
+            "surface-container-highest": "#cae7f0",
+            "on-surface-variant": "#3c4948",
+            "secondary-fixed": "#b8eaff",
+            "secondary-on-container": "#153D52",
+            "surface-tint": "#20b8b0",
+            "primary-fixed": "#74f7ee",
+            "inverse-primary": "#53dad1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "52px", fontWeight: "800" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] pt-safe">
+<div class="h-14 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-1 min-w-0 pr-2">
+<button aria-label="返回上一页" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all flex-shrink-0" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px] leading-none">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">纸张排版预览 · 版本锁定</h1>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="h-8 px-2.5 rounded-full bg-surface-high/90 border border-white/80 shadow-[0_2px_8px_rgba(32,184,176,0.06)] flex items-center gap-1.5">
+<button aria-label="小程序菜单" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">more_horiz</span>
+</button>
+<span class="w-[1px] h-3.5 bg-outline/60"></span>
+<button aria-label="关闭小程序" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[17px] leading-none">radio_button_checked</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-background"><div class="flex flex-col w-full pb-32">
+<!-- 1. 顶部悬浮工具条 (Glassmorphism 控制坞) -->
+<section class="sticky top-0 z-40 px-4 pt-3 pb-2 bg-surface/90 backdrop-blur-md">
+<div class="flex items-center justify-between gap-2 p-1.5 rounded-full bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)]">
+<!-- 视图模式切换 -->
+<div class="flex items-center p-0.5 rounded-full bg-surface-high">
+<button aria-label="单页模式" class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-lowest text-text-primary shadow-sm transition-all" id="btnViewSingle">
+<span class="material-symbols-outlined text-[18px]">article</span>
+</button>
+<button aria-label="双页折页" class="flex items-center justify-center w-8 h-8 rounded-full text-text-secondary hover:text-text-primary transition-all" id="btnViewSpread">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+</button>
+<button aria-label="九宫格概览" class="flex items-center justify-center w-8 h-8 rounded-full text-text-secondary hover:text-text-primary transition-all" id="btnViewGrid">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+</div>
+<!-- 页码翻页胶囊 -->
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-text-primary">
+<button aria-label="上一页" class="flex items-center justify-center w-6 h-6 rounded-full hover:bg-surface-high active:scale-90 text-text-secondary" id="prevPageBtn">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="font-label-md text-label-md px-1 tracking-tight text-text-primary select-none">
+<span class="text-primary-dark font-headline-sm text-label-md">03</span>
+<span class="text-text-secondary font-body-sm text-[12px]"> / 24 页</span>
+</span>
+<button aria-label="下一页" class="flex items-center justify-center w-6 h-6 rounded-full hover:bg-surface-high active:scale-90 text-text-secondary" id="nextPageBtn">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- 缩放与自适应胶囊 -->
+<div class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-surface-high text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">pinch</span>
+<span class="font-label-sm text-label-sm text-text-primary">100% 满幅</span>
+</div>
+</div>
+</section>
+<!-- 2. 真实 A4 白纸仿真画布容器 -->
+<section class="px-4 py-2 flex flex-col items-center">
+<div class="relative w-full max-w-[360px] aspect-[1/1.414] rounded-sm bg-surface-container-lowest shadow-[0_16px_36px_-6px_rgba(32,184,176,0.22)] overflow-hidden flex flex-col">
+<!-- 锁定状态专业水印与 L 型标角 -->
+<div class="absolute top-0 right-0 z-20 flex items-center gap-1 pl-2.5 pr-2 py-1 rounded-bl-xl bg-surface-container-low text-text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary-dark" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-[10px] tracking-tight">已锁定 v1.0.4 · 100% 像素直出</span>
+</div>
+<!-- 左侧 8mm 胶装/打孔装订安全边距带与提示 -->
+<div class="absolute left-0 top-0 bottom-0 w-8 bg-surface-high/60 z-10 flex flex-col items-center justify-between py-6">
+<div class="w-full flex flex-col items-center gap-6">
+<div class="w-2.5 h-2.5 rounded-full bg-text-secondary/25 shadow-inner"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-text-secondary/25 shadow-inner"></div>
+</div>
+<div class="flex items-center justify-center transform -rotate-90 origin-center whitespace-nowrap">
+<span class="font-label-sm text-[9px] tracking-wider text-text-secondary/80 font-mono">8mm 装订预留线</span>
+</div>
+<div class="w-full flex flex-col items-center gap-6">
+<div class="w-2.5 h-2.5 rounded-full bg-text-secondary/25 shadow-inner"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-text-secondary/25 shadow-inner"></div>
+</div>
+</div>
+<!-- 纸张内部仿真学术论文排版 -->
+<div class="flex-1 ml-8 p-3 flex flex-col justify-between select-none">
+<!-- 页眉与出血位线示意 -->
+<div class="pb-1.5 flex items-center justify-between text-text-secondary/60">
+<span class="font-label-sm text-[9px] tracking-tighter truncate max-w-[190px]">计算机工程与应用 · 第 42 卷 第 8 期</span>
+<span class="font-label-sm text-[9px] font-mono">第 3 页</span>
+</div>
+<div class="w-full h-px bg-surface-variant mb-2"></div>
+<!-- 论文标题与作者段落 -->
+<div class="space-y-1 mb-2">
+<h2 class="font-headline-sm text-[13px] leading-tight text-text-primary font-bold tracking-tight">
+            基于物联网的高校智能云印系统架构设计与排版引擎优化
+          </h2>
+<p class="font-label-sm text-[9px] text-text-secondary">
+            林子涵，周逸辰，陈思源 · 清华大学计算机科学与技术系
+          </p>
+</div>
+<!-- 摘要面板 -->
+<div class="p-1.5 rounded-md bg-surface-container-low mb-2">
+<p class="font-body-sm text-[8.5px] leading-[13px] text-on-surface-variant line-clamp-3">
+<span class="font-bold text-text-primary">摘要：</span>针对传统校园打印店排队耗时、格式排版错误率高等问题，提出基于微服务与云印前预检的智能排版调度机制。测试表明渲染解析耗时降低 46.2%，排版准确度达 99.98%。
+          </p>
+</div>
+<!-- 论文双栏正文与插图排版区 -->
+<div class="grid grid-cols-2 gap-2 flex-1 items-start">
+<!-- 左栏：论文正文假字 -->
+<div class="space-y-1">
+<div class="w-12 h-1.5 rounded-full bg-text-primary/70"></div>
+<p class="font-body-sm text-[8px] leading-[11px] text-text-secondary/90 text-justify">
+              本系统引入自适应 PostScript 解析管线，动态检测 PDF 字体嵌入状态与图片栅格化色彩空间，在客户端完成渲染校验并固化位图特征树。
+            </p>
+<p class="font-body-sm text-[8px] leading-[11px] text-text-secondary/90 text-justify">
+              针对跨页图表溢出，设计了基于约束布局算法的动态锚点分配。
+            </p>
+<div class="p-1 rounded bg-surface-high">
+<span class="font-mono text-[7px] text-text-secondary block">f(x) = ∑ (w_i · x_i) + β</span>
+</div>
+</div>
+<!-- 右栏：排版图表与数据示意 -->
+<div class="space-y-1.5">
+<!-- 仿真排版架构图插图 -->
+<div class="w-full rounded bg-surface-light p-1 shadow-sm flex flex-col items-center">
+<div class="w-full h-12 rounded bg-surface-container-high flex flex-col items-center justify-center p-1 relative overflow-hidden">
+<div class="flex items-center gap-1 z-10">
+<span class="material-symbols-outlined text-[12px] text-primary">cloud_done</span>
+<span class="font-label-sm text-[7px] text-on-surface-variant font-mono">PRINT-QUEUE</span>
+</div>
+<!-- 示意流程节点微型图 -->
+<div class="flex items-center gap-1 mt-1 z-10">
+<div class="w-4 h-2 rounded bg-primary-fixed text-[5px] flex items-center justify-center font-mono">PDF</div>
+<span class="material-symbols-outlined text-[8px] text-text-secondary">arrow_forward</span>
+<div class="w-4 h-2 rounded bg-secondary-fixed text-[5px] flex items-center justify-center font-mono">RIP</div>
+<span class="material-symbols-outlined text-[8px] text-text-secondary">arrow_forward</span>
+<div class="w-4 h-2 rounded bg-primary-container text-[5px] text-on-primary-container flex items-center justify-center font-mono">A4</div>
+</div>
+</div>
+<span class="font-label-sm text-[7px] text-text-secondary mt-0.5 scale-90">图 2 智能印前流水线解析流</span>
+</div>
+<p class="font-body-sm text-[8px] leading-[11px] text-text-secondary/90 text-justify">
+              对比实验表明，采用预检管线后设备出纸卡纸率降低 83.4%，且字体缺失替换告警率趋向零偏差。
+            </p>
+</div>
+</div>
+<!-- 真实页脚与双面反向提示 -->
+<div class="w-full h-px bg-surface-variant mt-2 pt-1 flex items-center justify-between text-text-secondary/50">
+<span class="font-label-sm text-[8px] font-mono">MoeFlow Print v1.0</span>
+<span class="font-label-sm text-[8px] font-mono font-bold text-text-primary">- 3 -</span>
+<span class="font-label-sm text-[8px]">长边翻转</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. 智能印前预检诊断条 -->
+<section class="px-4 mt-3">
+<div class="p-3 rounded-2xl bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-dark text-[18px]">verified_user</span>
+<span class="font-headline-sm text-[14px] text-text-primary font-bold">印前智能预检报告</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-[11px] font-semibold text-[#135442] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+          全项合规
+        </span>
+</div>
+<div class="grid grid-cols-3 gap-1.5 pt-1">
+<div class="p-2 rounded-xl bg-surface-light flex flex-col gap-0.5">
+<div class="flex items-center gap-1 text-[#135442]">
+<span class="material-symbols-outlined text-[14px]">space_dashboard</span>
+<span class="font-label-sm text-[11px]">装订边距</span>
+</div>
+<span class="font-body-sm text-[11px] text-text-secondary truncate">安全区留白充足</span>
+</div>
+<div class="p-2 rounded-xl bg-surface-light flex flex-col gap-0.5">
+<div class="flex items-center gap-1 text-[#135442]">
+<span class="material-symbols-outlined text-[14px]">high_quality</span>
+<span class="font-label-sm text-[11px]">插图精度</span>
+</div>
+<span class="font-body-sm text-[11px] text-text-secondary truncate">均值 320 DPI</span>
+</div>
+<div class="p-2 rounded-xl bg-surface-light flex flex-col gap-0.5">
+<div class="flex items-center gap-1 text-[#135442]">
+<span class="material-symbols-outlined text-[14px]">font_download</span>
+<span class="font-label-sm text-[11px]">字体解析</span>
+</div>
+<span class="font-body-sm text-[11px] text-text-secondary truncate">已全部嵌入</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. 锁定参数摘要条 -->
+<section class="px-4 mt-3">
+<div class="p-3.5 rounded-2xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-[12px]">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">tune</span>
+<span class="font-semibold text-text-primary">工单打印参数锁定</span>
+</div>
+<span class="font-mono text-[11px] text-text-secondary">单据号 MF-202505-8831</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-text-primary font-label-md text-[12px] shadow-sm">
+          A4 标准纸
+        </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-text-primary font-label-md text-[12px] shadow-sm">
+          黑白双面
+        </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-text-primary font-label-md text-[12px] shadow-sm">
+          长边翻转
+        </span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-[12px] shadow-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">book</span>
+          左侧热熔胶装
+        </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-text-secondary font-label-md text-[12px] shadow-sm font-mono">
+          共 12 张 / 24 页
+        </span>
+</div>
+</div>
+</section>
+<!-- 5. 底部悬浮操作与确认结算条 -->
+<footer class="fixed bottom-0 inset-x-0 z-50 p-4 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_-8px_24px_-4px_rgba(32,184,176,0.12)]">
+<div class="max-w-md mx-auto flex flex-col gap-2.5">
+<!-- 计费明细行 -->
+<div class="flex items-baseline justify-between px-1">
+<div class="flex items-center gap-1.5 text-text-secondary">
+<span class="font-label-md text-label-md">预估合计</span>
+<span class="font-body-sm text-[11px] text-text-secondary/80">（打印 ¥2.60 + 胶装 ¥0.50）</span>
+</div>
+<div class="flex items-baseline font-mono font-bold text-text-primary">
+<span class="text-[14px] text-primary-dark mr-0.5">¥</span>
+<span class="font-display-lg-mobile text-[26px] tracking-tight text-primary-dark">3.10</span>
+</div>
+</div>
+<!-- 操作按钮群 -->
+<div class="grid grid-cols-5 gap-2.5 items-center">
+<!-- 次按钮：修改参数 -->
+<button class="col-span-2 h-12 rounded-full bg-secondary-container hover:bg-secondary-fixed text-secondary-on-container font-label-lg text-label-lg active:scale-95 transition-all flex items-center justify-center gap-1 shadow-sm" id="btnModify" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>修改参数</span>
+</button>
+<!-- 主按钮：确认送印 -->
+<button class="col-span-3 h-12 rounded-full bg-primary-container hover:bg-primary-dark text-on-primary font-label-lg text-label-lg active:scale-95 shadow-[0_6px_18px_rgba(32,184,176,0.3)] transition-all flex items-center justify-center gap-1.5" id="btnConfirmPay" type="button">
+<span>确认版面无误</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- 智能印前安全保证提示 -->
+<div class="flex items-center justify-center gap-1 text-center">
+<span class="material-symbols-outlined text-[13px] text-text-secondary">lock</span>
+<p class="font-body-sm text-[11px] text-text-secondary">
+          点击后将固化排版参数送入印前引擎，出纸与预览 100% 一致
+        </p>
+</div>
+</div>
+</footer>
+</div>
+<script>
+  // 简易交互脚本：页码切换微动画与视图按钮切换
+  (function () {
+    const viewButtons = ['btnViewSingle', 'btnViewSpread', 'btnViewGrid'];
+    viewButtons.forEach(id => {
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.addEventListener('click', () => {
+          viewButtons.forEach(otherId => {
+            const other = document.getElementById(otherId);
+            if (other) {
+              other.classList.remove('bg-surface-container-lowest', 'text-text-primary', 'shadow-sm');
+              other.classList.add('text-text-secondary');
+            }
+          });
+          btn.classList.add('bg-surface-container-lowest', 'text-text-primary', 'shadow-sm');
+          btn.classList.remove('text-text-secondary');
+        });
+      }
+    });
+
+    const confirmBtn = document.getElementById('btnConfirmPay');
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', function() {
+        this.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span><span>正在固化排版...</span>';
+        setTimeout(() => {
+          this.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>排版已锁定</span>';
+        }, 800);
+      });
+    }
+  })();
+</script></main>
+</body></html>

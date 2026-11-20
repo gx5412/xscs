@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>MoeFlow SmartPrint</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:max(env(safe-area-inset-bottom,0px),16px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-primary":"#53dad1","secondary":"#006780","on-tertiary-container":"#3f355c","secondary-container":"#88ddfd","surface-high":"#EAF5F6","surface-container-high":"#d0edf6","error-container":"#ffdad6","surface-light":"#F4FBFC","surface-container":"#FFFFFF","badge-mint":"#B9EBD9","surface-dim":"#c2dfe8","tertiary-fixed":"#e8ddff","background":"#f0fbff","outline":"#C8E3E5","primary-fixed":"#74f7ee","on-primary-fixed-variant":"#00504c","surface-variant":"#cae7f0","outline-variant":"#bbc9c7","on-secondary":"#ffffff","on-error-container":"#93000a","surface":"#f0fbff","secondary-fixed-dim":"#7cd2f1","secondary-fixed":"#b8eaff","surface-container-highest":"#cae7f0","primary-container":"#D5F4F1","primary-fixed-dim":"#53dad1","inverse-on-surface":"#d8f6ff","badge-peach":"#FFD8C8","error":"#ba1a1a","text-primary":"#18343B","on-primary":"#ffffff","on-error":"#ffffff","on-tertiary-fixed-variant":"#4a4168","on-secondary-fixed-variant":"#004d61","surface-bright":"#f0fbff","surface-tint":"#006a65","text-secondary":"#527078","tertiary-container":"#ab9fcc","on-tertiary-fixed":"#1e153a","on-secondary-container":"#00627a","on-surface":"#011f26","on-secondary-fixed":"#001f28","on-primary-fixed":"#00201e","inverse-surface":"#18343b","badge-warm-yellow":"#FFF3C4","tertiary":"#625881","primary-dark":"#168D89","on-tertiary":"#ffffff","on-background":"#011f26","surface-container-low":"#e0f8ff","tertiary-fixed-dim":"#ccc0ef","on-surface-variant":"#3c4948","surface-container-lowest":"#ffffff","secondary-on-container":"#153D52","primary":"#006a65","on-primary-container":"#004340"},borderRadius:{DEFAULT:"1rem",lg:"2rem",xl:"3rem",full:"9999px"},spacing:{"gutter":"1rem","space-lg":"1.5rem","margin-desktop":"2.5rem","space-xl":"2rem","margin":"1rem","space-md":"1rem","space-sm":"0.5rem","gutter-desktop":"1.5rem","space-xs":"0.25rem"},fontFamily:{"body-sm":["Be Vietnam Pro"],"body-lg":["Be Vietnam Pro"],"label-lg":["Be Vietnam Pro"],"body-md":["Be Vietnam Pro"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Be Vietnam Pro"],"label-md":["Be Vietnam Pro"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"]},fontSize:{"body-sm":["14px",{lineHeight:"22px",fontWeight:"400"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-lg":["15px",{lineHeight:"22px",fontWeight:"600"}],"body-md":["16px",{lineHeight:"26px",fontWeight:"400"}],"headline-lg":["32px",{lineHeight:"40px",fontWeight:"700"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"700"}],"display-lg-mobile":["32px",{lineHeight:"40px",fontWeight:"800"}],"label-sm":["11px",{lineHeight:"16px",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",fontWeight:"600"}],"headline-lg-mobile":["26px",{lineHeight:"34px",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"700"}],"display-lg":["40px",{lineHeight:"52px",fontWeight:"800"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] pt-safe"><div class="h-14 px-3 flex items-center justify-between"><div class="flex items-center gap-1.5"><button aria-label="返回" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all" onclick="history.back()"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[150px]">Merchant Tools</h1></div><div class="flex items-center gap-2"><div class="h-8 px-2 rounded-full bg-surface-high/90 flex items-center gap-1"><button aria-label="更多操作" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors" type="button"><svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></svg></button><span class="w-[1px] h-3.5 bg-outline/60"></span><button aria-label="小程序胶囊关闭" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors" type="button"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" fill="currentColor" r="2.5"></circle></svg></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_2px_8px_rgba(0,106,101,0.2)]"><svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- 顶部统计与新增操作栏 -->
+<section class="px-4 pt-3 pb-3 flex items-center justify-between">
+<div class="flex items-baseline gap-2">
+<h2 class="font-headline-sm text-headline-sm text-text-primary">当前管理门店</h2>
+<span class="font-label-md text-label-md px-2.5 py-0.5 rounded-full bg-surface-high text-secondary font-bold tabular-nums">3</span>
+</div>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#20B8B0] to-[#73C9E8] text-white font-label-md text-label-md shadow-sm active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24">
+<path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>新增合作点位</span>
+</button>
+</section>
+<!-- 门店卡片列表 -->
+<div class="px-4 space-y-4">
+<!-- 卡片 1：主力门店 · 营业中 -->
+<article class="bg-surface-container rounded-[24px] p-5 shadow-sm space-y-4">
+<!-- 头部：标题与标签 -->
+<div class="flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#135442] animate-pulse"></span>
+              营业中
+            </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm">主理网点</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm">编号 #001</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">大学城文理学部创客打印中心</h3>
+</div>
+<!-- 网点详细信息 -->
+<div class="space-y-2.5 pt-1 text-text-secondary font-body-sm text-body-sm">
+<div class="flex items-start gap-2.5">
+<svg class="w-4 h-4 text-primary shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-text-primary leading-tight">学生活动中心 B 栋 1F 创客大厅 108 号</span>
+</div>
+<div class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-text-secondary leading-tight">07:30 - 23:30（支持夜间自助刷脸）</span>
+</div>
+<div class="flex items-start gap-2.5">
+<svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-text-secondary leading-tight">绑定 4 台设备（2 台激光一体机、1 台高速彩印机、1 台 PDA 核销机）</span>
+</div>
+</div>
+<!-- 今日概况小数据条 (Bento 式胶囊栏) -->
+<div class="bg-surface-high rounded-2xl p-3.5 flex items-center justify-between">
+<div class="flex-1 flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-text-secondary">今日接单</span>
+<span class="font-headline-sm text-headline-sm text-text-primary tabular-nums mt-0.5">142<span class="font-label-sm text-label-sm font-normal text-text-secondary ml-0.5">单</span></span>
+</div>
+<div class="w-px h-6 bg-surface-variant"></div>
+<div class="flex-1 flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-text-secondary">今日营收</span>
+<span class="font-headline-sm text-headline-sm text-primary tabular-nums mt-0.5">¥1,286.50</span>
+</div>
+<div class="w-px h-6 bg-surface-variant"></div>
+<div class="flex-1 flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-text-secondary">耗材健康度</span>
+<span class="font-headline-sm text-headline-sm text-[#135442] tabular-nums mt-0.5">96%</span>
+</div>
+</div>
+<!-- 快捷操作按钮组 -->
+<div class="grid grid-cols-4 gap-2 pt-1">
+<button class="py-2.5 px-2 rounded-full bg-surface-high hover:bg-surface-variant text-text-primary font-label-md text-label-md flex flex-col items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-center font-label-sm text-label-sm">暂停营业</span>
+</button>
+<button class="py-2.5 px-2 rounded-full bg-surface-high hover:bg-surface-variant text-text-primary font-label-md text-label-md flex flex-col items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-center font-label-sm text-label-sm">编辑信息</span>
+</button>
+<button class="py-2.5 px-2 rounded-full bg-surface-high hover:bg-surface-variant text-text-primary font-label-md text-label-md flex flex-col items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-center font-label-sm text-label-sm">设备配置</span>
+</button>
+<button class="py-2.5 px-2 rounded-full bg-secondary-container hover:bg-secondary-fixed text-secondary-on-container font-label-md text-label-md flex flex-col items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-secondary-on-container" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-center font-label-sm text-label-sm">查看报表</span>
+</button>
+</div>
+</article>
+<!-- 卡片 2：自助点位 · 营业中 -->
+<article class="bg-surface-container rounded-[24px] p-5 shadow-sm space-y-4">
+<div class="flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-mint text-[#135442] font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#135442]"></span>
+              营业中
+            </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-high text-secondary font-label-sm text-label-sm">24小时无人值守</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm">编号 #002</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">科技园 A 座 02 号 24H 自助印点</h3>
+</div>
+<div class="space-y-2 text-text-secondary font-body-sm text-body-sm">
+<div class="flex items-start gap-2.5">
+<svg class="w-4 h-4 text-primary shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-text-primary leading-tight">科技园 A 座 1F 挑空大堂南侧</span>
+</div>
+<div class="flex items-start gap-2.5">
+<svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-text-secondary leading-tight">绑定 1 台理光工业级多功能复合机</span>
+</div>
+</div>
+<!-- 纸仓告警警示条 -->
+<div class="bg-badge-warm-yellow rounded-2xl p-3.5 flex items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-[#5A4500]">
+<svg class="w-5 h-5 shrink-0 text-[#ba1a1a]" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-[#5A4500]">纸仓告警（剩余约 40 张）</span>
+<span class="font-body-sm text-body-sm text-[#5A4500]/80">A4 纸量不足，请安排就近运维补纸</span>
+</div>
+</div>
+</div>
+<!-- 操作按钮 -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<button class="py-2.5 px-4 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>快速报备加纸</span>
+</button>
+<button class="py-2.5 px-4 rounded-full bg-surface-high hover:bg-surface-variant text-text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>远程锁机</span>
+</button>
+</div>
+</article>
+<!-- 卡片 3：宿舍合作点 · 暂停营业 -->
+<article class="bg-surface-container rounded-[24px] p-5 shadow-sm space-y-4 opacity-95">
+<div class="flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-peach text-[#5D2717] font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#5D2717]"></span>
+              已打烊
+            </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-high text-secondary font-label-sm text-label-sm">宿舍代理点位</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm">编号 #003</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">紫菘学生公寓 4 栋宿管站打印角</h3>
+</div>
+<div class="space-y-2 text-text-secondary font-body-sm text-body-sm">
+<div class="flex items-start gap-2.5">
+<svg class="w-4 h-4 text-text-secondary shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-text-primary leading-tight">紫菘学生公寓 4 栋 1F 宿管办公室左侧窗口</span>
+</div>
+<div class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-text-secondary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-text-secondary leading-tight">已休市打烊（次日 08:00 自动开启）</span>
+</div>
+</div>
+<!-- 操作按钮 -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<button class="py-2.5 px-4 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>立即开启营业</span>
+</button>
+<button class="py-2.5 px-4 rounded-full bg-surface-high hover:bg-surface-variant text-text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>修改排期</span>
+</button>
+</div>
+</article>
+</div>
+<!-- 门店运营配置设置入口 -->
+<section class="px-4 mt-6">
+<div class="flex items-center justify-between mb-3 px-1">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">门店运营规则配置</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">全局生效</span>
+</div>
+<div class="bg-surface-container rounded-[24px] p-2 space-y-1 shadow-sm">
+<!-- 规则项 1 -->
+<div class="p-3.5 rounded-2xl hover:bg-surface-light flex items-center justify-between transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-primary">接单高峰分流设置</span>
+<span class="font-body-sm text-body-sm text-text-secondary">当排队超过 5 人自动调度至科技园点位</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-[#135442] bg-badge-mint px-2 py-0.5 rounded-full">已开启</span>
+<svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<!-- 规则项 2 -->
+<div class="p-3.5 rounded-2xl hover:bg-surface-light flex items-center justify-between transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-primary">自提货架储位管理</span>
+<span class="font-body-sm text-body-sm text-text-secondary">文理学部 A 区 1-12 号自取智能储位格</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-high px-2 py-0.5 rounded-full tabular-nums">12 储位</span>
+<svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<!-- 规则项 3 -->
+<div class="p-3.5 rounded-2xl hover:bg-surface-light flex items-center justify-between transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-primary">电子发票抬头与税号设置</span>
+<span class="font-body-sm text-body-sm text-text-secondary">支持学生与教工扫码自助即时开票</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- 底部支持与运维说明 -->
+<section class="px-4 mt-6">
+<div class="bg-surface-light rounded-[24px] p-5 flex flex-col items-center text-center space-y-2.5">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary shadow-sm">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-primary">官方直营与点位运维服务</span>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5">
+          服务热线：<span class="font-semibold text-secondary tabular-nums">400-800-6688</span>（08:00 - 22:00）
+        </span>
+</div>
+<p class="font-label-sm text-label-sm text-text-secondary/80 max-w-[280px]">
+        新合作点位提交后，工程师将在 1 个工作日内完成校园电网接入核验与固件下发。
+      </p>
+</div>
+</section>
+</div>
+<script>
+  // 页面微交互：快捷营业状态切换与加纸报备提示
+  document.querySelectorAll('button').forEach((btn) => {
+    btn.addEventListener('click', function (e) {
+      const text = this.innerText.trim();
+      if (text.includes('快速报备加纸')) {
+        this.innerHTML = `
+          <svg class="w-4 h-4 animate-spin text-white" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+          <span>已派发补纸单...</span>
+        `;
+        setTimeout(() => {
+          this.innerHTML = `
+            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>工单已流转</span>
+          `;
+        }, 800);
+      }
+    });
+  });
+</script></main></body></html>

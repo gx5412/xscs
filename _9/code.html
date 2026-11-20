@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>证件照制作 · Ai 智能美颜与排版</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#74f7ee", "text-secondary": "#527078", "on-surface": "#011f26", "primary": "#006a65", "on-tertiary-fixed": "#1e153a", "surface-container": "#FFFFFF", "error-container": "#ffdad6", "tertiary-fixed": "#e8ddff", "badge-peach": "#FFD8C8", "surface-container-high": "#d0edf6", "on-tertiary-fixed-variant": "#4a4168", "surface-container-highest": "#cae7f0", "surface-light": "#F4FBFC", "background": "#f0fbff", "on-error": "#ffffff", "outline": "#C8E3E5", "badge-mint": "#B9EBD9", "secondary-fixed-dim": "#7cd2f1", "inverse-surface": "#18343b", "surface-bright": "#f0fbff", "on-secondary-container": "#00627a", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ccc0ef", "inverse-primary": "#53dad1", "secondary-fixed": "#b8eaff", "surface-variant": "#cae7f0", "on-primary-container": "#004340", "primary-container": "#D5F4F1", "secondary": "#006780", "surface-dim": "#c2dfe8", "secondary-on-container": "#153D52", "primary-dark": "#168D89", "on-primary-fixed-variant": "#00504c", "surface-high": "#EAF5F6", "primary-fixed-dim": "#53dad1", "on-tertiary-container": "#3f355c", "on-primary-fixed": "#00201e", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004d61", "surface-container-low": "#e0f8ff", "outline-variant": "#bbc9c7", "secondary-container": "#88ddfd", "on-secondary": "#ffffff", "error": "#ba1a1a", "badge-warm-yellow": "#FFF3C4", "on-surface-variant": "#3c4948", "tertiary": "#625881", "surface": "#f0fbff", "surface-container-lowest": "#ffffff", "tertiary-container": "#ab9fcc", "inverse-on-surface": "#d8f6ff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#001f28", "surface-tint": "#006a65", "text-primary": "#18343B", "on-background": "#011f26" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "gutter": "1rem" }, fontFamily: { "label-md": ["Be Vietnam Pro"], "label-sm": ["Be Vietnam Pro"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Be Vietnam Pro"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px));}.pt-safe{padding-top:calc(env(safe-area-inset-top,0px));}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>body { min-height: max(884px, 100dvh); }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-text-primary antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_12px_rgba(32,184,176,0.06)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-text-primary rounded-full hover:bg-surface-container-low active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[170px]">证件照制作 · Ai 智能美颜与排版</h1></div><div class="flex items-center gap-space-sm"><div class="flex items-center bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,106,101,0.08)] border border-white/60"><button aria-label="Mini Program Options" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button><div class="w-px h-3.5 bg-outline mx-0.5"></div><button aria-label="Close Mini Program" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[18px]">radio_button_checked</span></button></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface px-margin pb-safe min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Top Segmented Pill Filter -->
+<div class="w-full pt-1 pb-3">
+<div class="flex p-1 bg-surface-container-high/60 backdrop-blur-md rounded-full shadow-[inset_0_1px_3px_rgba(0,106,101,0.06)]">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-lowest text-primary shadow-[0_2px_8px_rgba(32,184,176,0.18)] font-label-md text-label-md text-center transition-all" type="button">
+        待使用 <span class="tabular-nums font-bold ml-0.5">(3)</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-full text-text-secondary hover:text-text-primary font-label-md text-label-md text-center transition-all" type="button">
+        领券中心 <span class="tabular-nums ml-0.5">(4)</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-full text-text-secondary hover:text-text-primary font-label-md text-label-md text-center transition-all truncate" type="button">
+        已使用/失效 <span class="tabular-nums ml-0.5">(8)</span>
+</button>
+</div>
+</div>
+<!-- Coupon Code Exchange Input Bar -->
+<div class="w-full mb-4">
+<div class="flex items-center gap-2 bg-surface-container-lowest p-1.5 pl-3.5 rounded-full shadow-[0_4px_16px_rgba(32,184,176,0.08)]">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-secondary/60 focus:outline-none" placeholder="请输入 8 位兑换口令或券码" type="text"/>
+<button class="shrink-0 px-4 py-2 bg-secondary-container text-secondary-on-container rounded-full font-label-md text-label-md shadow-sm active:scale-95 transition-all" type="button">
+        立即兑换
+      </button>
+</div>
+</div>
+<!-- Ticket List Section -->
+<div class="flex flex-col gap-3.5 w-full mb-6">
+<!-- Ticket 1: Aqua Cyan -->
+<div class="relative flex w-full bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)]">
+<!-- Left Value Block -->
+<div class="w-28 shrink-0 bg-gradient-to-br from-primary-container to-primary flex flex-col items-center justify-center text-on-primary py-4 px-2 relative">
+<div class="flex items-baseline tabular-nums">
+<span class="font-label-md text-label-md mr-0.5">¥</span>
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold tracking-tight">5</span>
+<span class="font-label-md text-label-md">.00</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 mt-1 rounded-full bg-surface-container-lowest/20 backdrop-blur-sm text-on-primary">
+          无门槛
+        </span>
+</div>
+<!-- Ticket Perforation Notch (Top & Bottom) -->
+<div class="absolute left-28 top-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-surface z-10"></div>
+<div class="absolute left-28 bottom-0 -translate-x-1/2 translate-y-1/2 w-4 h-4 rounded-full bg-surface z-10"></div>
+<div class="absolute left-28 top-3 bottom-3 -translate-x-1/2 border-l border-dashed border-outline-variant/60 pointer-events-none"></div>
+<!-- Right Details & Action -->
+<div class="flex-1 flex items-center justify-between pl-5 pr-3.5 py-3.5 min-w-0">
+<div class="flex flex-col justify-center min-w-0 pr-2">
+<div class="flex items-center gap-1.5 mb-1">
+<h2 class="font-label-lg text-label-lg text-text-primary font-bold truncate">打印立减抵扣券</h2>
+<span class="px-1.5 py-0.2 shrink-0 rounded bg-badge-mint text-on-primary-container font-label-sm text-label-sm">
+              通用
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary truncate">全场文档及证件照排版可用</p>
+<div class="flex items-center gap-1 mt-2 text-error">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="font-label-sm text-label-sm tabular-nums">剩余 3 天到期</span>
+</div>
+</div>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-primary font-label-md text-label-md shadow-sm active:scale-95 transition-all" type="button">
+          去使用
+        </button>
+</div>
+</div>
+<!-- Ticket 2: Soft Sky Blue -->
+<div class="relative flex w-full bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)]">
+<!-- Left Value Block -->
+<div class="w-28 shrink-0 bg-gradient-to-br from-secondary-fixed-dim to-secondary flex flex-col items-center justify-center text-on-secondary py-4 px-2 relative">
+<div class="flex items-baseline tabular-nums">
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold tracking-tight">1</span>
+<span class="font-label-md text-label-md ml-0.5">份</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 mt-1 rounded-full bg-surface-container-lowest/20 backdrop-blur-sm text-on-secondary">
+          装订专享
+        </span>
+</div>
+<!-- Ticket Perforation Notch (Top & Bottom) -->
+<div class="absolute left-28 top-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-surface z-10"></div>
+<div class="absolute left-28 bottom-0 -translate-x-1/2 translate-y-1/2 w-4 h-4 rounded-full bg-surface z-10"></div>
+<div class="absolute left-28 top-3 bottom-3 -translate-x-1/2 border-l border-dashed border-outline-variant/60 pointer-events-none"></div>
+<!-- Right Details & Action -->
+<div class="flex-1 flex items-center justify-between pl-5 pr-3.5 py-3.5 min-w-0">
+<div class="flex flex-col justify-center min-w-0 pr-2">
+<div class="flex items-center gap-1.5 mb-1">
+<h2 class="font-label-lg text-label-lg text-text-primary font-bold truncate">热熔胶装装订券</h2>
+<span class="px-1.5 py-0.2 shrink-0 rounded bg-secondary-container text-secondary-on-container font-label-sm text-label-sm">
+              满赠
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary truncate">满 20 页毕业论文排版可用</p>
+<div class="flex items-center gap-1 mt-2 text-text-secondary">
+<span class="material-symbols-outlined text-[14px]">event_upcoming</span>
+<span class="font-label-sm text-label-sm tabular-nums">剩余 12 天有效</span>
+</div>
+</div>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md shadow-sm active:scale-95 transition-all" type="button">
+          去使用
+        </button>
+</div>
+</div>
+<!-- Ticket 3: Warm Peach Accent -->
+<div class="relative flex w-full bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)]">
+<!-- Left Value Block -->
+<div class="w-28 shrink-0 bg-badge-peach flex flex-col items-center justify-center text-text-primary py-4 px-2 relative">
+<div class="flex items-baseline tabular-nums text-on-surface">
+<span class="font-label-md text-label-md mr-0.5">¥</span>
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold tracking-tight">1</span>
+<span class="font-label-md text-label-md">.50</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 mt-1 rounded-full bg-surface-container-lowest/60 text-text-primary">
+          寝室极速达
+        </span>
+</div>
+<!-- Ticket Perforation Notch (Top & Bottom) -->
+<div class="absolute left-28 top-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-surface z-10"></div>
+<div class="absolute left-28 bottom-0 -translate-x-1/2 translate-y-1/2 w-4 h-4 rounded-full bg-surface z-10"></div>
+<div class="absolute left-28 top-3 bottom-3 -translate-x-1/2 border-l border-dashed border-outline-variant/60 pointer-events-none"></div>
+<!-- Right Details & Action -->
+<div class="flex-1 flex items-center justify-between pl-5 pr-3.5 py-3.5 min-w-0">
+<div class="flex flex-col justify-center min-w-0 pr-2">
+<div class="flex items-center gap-1.5 mb-1">
+<h2 class="font-label-lg text-label-lg text-text-primary font-bold truncate">校园寝室配送免邮券</h2>
+<span class="px-1.5 py-0.2 shrink-0 rounded bg-badge-warm-yellow text-on-surface font-label-sm text-label-sm">
+              专线
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary truncate">自强校区/大学科技园指定楼宇</p>
+<div class="flex items-center gap-1 mt-2 text-text-secondary">
+<span class="material-symbols-outlined text-[14px]">event_upcoming</span>
+<span class="font-label-sm text-label-sm tabular-nums">2025.04.30 前有效</span>
+</div>
+</div>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-primary font-label-md text-label-md shadow-sm active:scale-95 transition-all" type="button">
+          去使用
+        </button>
+</div>
+</div>
+</div>
+<!-- Recommend Welfare Activities Section -->
+<div class="w-full mb-6">
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-4 rounded-full bg-primary"></span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">领券福利专区</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary flex items-center">
+        查看全部福利
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Welfare Card 1 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-2xl shadow-[0_4px_16px_rgba(32,184,176,0.06)] flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-full bg-badge-mint flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+</div>
+<h4 class="font-label-md text-label-md text-text-primary font-bold">每日打卡签到</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 line-clamp-1">连续 3 天领补贴</p>
+</div>
+<div class="mt-3 pt-2.5 flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold tabular-nums">¥0.50 纸张券</span>
+<button class="px-2.5 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm active:scale-95 transition-all" type="button">
+            去签到
+          </button>
+</div>
+</div>
+<!-- Welfare Card 2 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-2xl shadow-[0_4px_16px_rgba(32,184,176,0.06)] flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary mb-2">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">group_add</span>
+</div>
+<h4 class="font-label-md text-label-md text-text-primary font-bold">邀请新室友</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 line-clamp-1">Ta 得券，你享免单</p>
+</div>
+<div class="mt-3 pt-2.5 flex items-center justify-between">
+<span class="font-label-md text-label-md text-tertiary font-bold tabular-nums">¥3.00 首单免</span>
+<button class="px-2.5 py-1 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm active:scale-95 transition-all" type="button">
+            立即邀
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Coupon Rule Accordion Card -->
+<div class="w-full bg-surface-container-lowest/80 backdrop-blur-md rounded-2xl p-4 shadow-[0_4px_16px_rgba(32,184,176,0.06)] mb-2">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">help_outline</span>
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold">优惠券使用与退款说明</h3>
+</div>
+<!-- Accordion Item 1 -->
+<details class="group mb-2" open="">
+<summary class="flex items-center justify-between py-2 text-text-primary font-label-md text-label-md cursor-pointer list-none select-none">
+<span>优惠券支持叠加使用吗？</span>
+<span class="material-symbols-outlined text-text-secondary text-[20px] transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<p class="font-body-sm text-body-sm text-text-secondary pb-2 pl-1 leading-relaxed">
+        每笔订单默认仅限核销一张抵扣券。若包含免邮券或特色服务兑换券（如热熔胶装装订），系统将在结算时自动并行组合抵扣，为您优先计算最优折扣方案。
+      </p>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group">
+<summary class="flex items-center justify-between py-2 text-text-primary font-label-md text-label-md cursor-pointer list-none select-none">
+<span>取消订单或售后退款后，券会退回吗？</span>
+<span class="material-symbols-outlined text-text-secondary text-[20px] transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<p class="font-body-sm text-body-sm text-text-secondary pb-2 pl-1 leading-relaxed">
+        在订单未进入实际喷印/排版工序前自主取消，或经售后审核通过全额退款后，已抵扣的优惠券将在 <span class="tabular-nums">15</span> 分钟内原路返还至您的券包中；若优惠券已过期，则无法退回重新使用。
+      </p>
+</details>
+</div>
+</div></main></body></html>

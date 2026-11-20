@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>钱包明细 · Moeflow Wallet - MoeFlow SmartPrint</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "badge-peach": "#FFD8C8",
+            "tertiary-fixed-dim": "#ccc0ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#53dad1",
+            "outline-variant": "#bbc9c7",
+            "inverse-surface": "#18343b",
+            "surface-container": "#d5f3fc",
+            "surface-container-low": "#e0f8ff",
+            "on-primary-container": "#004340",
+            "primary-container": "#20b8b0",
+            "surface-dim": "#c2dfe8",
+            "text-secondary": "#527078",
+            "secondary": "#006780",
+            "on-secondary-fixed-variant": "#004d61",
+            "on-tertiary-fixed-variant": "#4a4168",
+            "tertiary-fixed": "#e8ddff",
+            "secondary-container": "#D7F0FA",
+            "on-primary-fixed-variant": "#00504c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#011f26",
+            "on-secondary-container": "#00627a",
+            "badge-mint": "#B9EBD9",
+            "error": "#ba1a1a",
+            "surface-container-high": "#d0edf6",
+            "on-error": "#ffffff",
+            "primary": "#20b8b0",
+            "on-secondary-fixed": "#001f28",
+            "on-surface": "#011f26",
+            "on-tertiary-fixed": "#1e153a",
+            "tertiary": "#625881",
+            "badge-warm-yellow": "#FFF3C4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#3f355c",
+            "on-primary-fixed": "#00201e",
+            "surface": "#f0fbff",
+            "surface-bright": "#f0fbff",
+            "surface-high": "#EAF5F6",
+            "primary-dark": "#168D89",
+            "inverse-on-surface": "#d8f6ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#7cd2f1",
+            "on-error-container": "#93000a",
+            "background": "#f0fbff",
+            "surface-variant": "#cae7f0",
+            "outline": "#C8E3E5",
+            "text-primary": "#18343B",
+            "tertiary-container": "#ab9fcc",
+            "surface-light": "#F4FBFC",
+            "surface-container-highest": "#cae7f0",
+            "on-surface-variant": "#3c4948",
+            "secondary-fixed": "#b8eaff",
+            "secondary-on-container": "#153D52",
+            "surface-tint": "#20b8b0",
+            "primary-fixed": "#74f7ee",
+            "inverse-primary": "#53dad1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "52px", fontWeight: "800" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] pt-safe">
+<div class="h-14 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-1 min-w-0 pr-2">
+<button aria-label="返回上一页" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all flex-shrink-0" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px] leading-none">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">钱包明细 · Moeflow Wallet</h1>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="h-8 px-2.5 rounded-full bg-surface-high/90 border border-white/80 shadow-[0_2px_8px_rgba(32,184,176,0.06)] flex items-center gap-1.5">
+<button aria-label="小程序菜单" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">more_horiz</span>
+</button>
+<span class="w-[1px] h-3.5 bg-outline/60"></span>
+<button aria-label="关闭小程序" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[17px] leading-none">radio_button_checked</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-background"><div class="flex flex-col w-full px-4 pb-12 pt-2 space-y-4">
+<!-- 顶部核心资产卡片 -->
+<section class="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-[#20b8b0] via-[#32c9c2] to-[#73c9e8] text-on-primary p-5 shadow-[0_12px_32px_-6px_rgba(32,184,176,0.32)]">
+<!-- 装饰性光斑与波纹 -->
+<div class="absolute -right-10 -top-10 w-44 h-44 rounded-full bg-white/15 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-12 -bottom-12 w-40 h-40 rounded-full bg-primary-dark/20 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-4">
+<!-- 头部：钱包属性与充值按钮 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[19px] leading-none">account_balance_wallet</span>
+</div>
+<span class="font-label-md text-label-md tracking-wide text-white/90">MoeFlow 校园极速钱包</span>
+</div>
+<button class="h-8 px-4 rounded-full bg-white text-primary-dark font-label-md text-label-md shadow-[0_4px_14px_rgba(0,0,0,0.08)] active:scale-95 transition-transform flex items-center space-x-1" id="recharge-btn">
+<span class="material-symbols-outlined text-[17px] leading-none text-primary">bolt</span>
+<span>去充值</span>
+</button>
+</div>
+<!-- 核心金额数字 -->
+<div class="flex flex-col pt-1">
+<span class="font-label-sm text-label-sm text-white/80">当前账户可用总余额</span>
+<div class="flex items-baseline space-x-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold opacity-90">¥</span>
+<span class="font-display-lg-mobile text-display-lg-mobile font-extrabold tracking-tight tabular-nums">42.50</span>
+</div>
+</div>
+<!-- 本金与赠送金细分胶囊 -->
+<div class="flex items-center justify-between bg-white/15 backdrop-blur-md rounded-2xl py-2 px-3 text-white/95">
+<div class="flex items-center space-x-2 flex-1">
+<span class="w-2 h-2 rounded-full bg-badge-mint"></span>
+<span class="font-label-sm text-label-sm text-white/80">充值本金</span>
+<span class="font-label-md text-label-md font-bold tabular-nums">¥32.50</span>
+</div>
+<div class="w-[1px] h-3.5 bg-white/25"></div>
+<div class="flex items-center space-x-2 flex-1 justify-end">
+<span class="w-2 h-2 rounded-full bg-badge-warm-yellow"></span>
+<span class="font-label-sm text-label-sm text-white/80">活动赠送金</span>
+<span class="font-label-md text-label-md font-bold tabular-nums">¥10.00</span>
+</div>
+</div>
+<!-- 累计学期消费与省钱收益双指标 -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="bg-black/10 backdrop-blur-sm rounded-xl px-3 py-2 flex flex-col justify-center">
+<div class="flex items-center space-x-1 text-white/75">
+<span class="material-symbols-outlined text-[14px]">local_mall</span>
+<span class="font-label-sm text-label-sm scale-95 origin-left">本学期已消费</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold tabular-nums text-white mt-0.5">¥168.40</span>
+</div>
+<div class="bg-black/10 backdrop-blur-sm rounded-xl px-3 py-2 flex flex-col justify-center">
+<div class="flex items-center space-x-1 text-badge-mint">
+<span class="material-symbols-outlined text-[14px]">savings</span>
+<span class="font-label-sm text-label-sm scale-95 origin-left">拼印·会员已省</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold tabular-nums text-badge-mint mt-0.5">¥46.20</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 筛选胶囊 Tab -->
+<section class="w-full">
+<div class="flex items-center space-x-2 overflow-x-auto no-scrollbar py-1">
+<button class="filter-tab active-tab px-3.5 h-8 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-[0_4px_12px_rgba(32,184,176,0.22)] whitespace-nowrap transition-all" data-type="all">全部明细</button>
+<button class="filter-tab px-3.5 h-8 rounded-full bg-surface-container-lowest text-text-secondary font-label-md text-label-md whitespace-nowrap shadow-sm hover:text-text-primary transition-all" data-type="expense">消费支出</button>
+<button class="filter-tab px-3.5 h-8 rounded-full bg-surface-container-lowest text-text-secondary font-label-md text-label-md whitespace-nowrap shadow-sm hover:text-text-primary transition-all" data-type="recharge">充值到账</button>
+<button class="filter-tab px-3.5 h-8 rounded-full bg-surface-container-lowest text-text-secondary font-label-md text-label-md whitespace-nowrap shadow-sm hover:text-text-primary transition-all" data-type="refund">退款返还</button>
+<button class="filter-tab px-3.5 h-8 rounded-full bg-surface-container-lowest text-text-secondary font-label-md text-label-md whitespace-nowrap shadow-sm hover:text-text-primary transition-all" data-type="reward">邀请奖励</button>
+</div>
+</section>
+<!-- 月份汇总选择器 -->
+<section class="bg-surface-container-low/70 backdrop-blur-md rounded-2xl p-3 flex items-center justify-between text-text-primary shadow-[0_4px_16px_rgba(32,184,176,0.06)]">
+<button class="flex items-center space-x-1.5 py-1 px-2 rounded-xl active:bg-surface-high transition-colors">
+<div class="w-6 h-6 rounded-lg bg-primary-container text-primary-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] leading-none">calendar_today</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight">2024年10月</span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary leading-none">keyboard_arrow_down</span>
+</button>
+<div class="flex items-center space-x-3 text-text-secondary pr-1">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm scale-90 origin-right text-text-secondary/80">月支出</span>
+<span class="font-label-md text-label-md font-semibold text-text-primary tabular-nums">¥38.60</span>
+</div>
+<div class="w-[1px] h-6 bg-outline/60"></div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm scale-90 origin-right text-text-secondary/80">月充值</span>
+<span class="font-label-md text-label-md font-semibold text-primary tabular-nums">¥50.00</span>
+</div>
+</div>
+</section>
+<!-- 交易记录列表 -->
+<section class="space-y-3" id="records-container">
+<!-- a) 打印消费 -->
+<article class="record-item bg-surface-container-lowest rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.07)] flex flex-col space-y-3 transition-transform active:scale-[0.99]" data-category="expense">
+<div class="flex items-start justify-between">
+<div class="flex space-x-3 min-w-0">
+<div class="w-10 h-10 rounded-2xl bg-secondary-container text-secondary-on-container flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px] leading-none">print</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-text-primary truncate">毕业设计说明书打印</span>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">24页黑白双面 + 哑光胶装装订</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0 pl-2">
+<span class="font-headline-sm text-headline-sm font-bold text-text-primary tabular-nums">-¥3.10</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-md bg-badge-peach/40 text-on-error-container font-label-sm text-label-sm mt-1">赠券抵扣 ¥1.00</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-text-secondary/80 font-label-sm text-label-sm pt-2 bg-surface-high/40 rounded-xl px-2.5 py-1.5">
+<div class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-[13px] leading-none">schedule</span>
+<span>10-24 14:18</span>
+</div>
+<div class="flex items-center space-x-1 tabular-nums">
+<span>单号 MP202310248829</span>
+</div>
+</div>
+</article>
+<!-- b) 微信充值 -->
+<article class="record-item bg-surface-container-lowest rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.07)] flex flex-col space-y-3 transition-transform active:scale-[0.99]" data-category="recharge">
+<div class="flex items-start justify-between">
+<div class="flex space-x-3 min-w-0">
+<div class="w-10 h-10 rounded-2xl bg-primary-container text-primary-dark flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px] leading-none">credit_card</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center space-x-1.5">
+<span class="font-label-lg text-label-lg font-bold text-text-primary truncate">学霸钱包特惠充值</span>
+<span class="px-1.5 py-0.5 rounded-full bg-badge-mint text-on-primary-container font-label-sm text-label-sm scale-90">充50送8</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">微信极速支付入账</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0 pl-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tabular-nums">+¥50.00</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-md bg-badge-warm-yellow text-on-primary-container font-label-sm text-label-sm mt-1">赠送金 +¥8.00</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-text-secondary/80 font-label-sm text-label-sm pt-2 bg-surface-high/40 rounded-xl px-2.5 py-1.5">
+<div class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-[13px] leading-none">schedule</span>
+<span>10-22 09:30</span>
+</div>
+<div class="flex items-center space-x-1 tabular-nums">
+<span>流水号 RC202310220930</span>
+</div>
+</div>
+</article>
+<!-- c) 故障极速退款 -->
+<article class="record-item bg-surface-container-lowest rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.07)] flex flex-col space-y-3 transition-transform active:scale-[0.99]" data-category="refund">
+<div class="flex items-start justify-between">
+<div class="flex space-x-3 min-w-0">
+<div class="w-10 h-10 rounded-2xl bg-surface-container text-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px] leading-none">history_toggle_off</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-text-primary truncate">出纸传感器故障秒退</span>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">智能硬件监测未出纸，资金已即刻返还</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0 pl-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tabular-nums">+¥2.50</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-md bg-badge-mint text-on-primary-container font-label-sm text-label-sm mt-1">先行赔付</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-text-secondary/80 font-label-sm text-label-sm pt-2 bg-surface-high/40 rounded-xl px-2.5 py-1.5">
+<div class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-[13px] leading-none">schedule</span>
+<span>10-18 16:45</span>
+</div>
+<div class="flex items-center space-x-1 tabular-nums">
+<span>单号 MP202310189912</span>
+</div>
+</div>
+</article>
+<!-- d) 拼团返现 -->
+<article class="record-item bg-surface-container-lowest rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.07)] flex flex-col space-y-3 transition-transform active:scale-[0.99]" data-category="reward">
+<div class="flex items-start justify-between">
+<div class="flex space-x-3 min-w-0">
+<div class="w-10 h-10 rounded-2xl bg-tertiary-fixed text-tertiary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px] leading-none">group_work</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-text-primary truncate">论文拼印成团差价返还</span>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">计算机学院研合单拼满4人享受大宗阶梯价</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0 pl-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tabular-nums">+¥5.20</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-md bg-secondary-container text-secondary-on-container font-label-sm text-label-sm mt-1">成团结余</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-text-secondary/80 font-label-sm text-label-sm pt-2 bg-surface-high/40 rounded-xl px-2.5 py-1.5">
+<div class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-[13px] leading-none">schedule</span>
+<span>10-15 11:20</span>
+</div>
+<div class="flex items-center space-x-1 tabular-nums">
+<span>单号 GP202310150334</span>
+</div>
+</div>
+</article>
+<!-- e) 邀请好友奖励 -->
+<article class="record-item bg-surface-container-lowest rounded-[24px] p-4 shadow-[0_6px_20px_rgba(32,184,176,0.07)] flex flex-col space-y-3 transition-transform active:scale-[0.99]" data-category="reward">
+<div class="flex items-start justify-between">
+<div class="flex space-x-3 min-w-0">
+<div class="w-10 h-10 rounded-2xl bg-primary-container text-primary-dark flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px] leading-none">featured_seasonal_and_gifts</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-text-primary truncate">好友首印奖励到账</span>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">好友「李**」完成新生校园首单打印</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0 pl-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tabular-nums">+¥3.00</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-md bg-badge-mint text-on-primary-container font-label-sm text-label-sm mt-1">现金存入</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-text-secondary/80 font-label-sm text-label-sm pt-2 bg-surface-high/40 rounded-xl px-2.5 py-1.5">
+<div class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-[13px] leading-none">schedule</span>
+<span>10-12 18:05</span>
+</div>
+<div class="flex items-center space-x-1 tabular-nums">
+<span>单号 IV202310128899</span>
+</div>
+</div>
+</article>
+</section>
+<!-- 底部资金保障与安全承诺卡片 -->
+<footer class="pt-2 flex flex-col space-y-3">
+<div class="rounded-2xl bg-surface-container-low/60 border border-outline/30 p-3.5 flex items-center space-x-3">
+<div class="w-9 h-9 rounded-xl bg-badge-mint/60 text-primary-dark flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px] leading-none">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-text-primary">校园资金安全险先行赔付守护中</span>
+<span class="font-body-sm text-body-sm text-text-secondary text-xs mt-0.5">毕业离校时，账户内未消耗的充值本金支持随时 0 手续费原路原额退还。</span>
+</div>
+</div>
+<!-- 快捷支持与问答 -->
+<div class="flex items-center justify-center space-x-4 py-2 font-label-md text-label-md text-secondary">
+<button class="flex items-center space-x-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px] leading-none">support_agent</span>
+<span>财务专属客服</span>
+</button>
+<span class="text-outline-variant font-light">|</span>
+<button class="flex items-center space-x-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px] leading-none">help_outline</span>
+<span>赠送金与提现规则说明</span>
+</button>
+</div>
+</footer>
+</div>
+<script>
+  // Tab 过滤逻辑交互
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      // 样式切换
+      document.querySelectorAll('.filter-tab').forEach(t => {
+        t.classList.remove('bg-primary', 'text-on-primary', 'shadow-[0_4px_12px_rgba(32,184,176,0.22)]');
+        t.classList.add('bg-surface-container-lowest', 'text-text-secondary');
+      });
+      tab.classList.remove('bg-surface-container-lowest', 'text-text-secondary');
+      tab.classList.add('bg-primary', 'text-on-primary', 'shadow-[0_4px_12px_rgba(32,184,176,0.22)]');
+
+      const filterType = tab.getAttribute('data-type');
+      const records = document.querySelectorAll('.record-item');
+      
+      records.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        if (filterType === 'all' || itemCategory === filterType) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // 去充值按钮触觉微交互
+  const rechargeBtn = document.getElementById('recharge-btn');
+  if (rechargeBtn) {
+    rechargeBtn.addEventListener('click', () => {
+      // 小程序中通常调用 wx.navigateTo({ url: '/pages/account/recharge' })
+    });
+  }
+</script></main>
+</body></html>

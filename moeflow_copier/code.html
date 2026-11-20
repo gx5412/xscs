@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>复印与扫描 · 现场智能终端控制 - MoeFlow SmartPrint</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "badge-peach": "#FFD8C8",
+            "tertiary-fixed-dim": "#ccc0ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#53dad1",
+            "outline-variant": "#bbc9c7",
+            "inverse-surface": "#18343b",
+            "surface-container": "#d5f3fc",
+            "surface-container-low": "#e0f8ff",
+            "on-primary-container": "#004340",
+            "primary-container": "#20b8b0",
+            "surface-dim": "#c2dfe8",
+            "text-secondary": "#527078",
+            "secondary": "#006780",
+            "on-secondary-fixed-variant": "#004d61",
+            "on-tertiary-fixed-variant": "#4a4168",
+            "tertiary-fixed": "#e8ddff",
+            "secondary-container": "#D7F0FA",
+            "on-primary-fixed-variant": "#00504c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#011f26",
+            "on-secondary-container": "#00627a",
+            "badge-mint": "#B9EBD9",
+            "error": "#ba1a1a",
+            "surface-container-high": "#d0edf6",
+            "on-error": "#ffffff",
+            "primary": "#20b8b0",
+            "on-secondary-fixed": "#001f28",
+            "on-surface": "#011f26",
+            "on-tertiary-fixed": "#1e153a",
+            "tertiary": "#625881",
+            "badge-warm-yellow": "#FFF3C4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#3f355c",
+            "on-primary-fixed": "#00201e",
+            "surface": "#f0fbff",
+            "surface-bright": "#f0fbff",
+            "surface-high": "#EAF5F6",
+            "primary-dark": "#168D89",
+            "inverse-on-surface": "#d8f6ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#7cd2f1",
+            "on-error-container": "#93000a",
+            "background": "#f0fbff",
+            "surface-variant": "#cae7f0",
+            "outline": "#C8E3E5",
+            "text-primary": "#18343B",
+            "tertiary-container": "#ab9fcc",
+            "surface-light": "#F4FBFC",
+            "surface-container-highest": "#cae7f0",
+            "on-surface-variant": "#3c4948",
+            "secondary-fixed": "#b8eaff",
+            "secondary-on-container": "#153D52",
+            "surface-tint": "#20b8b0",
+            "primary-fixed": "#74f7ee",
+            "inverse-primary": "#53dad1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "52px", fontWeight: "800" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] pt-safe">
+<div class="h-14 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-1 min-w-0 pr-2">
+<button aria-label="返回上一页" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all flex-shrink-0" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px] leading-none">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">复印与扫描 · 现场智能终端控制</h1>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="h-8 px-2.5 rounded-full bg-surface-high/90 border border-white/80 shadow-[0_2px_8px_rgba(32,184,176,0.06)] flex items-center gap-1.5">
+<button aria-label="小程序菜单" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">more_horiz</span>
+</button>
+<span class="w-[1px] h-3.5 bg-outline/60"></span>
+<button aria-label="关闭小程序" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[17px] leading-none">radio_button_checked</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-background"><div class="flex flex-col w-full pb-32">
+<!-- 顶部模式切换大 Tab (胶囊质感) -->
+<section class="px-margin pt-space-sm pb-space-xs">
+<div class="p-1 rounded-full bg-surface-high flex items-center shadow-inner relative">
+<button class="flex-1 py-2.5 rounded-full flex items-center justify-center gap-1.5 transition-all duration-300 font-label-lg text-label-lg bg-surface-container-lowest text-text-primary shadow-sm" id="tab-copy" onclick="switchMode('copy')">
+<span class="material-symbols-outlined text-[19px] text-primary-dark">content_copy</span>
+<span>智能复印模式</span>
+</button>
+<button class="flex-1 py-2.5 rounded-full flex items-center justify-center gap-1.5 transition-all duration-300 font-label-lg text-label-lg text-text-secondary hover:text-text-primary" id="tab-scan" onclick="switchMode('scan')">
+<span class="material-symbols-outlined text-[19px]">document_scanner</span>
+<span>高清扫描模式</span>
+</button>
+</div>
+</section>
+<!-- 当前机台协同状态横幅 -->
+<section class="px-margin py-space-xs">
+<div class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center flex-shrink-0 text-primary-dark">
+<span class="material-symbols-outlined text-[22px]">print</span>
+</div>
+<div class="min-w-0 flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-text-primary truncate">科技园 A 座 01 号复合机</span>
+<span class="relative flex h-2 w-2 flex-shrink-0">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-fixed-dim opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-body-sm text-body-sm text-text-secondary truncate">状态在线空闲</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-body-sm text-body-sm text-primary-dark font-medium">A4 纸仓 85% 就绪</span>
+</div>
+</div>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-surface-high text-primary-dark font-label-sm text-label-sm flex items-center gap-1 flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">wifi_tethering</span>
+<span>BLE 直连</span>
+</div>
+</div>
+</section>
+<!-- 复印模式参数设置卡片区 -->
+<div class="flex flex-col gap-3 px-margin py-space-xs transition-opacity duration-300" id="section-copy-config">
+<!-- 份数控制卡 -->
+<div class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-dark text-[20px]">pin</span>
+<span class="font-label-lg text-label-lg text-text-primary">打印份数</span>
+</div>
+<!-- 步进控制器 -->
+<div class="flex items-center gap-3 bg-surface-high px-2 py-1 rounded-full">
+<button aria-label="减少份数" class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center text-text-primary shadow-sm active:scale-90 transition-transform" onclick="updateCopies(-1)">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-headline-sm text-headline-sm text-text-primary w-6 text-center tabular-nums" id="copies-count">1</span>
+<button aria-label="增加份数" class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center text-text-primary shadow-sm active:scale-90 transition-transform" onclick="updateCopies(1)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- 快速份数胶囊 -->
+<div class="flex items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm text-text-secondary mr-1">快捷:</span>
+<button class="copy-pill px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-container text-on-secondary-container transition-colors" onclick="setCopies(1)">1 份</button>
+<button class="copy-pill px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-high text-text-secondary hover:bg-surface-container transition-colors" onclick="setCopies(2)">2 份</button>
+<button class="copy-pill px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-high text-text-secondary hover:bg-surface-container transition-colors" onclick="setCopies(5)">5 份</button>
+<button class="copy-pill px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-high text-text-secondary hover:bg-surface-container transition-colors" onclick="setCopies(10)">10 份</button>
+</div>
+</div>
+<!-- 单双面选择卡 -->
+<div class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-dark text-[20px]">auto_stories</span>
+<span class="font-label-lg text-label-lg text-text-primary">翻页与双面模式</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-dark bg-secondary-container/40 px-2 py-0.5 rounded-full">节省 50% 纸张</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<button class="duplex-card p-3 rounded-DEFAULT bg-surface-container text-on-secondary-container flex flex-col items-center text-center gap-1.5 transition-all shadow-sm" onclick="selectDuplex(this)">
+<span class="material-symbols-outlined text-[24px]">article</span>
+<span class="font-label-md text-label-md">单面复印</span>
+<span class="font-label-sm text-label-sm text-text-secondary">正面出纸</span>
+</button>
+<button class="duplex-card p-3 rounded-DEFAULT bg-surface-high text-text-primary flex flex-col items-center text-center gap-1.5 transition-all hover:bg-surface-container/60" onclick="selectDuplex(this)">
+<span class="material-symbols-outlined text-[24px]">flip</span>
+<span class="font-label-md text-label-md">长边翻转</span>
+<span class="font-label-sm text-label-sm text-text-secondary">常规书册</span>
+</button>
+<button class="duplex-card p-3 rounded-DEFAULT bg-surface-high text-text-primary flex flex-col items-center text-center gap-1.5 transition-all hover:bg-surface-container/60" onclick="selectDuplex(this)">
+<span class="material-symbols-outlined text-[24px]">swap_vert</span>
+<span class="font-label-md text-label-md">短边翻转</span>
+<span class="font-label-sm text-label-sm text-text-secondary">便签账单</span>
+</button>
+</div>
+</div>
+<!-- 浓度调节分段器 (5 档) -->
+<div class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-dark text-[20px]">contrast</span>
+<span class="font-label-lg text-label-lg text-text-primary">打印浓度</span>
+</div>
+<span class="font-label-md text-label-md text-primary-dark font-medium" id="density-text">标准 (默认)</span>
+</div>
+<!-- 浓度分段条 -->
+<div class="relative pt-2 pb-1">
+<div class="h-2 rounded-full bg-surface-high relative flex items-center justify-between px-2">
+<div class="absolute left-0 top-0 h-2 bg-primary rounded-full transition-all duration-200" id="density-fill" style="width: 50%;"></div>
+<button aria-label="浅" class="z-10 w-4 h-4 rounded-full bg-surface-container-lowest shadow-sm -ml-2 focus:outline-none" onclick="setDensity(1)"></button>
+<button aria-label="较浅" class="z-10 w-4 h-4 rounded-full bg-surface-container-lowest shadow-sm focus:outline-none" onclick="setDensity(2)"></button>
+<button aria-label="标准" class="z-10 w-4.5 h-4.5 rounded-full bg-primary-dark shadow-md ring-2 ring-white focus:outline-none" onclick="setDensity(3)"></button>
+<button aria-label="较深" class="z-10 w-4 h-4 rounded-full bg-surface-container-lowest shadow-sm focus:outline-none" onclick="setDensity(4)"></button>
+<button aria-label="深" class="z-10 w-4 h-4 rounded-full bg-surface-container-lowest shadow-sm -mr-2 focus:outline-none" onclick="setDensity(5)"></button>
+</div>
+<div class="flex justify-between text-text-secondary font-label-sm text-label-sm mt-3 px-0.5">
+<span>较淡</span>
+<span>适中</span>
+<span class="text-primary-dark font-semibold">标准</span>
+<span>较浓</span>
+<span>特浓</span>
+</div>
+</div>
+</div>
+<!-- 纸张缩放与自适应 -->
+<div class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 flex flex-col gap-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-dark text-[20px]">aspect_ratio</span>
+<span class="font-label-lg text-label-lg text-text-primary">页面缩放与版式</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="scale-btn p-3 rounded-DEFAULT bg-surface-container text-on-secondary-container flex items-center justify-between text-left transition-colors" onclick="selectScale(this)">
+<div>
+<div class="font-label-md text-label-md">100% 原始尺寸</div>
+<div class="font-label-sm text-label-sm text-text-secondary">原比例扫描出纸</div>
+</div>
+<span class="material-symbols-outlined text-primary-dark text-[20px]">check_circle</span>
+</button>
+<button class="scale-btn p-3 rounded-DEFAULT bg-surface-high text-text-primary flex items-center justify-between text-left transition-colors" onclick="selectScale(this)">
+<div>
+<div class="font-label-md text-label-md">智能适应合纸</div>
+<div class="font-label-sm text-label-sm text-text-secondary">边缘留白防止截断</div>
+</div>
+<span class="material-symbols-outlined text-text-secondary/40 text-[20px]">radio_button_unchecked</span>
+</button>
+<button class="scale-btn p-3 rounded-DEFAULT bg-surface-high text-text-primary flex items-center justify-between text-left transition-colors" onclick="selectScale(this)">
+<div>
+<div class="font-label-md text-label-md">A3 自动转 A4</div>
+<div class="font-label-sm text-label-sm text-text-secondary">缩小 70% 紧凑输出</div>
+</div>
+<span class="material-symbols-outlined text-text-secondary/40 text-[20px]">radio_button_unchecked</span>
+</button>
+<button class="scale-btn p-3 rounded-DEFAULT bg-surface-high text-text-primary flex items-center justify-between text-left transition-colors" onclick="selectScale(this)">
+<div>
+<div class="font-label-md text-label-md">身份证智能居中</div>
+<div class="font-label-sm text-label-sm text-text-secondary">双面合并自动纠偏</div>
+</div>
+<span class="material-symbols-outlined text-text-secondary/40 text-[20px]">radio_button_unchecked</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 扫描高级设置卡片区 (隐藏/联动展示) -->
+<div class="hidden flex-col gap-3 px-margin py-space-xs transition-opacity duration-300" id="section-scan-config">
+<!-- 分辨率选项 -->
+<div class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-dark text-[20px]">high_res</span>
+<span class="font-label-lg text-label-lg text-text-primary">扫描清晰度 DPI</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<div class="dpi-card p-3 rounded-DEFAULT bg-surface-container text-on-secondary-container cursor-pointer flex flex-col gap-1 transition-all" onclick="selectDpi(this)">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm tabular-nums">300 DPI</span>
+<span class="material-symbols-outlined text-primary-dark text-[20px]">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">标准合同 / 课件讲义</p>
+<span class="font-label-sm text-label-sm text-primary-dark mt-1">处理快 · 文件体积小</span>
+</div>
+<div class="dpi-card p-3 rounded-DEFAULT bg-surface-high text-text-primary cursor-pointer flex flex-col gap-1 transition-all" onclick="selectDpi(this)">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm tabular-nums">600 DPI</span>
+<span class="material-symbols-outlined text-text-secondary/40 text-[20px]">radio_button_unchecked</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">证件照片 / 建筑图纸</p>
+<span class="font-label-sm text-label-sm text-text-secondary mt-1">超高清 · 原画细节</span>
+</div>
+</div>
+</div>
+<!-- 存储格式 -->
+<div class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-dark text-[20px]">folder_zip</span>
+<span class="font-label-lg text-label-lg text-text-primary">输出文件格式</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="fmt-card p-3 rounded-DEFAULT bg-surface-container text-on-secondary-container flex items-center justify-between text-left" onclick="selectFormat(this)">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary-dark text-[24px]">picture_as_pdf</span>
+<div>
+<div class="font-label-md text-label-md">多页合并 PDF</div>
+<div class="font-label-sm text-label-sm text-primary-dark">极力推荐</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary-dark text-[18px]">check</span>
+</button>
+<button class="fmt-card p-3 rounded-DEFAULT bg-surface-high text-text-primary flex items-center justify-between text-left" onclick="selectFormat(this)">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-text-secondary text-[24px]">collections</span>
+<div>
+<div class="font-label-md text-label-md">独立高清 JPG 包</div>
+<div class="font-label-sm text-label-sm text-text-secondary">单页独立</div>
+</div>
+</div>
+<span class="material-symbols-outlined opacity-0 text-[18px]">check</span>
+</button>
+</div>
+</div>
+<!-- 自动发送渠道 -->
+<div class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 flex flex-col gap-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-dark text-[20px]">send</span>
+<span class="font-label-lg text-label-lg text-text-primary">扫描结果自动投递</span>
+</div>
+<div class="flex flex-col gap-2">
+<label class="p-3 rounded-DEFAULT bg-surface-high flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-badge-mint flex items-center justify-center text-[#135442]">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-text-primary">微信文件传输助手</div>
+<div class="font-body-sm text-body-sm text-text-secondary">完成后公众号即刻推送文件卡片</div>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-primary rounded cursor-pointer" type="checkbox"/>
+</label>
+<label class="p-3 rounded-DEFAULT bg-surface-high flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-badge-warm-yellow flex items-center justify-center text-[#5A4500]">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-text-primary">发送至绑定邮箱</div>
+<div class="font-body-sm text-body-sm text-text-secondary">moe****@print.edu.cn</div>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-primary rounded cursor-pointer" type="checkbox"/>
+</label>
+<label class="p-3 rounded-DEFAULT bg-surface-high flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary-dark">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-text-primary">暂存至「我的云文档」</div>
+<div class="font-body-sm text-body-sm text-text-secondary">云端加密保存 7 天随时重打</div>
+</div>
+</div>
+<input class="w-5 h-5 accent-primary rounded cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<!-- 底部固定结算与操作栏 -->
+<section class="fixed bottom-0 inset-x-0 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-8px_24px_-4px_rgba(32,184,176,0.12)] px-margin pt-3 pb-safe z-40">
+<div class="flex flex-col gap-2 max-w-md mx-auto">
+<!-- 计价提示与学生卡特权 -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-baseline gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary">预估费用:</span>
+<span class="font-headline-md text-headline-md text-primary-dark font-bold tabular-nums" id="price-total">¥0.20</span>
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums ml-1" id="price-detail">(¥0.20/页 × 1 份)</span>
+</div>
+<div class="flex items-center gap-1 bg-badge-warm-yellow/90 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px] text-[#5A4500]">school</span>
+<span class="font-label-sm text-label-sm text-[#5A4500]">学霸卡已享 8 折</span>
+</div>
+</div>
+<!-- 核心启动大按钮 -->
+<button class="w-full py-3.5 px-6 rounded-full bg-primary hover:bg-primary-dark text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition-all" id="btn-launch" onclick="triggerOperation()">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+<span id="btn-text">启动复印 · 现场出纸</span>
+</button>
+<!-- 异常退款安全角标 -->
+<div class="flex items-center justify-center gap-1.5 pb-0.5">
+<span class="material-symbols-outlined text-[14px] text-primary-dark">verified_user</span>
+<span class="font-label-sm text-label-sm text-text-secondary">机台遇卡阻或缺纸，系统 3 秒内全额原路退款</span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  let currentCopies = 1;
+  const unitPrice = 0.20;
+  let currentMode = 'copy';
+
+  function switchMode(mode) {
+    currentMode = mode;
+    const tabCopy = document.getElementById('tab-copy');
+    const tabScan = document.getElementById('tab-scan');
+    const copyConfig = document.getElementById('section-copy-config');
+    const scanConfig = document.getElementById('section-scan-config');
+    const btnText = document.getElementById('btn-text');
+    const priceDetail = document.getElementById('price-detail');
+
+    if (mode === 'copy') {
+      tabCopy.className = "flex-1 py-2.5 rounded-full flex items-center justify-center gap-1.5 transition-all duration-300 font-label-lg text-label-lg bg-surface-container-lowest text-text-primary shadow-sm";
+      tabScan.className = "flex-1 py-2.5 rounded-full flex items-center justify-center gap-1.5 transition-all duration-300 font-label-lg text-label-lg text-text-secondary hover:text-text-primary";
+      copyConfig.classList.remove('hidden');
+      copyConfig.classList.add('flex');
+      scanConfig.classList.add('hidden');
+      scanConfig.classList.remove('flex');
+      btnText.textContent = "启动复印 · 现场出纸";
+      priceDetail.textContent = `(¥0.20/页 × ${currentCopies} 份)`;
+    } else {
+      tabScan.className = "flex-1 py-2.5 rounded-full flex items-center justify-center gap-1.5 transition-all duration-300 font-label-lg text-label-lg bg-surface-container-lowest text-text-primary shadow-sm";
+      tabCopy.className = "flex-1 py-2.5 rounded-full flex items-center justify-center gap-1.5 transition-all duration-300 font-label-lg text-label-lg text-text-secondary hover:text-text-primary";
+      scanConfig.classList.remove('hidden');
+      scanConfig.classList.add('flex');
+      copyConfig.classList.add('hidden');
+      copyConfig.classList.remove('flex');
+      btnText.textContent = "启动高清扫描";
+      priceDetail.textContent = "(¥0.10/页 扫描专享)";
+      document.getElementById('price-total').textContent = "¥0.10";
+    }
+  }
+
+  function updateCopies(delta) {
+    let next = currentCopies + delta;
+    if (next < 1) next = 1;
+    if (next > 99) next = 99;
+    setCopies(next);
+  }
+
+  function setCopies(num) {
+    currentCopies = num;
+    document.getElementById('copies-count').textContent = currentCopies;
+    const total = (unitPrice * currentCopies).toFixed(2);
+    if (currentMode === 'copy') {
+      document.getElementById('price-total').textContent = `¥${total}`;
+      document.getElementById('price-detail').textContent = `(¥0.20/页 × ${currentCopies} 份)`;
+    }
+
+    // 更新快捷胶囊样式
+    const pills = document.querySelectorAll('.copy-pill');
+    pills.forEach(pill => {
+      const val = parseInt(pill.textContent);
+      if (val === num) {
+        pill.className = "copy-pill px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-container text-on-secondary-container transition-colors";
+      } else {
+        pill.className = "copy-pill px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-high text-text-secondary hover:bg-surface-container transition-colors";
+      }
+    });
+  }
+
+  function selectDuplex(el) {
+    document.querySelectorAll('.duplex-card').forEach(c => {
+      c.className = "duplex-card p-3 rounded-DEFAULT bg-surface-high text-text-primary flex flex-col items-center text-center gap-1.5 transition-all hover:bg-surface-container/60";
+    });
+    el.className = "duplex-card p-3 rounded-DEFAULT bg-surface-container text-on-secondary-container flex flex-col items-center text-center gap-1.5 transition-all shadow-sm";
+  }
+
+  function setDensity(level) {
+    const fill = document.getElementById('density-fill');
+    const text = document.getElementById('density-text');
+    const labels = ["极淡", "较淡", "标准 (推荐)", "浓郁", "特深"];
+    const percentages = ["10%", "30%", "50%", "75%", "100%"];
+    
+    fill.style.width = percentages[level - 1];
+    text.textContent = labels[level - 1];
+  }
+
+  function selectScale(el) {
+    document.querySelectorAll('.scale-btn').forEach(btn => {
+      btn.className = "scale-btn p-3 rounded-DEFAULT bg-surface-high text-text-primary flex items-center justify-between text-left transition-colors";
+      const icon = btn.querySelector('.material-symbols-outlined');
+      icon.textContent = "radio_button_unchecked";
+      icon.className = "material-symbols-outlined text-text-secondary/40 text-[20px]";
+    });
+    el.className = "scale-btn p-3 rounded-DEFAULT bg-surface-container text-on-secondary-container flex items-center justify-between text-left transition-colors";
+    const activeIcon = el.querySelector('.material-symbols-outlined');
+    activeIcon.textContent = "check_circle";
+    activeIcon.className = "material-symbols-outlined text-primary-dark text-[20px]";
+  }
+
+  function selectDpi(el) {
+    document.querySelectorAll('.dpi-card').forEach(card => {
+      card.className = "dpi-card p-3 rounded-DEFAULT bg-surface-high text-text-primary cursor-pointer flex flex-col gap-1 transition-all";
+      const icon = card.querySelector('.material-symbols-outlined');
+      icon.textContent = "radio_button_unchecked";
+      icon.className = "material-symbols-outlined text-text-secondary/40 text-[20px]";
+    });
+    el.className = "dpi-card p-3 rounded-DEFAULT bg-surface-container text-on-secondary-container cursor-pointer flex flex-col gap-1 transition-all";
+    const activeIcon = el.querySelector('.material-symbols-outlined');
+    activeIcon.textContent = "check_circle";
+    activeIcon.className = "material-symbols-outlined text-primary-dark text-[20px]";
+  }
+
+  function selectFormat(el) {
+    document.querySelectorAll('.fmt-card').forEach(btn => {
+      btn.className = "fmt-card p-3 rounded-DEFAULT bg-surface-high text-text-primary flex items-center justify-between text-left";
+      btn.querySelector('.material-symbols-outlined:last-child').classList.add('opacity-0');
+    });
+    el.className = "fmt-card p-3 rounded-DEFAULT bg-surface-container text-on-secondary-container flex items-center justify-between text-left";
+    el.querySelector('.material-symbols-outlined:last-child').classList.remove('opacity-0');
+  }
+
+  function triggerOperation() {
+    const btn = document.getElementById('btn-launch');
+    btn.classList.add('scale-95');
+    setTimeout(() => {
+      btn.classList.remove('scale-95');
+    }, 150);
+  }
+</script></main>
+</body></html>

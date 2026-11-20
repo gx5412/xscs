@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>拼团大厅 · 校园智能合单拼印</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#74f7ee", "text-secondary": "#527078", "on-surface": "#011f26", "primary": "#006a65", "on-tertiary-fixed": "#1e153a", "surface-container": "#FFFFFF", "error-container": "#ffdad6", "tertiary-fixed": "#e8ddff", "badge-peach": "#FFD8C8", "surface-container-high": "#d0edf6", "on-tertiary-fixed-variant": "#4a4168", "surface-container-highest": "#cae7f0", "surface-light": "#F4FBFC", "background": "#f0fbff", "on-error": "#ffffff", "outline": "#C8E3E5", "badge-mint": "#B9EBD9", "secondary-fixed-dim": "#7cd2f1", "inverse-surface": "#18343b", "surface-bright": "#f0fbff", "on-secondary-container": "#00627a", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ccc0ef", "inverse-primary": "#53dad1", "secondary-fixed": "#b8eaff", "surface-variant": "#cae7f0", "on-primary-container": "#004340", "primary-container": "#D5F4F1", "secondary": "#006780", "surface-dim": "#c2dfe8", "secondary-on-container": "#153D52", "primary-dark": "#168D89", "on-primary-fixed-variant": "#00504c", "surface-high": "#EAF5F6", "primary-fixed-dim": "#53dad1", "on-tertiary-container": "#3f355c", "on-primary-fixed": "#00201e", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004d61", "surface-container-low": "#e0f8ff", "outline-variant": "#bbc9c7", "secondary-container": "#88ddfd", "on-secondary": "#ffffff", "error": "#ba1a1a", "badge-warm-yellow": "#FFF3C4", "on-surface-variant": "#3c4948", "tertiary": "#625881", "surface": "#f0fbff", "surface-container-lowest": "#ffffff", "tertiary-container": "#ab9fcc", "inverse-on-surface": "#d8f6ff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#001f28", "surface-tint": "#006a65", "text-primary": "#18343B", "on-background": "#011f26" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "gutter": "1rem" }, fontFamily: { "label-md": ["Be Vietnam Pro"], "label-sm": ["Be Vietnam Pro"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Be Vietnam Pro"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px));}.pt-safe{padding-top:calc(env(safe-area-inset-top,0px));}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>body { min-height: max(884px, 100dvh); }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-text-primary antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_12px_rgba(32,184,176,0.06)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#20B8B0] to-[#73C9E8] flex items-center justify-center shadow-[0_2px_8px_rgba(32,184,176,0.25)]"><span class="material-symbols-outlined text-white text-[18px]">print</span></div><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">拼团大厅 · 校园智能合单拼印</span></div><div class="flex items-center bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,106,101,0.08)] border border-white/60"><button aria-label="Mini Program Options" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button><div class="w-px h-3.5 bg-outline mx-0.5"></div><button aria-label="Close Mini Program" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[18px]">radio_button_checked</span></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface px-margin min-h-screen"><div class="flex flex-col w-full pb-6 space-y-4">
+<!-- 1. 用户个人头部卡片 (玻璃感与青空微光) -->
+<section class="relative overflow-hidden rounded-lg bg-surface-container-lowest p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)]">
+<!-- 装饰性渐变微光底纹 -->
+<div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-gradient-to-br from-primary-fixed/30 to-secondary-fixed/20 blur-2xl pointer-events-none"></div>
+<div class="relative flex items-start justify-between">
+<div class="flex items-center space-x-3.5">
+<!-- 头像容器带呼吸环与学生在线小徽标 -->
+<div class="relative flex-shrink-0">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-[0_4px_12px_rgba(32,184,176,0.18)] bg-surface-high">
+<img class="w-full h-full object-cover" data-alt="A warm, approachable Asian male university student with stylish wire-rim glasses, gentle smile, modern soft-lighting portrait, wearing a teal campus hoodie, against a soft airy pastel sky-cyan campus library background, crisp high aesthetic photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8jetAxRsr2hjED7oXmbJsUMrbvINWnZUV3TWpBukLb_qsTvdaKiF1_RSYbfQHa2oTy2XdywkcjwtEidlEVVagUpcB8ghpN_BjoFSqY_U_iVyLiJA2xQACipSTcHh_vSOAXqjM54CwHcPWRTKQoE0s2ypvIQtPEY7MCuLWeylAWtUDZQRjZWqp7KAvAogDCzLJn9g0T24uyyFVQZ5kHFx04q2UUjjEs-Dy7l-nNW-i"/>
+</div>
+<div class="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-badge-mint flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[12px] text-[#135442]" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+</div>
+<!-- 姓名与身份信息 -->
+<div class="flex flex-col min-w-0">
+<div class="flex items-center space-x-2">
+<span class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">晨曦同学</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-badge-mint/80 text-[#135442] font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px] mr-0.5" style="font-variation-settings: 'FILL' 1;">verified</span>
+              已认证
+            </span>
+</div>
+<div class="flex items-center text-text-secondary font-body-sm text-body-sm mt-0.5 space-x-2">
+<span>188****5291</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="truncate">信息工程学院</span>
+</div>
+</div>
+</div>
+<!-- 右上角快捷设置按键 -->
+<button aria-label="快捷设置" class="min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2 -mt-2 text-text-secondary active:text-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+</button>
+</div>
+<!-- PRO 会员特权胶囊横条 -->
+<div class="relative mt-4 flex items-center justify-between px-3.5 py-2.5 rounded-full bg-gradient-to-r from-secondary-container via-surface-container-low to-primary-fixed/40">
+<div class="flex items-center space-x-2 min-w-0">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="flex items-center space-x-1.5 truncate">
+<span class="font-label-md text-label-md text-secondary-on-container font-bold">PRO 学霸会员 Lv.3</span>
+<span class="text-secondary-on-container/60 text-[10px]">•</span>
+<span class="font-label-sm text-label-sm text-secondary-on-container truncate">智能合单立享 8 折专享价</span>
+</div>
+</div>
+<button class="flex-shrink-0 flex items-center space-x-0.5 text-primary active:opacity-75 pl-2 font-label-sm text-label-sm">
+<span>权益中心</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- 2. 资产三宫格卡片 -->
+<section class="grid grid-cols-3 gap-2.5 rounded-lg bg-surface-container-lowest p-3.5 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)]">
+<!-- 钱包余额 -->
+<div class="flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-light active:bg-secondary-container/40 transition-colors">
+<span class="font-label-sm text-label-sm text-text-secondary mb-1">钱包余额</span>
+<div class="flex items-baseline space-x-0.5 text-text-primary">
+<span class="text-[12px] font-bold text-primary">¥</span>
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">42.50</span>
+</div>
+<span class="mt-1 px-1.5 py-0.5 rounded-full bg-primary-fixed/40 text-on-primary-fixed-variant font-label-sm text-[10px] scale-95 origin-center text-center">
+        充值返利中
+      </span>
+</div>
+<!-- 打印优惠券 -->
+<div class="flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-light active:bg-secondary-container/40 transition-colors">
+<span class="font-label-sm text-label-sm text-text-secondary mb-1">优惠券</span>
+<div class="flex items-baseline space-x-0.5 text-text-primary">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">6</span>
+<span class="font-label-sm text-label-sm text-text-secondary">张可用</span>
+</div>
+<span class="mt-1 px-1.5 py-0.5 rounded-full bg-badge-peach text-[#5D2717] font-label-sm text-[10px] scale-95 origin-center text-center truncate max-w-full">
+        免配送费券
+      </span>
+</div>
+<!-- 印豆积分 -->
+<div class="flex flex-col items-center justify-center p-2 rounded-2xl bg-surface-light active:bg-secondary-container/40 transition-colors">
+<span class="font-label-sm text-label-sm text-text-secondary mb-1">印豆积分</span>
+<div class="flex items-baseline space-x-0.5 text-text-primary">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">1,280</span>
+<span class="font-label-sm text-label-sm text-text-secondary">分</span>
+</div>
+<span class="mt-1 px-1.5 py-0.5 rounded-full bg-badge-warm-yellow text-[#5A4500] font-label-sm text-[10px] scale-95 origin-center text-center truncate max-w-full">
+        兑免费打印
+      </span>
+</div>
+</section>
+<!-- 3. 会员权益专享横幅 (清透微光渐变) -->
+<section class="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary to-[#259b9a] p-4 text-on-primary shadow-[0_12px_28px_-6px_rgba(32,184,176,0.30)]">
+<!-- 光影装饰晶体与柔光 -->
+<div class="absolute right-0 top-0 bottom-0 w-36 bg-gradient-to-l from-white/15 to-transparent pointer-events-none"></div>
+<div class="absolute -left-6 -bottom-6 w-24 h-24 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+<div class="relative flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center flex-shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-white text-[22px]">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center space-x-1.5">
+<span class="font-label-lg text-label-lg font-bold tracking-wide">开通年度畅印卡</span>
+<span class="px-1.5 py-0.2 rounded-full bg-badge-warm-yellow text-[#5A4500] font-label-sm text-[10px] font-bold">限时</span>
+</div>
+<span class="font-body-sm text-body-sm text-white/85">合单双面0加价 · 全年省 ¥128</span>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-white text-primary font-label-md text-label-md font-bold shadow-md active:scale-95 transition-transform flex-shrink-0">
+        立即续费
+      </button>
+</div>
+</section>
+<!-- 4. 我的服务八宫格卡片 -->
+<section class="rounded-lg bg-surface-container-lowest p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)]">
+<div class="flex items-center justify-between pb-3">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">常用服务</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">校园智能合单专线</span>
+</div>
+<div class="grid grid-cols-4 gap-y-4 gap-x-2 pt-1">
+<!-- 1. 我的文档 -->
+<button class="flex flex-col items-center justify-center p-1 active:scale-95 transition-transform group">
+<div class="relative w-12 h-12 rounded-2xl bg-secondary-container/60 flex items-center justify-center text-primary group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">folder_open</span>
+<span class="absolute -top-1 -right-1 px-1.5 py-0.2 rounded-full bg-primary text-white font-label-sm text-[10px]">12</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-text-primary text-center">我的文档</span>
+<span class="text-[11px] text-text-secondary">云端暂存</span>
+</button>
+<!-- 2. 我的拼团 -->
+<button class="flex flex-col items-center justify-center p-1 active:scale-95 transition-transform group">
+<div class="relative w-12 h-12 rounded-2xl bg-badge-mint/50 flex items-center justify-center text-[#135442] group-hover:bg-badge-mint transition-colors">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-primary"></span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-text-primary text-center">我的拼团</span>
+<span class="text-[11px] text-primary font-medium">1个进行中</span>
+</button>
+<!-- 3. 邀请好友 -->
+<button class="flex flex-col items-center justify-center p-1 active:scale-95 transition-transform group">
+<div class="w-12 h-12 rounded-2xl bg-badge-peach/60 flex items-center justify-center text-[#5D2717] group-hover:bg-badge-peach transition-colors">
+<span class="material-symbols-outlined text-[24px]">redeem</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-text-primary text-center">邀请好友</span>
+<span class="text-[11px] text-badge-peach font-semibold text-[#5D2717]">得¥5券</span>
+</button>
+<!-- 4. 申请开票 -->
+<button class="flex flex-col items-center justify-center p-1 active:scale-95 transition-transform group">
+<div class="w-12 h-12 rounded-2xl bg-surface-high flex items-center justify-center text-text-primary group-hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-text-primary text-center">申请开票</span>
+<span class="text-[11px] text-text-secondary">电子发票</span>
+</button>
+<!-- 5. 常用打印点 -->
+<button class="flex flex-col items-center justify-center p-1 active:scale-95 transition-transform group">
+<div class="w-12 h-12 rounded-2xl bg-surface-high flex items-center justify-center text-secondary group-hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-text-primary text-center">常用点位</span>
+<span class="text-[11px] text-text-secondary">已收藏2处</span>
+</button>
+<!-- 6. 在线客服 -->
+<button class="flex flex-col items-center justify-center p-1 active:scale-95 transition-transform group">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/50 flex items-center justify-center text-primary group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">support_agent</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-text-primary text-center">在线客服</span>
+<span class="text-[11px] text-text-secondary">7x24h 响应</span>
+</button>
+<!-- 7. 帮助与指南 -->
+<button class="flex flex-col items-center justify-center p-1 active:scale-95 transition-transform group">
+<div class="w-12 h-12 rounded-2xl bg-surface-high flex items-center justify-center text-text-primary group-hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">help_center</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-text-primary text-center">帮助排障</span>
+<span class="text-[11px] text-text-secondary">退款及出纸</span>
+</button>
+<!-- 8. 系统设置 -->
+<button class="flex flex-col items-center justify-center p-1 active:scale-95 transition-transform group">
+<div class="w-12 h-12 rounded-2xl bg-surface-high flex items-center justify-center text-text-secondary group-hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">tune</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-text-primary text-center">偏好设置</span>
+<span class="text-[11px] text-text-secondary">打印习惯</span>
+</button>
+</div>
+</section>
+<!-- 5. 商家与管理工作台入口卡片 (专区) -->
+<section class="rounded-lg bg-surface-container-lowest p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)]">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#20B8B0] to-[#73C9E8] flex items-center justify-center text-white shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<span class="font-headline-sm text-headline-sm text-text-primary text-base">校园合作合伙人</span>
+<span class="px-1.5 py-0.2 rounded-full bg-badge-mint text-[#135442] font-label-sm text-[10px]">运营中</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary">复合机点位：信息楼B栋 1F 创客空间</span>
+</div>
+</div>
+<button class="flex items-center space-x-1 px-3 py-1.5 rounded-full bg-secondary-container text-secondary-on-container font-label-sm text-label-sm active:scale-95 transition-transform flex-shrink-0">
+<span>商家中心</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- 简报微胶囊数据 -->
+<div class="mt-3.5 pt-3 grid grid-cols-2 gap-2 bg-surface-light rounded-2xl p-2.5">
+<div class="flex items-center space-x-2.5 px-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[16px]">print_connect</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-text-secondary">设备状态</span>
+<span class="font-label-md text-label-md text-text-primary font-bold">2台 在线正常</span>
+</div>
+</div>
+<div class="flex items-center space-x-2.5 px-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-text-secondary">今日拼印收益</span>
+<span class="font-label-md text-label-md text-primary font-bold">¥ 186.40</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. 底部环境与版本标识 -->
+<footer class="pt-2 pb-4 flex flex-col items-center justify-center space-y-1">
+<button class="flex items-center space-x-1 font-label-sm text-label-sm text-text-secondary/70 active:text-primary transition-colors" id="versionTapBtn">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+<span>MoeFlow SmartPrint v5.3.2 (Build 202409)</span>
+</button>
+<p class="font-body-sm text-[11px] text-text-secondary/50">
+      智能合单 · 绿色低碳 · 校园打印新体验
+    </p>
+<div class="hidden fixed bottom-24 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm shadow-xl z-50" id="envToast">
+      当前环境：Production [生产网]
+    </div>
+</footer>
+</div>
+<script>
+  (function() {
+    // 1. 同步底部 Tab 栏选中高亮（激活「我的」）
+    try {
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        const path = link.getAttribute('data-path');
+        if (path === 'mine') {
+          link.classList.remove('text-text-secondary');
+          link.classList.add('text-primary', 'bg-primary-container/20');
+        } else {
+          link.classList.remove('text-primary', 'bg-primary-container/20');
+          link.classList.add('text-text-secondary');
+        }
+      });
+    } catch(e) {}
+
+    // 2. 版本号连击触发彩蛋/切换环境提示
+    let tapCount = 0;
+    let tapTimer = null;
+    const versionBtn = document.getElementById('versionTapBtn');
+    const envToast = document.getElementById('envToast');
+
+    if (versionBtn && envToast) {
+      versionBtn.addEventListener('click', () => {
+        tapCount++;
+        clearTimeout(tapTimer);
+        tapTimer = setTimeout(() => {
+          tapCount = 0;
+        }, 1500);
+
+        if (tapCount >= 5) {
+          tapCount = 0;
+          envToast.classList.remove('hidden');
+          setTimeout(() => {
+            envToast.classList.add('hidden');
+          }, 2000);
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-4px_20px_rgba(32,184,176,0.08)]" data-active-classes="text-primary bg-primary-container/60"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center w-16 h-16 rounded-[24px] text-text-secondary hover:text-text-primary transition-all duration-200 active:scale-95" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">cottage</span><span class="font-label-sm text-label-sm mt-0.5">首页</span></a><a class="flex flex-col items-center justify-center w-16 h-16 rounded-[24px] text-text-secondary hover:text-text-primary transition-all duration-200 active:scale-95" data-path="library" href="#"><span class="material-symbols-outlined text-[22px]">auto_stories</span><span class="font-label-sm text-label-sm mt-0.5">资料库</span></a><a class="flex flex-col items-center justify-center w-16 h-16 rounded-[24px] text-text-secondary hover:text-text-primary transition-all duration-200 active:scale-95" data-path="group-and-tools" href="#"><span class="material-symbols-outlined text-[22px]">widgets</span><span class="font-label-sm text-label-sm mt-0.5">拼团/工具</span></a><a class="flex flex-col items-center justify-center w-16 h-16 rounded-[24px] text-text-secondary hover:text-text-primary transition-all duration-200 active:scale-95" data-path="mine" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm mt-0.5">我的</span></a></div></nav></body></html>

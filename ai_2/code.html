@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>MoeFlow SmartPrint</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:max(env(safe-area-inset-bottom,0px),16px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-primary":"#53dad1","secondary":"#006780","on-tertiary-container":"#3f355c","secondary-container":"#88ddfd","surface-high":"#EAF5F6","surface-container-high":"#d0edf6","error-container":"#ffdad6","surface-light":"#F4FBFC","surface-container":"#FFFFFF","badge-mint":"#B9EBD9","surface-dim":"#c2dfe8","tertiary-fixed":"#e8ddff","background":"#f0fbff","outline":"#C8E3E5","primary-fixed":"#74f7ee","on-primary-fixed-variant":"#00504c","surface-variant":"#cae7f0","outline-variant":"#bbc9c7","on-secondary":"#ffffff","on-error-container":"#93000a","surface":"#f0fbff","secondary-fixed-dim":"#7cd2f1","secondary-fixed":"#b8eaff","surface-container-highest":"#cae7f0","primary-container":"#D5F4F1","primary-fixed-dim":"#53dad1","inverse-on-surface":"#d8f6ff","badge-peach":"#FFD8C8","error":"#ba1a1a","text-primary":"#18343B","on-primary":"#ffffff","on-error":"#ffffff","on-tertiary-fixed-variant":"#4a4168","on-secondary-fixed-variant":"#004d61","surface-bright":"#f0fbff","surface-tint":"#006a65","text-secondary":"#527078","tertiary-container":"#ab9fcc","on-tertiary-fixed":"#1e153a","on-secondary-container":"#00627a","on-surface":"#011f26","on-secondary-fixed":"#001f28","on-primary-fixed":"#00201e","inverse-surface":"#18343b","badge-warm-yellow":"#FFF3C4","tertiary":"#625881","primary-dark":"#168D89","on-tertiary":"#ffffff","on-background":"#011f26","surface-container-low":"#e0f8ff","tertiary-fixed-dim":"#ccc0ef","on-surface-variant":"#3c4948","surface-container-lowest":"#ffffff","secondary-on-container":"#153D52","primary":"#006a65","on-primary-container":"#004340"},borderRadius:{DEFAULT:"1rem",lg:"2rem",xl:"3rem",full:"9999px"},spacing:{"gutter":"1rem","space-lg":"1.5rem","margin-desktop":"2.5rem","space-xl":"2rem","margin":"1rem","space-md":"1rem","space-sm":"0.5rem","gutter-desktop":"1.5rem","space-xs":"0.25rem"},fontFamily:{"body-sm":["Be Vietnam Pro"],"body-lg":["Be Vietnam Pro"],"label-lg":["Be Vietnam Pro"],"body-md":["Be Vietnam Pro"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Be Vietnam Pro"],"label-md":["Be Vietnam Pro"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"]},fontSize:{"body-sm":["14px",{lineHeight:"22px",fontWeight:"400"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-lg":["15px",{lineHeight:"22px",fontWeight:"600"}],"body-md":["16px",{lineHeight:"26px",fontWeight:"400"}],"headline-lg":["32px",{lineHeight:"40px",fontWeight:"700"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"700"}],"display-lg-mobile":["32px",{lineHeight:"40px",fontWeight:"800"}],"label-sm":["11px",{lineHeight:"16px",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",fontWeight:"600"}],"headline-lg-mobile":["26px",{lineHeight:"34px",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"700"}],"display-lg":["40px",{lineHeight:"52px",fontWeight:"800"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.08)] pt-safe"><div class="h-14 px-3 flex items-center justify-between"><div class="flex items-center gap-1.5"><button aria-label="返回" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all" onclick="history.back()"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[150px]">Merchant Tools</h1></div><div class="flex items-center gap-2"><div class="h-8 px-2 rounded-full bg-surface-high/90 flex items-center gap-1"><button aria-label="更多操作" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors" type="button"><svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></svg></button><span class="w-[1px] h-3.5 bg-outline/60"></span><button aria-label="小程序胶囊关闭" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors" type="button"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" fill="currentColor" r="2.5"></circle></svg></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_2px_8px_rgba(0,106,101,0.2)]"><svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface"><div class="flex flex-col w-full pb-32">
+<!-- 顶部横向证件分类切换胶囊 -->
+<div class="w-full px-4 pt-3 pb-2">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="shrink-0 h-9 px-4 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-[0_4px_14px_rgba(0,106,101,0.22)] active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-on-primary" fill="currentColor" viewbox="0 0 24 24">
+<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1.4c0-2 4-3.1 6-3.1s6 1.1 6 3.1V19z"></path>
+</svg>
+<span>身份证 (正反合一)</span>
+</button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface-container text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>学生证/校园卡</span>
+</button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface-container text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>户口本 (首页+本人)</span>
+</button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface-container text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8h4.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>驾驶证</span>
+</button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface-container text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" type="button">
+<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>营业执照</span>
+</button>
+</div>
+</div>
+<!-- 主体工作区 -->
+<div class="px-4 flex flex-col gap-4">
+<!-- 1:1 A4 模拟真机排版实时预览区 -->
+<div class="relative w-full rounded-[24px] bg-surface-container p-4 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)]">
+<!-- 预览区标题状态栏 -->
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-headline-sm text-headline-sm text-text-primary">A4 标准套版实时预览</span>
+</div>
+<div class="flex items-center gap-1.5 bg-primary-container px-2.5 py-1 rounded-full text-on-primary-container font-label-sm text-label-sm">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>已启精准 1:1 缩放</span>
+</div>
+</div>
+<!-- A4 纸张主体仿真容器 (宽高比 1:1.414) -->
+<div class="relative w-full bg-surface-container-lowest rounded-xl shadow-[0_12px_32px_rgba(0,106,101,0.08)] overflow-hidden p-3 aspect-[1/1.38] flex flex-col justify-between">
+<!-- A4 背景细网格与裁切基准线 -->
+<div class="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(#c2dfe8_1px,transparent_1px)] [background-size:12px_12px]"></div>
+<!-- 四角十字对齐基准标线 -->
+<div class="absolute top-2 left-2 w-3 h-3 pointer-events-none">
+<div class="absolute top-1/2 left-0 right-0 h-[1px] bg-text-secondary/40 -translate-y-1/2"></div>
+<div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-text-secondary/40 -translate-x-1/2"></div>
+</div>
+<div class="absolute top-2 right-2 w-3 h-3 pointer-events-none">
+<div class="absolute top-1/2 left-0 right-0 h-[1px] bg-text-secondary/40 -translate-y-1/2"></div>
+<div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-text-secondary/40 -translate-x-1/2"></div>
+</div>
+<div class="absolute bottom-2 left-2 w-3 h-3 pointer-events-none">
+<div class="absolute top-1/2 left-0 right-0 h-[1px] bg-text-secondary/40 -translate-y-1/2"></div>
+<div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-text-secondary/40 -translate-x-1/2"></div>
+</div>
+<div class="absolute bottom-2 right-2 w-3 h-3 pointer-events-none">
+<div class="absolute top-1/2 left-0 right-0 h-[1px] bg-text-secondary/40 -translate-y-1/2"></div>
+<div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-text-secondary/40 -translate-x-1/2"></div>
+</div>
+<!-- 纸张中央对折虚线 -->
+<div class="absolute left-3 right-3 top-1/2 -translate-y-1/2 flex items-center justify-between pointer-events-none">
+<span class="w-full h-[1px] bg-surface-dim"></span>
+<span class="shrink-0 px-2 font-label-sm text-label-sm text-text-secondary bg-surface-container-lowest tabular-nums">A4 中轴对齐基准 85.6 × 54.0mm</span>
+<span class="w-full h-[1px] bg-surface-dim"></span>
+</div>
+<!-- 上半部分：身份证人像面 (正面) -->
+<div class="relative z-10 w-full flex flex-col items-center justify-center pt-2">
+<div class="relative w-[84%] aspect-[85.6/54] rounded-lg bg-surface-high overflow-hidden shadow-sm flex flex-col justify-between p-2.5">
+<!-- 证件模拟布局：正面人像 -->
+<div class="flex items-start justify-between">
+<div class="space-y-1.5 w-7/12">
+<div class="flex items-center gap-1.5">
+<span class="text-[10px] text-text-secondary font-semibold">姓名</span>
+<span class="h-3 w-14 bg-text-primary/20 rounded"></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-[10px] text-text-secondary font-semibold">性别</span>
+<span class="h-3 w-6 bg-text-primary/20 rounded"></span>
+<span class="text-[10px] text-text-secondary font-semibold ml-1">民族</span>
+<span class="h-3 w-8 bg-text-primary/20 rounded"></span>
+</div>
+<div class="flex items-start gap-1.5 pt-0.5">
+<span class="text-[10px] text-text-secondary font-semibold">住址</span>
+<div class="space-y-1">
+<span class="block h-2.5 w-24 bg-text-primary/20 rounded"></span>
+<span class="block h-2.5 w-16 bg-text-primary/20 rounded"></span>
+</div>
+</div>
+</div>
+<!-- 证件照片展示 -->
+<div class="w-16 h-20 rounded bg-surface-container overflow-hidden shadow-xs relative">
+<img class="w-full h-full object-cover" data-alt="A clean studio ID photo portrait of an East Asian individual against a neutral plain light grey backdrop, soft balanced front lighting, sharp focus, passport style headshot, cyan-tinted rim light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPMh6KUumuVdY2RlKj-oZJgokjC4ZSiruNZgwuxbRrJfRp_D2G29aICB8qh-XRE5hoAY7g7jMK4eRTSh2TyuAXTLwFQ0cp8nmjGDuV9f7u3ZhU_qHoex7AkWa5kVV_HGUH5GCd8-OS2tepzsn1BGPAuWTqnReWtdS8UV23sO2d0SnjHFlfMDRzjpE8FdIbs8846dtBMi-6nXTcGb16eFjJGwe-Lou67hYAqDHCbDRF"/>
+</div>
+</div>
+<!-- 公民身份号码条 -->
+<div class="flex items-center gap-2 pt-1">
+<span class="text-[10px] text-text-secondary font-semibold">公民身份号码</span>
+<span class="font-label-sm text-label-sm tracking-wider text-text-primary font-mono tabular-nums">110101199607******</span>
+</div>
+<!-- 透视矫正角标 -->
+<div class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full bg-badge-mint text-text-primary text-[9px] font-bold shadow-xs">
+              AI 居中已还原
+            </div>
+<!-- 水印浮层覆盖 (动态同步) -->
+<div class="watermark-overlay absolute inset-0 pointer-events-none flex flex-wrap items-center justify-around overflow-hidden select-none opacity-30 rotate-[-22deg] scale-110">
+<span class="watermark-text font-label-md text-label-md text-text-primary whitespace-nowrap">仅供办理考级使用 他用无效</span>
+<span class="watermark-text font-label-md text-label-md text-text-primary whitespace-nowrap">仅供办理考级使用 他用无效</span>
+</div>
+</div>
+</div>
+<!-- 下半部分：国徽面 (反面) -->
+<div class="relative z-10 w-full flex flex-col items-center justify-center pb-2">
+<div class="relative w-[84%] aspect-[85.6/54] rounded-lg bg-surface-high overflow-hidden shadow-sm flex flex-col justify-between p-2.5">
+<!-- 模拟反面底纹和国徽 -->
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-badge-peach flex items-center justify-center text-error shadow-inner">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm0 4a3 3 0 110 6 3 3 0 010-6zm4 11H8v-1c0-1.33 2.67-2 4-2s4 .67 4 2v1z"></path>
+</svg>
+</div>
+<div class="space-y-0.5">
+<span class="block font-headline-sm text-text-primary text-[11px] font-bold tracking-widest">中华人民共和国</span>
+<span class="block font-headline-sm text-text-primary text-[10px] font-bold tracking-widest">居民身份证</span>
+</div>
+</div>
+<!-- 签发机关和有效期限 -->
+<div class="space-y-1.5 pl-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-text-secondary font-semibold">签发机关</span>
+<span class="h-3 w-28 bg-text-primary/20 rounded"></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-text-secondary font-semibold">有效期限</span>
+<span class="font-label-sm text-label-sm text-text-primary font-mono tabular-nums">2020.08.12 - 2040.08.12</span>
+</div>
+</div>
+<!-- 尺寸对齐角标 -->
+<div class="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 rounded-full bg-badge-mint text-text-primary text-[9px] font-bold shadow-xs">
+              85.6×54mm 对齐
+            </div>
+<!-- 水印浮层覆盖 (动态同步) -->
+<div class="watermark-overlay absolute inset-0 pointer-events-none flex flex-wrap items-center justify-around overflow-hidden select-none opacity-30 rotate-[-22deg] scale-110">
+<span class="watermark-text font-label-md text-label-md text-text-primary whitespace-nowrap">仅供办理考级使用 他用无效</span>
+<span class="watermark-text font-label-md text-label-md text-text-primary whitespace-nowrap">仅供办理考级使用 他用无效</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 防伪水印与定制栏目 -->
+<div class="mt-4 pt-3 bg-surface-high/60 rounded-xl p-3 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="font-label-md text-label-md text-text-primary">防盗用防伪水印 (倾斜平铺)</span>
+</div>
+<!-- 胶囊开关 -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="watermarkToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+<!-- 水印文字定制输入框 -->
+<div class="relative w-full">
+<input class="w-full h-11 px-3.5 pr-20 rounded-xl bg-surface-container text-text-primary font-body-sm text-body-sm focus:outline-none shadow-sm placeholder:text-text-secondary/60" id="watermarkInput" placeholder="输入自定义防伪文字..." type="text" value="仅供办理高校考级使用 他用无效"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 h-7 px-2.5 rounded-lg bg-surface-high hover:bg-surface-dim text-text-secondary text-[12px] font-medium transition-colors" id="resetWatermarkBtn" type="button">
+            清空
+          </button>
+</div>
+<!-- 常用水印快捷标签 -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-0.5">
+<button class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-text-secondary hover:text-primary text-[11px] font-medium shadow-xs" onclick="setWatermark('仅供办理考级使用')" type="button"># 仅供办理考级使用</button>
+<button class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-text-secondary hover:text-primary text-[11px] font-medium shadow-xs" onclick="setWatermark('仅供入职审查备案')" type="button"># 仅供入职审查备案</button>
+<button class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-text-secondary hover:text-primary text-[11px] font-medium shadow-xs" onclick="setWatermark('仅供住房贷款申请')" type="button"># 仅供住房贷款申请</button>
+</div>
+</div>
+</div>
+<!-- 拍照引导与重拍控制卡片双栏 -->
+<div class="grid grid-cols-2 gap-3 w-full">
+<!-- 正面卡片 -->
+<div class="bg-surface-container rounded-[24px] p-3.5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-text-primary">人像面 (正面)</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-text-primary text-[10px] font-bold">清晰度极佳</span>
+</div>
+<div class="relative w-full aspect-[4/3] rounded-xl bg-surface-high overflow-hidden shadow-inner mb-3">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of national identity card front layout with portrait photo frame, precise edge detection line guide, soft morning natural studio light, crisp edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYCVLEbiDBbBvYOzVXrt8UoJ7QDeDWdgXREn7tytFIEEcZdt02GMOpyG6jTV_6cp6Sk2nhlKqi3JFMzqDTcPkRc_BbTMYyxWWYbYEDjn-ytkCfFR67E3qaCQIux5wcqBlKKQH--w6rBqHmbrAJMEKr5dv_oCDvHwniz_lf7f5Dkah3m0MSdIeNJ1YFLylE77UjKBEracZAbb_3C70XuB_Gxse2uk4hMsWyhD6dF4CS"/>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-surface-container/90 backdrop-blur text-[9px] text-text-primary font-mono tabular-nums">
+            300 DPI
+          </div>
+</div>
+<button class="w-full h-8 rounded-full bg-surface-high hover:bg-surface-container-high text-primary font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>重新拍摄</span>
+</button>
+</div>
+<!-- 反面卡片 -->
+<div class="bg-surface-container rounded-[24px] p-3.5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-text-primary">国徽面 (反面)</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-text-primary text-[10px] font-bold">对齐基准正常</span>
+</div>
+<div class="relative w-full aspect-[4/3] rounded-xl bg-surface-high overflow-hidden shadow-inner mb-3">
+<img class="w-full h-full object-cover" data-alt="National ID card reverse emblem side scanned on a soft white desktop background with crisp margins, high fidelity document photography with clean even cyan-tinted ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEaq3uR0ITjJLNyZqRPjn89FeuIIDA_5e4AzJN7x-WXWEidN1_ehdQPI7rpx1cIKDO6e2cOEzJRfpVe6VYRCzAoI6gNfLvcoplaKcFAsSNjeIFCMPOyUhK6Jo8HO8hWeVjBATmhLMFkrRZIbMX-itBfZzJH7Ot_HbSQCyPuEmheGOj-bBYZ4H_Qd-wcnxju_LyomZIS6WTDp4v5cPjdOD2gh8uB5is1Ozth-GeIQgx"/>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-surface-container/90 backdrop-blur text-[9px] text-text-primary font-mono tabular-nums">
+            300 DPI
+          </div>
+</div>
+<button class="w-full h-8 rounded-full bg-surface-high hover:bg-surface-container-high text-primary font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>重新拍摄</span>
+</button>
+</div>
+</div>
+<!-- 打印参数配置面板 -->
+<div class="w-full bg-surface-container rounded-[24px] p-4 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-text-primary">打印输出参数</h2>
+<span class="font-label-sm text-label-sm text-text-secondary bg-surface-high px-2.5 py-0.5 rounded-full">高保真输出标准</span>
+</div>
+<!-- 打印色彩选择 -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-text-secondary">色彩模式</label>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- 黑白模式 -->
+<div class="cursor-pointer relative p-3 rounded-2xl bg-surface-high transition-all flex flex-col justify-between" id="colorModeBw" onclick="selectColorMode('bw')">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary">黑白清晰省墨</span>
+<span class="w-4 h-4 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary">单价</span>
+<span class="font-headline-sm text-headline-sm text-primary font-mono tabular-nums">¥0.20</span>
+<span class="text-[11px] text-text-secondary">/ 张</span>
+</div>
+</div>
+<!-- 彩色模式 -->
+<div class="cursor-pointer relative p-3 rounded-2xl bg-surface-light opacity-80 hover:opacity-100 transition-all flex flex-col justify-between" id="colorModeColor" onclick="selectColorMode('color')">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary">彩色高保真</span>
+<span class="w-4 h-4 rounded-full bg-surface-dim"></span>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary">单价</span>
+<span class="font-headline-sm text-headline-sm text-text-primary font-mono tabular-nums">¥1.00</span>
+<span class="text-[11px] text-text-secondary">/ 张</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 份数与排版规范双列控制 -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<!-- 打印份数控制 -->
+<div class="bg-surface-high/60 rounded-2xl p-3 flex flex-col justify-between">
+<span class="font-label-md text-label-md text-text-secondary">打印份数</span>
+<div class="flex items-center justify-between mt-2">
+<button class="w-8 h-8 rounded-full bg-surface-container text-text-primary shadow-xs flex items-center justify-center active:scale-90 transition-transform" onclick="changeCopies(-1)" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M20 12H4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<span class="font-headline-sm text-headline-sm text-text-primary font-mono tabular-nums" id="copiesVal">1</span>
+<button class="w-8 h-8 rounded-full bg-surface-container text-text-primary shadow-xs flex items-center justify-center active:scale-90 transition-transform" onclick="changeCopies(1)" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- 纸张类型 -->
+<div class="bg-surface-high/60 rounded-2xl p-3 flex flex-col justify-between">
+<span class="font-label-md text-label-md text-text-secondary">版面规约</span>
+<div class="mt-2 flex items-center gap-1.5">
+<div class="w-7 h-7 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<p class="font-label-md text-label-md text-text-primary">A4 单面排版</p>
+<p class="text-[10px] text-text-secondary">同页正反对中</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 安全脱敏背书卡片 -->
+<div class="w-full bg-primary-container/40 rounded-[20px] p-3 flex items-start gap-2.5">
+<div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 mt-0.5">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container leading-relaxed">
+        银行级临时链路加密，打印完成后原始影像立即脱敏擦除，零留存保护个人隐私。
+      </p>
+</div>
+</div>
+<!-- 底部固定结算与送印操作条 -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface-container/90 backdrop-blur-xl shadow-[0_-8px_24px_rgba(0,106,101,0.08)] pb-safe pt-2.5 px-4">
+<div class="max-w-md mx-auto flex items-center justify-between gap-3">
+<!-- 左侧价格及明细汇总 -->
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-label-md text-label-md text-text-secondary">合计</span>
+<span class="font-headline-md text-headline-md text-primary font-mono font-bold tabular-nums" id="totalPrice">¥0.20</span>
+</div>
+<span class="text-[11px] text-text-secondary truncate max-w-[160px]" id="summaryDetail">
+          1份 ｜ 单面黑白 A4 1:1 防伪
+        </span>
+</div>
+<!-- 右侧送印主按钮 -->
+<button class="h-12 px-6 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg shadow-[0_8px_20px_rgba(0,106,101,0.28)] hover:shadow-lg active:scale-95 transition-all flex items-center gap-2" onclick="submitPrintJob()" type="button">
+<span>立即生成并送印</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<script>
+  let currentCopies = 1;
+  let currentColorMode = 'bw'; // 'bw' or 'color'
+  const unitPrices = { bw: 0.20, color: 1.00 };
+
+  const watermarkToggle = document.getElementById('watermarkToggle');
+  const watermarkInput = document.getElementById('watermarkInput');
+  const watermarkOverlays = document.querySelectorAll('.watermark-overlay');
+  const resetWatermarkBtn = document.getElementById('resetWatermarkBtn');
+
+  function updateWatermarkDisplay() {
+    const isVisible = watermarkToggle.checked;
+    const textVal = watermarkInput.value.trim() || '仅供办理业务使用';
+
+    watermarkOverlays.forEach(overlay => {
+      overlay.style.display = isVisible ? 'flex' : 'none';
+      const spans = overlay.querySelectorAll('.watermark-text');
+      spans.forEach(span => {
+        span.textContent = textVal;
+      });
+    });
+  }
+
+  function setWatermark(text) {
+    watermarkInput.value = text;
+    if (!watermarkToggle.checked) {
+      watermarkToggle.checked = true;
+    }
+    updateWatermarkDisplay();
+  }
+
+  watermarkToggle.addEventListener('change', updateWatermarkDisplay);
+  watermarkInput.addEventListener('input', updateWatermarkDisplay);
+  resetWatermarkBtn.addEventListener('click', () => {
+    watermarkInput.value = '';
+    updateWatermarkDisplay();
+  });
+
+  function selectColorMode(mode) {
+    currentColorMode = mode;
+    const bwCard = document.getElementById('colorModeBw');
+    const colorCard = document.getElementById('colorModeColor');
+
+    if (mode === 'bw') {
+      bwCard.className = 'cursor-pointer relative p-3 rounded-2xl bg-surface-high transition-all flex flex-col justify-between';
+      bwCard.querySelector('span.rounded-full').className = 'w-4 h-4 rounded-full bg-primary flex items-center justify-center text-on-primary';
+      bwCard.querySelector('span.rounded-full').innerHTML = '<svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>';
+
+      colorCard.className = 'cursor-pointer relative p-3 rounded-2xl bg-surface-light opacity-80 hover:opacity-100 transition-all flex flex-col justify-between';
+      colorCard.querySelector('span.rounded-full').className = 'w-4 h-4 rounded-full bg-surface-dim';
+      colorCard.querySelector('span.rounded-full').innerHTML = '';
+    } else {
+      colorCard.className = 'cursor-pointer relative p-3 rounded-2xl bg-surface-high transition-all flex flex-col justify-between';
+      colorCard.querySelector('span.rounded-full').className = 'w-4 h-4 rounded-full bg-primary flex items-center justify-center text-on-primary';
+      colorCard.querySelector('span.rounded-full').innerHTML = '<svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>';
+
+      bwCard.className = 'cursor-pointer relative p-3 rounded-2xl bg-surface-light opacity-80 hover:opacity-100 transition-all flex flex-col justify-between';
+      bwCard.querySelector('span.rounded-full').className = 'w-4 h-4 rounded-full bg-surface-dim';
+      bwCard.querySelector('span.rounded-full').innerHTML = '';
+    }
+
+    calculateTotal();
+  }
+
+  function changeCopies(delta) {
+    const nextVal = currentCopies + delta;
+    if (nextVal >= 1 && nextVal <= 99) {
+      currentCopies = nextVal;
+      document.getElementById('copiesVal').textContent = currentCopies;
+      calculateTotal();
+    }
+  }
+
+  function calculateTotal() {
+    const unitPrice = unitPrices[currentColorMode];
+    const total = (unitPrice * currentCopies).toFixed(2);
+    document.getElementById('totalPrice').textContent = `¥${total}`;
+    
+    const colorLabel = currentColorMode === 'bw' ? '单面黑白' : '单面全彩';
+    document.getElementById('summaryDetail').textContent = `${currentCopies}份 ｜ ${colorLabel} A4 1:1 防伪`;
+  }
+
+  function submitPrintJob() {
+    const btn = event.currentTarget;
+    btn.classList.add('opacity-80', 'pointer-events-none');
+    btn.innerHTML = `
+      <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-on-primary" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+      </svg>
+      <span>正在生成防伪版面...</span>
+    `;
+
+    setTimeout(() => {
+      btn.innerHTML = `
+        <svg class="w-4 h-4 text-on-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+        <span>已进入打印队列</span>
+      `;
+    }, 1200);
+  }
+
+  // 初始化设置
+  updateWatermarkDisplay();
+  calculateTotal();
+</script></main></body></html>

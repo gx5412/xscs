@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>我的拼团 · Moeflow Group - MoeFlow SmartPrint</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "badge-peach": "#FFD8C8",
+            "tertiary-fixed-dim": "#ccc0ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#53dad1",
+            "outline-variant": "#bbc9c7",
+            "inverse-surface": "#18343b",
+            "surface-container": "#d5f3fc",
+            "surface-container-low": "#e0f8ff",
+            "on-primary-container": "#004340",
+            "primary-container": "#20b8b0",
+            "surface-dim": "#c2dfe8",
+            "text-secondary": "#527078",
+            "secondary": "#006780",
+            "on-secondary-fixed-variant": "#004d61",
+            "on-tertiary-fixed-variant": "#4a4168",
+            "tertiary-fixed": "#e8ddff",
+            "secondary-container": "#D7F0FA",
+            "on-primary-fixed-variant": "#00504c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#011f26",
+            "on-secondary-container": "#00627a",
+            "badge-mint": "#B9EBD9",
+            "error": "#ba1a1a",
+            "surface-container-high": "#d0edf6",
+            "on-error": "#ffffff",
+            "primary": "#20b8b0",
+            "on-secondary-fixed": "#001f28",
+            "on-surface": "#011f26",
+            "on-tertiary-fixed": "#1e153a",
+            "tertiary": "#625881",
+            "badge-warm-yellow": "#FFF3C4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#3f355c",
+            "on-primary-fixed": "#00201e",
+            "surface": "#f0fbff",
+            "surface-bright": "#f0fbff",
+            "surface-high": "#EAF5F6",
+            "primary-dark": "#168D89",
+            "inverse-on-surface": "#d8f6ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#7cd2f1",
+            "on-error-container": "#93000a",
+            "background": "#f0fbff",
+            "surface-variant": "#cae7f0",
+            "outline": "#C8E3E5",
+            "text-primary": "#18343B",
+            "tertiary-container": "#ab9fcc",
+            "surface-light": "#F4FBFC",
+            "surface-container-highest": "#cae7f0",
+            "on-surface-variant": "#3c4948",
+            "secondary-fixed": "#b8eaff",
+            "secondary-on-container": "#153D52",
+            "surface-tint": "#20b8b0",
+            "primary-fixed": "#74f7ee",
+            "inverse-primary": "#53dad1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "52px", fontWeight: "800" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] pt-safe">
+<div class="h-14 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-1 min-w-0 pr-2">
+<button aria-label="返回上一页" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all flex-shrink-0" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px] leading-none">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">我的拼团 · Moeflow Group</h1>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="h-8 px-2.5 rounded-full bg-surface-high/90 border border-white/80 shadow-[0_2px_8px_rgba(32,184,176,0.06)] flex items-center gap-1.5">
+<button aria-label="小程序菜单" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">more_horiz</span>
+</button>
+<span class="w-[1px] h-3.5 bg-outline/60"></span>
+<button aria-label="关闭小程序" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[17px] leading-none">radio_button_checked</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-background"><div class="flex flex-col w-full px-margin pb-24">
+<!-- 顶部状态分类 Tab -->
+<section class="w-full pt-space-xs pb-space-sm">
+<nav aria-label="拼团状态筛选" class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1">
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-transform active:scale-95" type="button">
+        全部 <span class="tabular-nums font-label-sm text-label-sm opacity-90 ml-0.5">(4)</span>
+</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-text-primary hover:bg-surface-high font-label-md text-label-md transition-colors active:scale-95" type="button">
+        拼团中 <span class="tabular-nums font-label-sm text-label-sm text-primary font-bold ml-0.5">(1)</span>
+</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-text-primary hover:bg-surface-high font-label-md text-label-md transition-colors active:scale-95" type="button">
+        拼团成功 <span class="tabular-nums font-label-sm text-label-sm opacity-75 ml-0.5">(2)</span>
+</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-text-primary hover:bg-surface-high font-label-md text-label-md transition-colors active:scale-95" type="button">
+        已退款 <span class="tabular-nums font-label-sm text-label-sm opacity-75 ml-0.5">(1)</span>
+</button>
+</nav>
+</section>
+<!-- 拼团累计节省统计卡 -->
+<section class="w-full mb-space-md">
+<div class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 relative overflow-hidden flex items-center justify-between">
+<div class="relative z-10 flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-text-secondary tracking-wide uppercase">拼印省钱账本</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-body-sm text-body-sm text-text-secondary">已为寝室累计省下</span>
+<span class="font-headline-md text-headline-md text-primary font-bold tabular-nums">¥28.60</span>
+</div>
+<div class="flex items-center gap-1 text-text-secondary font-label-sm text-label-sm mt-0.5">
+<span>共参与</span>
+<span class="font-bold text-text-primary tabular-nums">4</span>
+<span>次合印协作，平均每单直省 42%</span>
+</div>
+</div>
+<!-- 统计徽标插图 -->
+<div class="relative z-10 w-12 h-12 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0">
+<svg class="w-6 h-6 text-on-primary-container" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+</svg>
+</div>
+<!-- 背景柔和装饰光晕 -->
+<div class="absolute -right-4 -bottom-4 w-28 h-28 rounded-full bg-secondary-container/40 blur-xl pointer-events-none"></div>
+</div>
+</section>
+<!-- 拼单列表 -->
+<main class="w-full flex flex-col gap-space-md">
+<!-- 卡片 1: 拼团中 (紧迫状态) -->
+<article class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 flex flex-col relative overflow-hidden">
+<!-- 顶部标签状态栏 -->
+<header class="flex items-center justify-between gap-2 mb-2.5">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-badge-mint text-on-primary-container font-label-sm text-label-sm font-semibold">
+            我是团长
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-badge-warm-yellow text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<svg class="w-3.5 h-3.5 text-on-surface-variant animate-spin" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="12"></circle>
+</svg>
+            还差 1 人成团
+          </span>
+</div>
+<!-- 倒计时 -->
+<div class="flex items-center gap-1 text-error font-label-sm text-label-sm tabular-nums">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span class="font-bold tracking-tight">剩 03:45:12</span>
+</div>
+</header>
+<!-- 标题 -->
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-bold line-clamp-1 mb-2">
+        【计算机学院】毕业论文双面胶装拼印 5人团
+      </h2>
+<!-- 价格对比面板 -->
+<div class="bg-surface-high rounded-xl p-2.5 flex items-center justify-between mb-3.5">
+<div class="flex items-baseline gap-1.5">
+<span class="font-label-sm text-label-sm text-text-secondary">拼印特价</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold tabular-nums">¥0.08</span>
+<span class="font-label-sm text-label-sm text-primary">/面</span>
+<span class="font-label-sm text-label-sm text-text-secondary line-through tabular-nums ml-1">¥0.15/面</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-peach text-on-surface font-label-sm text-label-sm font-semibold">
+          直省 46%
+        </span>
+</div>
+<!-- 成员头像组 (5人团，已加入4人，第5人为虚线空位) -->
+<div class="flex items-center justify-between py-1 mb-4">
+<div class="flex items-center -space-x-2">
+<!-- 团长高光 -->
+<div class="relative z-40">
+<div class="w-9 h-9 rounded-full bg-primary-container p-0.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-full" data-alt="Clear modern avatar photo of an East Asian college student wearing casual glasses against a neutral pastel aqua studio background, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5RwNa-dB5P-x3jAJg2SpQcMxiv4eAAzA5DP8GXTOMaGx4FIeAqkUtLNpQsHdvfLf3VeVnHJ0AaUe2ORDmEkpDn1nBJ9qDYHjAATJbiA_06UpvDaitvACLQpltCNDSAimtHzTL65A1rN_57d1-dHuj5jhXeLIsRr5ok9QPIpwVLUm8jZvqBbmDqfw8g_isFXnJh_O_jdKhtlDat7jorleDvUUXsP497OqZbWxhiD4H"/>
+</div>
+<span class="absolute -bottom-1 -right-1 px-1 rounded-full bg-primary text-on-primary font-label-sm text-[9px] scale-90 leading-tight">团长</span>
+</div>
+<!-- 成员 2 -->
+<div class="relative z-30 w-9 h-9 rounded-full bg-surface-container-high p-0.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-full" data-alt="Portrait photography of young male student Li smiling softly, neutral background with light teal atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp1tEU0374t1BhRQHsCf58MTSXE9hKQ_I2fQl_P0NIF6YoR9D0kZgHsyNurFt_UbANrm5qwG5kgEOMYB7heDg-xPusnbSpG9hFsU2s9IjNhi3uASPmas-sTXYcANf370FP7uCWyhIAgd_z4GmSkPOlphVd-nbVSLgKMqNtaFZUVofEl3sDqUqPr-MSr_yK2RbMzi6ksN5f1zR-JaTNm2nicCUdfayIQs06OYbwu87H"/>
+</div>
+<!-- 成员 3 -->
+<div class="relative z-20 w-9 h-9 rounded-full bg-surface-container-high p-0.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-full" data-alt="Campus student portrait Zhang with neat hair, clear soft studio lighting with gentle cyan undertones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNTyum-_KwTRbSu8qBjbFzOVkVea_Ta-OtvdKUAdTteK_n9rPKOS3s14mGBEARMG31_c4_B692Ypf-5BdqHpdl5y6eC6yhS7UNT080DeAP7ptYplo1TuK14_Sc4N61gvIaaHG1qVUB-mv-X3TPpW0vMPRtH4tpEaBHjIbJgaeawk91jDc7hW823ZNxTdNtGFoKIN2JGRWMWa_kvnveqvJdlPrXDoZ8fK6dtl9c7_hQ"/>
+</div>
+<!-- 成员 4 -->
+<div class="relative z-10 w-9 h-9 rounded-full bg-surface-container-high p-0.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-full" data-alt="Portrait photo of college student Wang looking forward, serene expression, natural bright indoor light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFR3s254Ij5xVqFXCdACGHChDXOu6cwpfERTlwlcgq05vWHrncDoZXsNc4MQ8CyGwMvp6pxGedwBZee8aehDvrpfnNU5WG3qeJnxawgXcgScUIG1-0ktZqm2afKC0TtFulVduCkWx-S8k2i-fgWxhmMXga5lgCmcKAK9MqLdjwEF7NSdj6zMHszgHVy9WaCEZlXzN7fqJTHbsK1EH0jDEKC0OuqaxDTG6FRkdXmO5D"/>
+</div>
+<!-- 第 5 个虚线空位 -->
+<button aria-label="邀请好友入团" class="relative z-0 w-9 h-9 rounded-full bg-surface-high flex items-center justify-center text-primary transition-transform active:scale-90" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="5" y2="19"></line>
+<line x1="5" x2="19" y1="12" y2="12"></line>
+</svg>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums">
+          已凑齐 <span class="font-bold text-text-primary">4</span>/5 份
+        </span>
+</div>
+<!-- 操作按钮栏 -->
+<footer class="flex items-center gap-2 pt-1">
+<button class="flex-1 py-2 px-3 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md text-center transition-colors active:scale-95" type="button">
+          查看拼单详情
+        </button>
+<button class="flex-1 py-2 px-3 rounded-full bg-primary text-on-primary font-label-md text-label-md text-center shadow-sm flex items-center justify-center gap-1 transition-transform active:scale-95" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="8.5" cy="7" r="4"></circle>
+<line x1="20" x2="20" y1="8" y2="14"></line>
+<line x1="23" x2="17" y1="11" y2="11"></line>
+</svg>
+          立即邀请室友凑单
+        </button>
+</footer>
+</article>
+<!-- 卡片 2: 拼团成功 · 待打印/待取件 -->
+<article class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 flex flex-col">
+<!-- 顶部标签状态栏 -->
+<header class="flex items-center justify-between gap-2 mb-2.5">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-secondary-on-container font-label-sm text-label-sm font-semibold">
+            拼友团员
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-badge-mint text-on-primary-container font-label-sm text-label-sm font-semibold">
+<svg class="w-3.5 h-3.5 text-on-primary-container" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+            拼印已就绪 · 待出纸
+          </span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums">3人团成团</span>
+</header>
+<!-- 标题 -->
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-bold line-clamp-1 mb-2">
+        【期末复习】高数下册期末真题及解析装订 3人团
+      </h2>
+<!-- 信息面板：金额与设备终端 -->
+<div class="bg-surface-high rounded-xl p-3 flex flex-col gap-1.5 mb-3.5">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-secondary">实付金额</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold tabular-nums">¥4.80</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold tabular-nums">(立省 ¥3.20)</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary font-label-sm text-label-sm">
+<svg class="w-3.5 h-3.5 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+<rect height="8" width="12" x="6" y="14"></rect>
+<path d="M6 9V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5"></path>
+</svg>
+<span class="truncate">自动调度至：<strong class="text-text-primary font-semibold">科技园 A 座 02 号机</strong></span>
+</div>
+</div>
+<!-- 操作按钮栏 -->
+<footer class="flex items-center gap-2">
+<button class="flex-1 py-2 px-3 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md text-center transition-colors active:scale-95" type="button">
+          再次拼印
+        </button>
+<button class="flex-1 py-2 px-3 rounded-full bg-primary text-on-primary font-label-md text-label-md text-center shadow-sm flex items-center justify-center gap-1 transition-transform active:scale-95" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="7" width="7" x="3" y="3"></rect>
+<rect height="7" width="7" x="14" y="3"></rect>
+<rect height="7" width="7" x="14" y="14"></rect>
+<rect height="7" width="7" x="3" y="14"></rect>
+</svg>
+          查看取件码 (4492)
+        </button>
+</footer>
+</article>
+<!-- 卡片 3: 拼团成功 · 已出纸完结 -->
+<article class="rounded-DEFAULT bg-surface-container-lowest shadow-sm p-4 flex flex-col">
+<!-- 顶部标签状态栏 -->
+<header class="flex items-center justify-between gap-2 mb-2.5">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-text-secondary font-label-sm text-label-sm font-semibold">
+            拼友团员
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-text-secondary font-label-sm text-label-sm font-semibold">
+<svg class="w-3.5 h-3.5 text-text-secondary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+            已取件完结
+          </span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums">10份合打</span>
+</header>
+<!-- 标题 -->
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-bold line-clamp-1 mb-2">
+        【答辩讲义】4合1 答辩讲义横线版 10份合打
+      </h2>
+<!-- 履约详情描述 -->
+<div class="bg-surface-high/60 rounded-xl p-3 flex flex-col gap-1 mb-3.5">
+<div class="flex items-center justify-between text-text-secondary font-body-sm text-body-sm">
+<span>完成时间</span>
+<span class="tabular-nums">2024-10-15 17:30</span>
+</div>
+<div class="flex items-center gap-1 text-text-secondary font-label-sm text-label-sm">
+<svg class="w-3.5 h-3.5 text-text-secondary flex-shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg>
+<span class="truncate">已在文理学部创客中心提货完结</span>
+</div>
+</div>
+<!-- 操作按钮栏 -->
+<footer class="flex items-center justify-end gap-2">
+<button class="py-1.5 px-4 rounded-full bg-surface-high hover:bg-surface-container text-text-primary font-label-md text-label-md transition-colors active:scale-95" type="button">
+          申请开票
+        </button>
+<button class="py-1.5 px-4 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md transition-colors active:scale-95" type="button">
+          再来一单
+        </button>
+</footer>
+</article>
+<!-- 卡片 4: 拼团超时已退款 -->
+<article class="rounded-DEFAULT bg-surface-container-lowest/80 shadow-sm p-4 flex flex-col opacity-90">
+<!-- 顶部标签状态栏 -->
+<header class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-badge-peach text-error font-label-sm text-label-sm font-semibold">
+<svg class="w-3 h-3 text-error" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="15" x2="9" y1="9" y2="15"></line>
+<line x1="9" x2="15" y1="9" y2="15"></line>
+</svg>
+            超时未满员 · 已退款
+          </span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums">原单 4 人团</span>
+</header>
+<!-- 标题 -->
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-bold line-clamp-1 mb-2">
+        【四六级冲刺】词汇高频真题背诵手卡
+      </h2>
+<!-- 退款通告条 -->
+<div class="bg-surface-high rounded-xl p-3 flex items-start gap-2.5">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-secondary-on-container flex items-center justify-center flex-shrink-0 mt-0.5">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="1 4 1 10 7 10"></polyline>
+<path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+</svg>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-label-md text-label-md text-text-primary font-semibold">
+            全额退款 ¥6.50
+          </span>
+<span class="font-body-sm text-body-sm text-text-secondary leading-tight mt-0.5">
+            资金已全额原路退回微信零钱账户，无任何手续扣费。
+          </span>
+</div>
+</div>
+</article>
+</main>
+<!-- 底部固定开团快捷入口 -->
+<aside class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-8px_24px_rgba(32,184,176,0.12)] px-margin py-3 pb-safe">
+<div class="max-w-md mx-auto flex items-center justify-between gap-3">
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold leading-tight truncate">
+          找不到合适的团？
+        </span>
+<span class="font-label-sm text-label-sm text-text-secondary truncate">
+          自定义规格与份数，随时成团
+        </span>
+</div>
+<button class="flex-shrink-0 px-5 py-2.5 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm text-[16px] font-bold shadow-md hover:bg-primary-dark transition-all active:scale-95 flex items-center gap-1.5" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="5" y2="19"></line>
+<line x1="5" x2="19" y1="12" y2="12"></line>
+</svg>
+        发起我的拼单
+      </button>
+</div>
+</aside>
+</div></main>
+</body></html>

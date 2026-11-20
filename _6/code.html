@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>Print Task Preview</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#74f7ee", "text-secondary": "#527078", "on-surface": "#011f26", "primary": "#006a65", "on-tertiary-fixed": "#1e153a", "surface-container": "#d5f3fc", "error-container": "#ffdad6", "tertiary-fixed": "#e8ddff", "badge-peach": "#FFD8C8", "surface-container-high": "#d0edf6", "on-tertiary-fixed-variant": "#4a4168", "surface-container-highest": "#cae7f0", "surface-light": "#F4FBFC", "background": "#f0fbff", "on-error": "#ffffff", "outline": "#C8E3E5", "badge-mint": "#B9EBD9", "secondary-fixed-dim": "#7cd2f1", "inverse-surface": "#18343b", "surface-bright": "#f0fbff", "on-secondary-container": "#00627a", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ccc0ef", "inverse-primary": "#53dad1", "secondary-fixed": "#b8eaff", "surface-variant": "#cae7f0", "on-primary-container": "#004340", "primary-container": "#D5F4F1", "secondary": "#006780", "surface-dim": "#c2dfe8", "secondary-on-container": "#153D52", "primary-dark": "#168D89", "on-primary-fixed-variant": "#00504c", "surface-high": "#EAF5F6", "primary-fixed-dim": "#53dad1", "on-tertiary-container": "#3f355c", "on-primary-fixed": "#00201e", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004d61", "surface-container-low": "#e0f8ff", "outline-variant": "#bbc9c7", "secondary-container": "#88ddfd", "on-secondary": "#ffffff", "error": "#ba1a1a", "badge-warm-yellow": "#FFF3C4", "on-surface-variant": "#3c4948", "tertiary": "#625881", "surface": "#f0fbff", "surface-container-lowest": "#ffffff", "tertiary-container": "#ab9fcc", "inverse-on-surface": "#d8f6ff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#001f28", "surface-tint": "#006a65", "text-primary": "#18343B", "on-background": "#011f26" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "gutter": "1rem" }, fontFamily: { "label-md": ["Be Vietnam Pro"], "label-sm": ["Be Vietnam Pro"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Be Vietnam Pro"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px));}.pt-safe{padding-top:calc(env(safe-area-inset-top,0px));}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-text-primary antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_12px_rgba(32,184,176,0.06)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-text-primary rounded-full hover:bg-surface-container-low active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[160px]">Print Task Preview</h1></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex items-center bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,106,101,0.08)]"><button aria-label="Mini Program Options" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button><div class="w-px h-3.5 bg-outline mx-0.5"></div><button aria-label="Close Mini Program" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[18px]">radio_button_checked</span></button></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface px-margin pb-safe min-h-screen"><div class="flex flex-col w-full pb-28 pt-2">
+<!-- Subtle Ambient Top Glow -->
+<div class="relative w-full">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 w-72 h-32 bg-primary-fixed/20 blur-3xl rounded-full pointer-events-none -z-10"></div>
+</div>
+<!-- 1. Order Summary Card -->
+<section class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)] mb-space-md relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="w-2 h-2 rounded-full bg-primary flex-shrink-0 animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">待支付打印任务</span>
+</div>
+<div class="flex items-baseline text-right flex-shrink-0">
+<span class="font-label-sm text-label-sm text-text-secondary mr-0.5">应付</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold tabular-nums">¥3.10</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md p-space-sm rounded-DEFAULT bg-surface-light">
+<div class="relative w-16 h-20 rounded-DEFAULT bg-surface-container-high overflow-hidden flex-shrink-0 shadow-inner flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Close up architectural style product interaction architecture PDF document cover on crisp clean matte white paper with cyan accent typography and grid layout, studio photography, soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGl2AqFGK5VzPPxCeaikLygjhK-F4ha7ZksSs0OFHlNFR6dbRCBuK92PbVGnDKt63hySEKgkh893PLu164NresHonGiPePd-GGeH2Qi9Q28dDTDHCrOmGlaVpNDzwR-Ju7IcdL8j2Vb-Z4tLb3fPYWNGhLxm-JFlE7M_D4kPJzWC7TZqKCojfGT3F9tWiJVil3yU9BwQOfi8MbL4PyJY_ZyC6TtF-eZGNJ4ArCE_EP"/>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded-full bg-on-surface/75 backdrop-blur-sm">
+<span class="font-label-sm text-[10px] leading-none text-surface-container-lowest font-medium">PDF</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0 flex-1 justify-center">
+<h2 class="font-label-lg text-label-lg text-text-primary truncate font-bold mb-1">
+          产品规划与交互架构设计说明书.pdf
+        </h2>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-lowest text-text-secondary font-label-sm text-label-sm shadow-sm">
+            黑白双面
+          </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-lowest text-text-secondary font-label-sm text-label-sm shadow-sm">
+            A4
+          </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-lowest text-text-secondary font-label-sm text-label-sm shadow-sm">
+            左上角订
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 tabular-nums">
+          共 24 页 · 1 份
+        </p>
+</div>
+</div>
+</section>
+<!-- 2. Fulfillment Method Toggle Cards -->
+<section class="w-full mb-space-md">
+<div class="flex items-center justify-between mb-space-xs px-1">
+<span class="font-label-md text-label-md text-text-primary font-bold">选择取件方式</span>
+<span class="font-label-sm text-label-sm text-text-secondary">支持无感凭码速取</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Pickup Tab (Active) -->
+<button class="relative text-left p-space-md rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.18)] transition-all overflow-hidden flex flex-col justify-between" id="tab-pickup" onclick="switchMethod('pickup')" type="button">
+<div class="absolute inset-0 bg-primary-container/20 pointer-events-none"></div>
+<div class="absolute top-0 right-0 bg-primary text-on-primary w-6 h-6 rounded-bl-xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+<p class="font-label-lg text-label-lg font-bold text-text-primary mb-1">到店自助取件</p>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">凭 4 位取件码或二维码即到即取，无需排队</p>
+</div>
+<div class="mt-space-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary font-bold">免配送费</span>
+</div>
+</button>
+<!-- Delivery Tab (Inactive) -->
+<button class="relative text-left p-space-md rounded-lg bg-surface-container-lowest/80 shadow-[0_4px_16px_rgba(0,0,0,0.03)] opacity-85 transition-all overflow-hidden flex flex-col justify-between" id="tab-delivery" onclick="switchMethod('delivery')" type="button">
+<div>
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-secondary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">moped</span>
+</div>
+<p class="font-label-lg text-label-lg font-bold text-text-primary mb-1">极速送达寝室/工位</p>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">校园骑手送达 · 预计 30 分钟内送达</p>
+</div>
+<div class="mt-space-md flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary">配送服务 +¥1.50</span>
+</div>
+</button>
+</div>
+</section>
+<!-- 3. Selected Device / Station Info Card -->
+<section class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] mb-space-md">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">print</span>
+<span class="font-label-md text-label-md text-text-primary font-bold">已匹配最优打印点</span>
+</div>
+<button class="inline-flex items-center gap-0.5 px-3 py-1 rounded-full bg-secondary-container text-secondary-on-container font-label-sm text-label-sm hover:opacity-90 active:scale-95 transition-all" type="button">
+<span>更换设备/门店</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">科技园A座 02号智能复合机</h3>
+</div>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-text-secondary">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary">near_me</span>
+<span class="tabular-nums">距您 320m</span>
+</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="truncate">首层南侧智能文印区服务台旁</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="flex items-center gap-space-xs p-2 rounded-DEFAULT bg-surface-light">
+<span class="w-2 h-2 rounded-full bg-badge-mint flex-shrink-0" style="background-color: #20B8B0;"></span>
+<div class="min-w-0">
+<span class="block font-label-sm text-label-sm text-primary font-bold truncate">在线空闲 · 纸张充足</span>
+<span class="block font-label-sm text-[11px] text-text-secondary truncate">状态良好 即刻启动</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs p-2 rounded-DEFAULT bg-surface-light">
+<span class="material-symbols-outlined text-secondary text-[18px]">timer</span>
+<div class="min-w-0">
+<span class="block font-label-sm text-label-sm text-text-primary font-bold truncate">约 1 分 15 秒</span>
+<span class="block font-label-sm text-[11px] text-text-secondary truncate">预估出纸总耗时</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Discounts, Benefits & Perks -->
+<section class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] mb-space-md flex flex-col gap-space-sm">
+<!-- Coupon Row -->
+<div class="flex items-center justify-between p-space-sm rounded-DEFAULT bg-surface-light active:bg-surface-container-low transition-all">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-badge-peach flex items-center justify-center text-[#5D2717]">
+<span class="material-symbols-outlined text-[14px]">confirmation_number</span>
+</span>
+<span class="font-body-md text-body-md text-text-primary font-medium">优惠券抵扣</span>
+</div>
+<button class="inline-flex items-center gap-0.5 text-right" type="button">
+<span class="font-label-md text-label-md text-error font-bold tabular-nums">新学期专享立减券 -¥1.00</span>
+<span class="material-symbols-outlined text-text-secondary text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- Student Membership Row -->
+<div class="flex items-center justify-between p-space-sm rounded-DEFAULT bg-surface-light">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-badge-mint flex items-center justify-center text-[#135442]">
+<span class="material-symbols-outlined text-[14px]">school</span>
+</span>
+<span class="font-body-md text-body-md text-text-primary font-medium">会员特权</span>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-badge-warm-yellow/70 text-[#5A4500]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm font-bold">学生认证享 8 折已生效</span>
+</div>
+</div>
+<!-- Bill Breakdown Summary -->
+<div class="pt-space-xs px-1 flex flex-col gap-1.5 font-body-sm text-body-sm text-text-secondary">
+<div class="flex justify-between items-center">
+<span>原价小计 (24页单面折算)</span>
+<span class="tabular-nums text-text-primary font-medium">¥4.60</span>
+</div>
+<div class="flex justify-between items-center">
+<span>学子优惠 (8折折让)</span>
+<span class="tabular-nums text-primary font-medium">-¥0.50</span>
+</div>
+<div class="flex justify-between items-center">
+<span>优惠券抵减</span>
+<span class="tabular-nums text-error font-medium">-¥1.00</span>
+</div>
+</div>
+</section>
+<!-- 5. Payment Methods Card -->
+<section class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] mb-space-md">
+<div class="font-label-md text-label-md text-text-primary font-bold mb-space-sm">支付方式</div>
+<div class="flex items-center justify-between p-space-sm rounded-DEFAULT bg-surface-light">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-[#07C160]/10 flex items-center justify-center flex-shrink-0">
+<svg class="w-5 h-5" fill="#07C160" viewbox="0 0 24 24">
+<path d="M8.5 4.5C4.91 4.5 2 7.02 2 10.13c0 1.73.91 3.28 2.34 4.31l-.59 2.16 2.37-1.19c.74.22 1.53.35 2.38.35.2 0 .39 0 .58-.02-.2-.55-.31-1.13-.31-1.74 0-3.11 2.91-5.63 6.5-5.63.4 0 .79.03 1.17.1C15.54 6.07 12.28 4.5 8.5 4.5zm-2 3.63a1.13 1.13 0 1 1 0 2.25 1.13 1.13 0 0 1 0-2.25zm4 0a1.13 1.13 0 1 1 0 2.25 1.13 1.13 0 0 1 0-2.25zM15.5 9.5c-3.04 0-5.5 2.13-5.5 4.75 0 2.63 2.46 4.75 5.5 4.75.64 0 1.25-.1 1.82-.27l1.83.92-.46-1.68c1.11-.8 1.81-2 1.81-3.34 0-2.62-2.46-4.38-5-4.38zm-1.8 3.12a.94.94 0 1 1 0 1.88.94.94 0 0 1 0-1.88zm3.6 0a.94.94 0 1 1 0 1.88.94.94 0 0 1 0-1.88z"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-text-primary">微信支付</span>
+<span class="font-body-sm text-[12px] text-text-secondary leading-none mt-0.5">支持数币、零钱或信用卡快捷划扣</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+</section>
+<!-- 6. Floating Bottom Payment Action Dock -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/80 backdrop-blur-xl px-margin pt-space-sm pb-[calc(env(safe-area-inset-bottom,16px)+10px)] shadow-[0_-8px_24px_rgba(32,184,176,0.12)]">
+<div class="max-w-md mx-auto flex items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<div class="flex items-baseline gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary">实付金额</span>
+<span class="font-headline-md text-headline-md text-text-primary font-bold tabular-nums">
+<span class="text-sm font-semibold text-primary mr-0.5">¥</span><span id="display-price">3.10</span>
+</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-[11px] text-text-secondary">
+<span class="inline-block px-1.5 py-0.2 rounded bg-badge-peach/80 text-[#5D2717] font-semibold">立省 ¥1.50</span>
+<span>已享学生特权</span>
+</div>
+</div>
+<button class="relative group min-h-[50px] px-8 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-headline-sm text-[17px] font-bold shadow-[0_8px_20px_rgba(32,184,176,0.28)] active:scale-[0.98] transition-all flex items-center justify-center overflow-hidden flex-shrink-0" id="pay-button" onclick="handlePayment()" type="button">
+<span class="relative z-10 flex items-center gap-1">
+<span>立即支付</span>
+<span class="tabular-nums" id="btn-price">¥3.10</span>
+</span>
+<div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function switchMethod(method) {
+    const pickupTab = document.getElementById('tab-pickup');
+    const deliveryTab = document.getElementById('tab-delivery');
+    const displayPrice = document.getElementById('display-price');
+    const btnPrice = document.getElementById('btn-price');
+
+    if (method === 'pickup') {
+      pickupTab.className = "relative text-left p-space-md rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.18)] transition-all overflow-hidden flex flex-col justify-between";
+      deliveryTab.className = "relative text-left p-space-md rounded-lg bg-surface-container-lowest/80 shadow-[0_4px_16px_rgba(0,0,0,0.03)] opacity-85 transition-all overflow-hidden flex flex-col justify-between";
+      displayPrice.innerText = "3.10";
+      btnPrice.innerText = "¥3.10";
+    } else {
+      deliveryTab.className = "relative text-left p-space-md rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(32,184,176,0.18)] transition-all overflow-hidden flex flex-col justify-between";
+      pickupTab.className = "relative text-left p-space-md rounded-lg bg-surface-container-lowest/80 shadow-[0_4px_16px_rgba(0,0,0,0.03)] opacity-85 transition-all overflow-hidden flex flex-col justify-between";
+      displayPrice.innerText = "4.60";
+      btnPrice.innerText = "¥4.60";
+    }
+  }
+
+  function handlePayment() {
+    const btn = document.getElementById('pay-button');
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span><span class="ml-2 font-label-md">支付确认中...</span>';
+    btn.classList.add('opacity-90', 'pointer-events-none');
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: \'FILL\' 1;">check_circle</span><span class="ml-1 font-label-md">支付成功</span>';
+    }, 1200);
+  }
+</script></main></body></html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>商家提现 · Moeflow Withdraw - MoeFlow SmartPrint</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "badge-peach": "#FFD8C8",
+            "tertiary-fixed-dim": "#ccc0ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#53dad1",
+            "outline-variant": "#bbc9c7",
+            "inverse-surface": "#18343b",
+            "surface-container": "#d5f3fc",
+            "surface-container-low": "#e0f8ff",
+            "on-primary-container": "#004340",
+            "primary-container": "#20b8b0",
+            "surface-dim": "#c2dfe8",
+            "text-secondary": "#527078",
+            "secondary": "#006780",
+            "on-secondary-fixed-variant": "#004d61",
+            "on-tertiary-fixed-variant": "#4a4168",
+            "tertiary-fixed": "#e8ddff",
+            "secondary-container": "#D7F0FA",
+            "on-primary-fixed-variant": "#00504c",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#011f26",
+            "on-secondary-container": "#00627a",
+            "badge-mint": "#B9EBD9",
+            "error": "#ba1a1a",
+            "surface-container-high": "#d0edf6",
+            "on-error": "#ffffff",
+            "primary": "#20b8b0",
+            "on-secondary-fixed": "#001f28",
+            "on-surface": "#011f26",
+            "on-tertiary-fixed": "#1e153a",
+            "tertiary": "#625881",
+            "badge-warm-yellow": "#FFF3C4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#3f355c",
+            "on-primary-fixed": "#00201e",
+            "surface": "#f0fbff",
+            "surface-bright": "#f0fbff",
+            "surface-high": "#EAF5F6",
+            "primary-dark": "#168D89",
+            "inverse-on-surface": "#d8f6ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#7cd2f1",
+            "on-error-container": "#93000a",
+            "background": "#f0fbff",
+            "surface-variant": "#cae7f0",
+            "outline": "#C8E3E5",
+            "text-primary": "#18343B",
+            "tertiary-container": "#ab9fcc",
+            "surface-light": "#F4FBFC",
+            "surface-container-highest": "#cae7f0",
+            "on-surface-variant": "#3c4948",
+            "secondary-fixed": "#b8eaff",
+            "secondary-on-container": "#153D52",
+            "surface-tint": "#20b8b0",
+            "primary-fixed": "#74f7ee",
+            "inverse-primary": "#53dad1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "display-lg": ["40px", { lineHeight: "52px", fontWeight: "800" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] pt-safe">
+<div class="h-14 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-1 min-w-0 pr-2">
+<button aria-label="返回上一步" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-high active:scale-95 transition-all flex-shrink-0" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px] leading-none">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">商家提现 · Moeflow Withdraw</h1>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="h-8 px-2.5 rounded-full bg-surface-high/90 border border-white/80 shadow-[0_2px_8px_rgba(32,184,176,0.06)] flex items-center gap-1.5">
+<button aria-label="小程序菜单" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">more_horiz</span>
+</button>
+<span class="w-[1px] h-3.5 bg-outline/60"></span>
+<button aria-label="关闭小程序" class="w-6 h-6 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[17px] leading-none">radio_button_checked</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-background"><div class="flex flex-col w-full px-4 pb-28 space-y-4">
+<!-- 可提现资产主卡 (玻璃拟态柔和质感) -->
+<section class="relative overflow-hidden rounded-lg bg-gradient-to-br from-surface-container-lowest/90 via-surface-container/40 to-surface-container-high/60 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,184,176,0.14)] p-5 text-on-surface">
+<!-- 装饰性光晕背景 -->
+<div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-primary-fixed-dim/20 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-10 -bottom-10 w-32 h-32 rounded-full bg-secondary-container/30 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-3">
+<!-- 顶部主理人站点标签 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+</span>
+<span class="font-label-md text-label-md text-text-primary tracking-tight">文理学部创客打印中心</span>
+<span class="w-1 h-1 rounded-full bg-primary-dark"></span>
+<span class="font-label-sm text-label-sm text-text-secondary">收益结算账户</span>
+</div>
+<div class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-badge-mint text-on-primary-container">
+<span class="material-symbols-outlined text-[13px] text-primary-dark">verified_user</span>
+<span class="font-label-sm text-label-sm font-semibold">安全险先行赔付</span>
+</div>
+</div>
+<!-- 可提现大字金额 -->
+<div class="pt-1">
+<div class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">可提现收益 (元)</div>
+<div class="flex items-baseline space-x-1.5 mt-0.5">
+<span class="font-headline-md text-headline-md text-primary font-extrabold select-none">¥</span>
+<span class="font-display-lg-mobile text-display-lg-mobile font-extrabold tracking-tight text-text-primary tabular-nums" id="display-avail-amount">2,860.50</span>
+<span class="ml-1 font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-medium">实时可取</span>
+</div>
+</div>
+<!-- 冻结/在途与累计到账指标格 -->
+<div class="grid grid-cols-2 gap-2 pt-2">
+<div class="rounded bg-surface-container-lowest/80 p-2.5 backdrop-blur-sm flex flex-col justify-between">
+<div class="flex items-center space-x-1 text-text-secondary">
+<span class="material-symbols-outlined text-[14px]">timelapse</span>
+<span class="font-label-sm text-label-sm">在途质保冻结</span>
+</div>
+<div class="mt-1">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold tabular-nums">¥ 186.40</span>
+</div>
+<div class="font-label-sm text-label-sm text-text-secondary mt-0.5 truncate">昨日订单次日0点解冻</div>
+</div>
+<div class="rounded bg-surface-container-lowest/80 p-2.5 backdrop-blur-sm flex flex-col justify-between">
+<div class="flex items-center space-x-1 text-text-secondary">
+<span class="material-symbols-outlined text-[14px]">savings</span>
+<span class="font-label-sm text-label-sm">本月累计到账</span>
+</div>
+<div class="mt-1">
+<span class="font-headline-sm text-headline-sm text-primary-dark font-bold tabular-nums">¥ 8,420.00</span>
+</div>
+<div class="font-label-sm text-label-sm text-text-secondary mt-0.5">已全额划拔结清</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 提现到账渠道选择卡片 -->
+<section class="rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_rgba(32,184,176,0.06)] p-4 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="w-1.5 h-4 rounded-full bg-primary"></span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">提现到账方式</h2>
+</div>
+<button class="inline-flex items-center space-x-1 text-primary hover:text-primary-dark active:scale-95 transition-transform" onclick="alert('进入收款账号绑定/更换流程')" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span class="font-label-sm text-label-sm font-semibold">管理收款账号</span>
+</button>
+</div>
+<!-- 渠道列表 -->
+<div class="flex flex-col space-y-2.5">
+<!-- 渠道 1: 微信零钱 (选中状态) -->
+<label class="channel-card relative flex items-center justify-between p-3.5 rounded-lg bg-surface-container-low cursor-pointer transition-all active:scale-[0.99]" id="channel-wechat">
+<input checked="" class="hidden" name="withdraw_channel" onchange="selectChannel('wechat')" type="radio" value="wechat"/>
+<div class="flex items-center space-x-3 min-w-0">
+<div class="w-10 h-10 rounded-full bg-badge-mint flex items-center justify-center flex-shrink-0 text-on-primary-container">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center space-x-2">
+<span class="font-label-lg text-label-lg text-text-primary font-bold">微信零钱商户打款</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-badge-peach text-on-error-container">推荐极速</span>
+</div>
+<div class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">
+              已绑微信：主理人·林逸 (实时到账 · 0服务费)
+            </div>
+</div>
+</div>
+<div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-on-primary ml-2 flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</label>
+<!-- 渠道 2: 招商银行卡 -->
+<label class="channel-card relative flex items-center justify-between p-3.5 rounded-lg bg-surface-high cursor-pointer transition-all active:scale-[0.99]" id="channel-bank">
+<input class="hidden" name="withdraw_channel" onchange="selectChannel('bank')" type="radio" value="bank"/>
+<div class="flex items-center space-x-3 min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center space-x-2">
+<span class="font-label-lg text-label-lg text-text-primary font-bold">招商银行储蓄卡</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container text-text-secondary">尾号 6819</span>
+</div>
+<div class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">
+              对公/个人账户 · 预计 T+1 个工作日到账
+            </div>
+</div>
+</div>
+<div class="channel-indicator-bank flex items-center justify-center w-6 h-6 rounded-full bg-outline-variant/40 text-transparent ml-2 flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</label>
+</div>
+</section>
+<!-- 提现金额输入区 -->
+<section class="rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_rgba(32,184,176,0.06)] p-4 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-text-primary">提现金额</span>
+<div class="flex items-center space-x-1 text-primary-dark">
+<span class="material-symbols-outlined text-[16px]">local_offer</span>
+<span class="font-label-sm text-label-sm font-semibold">特权：已减免 0.1% 提现手续费</span>
+</div>
+</div>
+<!-- 输入金额槽位 -->
+<div class="flex items-center justify-between rounded-lg bg-surface-high px-4 py-3">
+<div class="flex items-center space-x-2 flex-1 min-w-0">
+<span class="font-headline-md text-headline-md text-text-primary font-bold select-none">¥</span>
+<input class="w-full bg-transparent font-display-lg-mobile text-display-lg-mobile text-text-primary font-bold focus:outline-none tabular-nums" id="withdraw-input" max="2860.50" oninput="updateWithdrawAction(this.value)" placeholder="0.00" step="0.01" type="number" value="2860.50"/>
+</div>
+<button class="ml-3 px-3 py-1.5 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md font-bold whitespace-nowrap active:scale-95 transition-transform" onclick="fillAllAmount()" type="button">
+        全部提现
+      </button>
+</div>
+<!-- 手续费及到账提示明细 -->
+<div class="flex items-center justify-between px-1 text-text-secondary">
+<span class="font-body-sm text-body-sm">实际扣减手续费：¥0.00</span>
+<span class="font-body-sm text-body-sm">到账预估：<strong class="text-primary-dark tabular-nums" id="real-arrival-sum">¥ 2,860.50</strong></span>
+</div>
+</section>
+<!-- 提现规则提示与风控说明 -->
+<section class="rounded-lg bg-surface-container-low/70 p-3.5 space-y-2 text-text-secondary">
+<div class="flex items-center space-x-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[17px] text-primary">shield</span>
+<span class="font-label-md text-label-md font-bold">合规结算及风控保障须知</span>
+</div>
+<ul class="space-y-1 font-body-sm text-body-sm pl-5 list-disc marker:text-primary">
+<li>最低提现金额门槛为 <span class="tabular-nums font-semibold text-text-primary">¥10.00</span>，单日商户累计提现额度上限为 <span class="tabular-nums font-semibold text-text-primary">¥20,000.00</span>。</li>
+<li>微信商户零钱通道为实时秒级代付；银行打款于工作日 16:00 前提报的当日完成总行转账清算。</li>
+<li>根据校园机台安全协定，账户需常态预留 <span class="tabular-nums font-semibold text-text-primary">¥200.00</span> 基础客诉退款备付金 (当前结算已达标且已核扣)。</li>
+</ul>
+</section>
+<!-- 历史提现流水明细（近 3 笔） -->
+<section class="rounded-lg bg-surface-container-lowest shadow-[0_8px_24px_rgba(32,184,176,0.06)] p-4 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="w-1.5 h-4 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">近期提现记录</h2>
+</div>
+<button class="inline-flex items-center space-x-0.5 text-text-secondary hover:text-text-primary active:scale-95 transition-transform" onclick="alert('跳转全部提现账单明细流水')" type="button">
+<span class="font-label-sm text-label-sm">查看全部账单</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+<!-- 流水列表 -->
+<div class="flex flex-col space-y-3 divide-y-0">
+<!-- 流水 1 -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-badge-mint/60 flex items-center justify-center text-primary-dark">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary">微信零钱结算打款</span>
+<span class="font-body-sm text-body-sm text-text-secondary tabular-nums">2024-10-22 17:30</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold tabular-nums">- ¥1,500.00</span>
+<span class="font-label-sm text-label-sm text-primary-dark font-medium">已到账</span>
+</div>
+</div>
+<!-- 流水 2 -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container/70 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary">招商银行 (尾号6819)</span>
+<span class="font-body-sm text-body-sm text-text-secondary tabular-nums">2024-10-15 10:20</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold tabular-nums">- ¥3,200.00</span>
+<span class="font-label-sm text-label-sm text-primary-dark font-medium">已到账</span>
+</div>
+</div>
+<!-- 流水 3 -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-badge-mint/60 flex items-center justify-center text-primary-dark">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary">微信零钱结算打款</span>
+<span class="font-body-sm text-body-sm text-text-secondary tabular-nums">2024-10-08 09:12</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold tabular-nums">- ¥860.00</span>
+<span class="font-label-sm text-label-sm text-primary-dark font-medium">已到账</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 底部浮动提交操作坞 (固定底部，紧凑且富有安全感) -->
+<div class="fixed inset-x-0 bottom-0 z-40 bg-surface-container-lowest/90 backdrop-blur-lg px-4 py-3 pb-safe shadow-[0_-8px_24px_rgba(32,184,176,0.12)]">
+<div class="max-w-md mx-auto flex items-center space-x-3">
+<div class="flex flex-col justify-center flex-1">
+<div class="flex items-center space-x-1 text-text-secondary">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span class="font-label-sm text-label-sm">金融级专网打款</span>
+</div>
+<div class="font-body-sm text-body-sm text-text-primary">
+        扣除服务费后：<span class="font-bold text-primary-dark tabular-nums" id="dock-preview-sum">¥2,860.50</span>
+</div>
+</div>
+<button class="px-6 py-3 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold shadow-[0_6px_18px_rgba(32,184,176,0.30)] active:scale-95 transition-all flex items-center justify-center space-x-1.5" id="btn-submit-withdraw" onclick="triggerWithdrawSubmission()" type="button">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span id="btn-submit-text">确认提现 ¥2,860.50</span>
+</button>
+</div>
+</div>
+<script>
+  let currentMax = 2860.50;
+  let selectedChannelType = 'wechat';
+
+  function fillAllAmount() {
+    const input = document.getElementById('withdraw-input');
+    input.value = currentMax.toFixed(2);
+    updateWithdrawAction(input.value);
+  }
+
+  function updateWithdrawAction(val) {
+    const num = parseFloat(val) || 0;
+    const btnText = document.getElementById('btn-submit-text');
+    const realSum = document.getElementById('real-arrival-sum');
+    const dockSum = document.getElementById('dock-preview-sum');
+    const btnSubmit = document.getElementById('btn-submit-withdraw');
+
+    const formatted = '¥ ' + num.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    realSum.innerText = formatted;
+    dockSum.innerText = formatted.replace(/\s+/g, '');
+
+    if (num < 10) {
+      btnText.innerText = '低于门槛 ¥10.00';
+      btnSubmit.classList.add('opacity-50', 'pointer-events-none');
+    } else if (num > currentMax) {
+      btnText.innerText = '超出可提现额度';
+      btnSubmit.classList.add('opacity-50', 'pointer-events-none');
+    } else {
+      btnText.innerText = '确认提现 ¥' + num.toFixed(2);
+      btnSubmit.classList.remove('opacity-50', 'pointer-events-none');
+    }
+  }
+
+  function selectChannel(type) {
+    selectedChannelType = type;
+    const cardWechat = document.getElementById('channel-wechat');
+    const cardBank = document.getElementById('channel-bank');
+    const bankIndicator = document.querySelector('.channel-indicator-bank');
+    
+    // Wechat radio wrapper
+    const wechatIndicator = cardWechat.querySelector('.w-6.h-6');
+
+    if (type === 'wechat') {
+      cardWechat.classList.remove('bg-surface-high');
+      cardWechat.classList.add('bg-surface-container-low');
+      wechatIndicator.classList.remove('bg-outline-variant/40', 'text-transparent');
+      wechatIndicator.classList.add('bg-primary', 'text-on-primary');
+
+      cardBank.classList.remove('bg-surface-container-low');
+      cardBank.classList.add('bg-surface-high');
+      bankIndicator.classList.remove('bg-primary', 'text-on-primary');
+      bankIndicator.classList.add('bg-outline-variant/40', 'text-transparent');
+    } else {
+      cardBank.classList.remove('bg-surface-high');
+      cardBank.classList.add('bg-surface-container-low');
+      bankIndicator.classList.remove('bg-outline-variant/40', 'text-transparent');
+      bankIndicator.classList.add('bg-primary', 'text-on-primary');
+
+      cardWechat.classList.remove('bg-surface-container-low');
+      cardWechat.classList.add('bg-surface-high');
+      wechatIndicator.classList.remove('bg-primary', 'text-on-primary');
+      wechatIndicator.classList.add('bg-outline-variant/40', 'text-transparent');
+    }
+  }
+
+  function triggerWithdrawSubmission() {
+    const input = document.getElementById('withdraw-input');
+    const amount = parseFloat(input.value) || 0;
+    const channelName = selectedChannelType === 'wechat' ? '微信零钱商户通道' : '招商银行(尾号6819)';
+
+    if (amount < 10 || amount > currentMax) return;
+
+    const confirmResult = confirm(`【提现安全验证】\n收款通道：${channelName}\n提现金额：¥${amount.toFixed(2)}\n免手续费：¥0.00\n\n点击“确定”调用商户数字凭证并进行手机动态验证码核对。`);
+    if (confirmResult) {
+      alert('提现指令已递交至 finance 4 接口处理。\n微信零钱实时发起，请注意查看到账通知。');
+    }
+  }
+</script></main>
+</body></html>

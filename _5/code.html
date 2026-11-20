@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>Print Task Preview</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#74f7ee", "text-secondary": "#527078", "on-surface": "#011f26", "primary": "#006a65", "on-tertiary-fixed": "#1e153a", "surface-container": "#d5f3fc", "error-container": "#ffdad6", "tertiary-fixed": "#e8ddff", "badge-peach": "#FFD8C8", "surface-container-high": "#d0edf6", "on-tertiary-fixed-variant": "#4a4168", "surface-container-highest": "#cae7f0", "surface-light": "#F4FBFC", "background": "#f0fbff", "on-error": "#ffffff", "outline": "#C8E3E5", "badge-mint": "#B9EBD9", "secondary-fixed-dim": "#7cd2f1", "inverse-surface": "#18343b", "surface-bright": "#f0fbff", "on-secondary-container": "#00627a", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ccc0ef", "inverse-primary": "#53dad1", "secondary-fixed": "#b8eaff", "surface-variant": "#cae7f0", "on-primary-container": "#004340", "primary-container": "#D5F4F1", "secondary": "#006780", "surface-dim": "#c2dfe8", "secondary-on-container": "#153D52", "primary-dark": "#168D89", "on-primary-fixed-variant": "#00504c", "surface-high": "#EAF5F6", "primary-fixed-dim": "#53dad1", "on-tertiary-container": "#3f355c", "on-primary-fixed": "#00201e", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004d61", "surface-container-low": "#e0f8ff", "outline-variant": "#bbc9c7", "secondary-container": "#88ddfd", "on-secondary": "#ffffff", "error": "#ba1a1a", "badge-warm-yellow": "#FFF3C4", "on-surface-variant": "#3c4948", "tertiary": "#625881", "surface": "#f0fbff", "surface-container-lowest": "#ffffff", "tertiary-container": "#ab9fcc", "inverse-on-surface": "#d8f6ff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#001f28", "surface-tint": "#006a65", "text-primary": "#18343B", "on-background": "#011f26" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "gutter": "1rem" }, fontFamily: { "label-md": ["Be Vietnam Pro"], "label-sm": ["Be Vietnam Pro"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Be Vietnam Pro"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Be Vietnam Pro"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px));}.pt-safe{padding-top:calc(env(safe-area-inset-top,0px));}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-text-primary antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_12px_rgba(32,184,176,0.06)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-text-primary rounded-full hover:bg-surface-container-low active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate max-w-[160px]">Print Task Preview</h1></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex items-center bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,106,101,0.08)]"><button aria-label="Mini Program Options" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button><div class="w-px h-3.5 bg-outline mx-0.5"></div><button aria-label="Close Mini Program" class="min-w-[44px] min-h-[44px] -my-2 flex items-center justify-center text-text-primary active:opacity-70" type="button"><span class="material-symbols-outlined text-[18px]">radio_button_checked</span></button></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface px-margin pb-safe min-h-screen"><div class="flex flex-col w-full pb-8 space-y-space-md">
+<!-- 顶部当前门店信息栏 -->
+<div class="bg-surface-container-lowest/90 backdrop-blur-md rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.10)] flex items-center justify-between transition-all active:scale-[0.99]">
+<div class="flex items-center gap-space-sm min-w-0 pr-space-xs">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-text-primary truncate">智慧文印中心(科技园A座店)</span>
+</div>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums flex items-center">
+<span class="material-symbols-outlined text-[13px] mr-0.5 text-primary">near_me</span>
+            320m
+          </span>
+<span class="text-outline-variant font-label-sm">•</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-badge-mint text-primary-dark font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            营业中·在线5台
+          </span>
+</div>
+</div>
+</div>
+<button class="shrink-0 flex items-center gap-0.5 px-3 py-1.5 rounded-full bg-surface-light text-primary font-label-md text-label-md active:bg-primary-container transition-colors" type="button">
+<span>切换</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- 来源卡片列表 (高质感纵向卡片组) -->
+<div class="flex flex-col space-y-3">
+<div class="flex items-center justify-between px-1">
+<span class="font-headline-sm text-headline-sm text-text-primary">选择打印来源</span>
+<span class="font-label-sm text-label-sm text-text-secondary">即选即印 · 极速传输</span>
+</div>
+<!-- 1. 微信聊天文件 (主推荐高光卡片) -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-lg p-space-md shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)] flex items-center justify-between transition-all active:scale-[0.98] cursor-pointer">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-primary-container/40 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-2xl bg-badge-mint/80 flex items-center justify-center shrink-0 text-primary-dark shadow-[0_4px_12px_rgba(32,184,176,0.15)]">
+<span class="material-symbols-outlined text-[26px]">chat_bubble</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-primary">微信聊天文件</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-peach text-on-error-container font-label-sm text-label-sm font-semibold tracking-wide">
+              高频推荐
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">从群聊或个人对话中直接导入文档</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-light flex items-center justify-center shrink-0 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+<!-- 2. 本地文件与照片导入 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_4px_20px_-2px_rgba(32,184,176,0.06)] flex items-center justify-between transition-all active:scale-[0.98] cursor-pointer">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/60 flex items-center justify-center shrink-0 text-secondary-on-container">
+<span class="material-symbols-outlined text-[26px]">photo_library</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-primary">相册与图像冲印</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm">
+              超清冲印
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">手机相册图片、证件照排版、高精度艺术印刷</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-light flex items-center justify-center shrink-0 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+<!-- 3. 云盘直连 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_4px_20px_-2px_rgba(32,184,176,0.06)] flex items-center justify-between transition-all active:scale-[0.98] cursor-pointer">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[26px]">cloud_sync</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-primary">百度网盘 · 腾讯微云</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">云端授权即刻解析，无损高速调取原件</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-light flex items-center justify-center shrink-0 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+<!-- 4. 现场 U 盘直读 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_4px_20px_-2px_rgba(32,184,176,0.06)] flex items-center justify-between transition-all active:scale-[0.98] cursor-pointer">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-2xl bg-badge-warm-yellow/80 flex items-center justify-center shrink-0 text-[#715400]">
+<span class="material-symbols-outlined text-[26px]">usb</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-primary">现场 U 盘直读</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-warm-yellow text-[#5A4500] font-label-sm text-label-sm">
+              即插即印
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">插入自助打印机右侧 USB 口，秒速识别内容</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-light flex items-center justify-center shrink-0 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+<!-- 5. 资料库与模板中心 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_4px_20px_-2px_rgba(32,184,176,0.06)] flex items-center justify-between transition-all active:scale-[0.98] cursor-pointer">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-fixed flex items-center justify-center shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[26px]">auto_stories</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-primary">资料库与精选模板</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">历年真题试卷、个人简历、标准法律合同</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-light flex items-center justify-center shrink-0 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+<!-- 6. 网页/公文链接打印 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_4px_20px_-2px_rgba(32,184,176,0.06)] flex items-center justify-between transition-all active:scale-[0.98] cursor-pointer">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-high flex items-center justify-center shrink-0 text-primary-dark">
+<span class="material-symbols-outlined text-[26px]">link</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-primary">网页与公文链接</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">粘贴推文、在线发票或公告网址智能排版</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-light flex items-center justify-center shrink-0 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- 最近文件横向滑动区 -->
+<div class="flex flex-col space-y-2 pt-2">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">history</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">最近打印文件</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary flex items-center">
+        全部记录
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</span>
+</div>
+<!-- 横向滑槽 -->
+<div class="flex gap-3 overflow-x-auto pb-2 -mx-margin px-margin pt-1 scroll-smooth">
+<!-- 文件 1 -->
+<div class="shrink-0 w-44 bg-surface-container-lowest rounded-lg p-3 shadow-[0_4px_16px_rgba(32,184,176,0.08)] flex flex-col justify-between active:scale-95 transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-primary-dark font-label-sm text-label-sm tabular-nums">
+            12页
+          </span>
+</div>
+<div class="mt-3">
+<p class="font-label-md text-label-md text-text-primary line-clamp-1">毕业设计开题报告.docx</p>
+<div class="flex items-center justify-between mt-1 text-text-secondary font-label-sm text-label-sm">
+<span class="tabular-nums">今天 10:24</span>
+<span class="text-primary font-medium">重印</span>
+</div>
+</div>
+</div>
+<!-- 文件 2 -->
+<div class="shrink-0 w-44 bg-surface-container-lowest rounded-lg p-3 shadow-[0_4px_16px_rgba(32,184,176,0.08)] flex flex-col justify-between active:scale-95 transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-badge-peach/60 flex items-center justify-center text-[#8C341E]">
+<span class="material-symbols-outlined text-[18px]">image</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-light text-text-secondary font-label-sm text-label-sm tabular-nums">
+            单页
+          </span>
+</div>
+<div class="mt-3">
+<p class="font-label-md text-label-md text-text-primary line-clamp-1">证件照排版A4.jpg</p>
+<div class="flex items-center justify-between mt-1 text-text-secondary font-label-sm text-label-sm">
+<span class="tabular-nums">昨天 17:40</span>
+<span class="text-primary font-medium">重印</span>
+</div>
+</div>
+</div>
+<!-- 文件 3 -->
+<div class="shrink-0 w-44 bg-surface-container-lowest rounded-lg p-3 shadow-[0_4px_16px_rgba(32,184,176,0.08)] flex flex-col justify-between active:scale-95 transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-error-container/60 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-primary-dark font-label-sm text-label-sm tabular-nums">
+            6页
+          </span>
+</div>
+<div class="mt-3">
+<p class="font-label-md text-label-md text-text-primary line-clamp-1">租房合同范本.pdf</p>
+<div class="flex items-center justify-between mt-1 text-text-secondary font-label-sm text-label-sm">
+<span class="tabular-nums">04-18</span>
+<span class="text-primary font-medium">重印</span>
+</div>
+</div>
+</div>
+<!-- 文件 4 -->
+<div class="shrink-0 w-44 bg-surface-container-lowest rounded-lg p-3 shadow-[0_4px_16px_rgba(32,184,176,0.08)] flex flex-col justify-between active:scale-95 transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">slideshow</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-primary-dark font-label-sm text-label-sm tabular-nums">
+            24页
+          </span>
+</div>
+<div class="mt-3">
+<p class="font-label-md text-label-md text-text-primary line-clamp-1">产品发布路演.pptx</p>
+<div class="flex items-center justify-between mt-1 text-text-secondary font-label-sm text-label-sm">
+<span class="tabular-nums">04-15</span>
+<span class="text-primary font-medium">重印</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 底部安全与格式温馨提示 -->
+<div class="bg-surface-container-low/70 rounded-lg p-space-md shadow-sm flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shrink-0 mt-0.5 text-primary">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+</div>
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-text-primary">打印格式与安全保障</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+        支持格式：<span class="font-medium text-text-primary">PDF / Word / PPT / JPG / PNG</span>，单文件最大支持 <span class="tabular-nums font-medium text-text-primary">100MB</span>。所有传输文档均享受高强度银行级加密传输，云端将在 <span class="font-medium text-text-primary">24 小时</span> 后自动彻底销毁，严防隐私泄露。
+      </p>
+</div>
+</div>
+</div></main></body></html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-fixed": "#1e153a", "on-secondary": "#ffffff", "outline-variant": "#bbc9c7", "inverse-surface": "#18343b", "surface-light": "#F4FBFC", "tertiary": "#625881", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "outline": "#C8E3E5", "background": "#f0fbff", "primary-fixed": "#74f7ee", "on-tertiary-container": "#3f355c", "badge-warm-yellow": "#FFF3C4", "on-secondary-container": "#00627a", "primary-dark": "#168D89", "surface-container-low": "#e0f8ff", "on-surface": "#011f26", "surface-container": "#FFFFFF", "surface-dim": "#c2dfe8", "surface-container-high": "#d0edf6", "tertiary-fixed-dim": "#ccc0ef", "primary-container": "#20b8b0", "secondary": "#006780", "text-secondary": "#527078", "surface-container-lowest": "#ffffff", "secondary-container": "#88ddfd", "on-error": "#ffffff", "on-background": "#011f26", "secondary-fixed": "#b8eaff", "secondary-fixed-dim": "#7cd2f1", "on-primary-container": "#004340", "badge-peach": "#FFD8C8", "secondary-on-container": "#153D52", "on-primary-fixed-variant": "#00504c", "badge-mint": "#B9EBD9", "on-tertiary-fixed-variant": "#4a4168", "on-error-container": "#93000a", "surface-container-highest": "#cae7f0", "primary": "#006a65", "tertiary-fixed": "#e8ddff", "text-primary": "#18343B", "surface-high": "#EAF5F6", "on-secondary-fixed-variant": "#004d61", "surface": "#f0fbff", "error": "#ba1a1a", "surface-tint": "#006a65", "primary-fixed-dim": "#53dad1", "on-primary-fixed": "#00201e", "surface-bright": "#f0fbff", "on-surface-variant": "#3c4948", "tertiary-container": "#ab9fcc", "inverse-primary": "#53dad1", "surface-variant": "#cae7f0", "on-secondary-fixed": "#001f28", "inverse-on-surface": "#d8f6ff", "on-primary": "#ffffff" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "margin-desktop": "2.5rem", "margin": "1rem", "gutter": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem" }, "fontFamily": { "display-lg": ["Plus Jakarta Sans"], "label-sm": ["Be Vietnam Pro"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Be Vietnam Pro"], "body-sm": ["Be Vietnam Pro"], "body-lg": ["Be Vietnam Pro"], "headline-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "headline-sm": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["40px", {"lineHeight": "52px", "fontWeight": "800"}], "label-sm": ["11px", {"lineHeight": "16px", "fontWeight": "600"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "fontWeight": "700"}], "label-lg": ["15px", {"lineHeight": "22px", "fontWeight": "600"}], "body-sm": ["14px", {"lineHeight": "22px", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}], "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "800"}], "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}], "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}], "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "700"}] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;background-color:#f0fbff;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 0.5rem);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/75 backdrop-blur-xl shadow-[0_1px_12px_rgba(32,184,176,0.08)]"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">Pages Library Shelf</span></div><div class="flex items-center h-8 rounded-full bg-surface-container/85 backdrop-blur-md px-1 py-0.5 shadow-[0_2px_8px_rgba(0,103,128,0.06)]"><button aria-label="更多操作" class="w-7 h-7 flex items-center justify-center text-text-primary hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button><div class="w-[1px] h-3.5 bg-outline/60 my-auto mx-0.5"></div><button aria-label="关闭胶囊" class="w-7 h-7 flex items-center justify-center text-text-primary hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">adjust</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full pb-6 px-margin">
+<!-- 搜索与快捷检索区 -->
+<section class="mt-3 relative w-full">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-4 text-text-secondary text-[22px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-12 pr-11 rounded-full bg-surface-container text-on-surface placeholder:text-text-secondary/70 font-body-sm text-body-sm shadow-[0_4px_16px_rgba(32,184,176,0.08)] outline-none focus:bg-surface-container-lowest transition-all" id="search-input" placeholder="搜索论文开题报告、答辩PPT、考研真题..." type="search"/>
+<button aria-label="清空输入" class="absolute right-3.5 w-7 h-7 rounded-full bg-surface-high flex items-center justify-center text-text-secondary hover:text-primary transition-colors opacity-0 pointer-events-none" id="clear-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</section>
+<!-- 分类滑动胶囊 -->
+<section class="mt-4 -mx-margin px-margin overflow-x-auto no-scrollbar flex items-center gap-2 py-1" id="category-bar">
+<button class="category-chip shrink-0 px-4 py-1.5 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-[0_4px_12px_rgba(0,106,101,0.22)] transition-all" type="button">全部</button>
+<button class="category-chip shrink-0 px-4 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-text-secondary hover:text-text-primary shadow-[0_2px_8px_rgba(32,184,176,0.06)] transition-all" type="button">毕业论文</button>
+<button class="category-chip shrink-0 px-4 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-text-secondary hover:text-text-primary shadow-[0_2px_8px_rgba(32,184,176,0.06)] transition-all" type="button">期末冲刺</button>
+<button class="category-chip shrink-0 px-4 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-text-secondary hover:text-text-primary shadow-[0_2px_8px_rgba(32,184,176,0.06)] transition-all" type="button">求职简历</button>
+<button class="category-chip shrink-0 px-4 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-text-secondary hover:text-text-primary shadow-[0_2px_8px_rgba(32,184,176,0.06)] transition-all" type="button">常用表格</button>
+<button class="category-chip shrink-0 px-4 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-text-secondary hover:text-text-primary shadow-[0_2px_8px_rgba(32,184,176,0.06)] transition-all" type="button">学术海报</button>
+<button class="category-chip shrink-0 px-4 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-text-secondary hover:text-text-primary shadow-[0_2px_8px_rgba(32,184,176,0.06)] transition-all" type="button">党团材料</button>
+</section>
+<!-- 精选推荐玻璃拟态 Banner -->
+<section class="mt-4 relative w-full overflow-hidden rounded-lg bg-gradient-to-br from-primary-container/25 via-surface-container to-secondary-container/20 p-4 shadow-[0_8px_24px_-4px_rgba(32,184,176,0.12)] backdrop-blur-md">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-primary-fixed/25 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col justify-between h-full">
+<div class="flex items-center justify-between gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-badge-mint text-on-surface font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          高校精选合辑
+        </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-badge-peach text-on-surface font-label-sm text-label-sm font-bold">
+          免费领取
+        </span>
+</div>
+<div class="mt-2.5">
+<h2 class="font-headline-sm text-headline-sm text-text-primary leading-tight">
+          2024春季论文盲审与答辩标准规范套件
+        </h2>
+<p class="mt-1 font-body-sm text-body-sm text-text-secondary line-clamp-1">
+          含扉页、格式检查清单、评阅专家审阅评语单等6份文书规范
+        </p>
+</div>
+<div class="mt-3.5 flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 text-text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[15px] text-primary">verified</span>教务处同步</span>
+<span class="flex items-center gap-0.5 tabular-nums"><span class="material-symbols-outlined text-[15px] text-primary">download</span>1.4w人已领</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-bold shadow-[0_4px_14px_rgba(0,106,101,0.25)] active:scale-95 transition-transform flex items-center gap-1" type="button">
+<span>一键整套领</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 最近使用快捷历史 -->
+<section class="mt-5 w-full">
+<div class="flex items-center justify-between mb-2.5 px-0.5">
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">history</span>
+        最近使用
+      </h3>
+<span class="font-label-sm text-label-sm text-text-secondary">滑动查看</span>
+</div>
+<div class="flex items-center gap-3 overflow-x-auto no-scrollbar -mx-margin px-margin py-0.5">
+<div class="shrink-0 w-44 p-3 rounded-DEFAULT bg-surface-container shadow-[0_4px_16px_rgba(32,184,176,0.06)] flex items-center gap-2.5 active:bg-surface-high transition-colors">
+<div class="w-9 h-11 rounded bg-secondary-fixed/50 flex flex-col items-center justify-center text-secondary-on-container shrink-0">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span class="text-[9px] font-bold mt-0.5 uppercase tracking-tighter">DOC</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md text-text-primary font-semibold truncate">论文盲审封面模版</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-0.5 tabular-nums">2天前打印 · 1页</p>
+</div>
+</div>
+<div class="shrink-0 w-44 p-3 rounded-DEFAULT bg-surface-container shadow-[0_4px_16px_rgba(32,184,176,0.06)] flex items-center gap-2.5 active:bg-surface-high transition-colors">
+<div class="w-9 h-11 rounded bg-badge-mint/60 flex flex-col items-center justify-center text-primary-dark shrink-0">
+<span class="material-symbols-outlined text-[18px]">table_chart</span>
+<span class="text-[9px] font-bold mt-0.5 uppercase tracking-tighter">PDF</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md text-text-primary font-semibold truncate">校医院标准体检表</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-0.5 tabular-nums">4天前打印 · 双面</p>
+</div>
+</div>
+<div class="shrink-0 w-44 p-3 rounded-DEFAULT bg-surface-container shadow-[0_4px_16px_rgba(32,184,176,0.06)] flex items-center gap-2.5 active:bg-surface-high transition-colors">
+<div class="w-9 h-11 rounded bg-badge-warm-yellow/70 flex flex-col items-center justify-center text-secondary-on-container shrink-0">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span class="text-[9px] font-bold mt-0.5 uppercase tracking-tighter">PDF</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md text-text-primary font-semibold truncate">三方协议书附页</p>
+<p class="font-label-sm text-label-sm text-text-secondary mt-0.5 tabular-nums">上周使用 · 2份</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 精选模板列表 -->
+<section class="mt-6 w-full flex flex-col gap-3.5">
+<div class="flex items-center justify-between px-0.5">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">
+        精选文库与排版模板
+      </h3>
+<span class="font-label-sm text-label-sm text-text-secondary tabular-nums">共 184 款模板</span>
+</div>
+<!-- 卡片 1: 计算机学院毕业设计 -->
+<article class="p-4 rounded-lg bg-surface-container shadow-[0_8px_24px_-4px_rgba(32,184,176,0.09)] flex flex-col gap-3 transition-transform active:scale-[0.99]">
+<div class="flex gap-3">
+<div class="w-20 h-28 rounded-DEFAULT bg-surface-high flex-shrink-0 overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Clean minimal flat lay of an official university computer science thesis cover with geometric teal typography, embossed institutional emblem, crisp paper texture, soft natural daylight, aesthetic academic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV25__eCyas9toXOlCwk6B_oe-4sJMyYrZ3I9OfBKuZJBN-PjwjOOstjE-IbnGT29mIYZHrs7h_5P7PBaPFF5WvOpRfZbSw7Co5KM5ycRkiho5Ud-i2nOt2_HHQCs3LAbMjKC8igSBhySbz6fpJdRFw92-Eh_hoGwF_O8YG8S7PiA6gvBcHz6Gk3jjgbrH4JLxto58y2jQtKz_1IVUUdJhjGEuTBVQy5PKvBi-IBX6"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-surface-container/90 backdrop-blur-sm font-label-sm text-[10px] text-primary font-bold">DOCX</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-badge-mint text-primary-dark font-label-sm text-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+                官方认证
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm tabular-nums">64页</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-text-primary font-bold mt-1.5 line-clamp-2 leading-snug">
+              计算机学院毕业设计标准说明书规范模板
+            </h4>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm pt-1">
+<span class="tabular-nums">4.2k 人使用</span>
+<span class="font-bold text-primary font-headline-sm text-headline-sm tabular-nums">免费</span>
+</div>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between gap-2 bg-surface-light -mx-4 -mb-4 px-4 py-3 rounded-b-lg">
+<div class="flex items-center gap-1 text-text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-container">print</span>
+<span>支持直接双面胶装标准</span>
+</div>
+<button class="px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-container to-secondary text-on-primary font-label-md text-label-md font-bold shadow-[0_4px_12px_rgba(32,184,176,0.22)] active:opacity-90 flex items-center gap-1 shrink-0" onclick="triggerPrint('计算机学院毕业设计标准说明书规范模板', 64)" type="button">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+<span>一键载入打印</span>
+</button>
+</div>
+</article>
+<!-- 卡片 2: 中英双语求职简历 -->
+<article class="p-4 rounded-lg bg-surface-container shadow-[0_8px_24px_-4px_rgba(32,184,176,0.09)] flex flex-col gap-3 transition-transform active:scale-[0.99]">
+<div class="flex gap-3">
+<div class="w-20 h-28 rounded-DEFAULT bg-surface-high flex-shrink-0 overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Modern bilingual professional resume template document layout preview, structured two-column layout, soft teal accent lines, elegant typography, high resolution paper mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuZp9YDv-sqaVOU3hrmGUf1SUI6XbH8tm7NIP497cBi8vpMwGjTzGvTxuFBQH7SbgG3XGEvCcIw8xiiUZq8rPKa-ZS3Tj0Ipb8pwGSCrvIGWYCAGB4TidKjkAsPqS7hyYV4Ccm4ahtjru56TKdRCK6hepNzihQfUX6gf2r3X69F3qGNHUDN4LJY4byJw0P2qncRhcLfcSWB1Em_tWtfwzOW4aLPoyM4axO0piuKM_e"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-surface-container/90 backdrop-blur-sm font-label-sm text-[10px] text-secondary font-bold">PDF</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-badge-peach text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">star</span>
+                精品推荐
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-badge-warm-yellow text-on-surface font-label-sm text-label-sm font-bold">限免特权</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm tabular-nums">2页</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-text-primary font-bold mt-1.5 line-clamp-2 leading-snug">
+              2024届互联网大厂校招中英双语简历模版
+            </h4>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm pt-1">
+<span class="tabular-nums">8.9k 人使用</span>
+<div class="flex items-baseline gap-1">
+<span class="text-text-secondary line-through font-label-sm text-label-sm tabular-nums">¥3.00</span>
+<span class="font-bold text-primary font-headline-sm text-headline-sm tabular-nums">¥0.00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between gap-2 bg-surface-light -mx-4 -mb-4 px-4 py-3 rounded-b-lg">
+<span class="text-text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">aspect_ratio</span>
+          建议使用 120g 高颜轻涂纸
+        </span>
+<button class="px-4 py-1.5 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md font-bold active:opacity-85 flex items-center gap-1 shrink-0" onclick="triggerPrint('2024届互联网大厂校招中英双语简历模版', 2)" type="button">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>选用送印</span>
+</button>
+</div>
+</article>
+<!-- 卡片 3: 高等数学速记手卡 -->
+<article class="p-4 rounded-lg bg-surface-container shadow-[0_8px_24px_-4px_rgba(32,184,176,0.09)] flex flex-col gap-3 transition-transform active:scale-[0.99]">
+<div class="flex gap-3">
+<div class="w-20 h-28 rounded-DEFAULT bg-surface-high flex-shrink-0 overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Folded pocket study flashcard guide for calculus and advanced mathematics formulas, neat typography, concise diagrams, clear pastel aqua highlighters, architectural studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2FjnzgrBe2QSUnfvbFQ-nHl0W_Enk_WptrQ6ESIfmzYarHbVNnoX-zeGbX97Woxr8rchnULWCu7WZYV76W5eg6y-HLrrSYZ1Gc56pzsUL55JFveAFs87oolwjnKbXPlfvPxdn6jCEoLF9YBYgip5HXqu3BBvGcURPKGNw7XzBypidKyRGrfxhfFMoEZ1-wg8yMQUIU3XyPlMIzaHWs-k4t_1jA6AZmcEnDIFkQ1Nt"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-surface-container/90 backdrop-blur-sm font-label-sm text-[10px] text-tertiary font-bold">PDF</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-badge-warm-yellow text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">military_tech</span>
+                考研必备
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm tabular-nums">4页 (折页式)</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-text-primary font-bold mt-1.5 line-clamp-2 leading-snug">
+              高等数学（下）期末核心公式速记折叠手卡
+            </h4>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm pt-1">
+<span class="tabular-nums">6.1k 人收藏</span>
+<span class="font-bold text-primary font-headline-sm text-headline-sm tabular-nums">免费</span>
+</div>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between gap-2 bg-surface-light -mx-4 -mb-4 px-4 py-3 rounded-b-lg">
+<span class="text-text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">unfold_more</span>
+          自动匹配风琴两折排版
+        </span>
+<button class="px-4 py-1.5 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md font-bold active:opacity-85 flex items-center gap-1 shrink-0" onclick="triggerPrint('高等数学（下）期末核心公式速记折叠手卡', 4)" type="button">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>选用送印</span>
+</button>
+</div>
+</article>
+<!-- 卡片 4: 学术答辩海报 -->
+<article class="p-4 rounded-lg bg-surface-container shadow-[0_8px_24px_-4px_rgba(32,184,176,0.09)] flex flex-col gap-3 transition-transform active:scale-[0.99]">
+<div class="flex gap-3">
+<div class="w-20 h-28 rounded-DEFAULT bg-surface-high flex-shrink-0 overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Academic scientific poster presentation design template, three-column layout, cyan and crisp teal data charts, conference research diagram format, clean realistic rendering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEuY4sfqQEq8yNHAcYGMJvTgyHHY8LAiJX_HQI_oauHiZd66BvHyoEczsM21StR-tbHK4WacjnXA1ZD1LkmtWodF2m0LD36kF-9NfwegMAd2mmBO2miSqcRBUDS84ffvBuB2chCHrZIzmgl7tKBUY30J1C9Y2p6pRTnc2g5EmDetfAf1IoL2wdv0vrxzP-8_RjkgQxxaFeSoDwxMgE1c_HtaAzXW29Hrj2RDm1B19S"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-surface-container/90 backdrop-blur-sm font-label-sm text-[10px] text-on-secondary-container font-bold">PPTX</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-surface-high text-secondary font-label-sm text-label-sm font-semibold">
+                90x120cm 大图
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-high text-text-secondary font-label-sm text-label-sm tabular-nums">1页</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-text-primary font-bold mt-1.5 line-clamp-2 leading-snug">
+              标准三段式横版学术答辩海报模板
+            </h4>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm pt-1">
+<span class="tabular-nums">1.8k 人下载</span>
+<span class="font-bold text-text-primary font-headline-sm text-headline-sm tabular-nums">¥1.00</span>
+</div>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between gap-2 bg-surface-light -mx-4 -mb-4 px-4 py-3 rounded-b-lg">
+<span class="text-text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">photo_size_select_actual</span>
+          专配写真PP背胶喷绘
+        </span>
+<button class="px-4 py-1.5 rounded-full bg-secondary-container text-secondary-on-container font-label-md text-label-md font-bold active:opacity-85 flex items-center gap-1 shrink-0" onclick="triggerPrint('标准三段式横版学术答辩海报模板', 1)" type="button">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>选用送印</span>
+</button>
+</div>
+</article>
+</section>
+<!-- 底部状态与版权合规声明 -->
+<footer class="mt-8 mb-4 w-full flex flex-col items-center justify-center text-center text-text-secondary">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">policy</span>
+<span>版权承诺：文库资源经学术共享协议或校级公开发布</span>
+</div>
+<p class="font-label-sm text-[11px] text-text-secondary/70 mt-1 tabular-nums">
+      © 2024 云印校园知识文库中心 · 资料持续校验与同步更新
+    </p>
+</footer>
+<!-- 动态即时提示浮动 Dock (默认隐藏) -->
+<aside aria-live="polite" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-40 px-4 py-2.5 rounded-full bg-inverse-surface/90 text-inverse-on-surface backdrop-blur-md shadow-xl flex items-center gap-2 font-label-md text-label-md opacity-0 pointer-events-none transition-all duration-300" id="toast-dock" role="status">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check_circle</span>
+<span id="toast-text">已载入打印队列</span>
+</aside>
+</div>
+<script>
+  // 简易交互逻辑：胶囊分类激活、搜索输入清除与送印反馈
+  (function initLibraryShelf() {
+    const searchInput = document.getElementById('search-input');
+    const clearBtn = document.getElementById('clear-btn');
+    const categoryChips = document.querySelectorAll('.category-chip');
+    const toastDock = document.getElementById('toast-dock');
+    const toastText = document.getElementById('toast-text');
+    let toastTimer = null;
+
+    if (searchInput && clearBtn) {
+      searchInput.addEventListener('input', function() {
+        if (this.value.trim().length > 0) {
+          clearBtn.classList.remove('opacity-0', 'pointer-events-none');
+        } else {
+          clearBtn.classList.add('opacity-0', 'pointer-events-none');
+        }
+      });
+
+      clearBtn.addEventListener('click', function() {
+        searchInput.value = '';
+        clearBtn.classList.add('opacity-0', 'pointer-events-none');
+        searchInput.focus();
+      });
+    }
+
+    categoryChips.forEach(chip => {
+      chip.addEventListener('click', function() {
+        categoryChips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary', 'shadow-[0_4px_12px_rgba(0,106,101,0.22)]');
+          c.classList.add('bg-surface-container', 'text-text-secondary');
+        });
+        this.classList.remove('bg-surface-container', 'text-text-secondary');
+        this.classList.add('bg-primary', 'text-on-primary', 'shadow-[0_4px_12px_rgba(0,106,101,0.22)]');
+      });
+    });
+
+    window.triggerPrint = function(name, pages) {
+      if (toastTimer) clearTimeout(toastTimer);
+      if (toastText && toastDock) {
+        toastText.textContent = `已载入: ${name.slice(0, 10)}... (共${pages}页)`;
+        toastDock.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+        toastDock.classList.add('opacity-100', 'translate-y-0');
+
+        toastTimer = setTimeout(() => {
+          toastDock.classList.remove('opacity-100', 'translate-y-0');
+          toastDock.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+        }, 2200);
+      }
+    };
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_-4px_24px_rgba(32,184,176,0.12)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-sm"><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] transition-all text-primary font-bold" data-path="pages-library-shelf" href="#"><span class="material-symbols-outlined text-[22px]">local_library</span><span class="font-label-sm text-label-sm mt-0.5">资料库</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] text-text-secondary transition-all hover:text-primary" data-path="pages-account-recharge" href="#"><span class="material-symbols-outlined text-[22px]">account_balance_wallet</span><span class="font-label-sm text-label-sm mt-0.5">余额充值</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] text-text-secondary transition-all hover:text-primary" data-path="pages-workorder-list" href="#"><span class="material-symbols-outlined text-[22px]">support_agent</span><span class="font-label-sm text-label-sm mt-0.5">售后申诉</span></a></div></nav></body></html>
